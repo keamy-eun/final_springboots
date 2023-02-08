@@ -23,25 +23,26 @@ Final_Springboots
 
 #### 2023.02.01
 
-- 온라인강의, 마이페이지, 로그인/회원가입, 메인페이지: 이찬우
+- 메인페이지, 온라인강의, 마이페이지: 이찬우
 
   - [main](../final_springboots/docs/)
   - [login](../final_springboots/docs/)
   - [logout](../toy_servletsWithDB/src/main/java/com/midleterm/midle_term/servlets/Logout.java)
   - [signup](../final_springboots/docs/)
 
-- 커뮤니티(게시판): 이정훈
+- 커뮤니티(게시판), 로그인: 이정훈
 
   - [main](../final_springboots/docs/)
   - [login](../final_springboots/docs/)
   - [logout](../toy_servletsWithDB/src/main/java/com/midleterm/midle_term/servlets/Logout.java)
   - [signup](../final_springboots/docs/)
 
-- 학원소개, 메인페이지: 은원기
+- 학원소개, 관리자페이지, 회원가입: 은원기
 
   - [main](../final_springboots/docs/)
   - [login](../final_springboots/docs/)
   - [logout](../toy_servletsWithDB/src/main/java/com/midleterm/midle_term/servlets/Logout.java)
   - [signup](../final_springboots/docs/)
 
-## 구현기능
+## 의뢰팀과의 요구사항 협의서
+--PDF 파일 첨부--
