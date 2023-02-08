@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>공지사항</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <!-- CSS링크 -->
+
+    <link rel="stylesheet" href="./css/commons.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- -------------------- -->
+      <!-- navbar -->
+      <div class="m-5 mb-2">
+        <div class="d-flex justify-content-end">
+          <a
+            href="./main_login.html"
+            class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
+            >로그인</a
+          >
+          <a
+            href="./main_signUp.html"
+            class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
+            >회원가입</a
+          >
+        </div>
+        <!-- menu bar -->
+        <div class="d-flex justify-content-around">
+          <!-- logo -->
+          <a href="./main.html">
+            <img
+              src="./EJ_logoedit.png"
+              width="230"
+              height="100"
+              class="me-5"
+              alt=""
+            />
+          </a>
+          <a
+            href="./introduction_academy.html"
+            class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
+          >
+            학원안내</a
+          >
+          <a
+            href="./lecture_signup_list.html"
+            class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
+          >
+            온라인강의</a
+          >
+          <a
+            href="./community_lecture.html"
+            class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
+          >
+            커뮤니티</a
+          >
+          <a
+            href="./mypage_Lecture.html"
+            class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
+          >
+            마이페이지</a
+          >
+          <a
+            href="./admin_member.html"
+            class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
+          >
+            관리자페이지</a
+          >
+        </div>
+      </div>
+      <hr />
+
+      <!-- -------------------------- -->
+      <div class="text-center container-fluid">
+        <div class="row">
+          <!--  -->
+          <div class="row">
+            <!-- Sidebar -->
+            <div class="col-auto wrapper border border-1 m-3 p-3">
+              <nav id="sidebar">
+                <div class="text-secondary">
+                  <h3>은정이 아카데미</h3>
+                </div>
+                <ul class="list-unstyled components fs-5">
+                  <li class="border-top border-1 p-2">
+                    <a
+                      href="./community_lecture.html"
+                      class="text-decoration-none text-secondary"
+                      >학생 커뮤니티</a
+                    >
+                  </li>
+                  <li class="border-top border-1 p-2">
+                    <a
+                      href="./community_lecturer.html"
+                      class="text-decoration-none text-secondary"
+                      >강사 게시판</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <!--  -->
+            <div class="container col-7 mt-5">
+              <!-- 글쓰기 -->
+              <div class="mb-3 text-end">
+                <button class="border btn">
+                  <a
+                    href="./community_postWrite.html"
+                    class="text-black"
+                    style="text-decoration: none"
+                    >글쓰기</a
+                  >
+                </button>
+              </div>
+
+              <!-- 게시판 테이블 -->
+              <table class="table text-start">
+                <div class="row mb-5 bg-black bg-opacity-10 p-2">
+                <div class="col-3 h4"><a href="#" style="text-decoration: none;" class="text-black">학생게시판</a> </div>
+                <div class="col-3 h4"><a href="#" style="text-decoration: none;" class="text-black">강좌게시판</a> </div>
+                <div class="col-3 h4"><a href="#" style="text-decoration: none;" class="text-black">공지사항</a></div>
+              </div>
+                  <tr>
+                    <th>NO</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                    <th>조회수</th>
+                  </tr>
+                
+                <tbody>
+                  <tr>
+                    <td>5</td>
+                    <td>
+                      <a href="./community_post.html" class=""
+                        >[문법 입문] 기초 문법 공부 3단계 /(확인용 링크)</a
+                      >
+                    </td>
+                    <td>John Doe</td>
+                    <td>2023-01-12</td>
+                    <td class="text-center">12</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>[문법 입문] 기초 문법 공부 2단계</td>
+                    <td>John Doe</td>
+                    <td>2023-01-12</td>
+                    <td class="text-center">20</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>[문법 입문] 기초 문법 공부 1단계</td>
+                    <!-- <td>Alexander Pierce</td> -->
+                    <td>John Doe</td>
+                    <td>2023-01-11</td>
+                    <td class="text-center">32</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>[회화 입문] 회화, 영어로 말해봐!! 30일의 기적</td>
+                    <td>Bob Doe</td>
+                    <td>2023-01-03</td>
+                    <td class="text-center">40</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>[독해 입문] 물마시듯 매일매일 영어독해</td>
+                    <td>Mike Doe</td>
+                    <td>2023-01-02</td>
+                    <td class="text-center">52</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="input-group input-group-sm mt-3">
+                <input
+                  type="text"
+                  name="table_search"
+                  class="form-control float-right"
+                  placeholder="Search"
+                />
+
+                <button type="submit" class="btn btn-default border">
+                  검색
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <!-- SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
+  </body>
+</html>
+
+<!-- https://getbootstrap.com/docs/4.0/components/navbar/
+ 참고 -->
