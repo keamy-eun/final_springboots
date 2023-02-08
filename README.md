@@ -1,6 +1,4 @@
 # FINAL 프로젝트 : Springboots & DB 활용 웹사이트 구현
-![요구사항정의서_은정이.xlsx - 1차 정의서.pdf](
-<img width="80%" src="https://github.com/keamy-eun/final_springboots/files/10680824/_.xlsx.-.1.pdf"/>)
 <img src="https://images.unsplash.com/photo-1661961112951-f2…fHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80">
 
 <hr>
