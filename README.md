@@ -44,5 +44,5 @@ Final_Springboots
   - [logout](../toy_servletsWithDB/src/main/java/com/midleterm/midle_term/servlets/Logout.java)
   - [signup](../final_springboots/docs/)
 
-## 의뢰팀과의 요구사항 협의서
+## 의뢰팀 요구사항 협의서
 --PDF 파일 첨부--
