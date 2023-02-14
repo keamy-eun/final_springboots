@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": 0,
-    "scrollLeft": 0,
+    "scrollTop": -6,
+    "scrollLeft": -10,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -43,12 +43,35 @@
   "table": {
     "tables": [
       {
-        "name": "LECTURE_REVIEW",
-        "comment": "수업 후기 게시판",
+        "name": "admin_member",
+        "comment": "회원관리",
         "columns": [
           {
-            "name": "SEARCH_WORD",
-            "comment": "검색어(수업후기게시판)",
+            "name": "USER_LIST_CHECKBOX",
+            "comment": "유저목록체크박스",
+            "dataType": "VARCHAR(10)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 152.99169921875,
+              "widthComment": 106,
+              "widthDataType": 87.71875,
+              "widthDefault": 60
+            },
+            "id": "8ff5f983-efd9-497b-9ecb-5857f967ffc8"
+          },
+          {
+            "name": "MEMBER_UID",
+            "comment": "유저고유번호",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -62,16 +85,16 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 104.5654296875,
-              "widthComment": 120,
+              "widthName": 88.67724609375,
+              "widthComment": 80,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "d19108f2-10ee-4503-8a20-ff1ddb568723"
+            "id": "bfdf6ac5-cbed-4a6d-9426-5923ae3a1c21"
           },
           {
-            "name": "POST_NUMBER",
-            "comment": "글번호(수업후기게시판)",
+            "name": "NAME",
+            "comment": "이름",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -85,16 +108,16 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 100.9599609375,
-              "widthComment": 120,
+              "widthName": 60,
+              "widthComment": 60,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "69c16948-fb2a-43ad-91ad-6948b52a7f35"
+            "id": "553eb789-e1ae-4370-9410-ab046cad3361"
           },
           {
-            "name": "POST_TITLE",
-            "comment": "제목(수업후기게시판)",
+            "name": "POSITION",
+            "comment": "등급",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -108,39 +131,16 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 80.01904296875,
-              "widthComment": 120,
+              "widthName": 64.1181640625,
+              "widthComment": 60,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "0da32d95-ef9d-45e1-87e5-a580be61c9a4"
+            "id": "1a73ee74-5564-4f19-ad2e-3c3b8de9c6ed"
           },
           {
-            "name": "POST_COMMENT_COUNT",
-            "comment": "게시글댓글수(수업후기게시판)",
-            "dataType": "INTEGER",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 165.22998046875,
-              "widthComment": 120,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "f1bad443-9d9c-4c04-abe8-aab79d458406"
-          },
-          {
-            "name": "POSTING_MEMBER",
-            "comment": "작성자(수업후기게시판)",
+            "name": "BIRTH",
+            "comment": "생년월일",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -154,16 +154,16 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 124.79541015625,
-              "widthComment": 120,
+              "widthName": 60,
+              "widthComment": 60,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "279ef561-4cf2-4d4b-be6e-9bc62b44884a"
+            "id": "03784426-29d8-4cae-b4c6-a24ae9e5eca0"
           },
           {
-            "name": "POSTING_DATE",
-            "comment": "작성일(수업후기게시판)",
+            "name": "EMAIL",
+            "comment": "이메일주소",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -177,17 +177,17 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 101.4423828125,
-              "widthComment": 120,
+              "widthName": 60,
+              "widthComment": 67,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "5b8d7c39-50a3-4954-a15f-c792625d09ea"
+            "id": "1a300ed5-5efa-4217-843e-d2add7b169cb"
           },
           {
-            "name": "VIEW_COUNT",
-            "comment": "조회수(수업후기게시판)",
-            "dataType": "INTEGER",
+            "name": "SMS_AD",
+            "comment": "SMS광고수신",
+            "dataType": "VARCHAR(10)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -200,17 +200,17 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 88.6708984375,
-              "widthComment": 120,
-              "widthDataType": 60,
+              "widthName": 60,
+              "widthComment": 82.1708984375,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
-            "id": "cb70b91b-f0e2-48bd-8f69-48a582413c84"
+            "id": "c22b9ab0-0669-4902-8294-fa639aac1a30"
           },
           {
-            "name": "PAGE_NUMBER",
-            "comment": "페이지번호(수업후기게시판)",
-            "dataType": "INTEGER",
+            "name": "EMAIL_AD",
+            "comment": "Email광고수신",
+            "dataType": "VARCHAR(10)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -223,24 +223,24 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 100.72509765625,
-              "widthComment": 120,
-              "widthDataType": 60,
+              "widthName": 66.3017578125,
+              "widthComment": 86.50634765625,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
-            "id": "0e87c31b-bb4f-476a-88d4-d752320e1cd7"
+            "id": "cb3e626b-2296-4d62-b436-dd819d96be96"
           }
         ],
         "ui": {
           "active": false,
-          "left": 24,
-          "top": 21.8,
-          "zIndex": 57,
-          "widthName": 121.18994140625,
-          "widthComment": 100.2236328125
+          "left": 52,
+          "top": 25,
+          "zIndex": 79,
+          "widthName": 92.314453125,
+          "widthComment": 60
         },
         "visible": true,
-        "id": "31941d01-67e0-4e3f-a7e4-acd43e9812d1"
+        "id": "f6d24f83-14c6-47eb-ba98-f3a3fb3ac6ac"
       }
     ],
     "indexes": []

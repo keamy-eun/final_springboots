@@ -43,35 +43,12 @@
   "table": {
     "tables": [
       {
-        "name": "LECTURE_REVIEW",
-        "comment": "수업 후기 게시판",
+        "name": "community_lecture",
+        "comment": "강좌게시판",
         "columns": [
           {
-            "name": "SEARCH_WORD",
-            "comment": "검색어(수업후기게시판)",
-            "dataType": "VARCHAR(100)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 104.5654296875,
-              "widthComment": 120,
-              "widthDataType": 94.94873046875,
-              "widthDefault": 60
-            },
-            "id": "d19108f2-10ee-4503-8a20-ff1ddb568723"
-          },
-          {
             "name": "POST_NUMBER",
-            "comment": "글번호(수업후기게시판)",
+            "comment": "게시글번호",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -86,15 +63,15 @@
               "fk": false,
               "pfk": false,
               "widthName": 100.9599609375,
-              "widthComment": 120,
+              "widthComment": 67,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "69c16948-fb2a-43ad-91ad-6948b52a7f35"
+            "id": "30d51bcc-4380-49c5-8560-1d67bfb4661a"
           },
           {
-            "name": "POST_TITLE",
-            "comment": "제목(수업후기게시판)",
+            "name": "TITLE",
+            "comment": "제목",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -108,39 +85,16 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 80.01904296875,
-              "widthComment": 120,
+              "widthName": 60,
+              "widthComment": 60,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "0da32d95-ef9d-45e1-87e5-a580be61c9a4"
-          },
-          {
-            "name": "POST_COMMENT_COUNT",
-            "comment": "게시글댓글수(수업후기게시판)",
-            "dataType": "INTEGER",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 165.22998046875,
-              "widthComment": 120,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "f1bad443-9d9c-4c04-abe8-aab79d458406"
+            "id": "6ed4c47d-f94f-4855-8721-9d0ab46103c8"
           },
           {
             "name": "POSTING_MEMBER",
-            "comment": "작성자(수업후기게시판)",
+            "comment": "작성자",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -155,15 +109,15 @@
               "fk": false,
               "pfk": false,
               "widthName": 124.79541015625,
-              "widthComment": 120,
+              "widthComment": 60,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "279ef561-4cf2-4d4b-be6e-9bc62b44884a"
+            "id": "1231d53e-f6b0-4d31-841b-1599ca1e457f"
           },
           {
             "name": "POSTING_DATE",
-            "comment": "작성일(수업후기게시판)",
+            "comment": "작성일",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -178,15 +132,15 @@
               "fk": false,
               "pfk": false,
               "widthName": 101.4423828125,
-              "widthComment": 120,
+              "widthComment": 60,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "5b8d7c39-50a3-4954-a15f-c792625d09ea"
+            "id": "1db58708-0cee-4483-a150-f9ea99cbfbc0"
           },
           {
             "name": "VIEW_COUNT",
-            "comment": "조회수(수업후기게시판)",
+            "comment": "조회수",
             "dataType": "INTEGER",
             "default": "",
             "option": {
@@ -201,15 +155,15 @@
               "fk": false,
               "pfk": false,
               "widthName": 88.6708984375,
-              "widthComment": 120,
+              "widthComment": 60,
               "widthDataType": 60,
               "widthDefault": 60
             },
-            "id": "cb70b91b-f0e2-48bd-8f69-48a582413c84"
+            "id": "50fda250-4a9e-4230-b517-34c39705c68e"
           },
           {
             "name": "PAGE_NUMBER",
-            "comment": "페이지번호(수업후기게시판)",
+            "comment": "페이지번호",
             "dataType": "INTEGER",
             "default": "",
             "option": {
@@ -224,23 +178,23 @@
               "fk": false,
               "pfk": false,
               "widthName": 100.72509765625,
-              "widthComment": 120,
+              "widthComment": 67,
               "widthDataType": 60,
               "widthDefault": 60
             },
-            "id": "0e87c31b-bb4f-476a-88d4-d752320e1cd7"
+            "id": "fed0cfc2-9e81-4cb1-a798-082c6b21846f"
           }
         ],
         "ui": {
           "active": false,
-          "left": 24,
-          "top": 21.8,
-          "zIndex": 57,
-          "widthName": 121.18994140625,
-          "widthComment": 100.2236328125
+          "left": 32,
+          "top": 25,
+          "zIndex": 80,
+          "widthName": 111.09716796875,
+          "widthComment": 67
         },
         "visible": true,
-        "id": "31941d01-67e0-4e3f-a7e4-acd43e9812d1"
+        "id": "ac18e9f8-0450-4d2b-8bba-d6e993513191"
       }
     ],
     "indexes": []
