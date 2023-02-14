@@ -28,21 +28,17 @@ Final_Springboots
 
 - 메인페이지, 온라인강의, 마이페이지: 이찬우
 
-  - [main](../final_springboots/docs/)
-  - [login](../final_springboots/docs/)
-  - [logout](../toy_servletsWithDB/src/main/java/com/midleterm/midle_term/servlets/Logout.java)
-  - [signup](../final_springboots/docs/)
+  - [main](../final_springboots/docs/htmls/main.html)
+  - [lecture](../final_springboots/docs/htmls/lecture_signup.html)
+  - [mypage](../final_springboots/docs/htmls/mypage_Lecture.html)
 
 - 커뮤니티(게시판), 로그인: 이정훈
 
-  - [main](../final_springboots/docs/)
-  - [login](../final_springboots/docs/)
-  - [logout](../toy_servletsWithDB/src/main/java/com/midleterm/midle_term/servlets/Logout.java)
-  - [signup](../final_springboots/docs/)
+  - [community](../final_springboots/docs/htmls/community_lecture.html)
+  - [login](../final_springboots/docs/htmls/main_login.html)
 
 - 학원소개, 관리자페이지, 회원가입: 은원기
 
-  - [main](../final_springboots/docs/)
-  - [login](../final_springboots/docs/)
-  - [logout](../toy_servletsWithDB/src/main/java/com/midleterm/midle_term/servlets/Logout.java)
-  - [signup](../final_springboots/docs/)
+  - [introduction](../final_springboots/docs/htmls/introduction_academy.html)
+  - [admin](../final_springboots/docs/htmls/admin_member.html)
+  - [signup](../final_springboots/docs/htmls/main_signUp.html)
