@@ -233,9 +233,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 41.6,
-          "top": 40.8,
-          "zIndex": 261,
+          "left": 56,
+          "top": 48.8,
+          "zIndex": 4,
           "widthName": 121.18994140625,
           "widthComment": 100.2236328125
         },
