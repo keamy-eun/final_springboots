@@ -114,13 +114,59 @@
               "widthDefault": 60
             },
             "id": "35030a30-2dad-480b-abcc-103fb51f155d"
+          },
+          {
+            "name": "COMMUNITY_TITLE",
+            "comment": "게시판제목",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 124.78271484375,
+              "widthComment": 67,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "23724bc7-d7d5-457a-bdaf-966bc6b39db8"
+          },
+          {
+            "name": "FILE_ATTACHIMENT",
+            "comment": "첨부파일",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 127.19482421875,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "ba9bddf6-7832-4ed7-8ccc-11a3a2e624de"
           }
         ],
         "ui": {
           "active": false,
           "left": 33,
           "top": 25,
-          "zIndex": 61,
+          "zIndex": 101,
           "widthName": 96.64990234375,
           "widthComment": 60
         },

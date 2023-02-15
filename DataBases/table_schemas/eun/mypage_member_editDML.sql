@@ -1,0 +1,5 @@
+update MEMBER 
+set PW='S1234', EMAIL='S@daum.net', BIRTH='2000-01-01',SMS_AD='Y',EMAIL_AD='N' 
+WHERE MEMBER_ID='Q';
+
+delete from MEMBER WHERE MEMBER_ID = 'Q';

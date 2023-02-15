@@ -47,7 +47,7 @@
         "comment": "사용자",
         "columns": [
           {
-            "name": "ID",
+            "name": "MEMBER_ID",
             "comment": "아이디",
             "dataType": "VARCHAR(100)",
             "default": "",
@@ -62,7 +62,7 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 60,
+              "widthName": 79.2890625,
               "widthComment": 60,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
@@ -91,6 +91,29 @@
               "widthDefault": 60
             },
             "id": "a9a3af69-9863-4d1a-9325-fbf42bc958d1"
+          },
+          {
+            "name": "MEMBER_NAME",
+            "comment": "이름",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 103.84814453125,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "34912876-d3b0-4840-b0d3-bd21853ffe37"
           },
           {
             "name": "POSITION",
@@ -279,9 +302,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 25,
-          "top": 24,
-          "zIndex": 56,
+          "left": 26,
+          "top": 26,
+          "zIndex": 86,
           "widthName": 60,
           "widthComment": 60
         },
