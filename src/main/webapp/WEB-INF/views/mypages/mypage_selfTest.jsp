@@ -23,12 +23,12 @@
       <div class="m-5 mb-2">
         <div class="d-flex justify-content-end">
           <a
-            href="./main_login.html"
+            href="./main_login"
             class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
             >로그인</a
           >
           <a
-            href="./main_signUp.html"
+            href="./main_signUp"
             class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
             >회원가입</a
           >
@@ -36,7 +36,7 @@
         <!-- menu bar -->
         <div class="d-flex justify-content-around">
           <!-- logo -->
-          <a href="./main.html">
+          <a href="./main">
             <img
               src="./EJ_logoedit.png"
               width="230"
@@ -46,31 +46,31 @@
             />
           </a>
           <a
-            href="./introduction_academy.html"
+            href="./introduction_academy"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             학원안내</a
           >
           <a
-            href="./lecture_signup_list.html"
+            href="./lecture_signup_list"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             온라인강의</a
           >
           <a
-            href="./community_lecture.html"
+            href="./community_lecture"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             커뮤니티</a
           >
           <a
-            href="./mypage_Lecture.html"
+            href="./mypage_Lecture"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             마이페이지</a
           >
           <a
-            href="./admin_member.html"
+            href="./admin_member"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             관리자페이지</a
@@ -92,7 +92,7 @@
               <ul class="list-unstyled components fs-5">
                 <li class="border-top border-1 p-2">
                   <a
-                    href="./mypage_Lecture.html"
+                    href="./mypage_Lecture"
                     target="_self"
                     class="text-decoration-none text-secondary"
                     >내 강의보기</a
@@ -100,7 +100,7 @@
                 </li>
                 <li class="border-top border-1 p-2">
                   <a
-                    href="./mypage_signup_lecturelist.html"
+                    href="./mypage_signup_lecturelist"
                     target="_self"
                     class="text-decoration-none text-secondary"
                     >수강신청내역</a
@@ -108,7 +108,7 @@
                 </li>
                 <li class="border-top border-1 p-2">
                   <a
-                    href="./mypage_member_edit.html"
+                    href="./mypage_member_edit"
                     target="_self"
                     class="text-decoration-none text-secondary"
                     >개인정보수정</a
@@ -116,7 +116,7 @@
                 </li>
                 <li class="border-top border-1 p-2">
                   <a
-                    href="./mypage_selfTest.html"
+                    href="./mypage_selfTest"
                     target="_self"
                     class="text-decoration-none text-secondary"
                     >영어실력 테스트</a
@@ -374,7 +374,7 @@
 
                   <!-- btn -->
                   <div class="d-flex justify-content-end">
-                    <a class="btn btn-primary w-25 mt-5 mb-5" href="./mypage_selfTestResult.html">제출하고 점수 확인하기</a>
+                    <a class="btn btn-primary w-25 mt-5 mb-5" href="./mypage_selfTestResult">제출하고 점수 확인하기</a>
                   </div>
                 </form>
               </div>

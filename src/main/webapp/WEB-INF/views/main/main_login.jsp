@@ -38,12 +38,12 @@
       <div class="m-5 mb-2">
         <div class="d-flex justify-content-end">
           <a
-            href="./main_login.html"
+            href="./main_login"
             class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
             >로그인</a
           >
           <a
-            href="./main_signUp.html"
+            href="./main_signUp"
             class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
             >회원가입</a
           >
@@ -51,7 +51,7 @@
         <!-- menu bar -->
         <div class="d-flex justify-content-around">
           <!-- logo -->
-          <a href="./main.html">
+          <a href="./main">
             <img
               src="./EJ_logoedit.png"
               width="230"
@@ -61,31 +61,31 @@
             />
           </a>
           <a
-            href="./introduction_academy.html"
+            href="./introduction_academy"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             학원안내</a
           >
           <a
-            href="./lecture_signup_list.html"
+            href="./lecture_signup_list"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             온라인강의</a
           >
           <a
-            href="./community_lecture.html"
+            href="./community_lecture"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             커뮤니티</a
           >
           <a
-            href="./mypage_Lecture.html"
+            href="./mypage_Lecture"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             마이페이지</a
           >
           <a
-            href="./admin_member.html"
+            href="./admin_member"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             관리자페이지</a
@@ -122,13 +122,13 @@
                 </div>
               </div>
               <button class="btn btn-primary ms-4 mt-4 me-3">
-                <a href="./main.html" class="text-decoration-none text-white"
+                <a href="./main" class="text-decoration-none text-white"
                   >로그인</a
                 >
               </button>
               <button class="btn btn-primary mt-4 ms-2">
                 <a
-                  href="./main_signUp.html"
+                  href="./main_signUp"
                   class="text-decoration-none text-white"
                   >회원가입</a
                 >
