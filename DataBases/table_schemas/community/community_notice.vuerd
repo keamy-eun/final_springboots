@@ -43,8 +43,8 @@
   "table": {
     "tables": [
       {
-        "name": "community_lecturer",
-        "comment": "강사게시판",
+        "name": "community_notice",
+        "comment": "공지사항",
         "columns": [
           {
             "name": "POST_NUMBER",
@@ -186,12 +186,12 @@
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 32,
           "top": 25,
-          "zIndex": 1,
-          "widthName": 115.42626953125,
-          "widthComment": 67
+          "zIndex": 11,
+          "widthName": 106.76806640625,
+          "widthComment": 60
         },
         "visible": true,
         "id": "ac18e9f8-0450-4d2b-8bba-d6e993513191"
