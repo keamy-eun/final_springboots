@@ -22,12 +22,12 @@
       <div class="m-5 mb-2">
         <div class="d-flex justify-content-end">
           <a
-            href="./main_login.html"
+            href="./main_login"
             class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
             >로그인</a
           >
           <a
-            href="./main_signUp.html"
+            href="./main_signUp"
             class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
             >회원가입</a
           >
@@ -35,7 +35,7 @@
         <!-- menu bar -->
         <div class="d-flex justify-content-around">
           <!-- logo -->
-          <a href="./main.html">
+          <a href="./main">
             <img
               src="./EJ_logoedit.png"
               width="230"
@@ -45,31 +45,31 @@
             />
           </a>
           <a
-            href="./introduction_academy.html"
+            href="./introduction_academy"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             학원안내</a
           >
           <a
-            href="./lecture_signup_list.html"
+            href="./lecture_signup_list"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             온라인강의</a
           >
           <a
-            href="./community_lecture.html"
+            href="./community_lecture"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             커뮤니티</a
           >
           <a
-            href="./mypage_Lecture.html"
+            href="./mypage_Lecture"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             마이페이지</a
           >
           <a
-            href="./admin_member.html"
+            href="./admin_member"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             관리자페이지</a
@@ -171,7 +171,7 @@
               학생들의 피드백과 교사들의 학습에 대한 열정이 만들어낸 교육방식!
             </div>
             <div class="mt-4">
-              <a href="./introduction_learning.html" class="btn btn-primary"
+              <a href="./introduction_learning" class="btn btn-primary"
                 >교육방법 보러가기</a
               >
             </div>
@@ -206,7 +206,7 @@
                 </p>
                 <div class="text-end">
                   <a
-                    href="./community_post.html"
+                    href="./community_post"
                     class="btn btn-success m-3 w-25"
                     >더 읽기</a
                   >
@@ -235,7 +235,7 @@
                 </p>
                 <div class="text-end">
                   <a
-                    href="./community_post.html"
+                    href="./community_post"
                     class="btn btn-success m-3 w-25"
                     >더 읽기</a
                   >
@@ -260,7 +260,7 @@
                 />
               </div>
               <div class="d-flex align-items-center fs-bold">
-                <a href="./community_post.html">
+                <a href="./community_post">
                   [독해 입문] 물마시듯 매일매일 영어독해
                 </a>
               </div>
@@ -277,7 +277,7 @@
                 />
               </div>
               <div class="d-flex align-items-center fs-bold">
-                <a href="./community_post.html">
+                <a href="./community_post">
                   [문법 입문] 기초 문법 공부 2단계
                 </a>
               </div>
@@ -294,7 +294,7 @@
                 />
               </div>
               <div class="d-flex align-items-center fs-bold">
-                <a href="./community_post.html">
+                <a href="./community_post">
                   [문법 입문] 기초 문법 공부 2단계
                 </a>
               </div>
@@ -311,7 +311,7 @@
                 />
               </div>
               <div class="d-flex align-items-center fs-bold">
-                <a href="./community_post.html">
+                <a href="./community_post">
                   [문법 입문] 기초 문법 공부 1단계
                 </a>
               </div>
