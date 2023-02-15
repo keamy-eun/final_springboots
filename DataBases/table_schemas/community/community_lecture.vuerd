@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": 0,
-    "scrollLeft": 0,
+    "scrollTop": -4,
+    "scrollLeft": -2,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -46,6 +46,29 @@
         "name": "community_lecture",
         "comment": "강좌게시판",
         "columns": [
+          {
+            "name": "COMMUNITY_NUMBER",
+            "comment": "게시판번호",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 145.7236328125,
+              "widthComment": 67,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "00200baa-c16a-44ff-9f1c-f2ea1090b19a"
+          },
           {
             "name": "POST_NUMBER",
             "comment": "게시글번호",
@@ -187,9 +210,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 32,
-          "top": 25,
-          "zIndex": 80,
+          "left": 43,
+          "top": 46,
+          "zIndex": 1,
           "widthName": 111.09716796875,
           "widthComment": 67
         },

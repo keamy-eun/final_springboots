@@ -3,7 +3,7 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": 0,
+    "scrollTop": -1,
     "scrollLeft": 0,
     "zoomLevel": 1,
     "show": {
@@ -46,6 +46,29 @@
         "name": "community_notice",
         "comment": "공지사항",
         "columns": [
+          {
+            "name": "COMMUNITY_NUMBER",
+            "comment": "게시판번호",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 145.7236328125,
+              "widthComment": 67,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "ac13ac26-d5a6-4e33-876b-3c62451d16a3"
+          },
           {
             "name": "POST_NUMBER",
             "comment": "게시글번호",
@@ -186,10 +209,10 @@
           }
         ],
         "ui": {
-          "active": true,
-          "left": 32,
-          "top": 25,
-          "zIndex": 11,
+          "active": false,
+          "left": 28,
+          "top": 77,
+          "zIndex": 1,
           "widthName": 106.76806640625,
           "widthComment": 60
         },
