@@ -1,0 +1,7 @@
+
+CREATE TABLE lecture_signup_list
+(
+  PAGE_NUMBER    INTEGER      NULL     COMMENT '페이지번호',
+  LECTURE_NAME   VARCHAR(100) NULL     COMMENT '강좌이름',
+  LECTURE_DETAIL VARCHAR(100) NULL     COMMENT '강좌상세'
+) COMMENT '강좌신청목록';
