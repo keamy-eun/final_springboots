@@ -4,7 +4,7 @@
     "width": 2000,
     "height": 2000,
     "scrollTop": 0,
-    "scrollLeft": 0,
+    "scrollLeft": -2,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -47,29 +47,6 @@
         "comment": "사용자",
         "columns": [
           {
-            "name": "MEMBER_UID",
-            "comment": "사용자고유번호",
-            "dataType": "VARCHAR(100)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 88.67724609375,
-              "widthComment": 93,
-              "widthDataType": 94.94873046875,
-              "widthDefault": 60
-            },
-            "id": "1fb558e0-cbcd-4ca9-9be3-0ca2067ddf57"
-          },
-          {
             "name": "ID",
             "comment": "아이디",
             "dataType": "VARCHAR(100)",
@@ -78,7 +55,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -229,13 +206,82 @@
               "widthDefault": 60
             },
             "id": "7044e4cf-73b0-471f-ae37-ecf42b512320"
+          },
+          {
+            "name": "MEMBER_LECTURE",
+            "comment": "나의강의",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 126.96630859375,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "3f12c152-f0ff-49a5-831b-42e8fee64731"
+          },
+          {
+            "name": "MEMBER_SIGNUP_LECTURE_LIST",
+            "comment": "수강신청내역",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 218.7216796875,
+              "widthComment": 80,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "a43ba66b-f271-4935-b18d-0b0333fdc829"
+          },
+          {
+            "name": "TEST_RESULT",
+            "comment": "테스트결과",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 92.77783203125,
+              "widthComment": 67,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "fa1abad4-f13e-479c-a2dc-eff9e0bf1469"
           }
         ],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 25,
           "top": 24,
-          "zIndex": 52,
+          "zIndex": 56,
           "widthName": 60,
           "widthComment": 60
         },

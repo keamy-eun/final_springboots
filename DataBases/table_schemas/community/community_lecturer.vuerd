@@ -116,8 +116,8 @@
             "id": "6ed4c47d-f94f-4855-8721-9d0ab46103c8"
           },
           {
-            "name": "POSTING_MEMBER",
-            "comment": "작성자",
+            "name": "ID",
+            "comment": "아이디",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -131,7 +131,7 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 124.79541015625,
+              "widthName": 60,
               "widthComment": 60,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
@@ -212,7 +212,7 @@
           "active": true,
           "left": 43,
           "top": 46,
-          "zIndex": 9,
+          "zIndex": 10,
           "widthName": 115.42626953125,
           "widthComment": 67
         },

@@ -1,0 +1,8 @@
+
+CREATE TABLE STATISTICS
+(
+  DATE                 VARCHAR(100) NOT NULL COMMENT '날짜',
+  MEMBER_COUNT         INTEGER      NULL     COMMENT '회원수',
+  SIGNUP_LECTURE_COUNT INTEGER      NULL     COMMENT '수강신청수',
+  POST_COUNT           INTEGER      NULL     COMMENT '글작성수'
+) COMMENT '통계관리';

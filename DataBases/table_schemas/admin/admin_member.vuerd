@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -6,
-    "scrollLeft": -10,
+    "scrollTop": -8,
+    "scrollLeft": -9,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -70,23 +70,23 @@
             "id": "8ff5f983-efd9-497b-9ecb-5857f967ffc8"
           },
           {
-            "name": "MEMBER_UID",
-            "comment": "유저고유번호",
+            "name": "ID",
+            "comment": "아이디",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 88.67724609375,
-              "widthComment": 80,
+              "widthName": 60,
+              "widthComment": 60,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
@@ -232,10 +232,10 @@
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 52,
           "top": 25,
-          "zIndex": 79,
+          "zIndex": 14,
           "widthName": 92.314453125,
           "widthComment": 60
         },

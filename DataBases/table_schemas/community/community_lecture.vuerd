@@ -93,6 +93,29 @@
             "id": "30d51bcc-4380-49c5-8560-1d67bfb4661a"
           },
           {
+            "name": "ID",
+            "comment": "아이디",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "1231d53e-f6b0-4d31-841b-1599ca1e457f"
+          },
+          {
             "name": "TITLE",
             "comment": "제목",
             "dataType": "VARCHAR(100)",
@@ -114,29 +137,6 @@
               "widthDefault": 60
             },
             "id": "6ed4c47d-f94f-4855-8721-9d0ab46103c8"
-          },
-          {
-            "name": "POSTING_MEMBER",
-            "comment": "작성자",
-            "dataType": "VARCHAR(100)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 124.79541015625,
-              "widthComment": 60,
-              "widthDataType": 94.94873046875,
-              "widthDefault": 60
-            },
-            "id": "1231d53e-f6b0-4d31-841b-1599ca1e457f"
           },
           {
             "name": "POSTING_DATE",
@@ -209,10 +209,10 @@
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 43,
           "top": 46,
-          "zIndex": 1,
+          "zIndex": 13,
           "widthName": 111.09716796875,
           "widthComment": 67
         },
