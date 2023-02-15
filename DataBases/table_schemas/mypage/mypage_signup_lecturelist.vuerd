@@ -1,0 +1,139 @@
+{
+  "canvas": {
+    "version": "2.2.11",
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": -1.6,
+    "scrollLeft": 0,
+    "zoomLevel": 1,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": false,
+      "columnPrimaryKey": true,
+      "columnUnique": false,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "MySQL",
+    "databaseName": "",
+    "canvasType": "ERD",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "highlightTheme": "VS2015",
+    "bracketType": "none",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "relationshipOptimization": false,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    },
+    "pluginSerializationMap": {}
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "MYPAGE_SIGNUP_LECTURELIST",
+        "comment": "수강강좌확인",
+        "columns": [
+          {
+            "name": "MEMBER_UID",
+            "comment": "회원UID",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 88.67724609375,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "fff954b7-0b2d-45df-ad36-6757eaedb5c0"
+          },
+          {
+            "name": "ENROLMENT_LECTURE_TITLE",
+            "comment": "수강신청강의이름",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 194.14990234375,
+              "widthComment": 106,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "047c9940-38e7-46ac-898c-90660c55e523"
+          },
+          {
+            "name": "ENROLMENT_LECTURE_LECTURER",
+            "comment": "수강신청강사이름",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 228.82080078125,
+              "widthComment": 106,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "8eac8843-4d62-4903-be41-e8991e8e32de"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 63.2,
+          "top": 48,
+          "zIndex": 10,
+          "widthName": 209.09228515625,
+          "widthComment": 80
+        },
+        "visible": true,
+        "id": "99e33ff8-f04c-4d97-9bb1-9e852c2923ad"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": []
+  }
+}
