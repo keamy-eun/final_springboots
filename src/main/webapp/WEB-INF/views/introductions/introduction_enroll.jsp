@@ -14,7 +14,7 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/commons.css" />
+    <link rel="stylesheet" href="/css/commons.css" />
   </head>
   <body>
     <div class="container">
@@ -22,12 +22,12 @@
     <div class="m-5 mb-2">
       <div class="d-flex justify-content-end">
         <a
-          href="./main_login"
+          href="/main_login"
           class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
           >로그인</a
         >
         <a
-          href="./main_signUp"
+          href="/main_signUp"
           class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
           >회원가입</a
         >
@@ -35,7 +35,7 @@
       <!-- menu bar -->
       <div class="d-flex justify-content-around">
         <!-- logo -->
-        <a href="./main">
+        <a href="/main">
           <img
             src="./EJ_logoedit.png"
             width="230"
@@ -45,31 +45,31 @@
           />
         </a>
         <a
-          href="./introduction_academy"
+          href="/introduction_academy"
           class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
         >
           학원안내</a
         >
         <a
-          href="./lecture_signup_list"
+          href="/lecture_signup_list"
           class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
         >
           온라인강의</a
         >
         <a
-          href="./community_lecture"
+          href="/community_lecture"
           class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
         >
           커뮤니티</a
         >
         <a
-          href="./mypage_Lecture"
+          href="/mypage_Lecture"
           class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
         >
           마이페이지</a
         >
         <a
-          href="./admin_member"
+          href="/admin_member"
           class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
         >
           관리자페이지</a
@@ -88,7 +88,7 @@
           <ul class="list-unstyled components fs-5">
             <li class="border-top border-1 p-2">
               <a
-                href="./introduction_academy"
+                href="/introduction_academy"
                 target="_self"
                 class="text-decoration-none text-secondary"
                 >학원소개</a
@@ -96,7 +96,7 @@
             </li>
             <li class="border-top border-1 p-2">
               <a
-                href="./introduction_learning"
+                href="/introduction_learning"
                 target="_self"
                 class="text-decoration-none text-secondary"
                 >학습소개</a
@@ -104,7 +104,7 @@
             </li>
             <li class="border-top border-1 p-2">
               <a
-                href="./introduction_enroll"
+                href="/introduction_enroll"
                 target="_self"
                 class="text-decoration-none text-secondary"
                 >입학안내</a
@@ -112,7 +112,7 @@
             </li>
             <li class="border-top border-1 p-2">
               <a
-                href="./introduction_location"
+                href="/introduction_location"
                 target="_self"
                 class="text-decoration-none text-secondary"
                 >학원위치</a

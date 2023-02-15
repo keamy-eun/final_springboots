@@ -17,7 +17,7 @@
 
     <!-- CSS링크 -->
 
-    <link rel="stylesheet" href="./css/commons.css" />
+    <link rel="stylesheet" href="/css/commons.css" />
   </head>
   <body>
     <div class="container">
@@ -26,12 +26,12 @@
       <div class="m-5 mb-2">
         <div class="d-flex justify-content-end">
           <a
-            href="./main_login"
+            href="/main_login"
             class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
             >로그인</a
           >
           <a
-            href="./main_signUp"
+            href="/main_signUp"
             class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
             >회원가입</a
           >
@@ -39,7 +39,7 @@
         <!-- menu bar -->
         <div class="d-flex justify-content-around">
           <!-- logo -->
-          <a href="./main">
+          <a href="/main">
             <img
               src="./EJ_logoedit.png"
               width="230"
@@ -49,31 +49,31 @@
             />
           </a>
           <a
-            href="./introduction_academy"
+            href="/introduction_academy"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             학원안내</a
           >
           <a
-            href="./lecture_signup_list"
+            href="/lecture_signup_list"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             온라인강의</a
           >
           <a
-            href="./community_lecture"
+            href="/community_lecture"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             커뮤니티</a
           >
           <a
-            href="./mypage_Lecture"
+            href="/mypage_Lecture"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             마이페이지</a
           >
           <a
-            href="./admin_member"
+            href="/admin_member"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             관리자페이지</a
@@ -96,14 +96,14 @@
                 <ul class="list-unstyled components fs-5">
                   <li class="border-top border-1 p-2">
                     <a
-                      href="./community_lecture"
+                      href="/community_lecture"
                       class="text-decoration-none text-secondary"
                       >학생 커뮤니티</a
                     >
                   </li>
                   <li class="border-top border-1 p-2">
                     <a
-                      href="./community_lecturer"
+                      href="/community_lecturer"
                       class="text-decoration-none text-secondary"
                       >강사 게시판</a
                     >
@@ -127,7 +127,7 @@
               <div class="mb-3 text-end">
                 <button class="border btn">
                   <a
-                    href="./community_posting"
+                    href="/community_posting"
                     class="text-black"
                     style="text-decoration: none"
                     >글쓰기</a
@@ -146,7 +146,7 @@
                   <tr>
                     <td>5</td>
                     <td>
-                      <a href="./community_post" class=""
+                      <a href="/community_post" class=""
                         >[문법 입문] 기초 문법 공부 3단계 /(확인용 링크)</a
                       >
                     </td>
