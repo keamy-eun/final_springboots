@@ -37,7 +37,7 @@
           <!-- logo -->
           <a href="/main">
             <img
-              src="./EJ_logoedit.png"
+              src="https://user-images.githubusercontent.com/115060986/219259405-a08ffba7-6cbb-4a65-b3d1-a8a456b811b6.png"
               width="230"
               height="90"
               class="me-5"
@@ -204,7 +204,7 @@
       <!-- footer -->
       <footer class="m-5">
         <div>
-          <img src="./EJ_logo.png" width="50" height="50" alt="" />
+          <img src="https://user-images.githubusercontent.com/115060986/219259301-39328314-70ed-4993-ba31-b11e987b1218.png" width="50" height="50" alt="" />
           <span class="opacity-50"> 은정 아카데미</span>
           <span class="ms-4 opacity-50">
             언어교육에 열정을 가진 사람들의 모임
