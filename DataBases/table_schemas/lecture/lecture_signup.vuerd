@@ -44,7 +44,7 @@
     "tables": [
       {
         "name": "LECTURE_SIGNUP",
-        "comment": "강좌신청",
+        "comment": "강좌신청설문조사",
         "columns": [
           {
             "name": "POLL_QUESTION",
@@ -120,9 +120,9 @@
           "active": false,
           "left": 42.4,
           "top": 32.8,
-          "zIndex": 105,
+          "zIndex": 15,
           "widthName": 119.7490234375,
-          "widthComment": 60
+          "widthComment": 106
         },
         "visible": true,
         "id": "9f7e8950-5ecb-4f68-b57d-867686372e8c"
