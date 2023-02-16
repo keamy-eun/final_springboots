@@ -3,7 +3,8 @@ package eunjunglee.final_springboots.service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CommunityService {
+public class MypageService {
+    
     // @Autowired
     // Dao;
 
@@ -12,6 +13,4 @@ public class CommunityService {
         Object result = 다오.메소드명(sqlMapId, dataMap);
         return result;
     }
-
-
 }
