@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -904,
-    "scrollLeft": -224,
+    "scrollTop": -468,
+    "scrollLeft": -35,
     "zoomLevel": 0.8,
     "show": {
       "tableComment": true,
@@ -48,8 +48,8 @@
         "columns": [
           {
             "id": "c68119c4-c44d-453f-ac69-00674a39b98e",
-            "name": "ID",
-            "comment": "아이디",
+            "name": "인증키",
+            "comment": "인증키",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -68,6 +68,29 @@
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             }
+          },
+          {
+            "name": "MEMBER_ID",
+            "comment": "아이디",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 79.2890625,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "c7afca6a-c524-495a-9af9-6576aa78ff6e"
           },
           {
             "id": "aa4f54e5-e4e5-4222-9bd9-595f36771147",
@@ -114,36 +137,13 @@
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             }
-          },
-          {
-            "name": "MEMBER_ID",
-            "comment": "아이디",
-            "dataType": "VARCHAR(100)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 79.2890625,
-              "widthComment": 60,
-              "widthDataType": 94.94873046875,
-              "widthDefault": 60
-            },
-            "id": "c7afca6a-c524-495a-9af9-6576aa78ff6e"
           }
         ],
         "ui": {
           "active": false,
-          "left": 64,
-          "top": 940,
-          "zIndex": 260,
+          "left": 105.25,
+          "top": 1088.75,
+          "zIndex": 432,
           "widthName": 93.74267578125,
           "widthComment": 60
         },
@@ -249,9 +249,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 61.5,
-          "top": 56.5,
-          "zIndex": 312,
+          "left": 91.5,
+          "top": 165.25,
+          "zIndex": 420,
           "widthName": 75.1884765625,
           "widthComment": 60
         },
@@ -2067,7 +2067,7 @@
           "active": false,
           "left": 710,
           "top": 683.25,
-          "zIndex": 269,
+          "zIndex": 414,
           "widthName": 60,
           "widthComment": 60
         },
@@ -2256,34 +2256,34 @@
             "id": "222ad631-abe5-4faf-84b8-435d31839117"
           },
           {
-            "name": "LECTURER_NAME",
-            "comment": "강사명",
+            "name": "MEMBER_ID",
+            "comment": "아이디",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
               "pk": false,
-              "fk": false,
+              "fk": true,
               "pfk": false,
-              "widthName": 116.8544921875,
+              "widthName": 79.2890625,
               "widthComment": 60,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "30ffda65-8a56-4847-9398-e4033a5134ee"
+            "id": "0b6adef6-20ed-47fc-bb8d-ec4816214dfa"
           }
         ],
         "ui": {
           "active": false,
-          "left": 767,
-          "top": 77.75,
-          "zIndex": 309,
+          "left": 79.5,
+          "top": 474,
+          "zIndex": 422,
           "widthName": 72.0654296875,
           "widthComment": 60
         },
@@ -2425,7 +2425,7 @@
             "f54858c7-ed3a-42c0-8aed-2707490b530a"
           ],
           "x": 710,
-          "y": 830.5,
+          "y": 904.125,
           "direction": "left"
         },
         "end": {
@@ -2433,8 +2433,8 @@
           "columnIds": [
             "c7afca6a-c524-495a-9af9-6576aa78ff6e"
           ],
-          "x": 491.9853515625,
-          "y": 1015.5,
+          "x": 533.2353515625,
+          "y": 1164.25,
           "direction": "right"
         },
         "constraintName": "fk_member_to_member_log",
@@ -2502,18 +2502,18 @@
           "columnIds": [
             "222ad631-abe5-4faf-84b8-435d31839117"
           ],
-          "x": 995.789794921875,
-          "y": 187.75,
-          "direction": "bottom"
+          "x": 537.07958984375,
+          "y": 501.5,
+          "direction": "right"
         },
         "end": {
           "tableId": "5b9f2c72-3622-49f9-9381-5d42af370a63",
           "columnIds": [
             "e706545d-97b4-4d4b-8bed-c9d315cdf63a"
           ],
-          "x": 995.539794921875,
-          "y": 354.25,
-          "direction": "top"
+          "x": 763.25,
+          "y": 450.25,
+          "direction": "left"
         },
         "constraintName": "fk_lecturer_to_lecture",
         "visible": true,
@@ -2700,6 +2700,32 @@
         "constraintName": "fk_community_post_connection_to_community_post",
         "visible": true,
         "id": "ea01a5c9-99dd-4c68-a26f-606a6c5e0838"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "ae431184-4f3e-4aa4-952e-d29acce5f0df",
+          "columnIds": [
+            "f54858c7-ed3a-42c0-8aed-2707490b530a"
+          ],
+          "x": 710,
+          "y": 756.875,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "e0cd835d-26a0-42d3-bd15-99b7a5604d0f",
+          "columnIds": [
+            "0b6adef6-20ed-47fc-bb8d-ec4816214dfa"
+          ],
+          "x": 537.07958984375,
+          "y": 556.5,
+          "direction": "right"
+        },
+        "constraintName": "fk_member_to_lecturer",
+        "visible": true,
+        "id": "488098b0-837b-4917-a1a3-e5356f281232"
       }
     ]
   }

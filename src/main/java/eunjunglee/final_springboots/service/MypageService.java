@@ -12,7 +12,8 @@ public class MypageService {
 
     public Object 메소드명(Object dataMap){
         String sqlMapId = "매퍼{namespace}.{ID}";
-        Object result = mypageDao.메소드명(sqlMapId, dataMap);
+        // Object result = mypageDao.메소드명(sqlMapId, dataMap);
+        Object result = null;
         return result;
     }
 }

@@ -11,7 +11,8 @@ public class LectureService {
 
     public Object 메소드명(Object dataMap){
         String sqlMapId = "매퍼{namespace}.{ID}";
-        Object result = lectureDao.메소드명(sqlMapId, dataMap);
+        // Object result = lectureDao.메소드명(sqlMapId, dataMap);
+        Object result = null;
         return result;
     }
 }

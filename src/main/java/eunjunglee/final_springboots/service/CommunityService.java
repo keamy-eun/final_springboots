@@ -11,7 +11,8 @@ public class CommunityService {
 
     public Object 메소드명(Object dataMap){
         String sqlMapId = "매퍼{namespace}.{ID}";
-        Object result = communityDao.메소드명(sqlMapId, dataMap);
+        // Object result = communityDao.메소드명(sqlMapId, dataMap);
+        Object result = null;
         return result;
     }
 
