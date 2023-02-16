@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -562,
-    "scrollLeft": -398,
+    "scrollTop": -575,
+    "scrollLeft": -217,
     "zoomLevel": 0.8,
     "show": {
       "tableComment": true,
@@ -48,7 +48,7 @@
         "columns": [
           {
             "id": "c68119c4-c44d-453f-ac69-00674a39b98e",
-            "name": "인증키",
+            "name": "CERTIFICATION_KEY",
             "comment": "인증키",
             "dataType": "VARCHAR(100)",
             "default": "",
@@ -63,7 +63,7 @@
               "pk": true,
               "fk": false,
               "pfk": false,
-              "widthName": 60,
+              "widthName": 133.70751953125,
               "widthComment": 60,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
@@ -143,7 +143,7 @@
           "active": false,
           "left": 105.25,
           "top": 1088.75,
-          "zIndex": 432,
+          "zIndex": 558,
           "widthName": 93.74267578125,
           "widthComment": 60
         },
@@ -559,7 +559,7 @@
           "active": false,
           "left": 1493.75,
           "top": 561.5,
-          "zIndex": 86,
+          "zIndex": 547,
           "widthName": 129.6259765625,
           "widthComment": 93
         },
@@ -2689,7 +2689,7 @@
           "columnIds": [
             "c7afca6a-c524-495a-9af9-6576aa78ff6e"
           ],
-          "x": 533.2353515625,
+          "x": 567.90625,
           "y": 1164.25,
           "direction": "right"
         },
