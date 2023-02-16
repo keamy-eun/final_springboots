@@ -47,6 +47,29 @@
         "comment": "게시글",
         "columns": [
           {
+            "name": "POST_NUMBER",
+            "comment": "게시글번호",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 100.9599609375,
+              "widthComment": 67,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "9071373f-379f-4d9e-9433-ddb0d298cfe2"
+          },
+          {
             "name": "COMMUNITY_NUMBER",
             "comment": "게시판번호",
             "dataType": "VARCHAR(100)",
@@ -166,7 +189,7 @@
           "active": false,
           "left": 33,
           "top": 25,
-          "zIndex": 101,
+          "zIndex": 17,
           "widthName": 96.64990234375,
           "widthComment": 60
         },
