@@ -14,7 +14,7 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/commons.css" />
+    <link rel="stylesheet" href="/css/commons.css" />
   </head>
   <body>
     <div class="container">
@@ -23,12 +23,12 @@
       <div class="m-5 mb-2">
         <div class="d-flex justify-content-end">
           <a
-            href="./main_login"
+            href="/main_login"
             class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
             >로그인</a
           >
           <a
-            href="./main_signUp"
+            href="/main_signUp"
             class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
             >회원가입</a
           >
@@ -36,7 +36,7 @@
         <!-- menu bar -->
         <div class="d-flex justify-content-around">
           <!-- logo -->
-          <a href="./main">
+          <a href="/main">
             <img
               src="./EJ_logoedit.png"
               width="230"
@@ -46,31 +46,31 @@
             />
           </a>
           <a
-            href="./introduction_academy"
+            href="/introduction_academy"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             학원안내</a
           >
           <a
-            href="./lecture_signup_list"
+            href="/lecture_signup_list"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             온라인강의</a
           >
           <a
-            href="./community_lecture"
+            href="/community_lecture"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             커뮤니티</a
           >
           <a
-            href="./mypage_Lecture"
+            href="/mypage_Lecture"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             마이페이지</a
           >
           <a
-            href="./admin_member"
+            href="/admin_member"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             관리자페이지</a
@@ -92,7 +92,7 @@
               <ul class="list-unstyled components fs-5">
                 <li class="border-top border-1 p-2">
                   <a
-                    href="./mypage_Lecture"
+                    href="/mypage_Lecture"
                     target="_self"
                     class="text-decoration-none text-secondary"
                     >내 강의보기</a
@@ -100,7 +100,7 @@
                 </li>
                 <li class="border-top border-1 p-2">
                   <a
-                    href="./mypage_signup_lecturelist"
+                    href="/mypage_signup_lecturelist"
                     target="_self"
                     class="text-decoration-none text-secondary"
                     >수강신청내역</a
@@ -108,7 +108,7 @@
                 </li>
                 <li class="border-top border-1 p-2">
                   <a
-                    href="./mypage_member_edit"
+                    href="/mypage_member_edit"
                     target="_self"
                     class="text-decoration-none text-secondary"
                     >개인정보수정</a
@@ -116,7 +116,7 @@
                 </li>
                 <li class="border-top border-1 p-2">
                   <a
-                    href="./mypage_selfTest"
+                    href="/mypage_selfTest"
                     target="_self"
                     class="text-decoration-none text-secondary"
                     >영어실력 테스트</a
@@ -156,12 +156,12 @@
                     </p>
                   </div>
                   <div class="modal-footer flex-column border-top-0">
-                    <a href="./lecture_signup_list"
+                    <a href="/lecture_signup_list"
                       class="btn btn-lg btn-success w-100 mx-0 mb-2"
                     >
                       강의목록 확인하러 가기
                   </a>
-                    <a href="./main"
+                    <a href="/main"
                       class="btn btn-lg btn-primary w-100 mx-0"
                     >
                       메인화면으로

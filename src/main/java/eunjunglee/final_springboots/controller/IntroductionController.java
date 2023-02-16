@@ -5,11 +5,12 @@ import java.util.Map;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class IntroductionController {
+
+    //  intriduction은 단순 출력이니 컨트롤러만 있으면 될 것 같다.
 
     // 학원소개
     @RequestMapping(value="/introduction_academy", method = RequestMethod.GET)

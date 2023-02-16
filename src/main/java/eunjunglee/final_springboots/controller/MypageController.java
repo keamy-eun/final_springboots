@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class MypageController {
 
     
-    // 내 강좌보기
+    // 내 강좌보기 ㅇ
     @RequestMapping(value="/mypage_Lecture", method = RequestMethod.GET)
     public ModelAndView getMypageLecture(ModelAndView modelAndView ){
         // Object resultMap = 서비스.get서비스메소드(params);
@@ -21,7 +21,7 @@ public class MypageController {
         return modelAndView;
     }
 
-    // 내 정보수정
+    // 내 정보수정 !@#
     @RequestMapping(value="/mypage_member_edit", method = RequestMethod.GET)
     public ModelAndView getMemberEdit(ModelAndView modelAndView ){
         // Object resultMap = 서비스.get서비스메소드(params);
@@ -30,7 +30,7 @@ public class MypageController {
         return modelAndView;
     }
 
-    // 자기실력 테스트
+    // 자기실력 테스트 ㅇ
     @RequestMapping(value="/mypage_selfTest", method = RequestMethod.GET)
     public ModelAndView getSelfTest(ModelAndView modelAndView ){
         // Object resultMap = 서비스.get서비스메소드(params);
@@ -39,7 +39,7 @@ public class MypageController {
         return modelAndView;
     }
 
-   // 자기실력 테스트 결과
+   // 자기실력 테스트 결과 ㅇ
     @RequestMapping(value="/mypage_selfTestResult", method = RequestMethod.GET)
     public ModelAndView getSelfTestResult(ModelAndView modelAndView ){
         // Object resultMap = 서비스.get서비스메소드(params);
@@ -48,7 +48,7 @@ public class MypageController {
         return modelAndView;
     }
 
-    // 수강강좌 확인
+    // 수강강좌 확인 ㅇ 
     @RequestMapping(value="/mypage_signup_lecturelist", method = RequestMethod.GET)
     public ModelAndView getLectureList(ModelAndView modelAndView ){
         // Object resultMap = 서비스.get서비스메소드(params);
