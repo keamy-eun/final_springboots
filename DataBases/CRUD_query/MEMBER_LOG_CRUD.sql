@@ -1,0 +1,17 @@
+	-- member_log CRUD    
+-- CREATE
+INSERT INTO member_log (ID, LOGIN_DATE, MEMBER_ID)
+VALUES ('ID', 'LOGIN_DATE', 'MEMBER_ID')
+;
+-- READ
+SELECT * from member_log
+;
+-- UPDATE
+UPDATE member_log 
+SET ID = 'ID_CHANGE' 
+WHERE LOGIN_DATE = 'LOGIN_DATE'
+;
+-- DELETE
+DELETE FROM member_log
+WHERE ID='ID_CHANGE'
+;
