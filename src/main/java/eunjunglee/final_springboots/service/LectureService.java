@@ -2,17 +2,16 @@ package eunjunglee.final_springboots.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import eunjunglee.final_springboots.dao.MypageDao;
+import eunjunglee.final_springboots.dao.LectureDao;
 
 @Service
-public class MypageService {
-    
+public class LectureService {
     @Autowired
-    MypageDao mypageDao;
+    LectureDao lectureDao;
 
     public Object 메소드명(Object dataMap){
         String sqlMapId = "매퍼{namespace}.{ID}";
-        Object result = mypageDao.메소드명(sqlMapId, dataMap);
+        Object result = lectureDao.메소드명(sqlMapId, dataMap);
         return result;
     }
 }

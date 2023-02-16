@@ -13,7 +13,7 @@ public class CommunityController {
 
  
     
-    // 강좌게시판
+    // 강좌게시판 ㅇ
     @RequestMapping(value="/community_lecture", method = RequestMethod.GET)
     public ModelAndView getLecture(ModelAndView modelAndView ){
         // Object resultMap = 서비스.get서비스메소드(params);
@@ -22,7 +22,7 @@ public class CommunityController {
         return modelAndView;
     }
 
-    // 강사게시판
+    // 강사게시판 ㅇ
     @RequestMapping(value="/community_lecturer", method = RequestMethod.GET)
     public ModelAndView getLecturer(ModelAndView modelAndView ){
         // Object resultMap = 서비스.get서비스메소드(params);
@@ -31,7 +31,7 @@ public class CommunityController {
         return modelAndView;
     }
 
-    //공지사항 게시판
+    //공지사항 게시판 ㅇ
     @RequestMapping(value="/community_notice", method = RequestMethod.GET)
     public ModelAndView getNotice(ModelAndView modelAndView ){
         // Object resultMap = 서비스.get서비스메소드(params);
@@ -40,7 +40,7 @@ public class CommunityController {
         return modelAndView;
     }
 
-    // 게시글 페이지
+    // 게시글 페이지 ㅇ
     @RequestMapping(value="/community_post", method = RequestMethod.GET)
     public ModelAndView getPost( ModelAndView modelAndView ){
         // Object resultMap = 서비스.get서비스메소드(params);
@@ -49,7 +49,7 @@ public class CommunityController {
         return modelAndView;
     }
 
-    // 게시글 작성 페이지
+    // 게시글 작성 페이지 ㅇ
     @RequestMapping(value="/community_posting", method = RequestMethod.GET)
     public ModelAndView getPosting( ModelAndView modelAndView ){
         // Object resultMap = 서비스.get서비스메소드(params);
@@ -58,7 +58,7 @@ public class CommunityController {
         return modelAndView;
     }
 
-    // 학생게시판
+    // 학생게시판 ㅇ
     @RequestMapping(value="/community_student", method = RequestMethod.GET)
     public ModelAndView getStudent( ModelAndView modelAndView ){
         // Object resultMap = 서비스.get서비스메소드(params);
@@ -67,10 +67,4 @@ public class CommunityController {
         return modelAndView;
     }
 
-    @RequestMapping(value = {"/test"}, method = RequestMethod.GET)
-    public ModelAndView form( ModelAndView modelAndView) {
-        modelAndView.setViewName("/communitys/test");
-        return modelAndView;
-    
-}
 }
