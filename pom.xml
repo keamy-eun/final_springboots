@@ -39,7 +39,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
-			<optional>ture</optional>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
