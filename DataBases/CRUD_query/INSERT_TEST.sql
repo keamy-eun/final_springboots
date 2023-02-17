@@ -56,7 +56,9 @@ insert into community_post
 (POST_NUMBER,COMMUNITY_CONTENT,COMMUNITY_TITLE,FILE_ATTACHIMENT,VIEW_COUNT,MEMBER_ID,COMMUNITY_NUMBER) 
 value('POST48','강의추천','최치열샘 강의를 추천합니다','2',412,'ceromi123','CM03');
 
-
+insert into post_comment 
+(COMMENT_NUMBER,COMMENT_CONTENT,POST_DATE,MEMBER_ID,POST_NUMBER) 
+value('CMN04','추천드려요','2023-11-11','ceromi123','POST48');
 
 
 
