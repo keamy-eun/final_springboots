@@ -32,14 +32,13 @@ values('C9483WFDJJ1','ceromi123',now(),'login'),
 ('UUGH831231','circle01',now(),'login'),
 ('IVO3W6DYY1','admin',now(),'logout');
 
-insert into COMMUNITY_POST_CONNECTION 
-(COMMUNITY_NUMBER) 
-value('CO112');
+insert into community
+(POST_NUMBER,POST_TITLE,MEMBER_ID,POSTING_DATE,VIEW_COUNT,PAGE_NUMBER,COMMUNITY_NUMBER) 
+value('POST49글번호','글제목보기','ceromi123','2023-08-07',412,5,'CM03');
 
 insert into community_post 
 (POST_NUMBER,COMMUNITY_CONTENT,COMMUNITY_TITLE,FILE_ATTACHIMENT,VIEW_COUNT,MEMBER_ID,COMMUNITY_NUMBER) 
-value('POST48','강의추천','최치열샘 강의를 추천합니다','2',412,'ceromi123','CO112');
+value('POST48','강의추천','최치열샘 강의를 추천합니다','2',412,'ceromi123','CM03');
 
-insert into community_lecturer 
-(POST_NUMBER,POST_TITLE,MEMBER_ID,POSTING_DATE,VIEW_COUNT,PAGE_NUMBER,COMMUNITY_NUMBER) 
-value('CRR09','강의실청결요청','ceromi123','2023-02-11',48,3,'CO112');
+
+
