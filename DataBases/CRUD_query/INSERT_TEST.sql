@@ -34,10 +34,6 @@ VALUES ('A01', '인터넷 광고를 보고', 2, 'Q01'), ('A01-1', NULL, NULL, 'Q
  ('A2', '3시간 이상', 4, 'Q02'), ('A3', '스마트폰', 1, 'Q03'),
  ('A4', '보충강좌 있으면 좋을것 같아요', NULL, 'Q04');
 
-insert into answer_list 
-(ANSWER_UID,ANSWER,ORDERS,QUESTION_UID) 
-value('A01','영어회화가 약해요',NULL,'Q01');
-
 insert into lecture_poll 
 (QUESTION_UID,ANSWER_UID,LECTURE_NUMBER) 
 value('Q01','A01','LECTURE_24');
@@ -49,16 +45,13 @@ values('C9483WFDJJ1','ceromi123',now(),'login'),
 ('IVO3W6DYY1','admin',now(),'logout');
 
 insert into community
-(POST_NUMBER,POST_TITLE,MEMBER_ID,POSTING_DATE,VIEW_COUNT,PAGE_NUMBER,COMMUNITY_NUMBER) 
-value('POST49글번호','글제목보기','ceromi123','2023-08-07',412,5,'CM03');
+(COMMUNITY_NUMBER,COMMUNITY_NAME) 
+values('C01','강좌게시판'),('C02','강사게시판'),('C03','학생게시판'),('C04','공지사항');
 
 insert into community_post 
 (POST_NUMBER,COMMUNITY_CONTENT,COMMUNITY_TITLE,FILE_ATTACHIMENT,VIEW_COUNT,MEMBER_ID,COMMUNITY_NUMBER) 
-value('POST48','강의추천','최치열샘 강의를 추천합니다','2',412,'ceromi123','CM03');
+value('POST48','강의추천','최치열샘 강의를 추천합니다','2',412,'ceromi123','C03');
 
 insert into post_comment 
 (COMMENT_NUMBER,COMMENT_CONTENT,POST_DATE,MEMBER_ID,POST_NUMBER) 
 value('CMN04','추천드려요','2023-11-11','ceromi123','POST48');
-
-
-
