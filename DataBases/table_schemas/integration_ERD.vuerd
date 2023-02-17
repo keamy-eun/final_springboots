@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -476.99999999999966,
-    "scrollLeft": -442.4,
+    "scrollTop": -537,
+    "scrollLeft": -703,
     "zoomLevel": 0.8,
     "show": {
       "tableComment": true,
@@ -143,7 +143,7 @@
           "active": false,
           "left": 105.25,
           "top": 1088.75,
-          "zIndex": 6,
+          "zIndex": 5,
           "widthName": 93.74267578125,
           "widthComment": 60
         },
@@ -428,7 +428,7 @@
           "active": false,
           "left": 754.75,
           "top": 1185.25,
-          "zIndex": 12,
+          "zIndex": 9,
           "widthName": 124.78271484375,
           "widthComment": 60
         },
@@ -436,7 +436,7 @@
         "id": "5178e35f-582c-49a5-b39b-a20ee628c9bc"
       },
       {
-        "name": "MYPAGE_SELFTEST_RESULT",
+        "name": "SELFTEST_RESULT",
         "comment": "자기실력테스트결과",
         "columns": [
           {
@@ -513,8 +513,8 @@
           "active": false,
           "left": 1403.75,
           "top": 647.5,
-          "zIndex": 191,
-          "widthName": 187.18017578125,
+          "zIndex": 59,
+          "widthName": 125.29052734375,
           "widthComment": 119
         },
         "visible": true,
@@ -642,9 +642,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1494.25,
-          "top": 1036.5,
-          "zIndex": 9,
+          "left": 1408,
+          "top": 990.25,
+          "zIndex": 19,
           "widthName": 111.78271484375,
           "widthComment": 60
         },
@@ -706,7 +706,7 @@
           "active": false,
           "left": 755.75,
           "top": 1517.75,
-          "zIndex": 13,
+          "zIndex": 10,
           "widthName": 82.158203125,
           "widthComment": 60
         },
@@ -900,82 +900,13 @@
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             }
-          },
-          {
-            "id": "29265540-3f96-4b12-b8ac-25d41e2c0615",
-            "name": "MEMBER_LECTURE",
-            "comment": "나의강의",
-            "dataType": "VARCHAR(100)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 126.96630859375,
-              "widthComment": 60,
-              "widthDataType": 94.94873046875,
-              "widthDefault": 60
-            }
-          },
-          {
-            "id": "be954d2f-a6f2-4061-8a56-7e6ff0161582",
-            "name": "MEMBER_SIGNUP_LECTURE_LIST",
-            "comment": "수강신청내역",
-            "dataType": "VARCHAR(100)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 218.7216796875,
-              "widthComment": 80,
-              "widthDataType": 94.94873046875,
-              "widthDefault": 60
-            }
-          },
-          {
-            "id": "b8b62f28-5038-4a4f-b4f2-bc525d93915a",
-            "name": "TEST_RESULT",
-            "comment": "테스트결과",
-            "dataType": "INTEGER",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 92.77783203125,
-              "widthComment": 67,
-              "widthDataType": 60,
-              "widthDefault": 60
-            }
           }
         ],
         "ui": {
           "active": false,
-          "left": 710,
-          "top": 682.25,
-          "zIndex": 70,
+          "left": 763.75,
+          "top": 712.25,
+          "zIndex": 18,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1129,7 +1060,7 @@
           "active": false,
           "left": 763.25,
           "top": 354.25,
-          "zIndex": 7,
+          "zIndex": 6,
           "widthName": 62.67724609375,
           "widthComment": 60
         },
@@ -1191,7 +1122,7 @@
           "active": false,
           "left": 79.5,
           "top": 474,
-          "zIndex": 10,
+          "zIndex": 8,
           "widthName": 72.0654296875,
           "widthComment": 60
         },
@@ -1284,8 +1215,8 @@
         "id": "479f8be8-6005-4292-851a-20ffb01861a0"
       },
       {
-        "name": "QUESTION_LIST",
-        "comment": "문항리스트",
+        "name": "POLL_QUESTIONS",
+        "comment": "설문문항",
         "columns": [
           {
             "name": "QUESTION_UID",
@@ -1361,16 +1292,16 @@
           "active": false,
           "left": 1398,
           "top": 13.75,
-          "zIndex": 3,
-          "widthName": 104.578125,
-          "widthComment": 67
+          "zIndex": 63,
+          "widthName": 119.0380859375,
+          "widthComment": 60
         },
         "visible": true,
         "id": "f7fa403a-03ee-4a67-93a8-f2e92dcd9050"
       },
       {
-        "name": "ANSWER_LIST",
-        "comment": "답항리스트",
+        "name": "POLL_ANSWERS",
+        "comment": "설문답항",
         "columns": [
           {
             "name": "ANSWER_UID",
@@ -1469,17 +1400,17 @@
           "active": false,
           "left": 1396.75,
           "top": 253.75,
-          "zIndex": 4,
-          "widthName": 93.74267578125,
-          "widthComment": 67,
+          "zIndex": 69,
+          "widthName": 108.20263671875,
+          "widthComment": 60,
           "color": "#1D1010"
         },
         "visible": true,
         "id": "a9e34c31-9580-40c1-97b0-26e72fe6c9a5"
       },
       {
-        "name": "문제문항",
-        "comment": "",
+        "name": "TEST_QUESTIONS",
+        "comment": "문제문항",
         "columns": [
           {
             "name": "QUESTION_UID",
@@ -1532,16 +1463,16 @@
           "active": false,
           "left": 1403.4873,
           "top": 456.2,
-          "zIndex": 197,
-          "widthName": 60,
+          "zIndex": 66,
+          "widthName": 119.01904296875,
           "widthComment": 60
         },
         "visible": true,
         "id": "6f848cdb-f4db-4b3c-9fa5-e8c3ba608b90"
       },
       {
-        "name": "문제답항",
-        "comment": "",
+        "name": "TEST_ANSWERS",
+        "comment": "문제답항",
         "columns": [
           {
             "name": "ANSWER_UID",
@@ -1594,8 +1525,8 @@
           "active": false,
           "left": 1410,
           "top": 857.2,
-          "zIndex": 198,
-          "widthName": 60,
+          "zIndex": 40,
+          "widthName": 108.18359375,
           "widthComment": 60
         },
         "visible": true,
@@ -1618,8 +1549,8 @@
           "columnIds": [
             "f54858c7-ed3a-42c0-8aed-2707490b530a"
           ],
-          "x": 996.835205078125,
-          "y": 976.75,
+          "x": 993.1484375,
+          "y": 945.25,
           "direction": "bottom"
         },
         "end": {
@@ -1644,8 +1575,8 @@
           "columnIds": [
             "f54858c7-ed3a-42c0-8aed-2707490b530a"
           ],
-          "x": 1283.67041015625,
-          "y": 903.125,
+          "x": 1222.546875,
+          "y": 887,
           "direction": "right"
         },
         "end": {
@@ -1653,8 +1584,8 @@
           "columnIds": [
             "e870fc50-19a3-49c6-8273-6d8a891a697d"
           ],
-          "x": 1494.25,
-          "y": 1079.375,
+          "x": 1408,
+          "y": 1033.125,
           "direction": "left"
         },
         "constraintName": "fk_member_to_post_comment",
@@ -1679,8 +1610,8 @@
           "columnIds": [
             "680a32ce-9c1e-4b1d-8d95-bc6895306415"
           ],
-          "x": 1494.25,
-          "y": 1165.125,
+          "x": 1408,
+          "y": 1118.875,
           "direction": "left"
         },
         "constraintName": "fk_community_post_to_post_comment",
@@ -1696,8 +1627,8 @@
           "columnIds": [
             "f54858c7-ed3a-42c0-8aed-2707490b530a"
           ],
-          "x": 710,
-          "y": 903.125,
+          "x": 763.75,
+          "y": 887,
           "direction": "left"
         },
         "end": {
@@ -1748,8 +1679,8 @@
           "columnIds": [
             "f54858c7-ed3a-42c0-8aed-2707490b530a"
           ],
-          "x": 996.835205078125,
-          "y": 682.25,
+          "x": 993.1484375,
+          "y": 712.25,
           "direction": "top"
         },
         "end": {
@@ -1774,8 +1705,8 @@
           "columnIds": [
             "f54858c7-ed3a-42c0-8aed-2707490b530a"
           ],
-          "x": 710,
-          "y": 755.875,
+          "x": 763.75,
+          "y": 770.5,
           "direction": "left"
         },
         "end": {
@@ -1930,8 +1861,8 @@
           "columnIds": [
             "f54858c7-ed3a-42c0-8aed-2707490b530a"
           ],
-          "x": 1283.67041015625,
-          "y": 755.875,
+          "x": 1222.546875,
+          "y": 770.5,
           "direction": "right"
         },
         "end": {
