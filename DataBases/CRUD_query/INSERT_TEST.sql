@@ -47,7 +47,7 @@ values('C9483WFDJJ1','ceromi123',now(),'login'),
 
 insert into community
 (COMMUNITY_NUMBER,COMMUNITY_NAME) 
-values('C01','강좌게시판'),('C02','강사게시판'),('C03','학생게시판'),('C04','공지사항');
+values('C01','강좌게시판'),('C02','강사게시판'),('C03','학생게시판'),('C04','공지사항'),('C05','강의후기게시판');
 
 insert into community_post 
 (POST_NUMBER,COMMUNITY_CONTENT,COMMUNITY_TITLE,FILE_ATTACHIMENT,COMMUNITY_DATE,VIEW_COUNT,MEMBER_ID,COMMUNITY_NUMBER) 
