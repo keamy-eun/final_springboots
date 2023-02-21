@@ -1,0 +1,21 @@
+-- CREATE
+INSERT INTO member (MEMBER_ID,MEMBER_NAME,POSITION,BIRTH,EMAIL,SMS_AD,EMAIL_AD)
+VALUES ("abc123","mike","USER","1994-03-10","abc123@gmail.com",true,true)
+;
+INSERT INTO member (MEMBER_ID,MEMBER_NAME,POSITION,BIRTH,EMAIL,SMS_AD,EMAIL_AD)
+VALUES ("jsu1212","junsuk","ADMIN","1992-01-13","jsu1212@gmail.com",false,true)
+;
+
+-- READ 
+SELECT * FROM member;
+
+-- UPDATE
+UPDATE member
+SET EMAIL = 'abc123@naver.com' 
+WHERE MEMBER_ID = 'abc123'
+;
+
+-- DELETE
+DELETE FROM member
+WHERE MEMBER_ID='jsu1212'
+;
