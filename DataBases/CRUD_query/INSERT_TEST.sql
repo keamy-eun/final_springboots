@@ -15,29 +15,24 @@ value ('LECTURE_24', '영어회화초급01','2022-09-10',580,'LECTURER_06','cero
 
 insert into POLL_QUESTIONS 
 (QUESTION_UID,QUESTION,ORDERS) 
-value ('PQ01','선택하신 강의를 신청하게 된 계기가 무엇인가요?',1);
-insert into POLL_QUESTIONS 
-(QUESTION_UID,QUESTION,ORDERS) 
-value ('PQ01-1','(1번 질문에서 기타를 선택한 경우) 이유를 적어주세요',1-1);
-insert into POLL_QUESTIONS 
-(QUESTION_UID,QUESTION,ORDERS) 
-value ('PQ02','하루에 공부하는 평균 시간은 어느정도 되시나요?',2);
-insert into POLL_QUESTIONS 
-(QUESTION_UID,QUESTION,ORDERS) 
-value ('PQ03','강의를 수강하실 때 주로 어떤 기기를 사용하시나요?',3);
-insert into POLL_QUESTIONS 
-(QUESTION_UID,QUESTION,ORDERS) 
-value ('PQ04','수업에 대해 바라는 점이나 기타 궁금한 사항이 있다면 적어주세요',4);
-
+values ('PQ01','선택하신 강의를 신청하게 된 계기가 무엇인가요?',1),('PQ01-1','(1번 질문에서 기타를 선택한 경우) 이유를 적어주세요',1-1),
+('PQ02','하루에 공부하는 평균 시간은 어느정도 되시나요?',2),('PQ03','강의를 수강하실 때 주로 어떤 기기를 사용하시나요?',3),
+('PQ04','수업에 대해 바라는 점이나 기타 궁금한 사항이 있다면 적어주세요',4);
 
 INSERT INTO POLL_ANSWERS (ANSWER_UID,ANSWER,ORDERS,QUESTION_UID)
-VALUES ('PA01', '인터넷 광고를 보고', 2, 'PQ01'), ('PA01-1', NULL, NULL, 'PQ01-1'),
- ('PA2', '3시간 이상', 4, 'PQ02'), ('PA3', '스마트폰', 1, 'PQ03'),
- ('PA4', '보충강좌 있으면 좋을것 같아요', NULL, 'PQ04');
+VALUES ('PA1-1', '지인의 추천으로', 1, 'PQ01'),('PA1-2', '인터넷 광고를 보고', 2, 'PQ01'),('PA1-3', 'SMS 광고를 보고', 3, 'PQ01'),('PA1-4', '수업이 마음에 들어서 재신청', 4, 'PQ01'),('PA1-5', '기타', 5, 'PQ01'),
+ ('PA01-1', NULL, NULL, 'PQ01-1'),
+ ('PA2-1', '30분 이하', 1, 'PQ02'),('PA2-2', '1시간 내외', 2, 'PQ02'),('PA2-3', '2시간 내외', 3, 'PQ02'),('PA2-4', '3시간 이상', 4, 'PQ02'),
+ ('PA3-1', '스마트폰', 1, 'PQ03'),('PA3-2', '컴퓨터', 2, 'PQ03'),('PA3-3', '테블릿', 3, 'PQ03'),('PA3-4', '기타', 4, 'PQ03'),
+ ('PA4', NULL, NULL, 'PQ04');
+ 
+INSERT INTO poll_qa (QUESTION_UID,ANSWER_UID) 
+VALUES ('PQ01','PA1-1'),('PQ01','PA1-2'),('PQ01','PA1-3'),('PQ01','PA1-4'),('PQ01','PA1-5'),
+('PQ01-1','PA01-1'),
+('PQ02','PA2-1'),('PQ02','PA2-2'),('PQ02','PA2-3'),('PQ02','PA2-4'),
+('PQ03','PA3-1'),('PQ03','PA3-2'),('PQ03','PA3-3'),('PQ03','PA3-4'),
+('PQ04','PA4');
 
-insert into lecture_poll 
-(QUESTION_UID,ANSWER_UID,LECTURE_NUMBER) 
-value('PQ01','PA01','LECTURE_24');
 
 insert into member_log 
 (CERTIFICATION_KEY,MEMBER_ID,LOGIN_DATE,LOGIN_STATUS) 
