@@ -1,17 +1,17 @@
 
 insert into member 
-(MEMBER_ID,PW,MEMBER_NAME,POSITION,BIRTH,EMAIL,SMS_AD,EMAIL_AD)
-values('ceromi123','비번1234','세로미','강사','1995-01-04','dnjsrl014@hanmail.net','YES','NO'),
-('circle01','비번4321','동그라미','학생','2005-11-04','circle@hanmail.net','NO','NO'),
-('admin','비번7777','은정이','관리자','1885-08-04','admin@hanmail.net',NULL,NULL);
+(MEMBER_ID,PW,MEMBER_NAME,POSITION,BIRTH,EMAIL,SMS_AD,EMAIL_AD,PRIVACY_INFO)
+values('ceromi123','비번1234','세로미','강사','1995-01-04','dnjsrl014@hanmail.net','YES','NO','YES'),
+('circle01','비번4321','동그라미','학생','2005-11-04','circle@hanmail.net','NO','NO','YES'),
+('admin','비번7777','은정이','관리자','1885-08-04','admin@hanmail.net',NULL,NULL,'YES');
 
 insert into LECTURER 
 (LECTURER_NUMBER, MEMBER_ID) 
 value ('LECTURER_06', 'ceromi123');
 
 insert into LECTURE 
-(LECTURE_NUMBER,LECTURE_TITLE,UPLOAD_DATE,STUDENT_COUNT,LECTURER_NUMBER,MEMBER_ID) 
-value ('LECTURE_24', '영어회화초급01','2022-09-10',580,'LECTURER_06','ceromi123');
+(LECTURE_NUMBER,LECTURE_TITLE,UPLOAD_DATE,STUDENT_COUNT,LECTURER_NUMBER,MEMBER_ID,LECTURE_INTRO) 
+value ('LECTURE_24', '영어회화초급01','2022-09-10',580,'LECTURER_06','ceromi123','영어회화능력을 향상시키는 기초 강좌');
 
 insert into POLL_QUESTIONS 
 (QUESTION_UID,QUESTION,ORDERS) 
@@ -50,8 +50,8 @@ insert into community
 values('C01','강좌게시판'),('C02','강사게시판'),('C03','학생게시판'),('C04','공지사항');
 
 insert into community_post 
-(POST_NUMBER,COMMUNITY_CONTENT,COMMUNITY_TITLE,FILE_ATTACHIMENT,VIEW_COUNT,MEMBER_ID,COMMUNITY_NUMBER) 
-value('POST48','강의추천','최치열샘 강의를 추천합니다','2',412,'ceromi123','C03');
+(POST_NUMBER,COMMUNITY_CONTENT,COMMUNITY_TITLE,FILE_ATTACHIMENT,COMMUNITY_DATE,VIEW_COUNT,MEMBER_ID,COMMUNITY_NUMBER) 
+value('POST48','강의추천','최치열샘 강의를 추천합니다','2','2023-10-25',412,'ceromi123','C03');
 
 insert into post_comment 
 (COMMENT_NUMBER,COMMENT_CONTENT,POST_DATE,MEMBER_ID,POST_NUMBER) 
@@ -72,4 +72,3 @@ insert into selftest_result
 (MEMBER_ID,QUESTION_UID,ANSWER_UID) 
 values('ceromi123','TQ01','TA01'),('ceromi123','TQ02','TA02'),('ceromi123','TQ03','TA03'),
 ('ceromi123','TQ04','TA04'),('ceromi123','TQ05','TA05'),('ceromi123','TQ06','TA06'),('ceromi123','TQ07','TA07');
-
