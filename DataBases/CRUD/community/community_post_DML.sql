@@ -18,7 +18,7 @@ VALUES ("654","영단어 외울수록 재미있어요",sysdate(),"jsu1212","223"
 
 -- READ 
 -- 게시판과 유저
-SELECT * 
+SELECT *
 FROM community_post
 inner join member where community_post.MEMBER_ID = member.MEMBER_ID
 ;
@@ -42,8 +42,17 @@ UPDATE community_post
 SET COMMUNITY_TITLE = '매일매일 영단어' 
 WHERE POST_NUMBER = '223'
 ;
+UPDATE post_comment
+SET COMMENT_NUMBER = '654' 
+WHERE COMMENT_CONTENT = '(수정됨) 이게 맞는지 모르겠습니다'
+;
+
 
 -- DELETE
 DELETE FROM community_post
 WHERE COMMUNITY_TITLE='매일매일 영단어'
+;
+-- DELETE
+DELETE FROM post_comment
+WHERE COMMENT_NUMBER='654'
 ;
