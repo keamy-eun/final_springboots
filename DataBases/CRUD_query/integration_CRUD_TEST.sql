@@ -12,7 +12,7 @@ FROM LECTURE
 INNER JOIN MEMBER
 ON member.MEMBER_ID = lecture.MEMBER_ID
 ;
--- UPDATE   --UPDATE하는 곳이 아닌것같다..
+-- UPDATE   
 UPDATE 수강신청리스트 
 SET LECTURE_TITLE = '850점 토익 챌린지' 
 WHERE MEMBER_ID = '1'   -- 도우너의 멤버ID
@@ -30,7 +30,7 @@ WHERE LECTURE_NUMBER='2'
 ;
 
 
-	-- mypage_selfTestResult
+-- mypage_selfTestResult
 -- CREATE
 INSERT INTO mypage_selfTestResult (MEMBER_NAME, MEMBER_TEST_SCORE, QUESTION_UID)
 VALUES ('홍길동', '720', '사물에 관련된 영어표현')
@@ -52,7 +52,7 @@ WHERE MEMBER_ID='m1'
 ;
 
 
-	-- mypage_selfTest
+-- mypage_selfTest
 -- CREATE
 INSERT INTO mypage_selfTest (TEST_QUESTION, TEST_ANSWER)
 VALUES ('1. Mark your answer on your answer sheet', '(A)')
@@ -72,8 +72,8 @@ WHERE TEST_QUESTION='1. Mark your answer on your answer sheet'
 ;
 
 
-	-- mypage_member_edit
--- CREATE  -- 개인정보 수정인데 CREATE가 필요할까..
+-- mypage_member_edit
+-- CREATE  
 
 -- READ
 SELECT  MEMBER_NAME, MEMBER_ID, PW, EMAIL_ID, BIRTH, SMS_AD, EMAIL_AD
@@ -90,7 +90,7 @@ WHERE MEMBER_ID='circle00'
 ;
 
 
-	-- mypage_Lecture
+-- mypage_Lecture
 -- CREATE
 INSERT INTO mypage_Lecture (POST_NUMBER, COMMUNITY_TITLE, MEMBER_NAME, COMMUNITY_DATE, VIEW_COUNT)
 VALUES  ('1', '[강좌 추천]길동선생님의 영어문법강좌 강추합니다 [23]', '희동이', '2023-01-02', '52')
@@ -112,7 +112,7 @@ WHERE POST_NUMBER='1'
 ;
 
 
-	-- main page
+-- main page
 -- CREATE
 -- READ
 SELECT  community_post.COMMUNITY_TITLE, community_post.COMMUNITY_CONTENT   -- + 이미지
