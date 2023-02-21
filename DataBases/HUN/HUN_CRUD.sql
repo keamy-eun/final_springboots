@@ -1,4 +1,4 @@
-  -- mypage_signup_lecturelist
+ -- mypage_signup_lecturelist
 -- CREATE 
 INSERT INTO 수강신청리스트 (LECTURE_TITLE, MEMBER_NAME)
 VALUES ('직장인비즈니스중국어', '도우너')
@@ -23,10 +23,10 @@ WHERE MEMBER_ID = '2'   --  고희동의 멤버ID
 ;
 -- DELETE
 DELETE FROM 수강신청리스트
-WHERE LECTURE_TITLE='850점 토익 챌린지'
+WHERE LECTURE_NUMBER='1'
 ;
 DELETE FROM 수강신청리스트
-WHERE LECTURE_TITLE='쉽고 빠른 영어 독해 마스터'
+WHERE LECTURE_NUMBER='2'
 ;
 
 
@@ -44,11 +44,11 @@ ON mypage_selfTestResult.QUESTION_UID = TEST_QUESTIONS.QUESTION_UID
 -- UPDATE
 UPDATE mypage_selfTestResult 
 SET MEMBER_TEST_SCORE = '750'  -- 기존 720에서 750으로 변경
-WHERE MEMBER_NAME = '홍길동'
+WHERE MEMBER_ID = 'm1'
 ;
 -- DELETE
 DELETE FROM mypage_selfTestResult
-WHERE MEMBER_NAME='홍길동'
+WHERE MEMBER_ID='m1'
 ;
 
 
