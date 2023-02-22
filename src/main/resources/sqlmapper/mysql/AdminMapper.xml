@@ -2,5 +2,51 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="Admin">
+    <select id="selectList" 
+        parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM member 
+    </select>
 
+    <select id="selectListByID" 
+        parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM member 
+        WHERE MEMBER_ID=#{MEMBER_ID} 
+    </select>
+
+    <update id="deleteByID" 
+        parameterType="Map"> 
+        DELETE FROM member 
+        WHERE MEMBER_ID=#{MEMBER_ID} 
+    </update> 
+
+    <update id="updateByID" 
+        parameterType="Map">
+        UPDATE member 
+        SET MEMBER_NAME=#{MEMBER_NAME}, POSITION=#{POSITION}, BIRTH=#{BIRTH}, EMAIL=#{EMAIL} 
+        <choose>
+            <when test="SMS_AD != null">
+                , SMS_AD='YES' 
+            </when>
+            <otherwise>
+                , SMS_AD='NO' 
+            </otherwise>
+        </choose>
+        <choose>
+            <when test="EMAIL_AD != null">
+                , EMAIL_AD='YES' 
+            </when>
+            <otherwise>
+                , EMAIL_AD='NO' 
+            </otherwise>
+        </choose>
+        WHERE MEMBER_ID=#{MEMBER_ID} 
+    </update>
+
+    <select id="selectTotal" 
+        parameterType="Map" resultType="int">
+        SELECT COUNT(*) 
+        FROM member 
+    </select>
 </mapper>

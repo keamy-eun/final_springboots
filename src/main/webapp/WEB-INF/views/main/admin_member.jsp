@@ -77,7 +77,6 @@
         </div>
       </div>
       <hr />
-
       <div class="text-center container-fluid">
         <div class="row">
           <!-- Sidebar -->
@@ -107,7 +106,7 @@
                 <thead>
                   <tr class="bordered-top">
                     <th><input type="checkbox" name="" id="" /></th>
-                    <th>유저고유번호</th>
+                    <th>아이디</th>
                     <th>이름</th>
                     <th>등급</th>
                     <th>생년월일</th>
@@ -119,72 +118,32 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
                   <tr>
                     <td><input type="checkbox" name="" id="" /></td>
-                    <td>U1</td>
-                    <td>은원기</td>
-                    <td>학생</td>
-                    <td>1992-01-04</td>
-                    <td>eun30137@naver.com</td>
-                    <td>Y</td>
-                    <td>N</td>
+                    <td>${resultData.MEMBER_ID}</td>
+                    <td>${resultData.MEMBER_NAME}</td>
+                    <td>${resultData.POSITION}</td>
+                    <td>${resultData.BIRTH}</td>
+                    <td>${resultData.EMAIL}</td>
+                    <td>${resultData.SMS_AD}</td>
+                    <td>${resultData.EMAIL_AD}</td>
                     <td>
-                      <button class="btn btn-success">
-                        <a
-                          class="text-decoration-none text-white"
-                          href="/admin_edit"
-                          >수정</a
-                        >
-                      </button>
+                      <div class="container">
+                        <form action="/admin_edit_form/${resultData.MEMBER_ID}" method="get">
+                          <button class="btn btn-primary">수정</button>
+                        </form>
+                      </div>
                     </td>
                     <td>
-                      <button class="btn btn-danger">삭제</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><input type="checkbox" name="" id="" /></td>
-                    <td>U2</td>
-                    <td>동그라미</td>
-                    <td>관리자</td>
-                    <td>1999-01-04</td>
-                    <td>circle04@naver.com</td>
-                    <td>N</td>
-                    <td>N</td>
-                    <td>
-                      <button class="btn btn-success">
-                        <a
-                          class="text-decoration-none text-white"
-                          href="/admin_edit"
-                          >수정</a
-                        >
-                      </button>
-                    </td>
-                    <td>
-                      <button class="btn btn-danger">삭제</button>
+                      <div class="container">
+                        <form action="/admin_member/${resultData.MEMBER_ID}" method="post">
+                          <button class="btn btn-danger">삭제</button>
+                        </form>
+                      </div>
                     </td>
                   </tr>
-                  <tr>
-                    <td><input type="checkbox" name="" id="" /></td>
-                    <td>U3</td>
-                    <td>세로미</td>
-                    <td>강사</td>
-                    <td>1988-01-04</td>
-                    <td>seromi11@naver.com</td>
-                    <td>Y</td>
-                    <td>Y</td>
-                    <td>
-                      <button class="btn btn-success">
-                        <a
-                          class="text-decoration-none text-white"
-                          href="/admin_edit"
-                          >수정</a
-                        >
-                      </button>
-                    </td>
-                    <td>
-                      <button class="btn btn-danger">삭제</button>
-                    </td>
-                  </tr>
+                </c:forEach>
                 </tbody>
               </table>
             </div>

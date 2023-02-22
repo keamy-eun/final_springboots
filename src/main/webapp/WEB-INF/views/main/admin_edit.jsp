@@ -83,10 +83,10 @@
         <br />
         <!-- table start -->
         <div class="card-body p-0">
-          <table class="table table-hover text-nowrap">
+          <table class="table text-nowrap">
             <thead>
               <tr class="bordered-top">
-                <th>유저고유번호</th>
+                <th>아이디</th>
                 <th>이름</th>
                 <th>등급</th>
                 <th>생년월일</th>
@@ -96,40 +96,52 @@
                 <th>수정</th>
               </tr>
             </thead>
+            <form action="/admin_edit" method="post">
             <tbody>
               <tr>
                 <td>
-                  <input class="form-control" type="text" name="" id="" />
+                  <input readonly class="form-control" type="text" name="MEMBER_ID" value="${resultMap.MEMBER_ID}"/>
                 </td>
                 <td>
-                  <input class="form-control" type="text" name="" id="" />
+                  <input class="form-control" type="text" name="MEMBER_NAME" value="${resultMap.MEMBER_NAME}"/>
                 </td>
                 <td>
-                  <input class="form-control" type="text" name="" id="" />
+                  <select name="POSITION" class="form-control ms-1 me-2 text-center" value="${resultMap.POSITION}">
+                    <option value="${resultMap.POSITION}">선택</option>
+                      <option value="">학생</option>
+                      <option value="">강사</option>
+                      <option value="">관리자</option>
+                  </select>
                 </td>
                 <td>
-                  <input class="form-control" type="text" name="" id="" />
+                  <input class="form-control" type="text" name="BIRTH" value="${resultMap.BIRTH}"/>
                 </td>
                 <td>
-                  <input class="form-control" type="text" name="" id="" />
+                  <input class="form-control" type="text" name="EMAIL" value="${resultMap.EMAIL}" />
                 </td>
                 <td>
-                  <input type="checkbox" name="" id="" />
-                </td>
+                  <div class="form-check">
+                  <input type="checkbox" class="form-check-input" name="SMS_AD"
+                  ${resultMap.SMS_AD == 'YES' ? 'checked': ''} />
+                  </div>
+              </td>
                 <td>
-                  <input type="checkbox" name="" id="" />
-                </td>
+                  <div class="form-check">
+                  <input type="checkbox" class="form-check-input" name="EMAIL_AD"
+                  ${resultMap.EMAIL_AD == 'YES' ? 'checked': ''} />
+                  </div>
+              </td>
                 <td>
                   <button class="btn btn-success">
                     <a
                       class="text-decoration-none text-white"
-                      href="/admin_member"
                       >수정</a
                     >
                   </button>
                 </td>
               </tr>
             </tbody>
+          </form>
           </table>
         </div>
       </div>
