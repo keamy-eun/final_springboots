@@ -21,8 +21,8 @@ public class CommunityController {
     // 강좌게시판 ㅇ
     @RequestMapping(value="/community_lecture", method = RequestMethod.GET)
     public ModelAndView getLecture(ModelAndView modelAndView ){
-        // Object resultMap = 서비스.get서비스메소드(params);
-        // modelAndView.addObject("resultMap", resultMap);
+        Object resultMap = communityService.getList(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/communitys/community_lecture");
         return modelAndView;
     }
