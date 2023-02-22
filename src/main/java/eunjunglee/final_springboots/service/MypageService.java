@@ -2,13 +2,13 @@ package eunjunglee.final_springboots.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import eunjunglee.final_springboots.dao.MypageDao;
+import eunjunglee.final_springboots.dao.SharedDaos;
 
 @Service
 public class MypageService {
     
     @Autowired
-    MypageDao mypageDao;
+    SharedDaos sharedDaos;
 
     public Object 메소드명(Object dataMap){
         String sqlMapId = "매퍼{namespace}.{ID}";

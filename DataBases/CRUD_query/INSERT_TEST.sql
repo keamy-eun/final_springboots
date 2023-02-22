@@ -2,6 +2,7 @@
 insert into member 
 (MEMBER_ID,PW,MEMBER_NAME,POSITION,BIRTH,EMAIL,SMS_AD,EMAIL_AD,PRIVACY_INFO)
 values('ceromi123','비번1234','세로미','강사','1995-01-04','dnjsrl014@hanmail.net','YES','NO','YES'),
+('nas8808','비번1234','남혜인','학생','1997-11-15','hein55@hanmail.net','NO','NO','YES'),
 ('circle01','비번4321','동그라미','학생','2005-11-04','circle@hanmail.net','NO','NO','YES'),
 ('admin','비번7777','은정이','관리자','1885-08-04','admin@hanmail.net',NULL,NULL,'YES');
 
@@ -11,7 +12,8 @@ value ('LECTURER_06', 'ceromi123');
 
 insert into LECTURE 
 (LECTURE_NUMBER,LECTURE_TITLE,UPLOAD_DATE,STUDENT_COUNT,LECTURER_NUMBER,MEMBER_ID,LECTURE_INTRO) 
-value ('LECTURE_24', '영어회화초급01','2022-09-10',580,'LECTURER_06','ceromi123','영어회화능력을 향상시키는 기초 강좌');
+values ('LECTURE_24', '영어회화초급01','2022-09-10',580,'LECTURER_06','ceromi123','영어회화능력을 향상시키는 기초 강좌'),
+('LECTURE_12', '영어문법중급A','2023-01-11',410,'LECTURER_05','ceromi123','문법에 재미를 느낄 수 있는 문법 중급 강좌');
 
 insert into POLL_QUESTIONS 
 (QUESTION_UID,QUESTION,ORDERS) 
