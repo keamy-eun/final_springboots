@@ -113,6 +113,15 @@
             <!-- title -->
             <h1 class="pb-3">수강신청</h1>
 
+            <c:forEach items="${resultList[0]}" var="resultQustions" varStatus="loop">
+            ${resultQustions.ORDERS}. ${resultQustions.QUESTION}
+              <c:forEach items="${resultList[1]}" var="resultAnswers" varStatus="loop">
+                ${resultAnswers.ANSWER}
+              </c:forEach>
+            <hr>
+            
+            </c:forEach>
+
             <div></div>
             <div><h3>홍길동 회원님 안녕하세요! (DB회원정보 불러옴)</h3></div>
             <div class="form-group row">

@@ -111,43 +111,10 @@
           <div class="container col m-3">
             <div class="mt-5 mb-5">
               <div class="h1 mt-4 mb-4">강좌 신청하기</div>
-              <div class="card border-primary">
-                <div class="row no-gutters">
-                  <div class="col-4">
-                    <img
-                      class="card-img h-100"
-                      src="https://s3.orbi.kr/data/file/united2/7362b16e-1b3a-4f98-a560-482b34af18f748ffcafbd24f505d37c0f84ab6d2d3dc.gif"
-                      alt="Card image cap"
-                    />
-                  </div>
-                  <div class="col-8">
-                    <div class="card-body border-primary">
-                      <div class="card-text">
-                        <h3>직장인 비즈니스 중국어</h3>
-                        <h5>
-                          중국어 공인 자격증 HSK를 기반으로 한 비즈니스 특화
-                          중국어!
-                        </h5>
-                        <div class="card-text">
-                          상하이 대학교 중국어강의 교수였던 깐따삐아 선생님의
-                          HSK 강의! 알기쉬운 예제와 풀이를 통해 최고의 학습을
-                          제공드립니다 출장, 회화 등 모든 비즈니스에 관련된 기본
-                          중국어를 배워보세요
-                        </div>
-                        <div class="d-flex flex-row-reverse">
-                          <a
-                            href="/lecture_signup"
-                            class="btn btn-primary mt-4"
-                            >무료수강신청하기</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <div class="mt-5 mb-5">
+
+              <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
+                <div class="mt-5 mb-5">
                 <div class="card border-primary">
                   <div class="row no-gutters">
                     <div class="col-4">
@@ -160,101 +127,22 @@
                     <div class="col-8">
                       <div class="card-body border-primary">
                         <div class="card-text">
-                          <h3>850점 토익챌린지</h3>
-                          <h5>토익 850점을 노리는 학생들을 위한 맞춤강의!</h5>
+                          <h3>${resultData.LECTURE_TITLE}</h3>
                           <div class="card-text">
-                            650~750 사이 토익공부에 어려움을 느끼시는 분들!
-                            주저말고 신청하세요 토익 만점자 도우너 선생님의
-                            수업과 함께 단기간 점수상승의 기회!
+                            ${resultData.LECTURE_INTRO}
                           </div>
                           <div class="d-flex flex-row-reverse">
-                            <a
-                              onclick="alert('이미 수강중인 강의입니다.')"
-                              href="/lecture_signup_list"
-                              class="btn btn-primary mt-4"
-                              >무료수강신청하기</a
-                            >
+                            <form action="/lecture_poll/${resultData.LECTURE_NUMBER}" method="get">
+                              <button class="btn btn-primary mt-4">무료수강신청하기</button>
+                            </form>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="mt-5 mb-5">
-                  <div class="card border-primary">
-                    <div class="row no-gutters">
-                      <div class="col-4">
-                        <img
-                          class="card-img h-100"
-                          src="http://imagescdn.gettyimagesbank.com/500/202005/jv12022505.jpg"
-                          alt="Card image cap"
-                        />
-                      </div>
-                      <div class="col-8">
-                        <div class="card-body border-primary">
-                          <div class="card-text">
-                            <h3>누구나 할수있는 8주 영어문법 마스터</h3>
-                            <h5>
-                              영어 초심자를 위한 문법다지기부터 시작하는 8주과정
-                            </h5>
-                            <div class="card-text">
-                              홍길동 선생님의 이해가 쏙쏙되는 강의를 들어보세요
-                              수강생들 모두가 만족하는 강의로써 2달간 영어
-                              문법을 듣고 기초적인 문법을 다져보세요 홍길동
-                              선생님의 이해가 쏙쏙되는 강의를 들어보세요 아주
-                              만족하실거에요~
-                            </div>
-                            <div class="d-flex flex-row-reverse">
-                              <a
-                                href="/lecture_signup"
-                                class="btn btn-primary mt-4"
-                                >무료수강신청하기</a
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="mt-5 mb-5">
-                    <div class="card border-primary">
-                      <div class="row no-gutters">
-                        <div class="col-4">
-                          <img
-                            class="card-img h-100"
-                            src="http://imagescdn.gettyimagesbank.com/500/202005/jv12022502.jpg"
-                            alt="Card image cap"
-                          />
-                        </div>
-                        <div class="col-8">
-                          <div class="card-body border-primary">
-                            <div class="card-text">
-                              <h3>누구나 할수있는 8주 영어문법 마스터</h3>
-                              <h5>
-                                영어 초심자를 위한 문법다지기부터 시작하는
-                                8주과정
-                              </h5>
-                              <div class="card-text">
-                                홍길동 선생님의 이해가 쏙쏙되는 강의를
-                                들어보세요 수강생들 모두가 만족하는 강의로써
-                                2달간 영어 문법을 듣고 기초적인 문법을
-                                다져보세요 홍길동 선생님의 이해가 쏙쏙되는
-                                강의를 들어보세요 아주 만족하실거에요~
-                              </div>
-                              <div class="d-flex flex-row-reverse">
-                                <a
-                                  href="/lecture_signup"
-                                  class="btn btn-primary mt-4"
-                                  >무료수강신청하기</a
-                                >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              </div>
+                </c:forEach>
 
                 <div class="pagination justify-content-center mt-5 mb-5">
                   <a href="" class="page-item page-link disabled">Prev</a>

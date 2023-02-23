@@ -17,13 +17,13 @@ public class AdminController {
     
     @Autowired
     AdminService adminService;
-    // 회원수정페이지
+    // 회원수정form
     @RequestMapping(value="/admin_edit_form/{member_id}", method = RequestMethod.GET)
     public ModelAndView getEditForm(@RequestParam Map<String, Object> params, @PathVariable String member_id, ModelAndView modelAndView ){
         params.put("MEMBER_ID",member_id);
         Object resultMap = adminService.getOne(params);
         modelAndView.addObject("resultMap", resultMap);
-        modelAndView.setViewName("/main/admin_edit");
+        modelAndView.setViewName("/admin/admin_edit");
         return modelAndView;
     }
 
@@ -32,7 +32,7 @@ public class AdminController {
      public ModelAndView getEdit(@RequestParam Map<String, Object> params, ModelAndView modelAndView ){
          Object resultMap = adminService.updateAndList(params);
          modelAndView.addObject("resultMap", resultMap);
-         modelAndView.setViewName("/main/admin_member");
+         modelAndView.setViewName("/admin/admin_member");
          return modelAndView;
      }
  
@@ -41,7 +41,7 @@ public class AdminController {
      public ModelAndView getMember(@RequestParam Map<String, Object> params, ModelAndView modelAndView ){
          Object resultMap = adminService.getList(params);
          modelAndView.addObject("resultMap", resultMap);
-         modelAndView.setViewName("/main/admin_member");
+         modelAndView.setViewName("/admin/admin_member");
          return modelAndView;
      }
       
@@ -51,19 +51,19 @@ public class AdminController {
         params.put("MEMBER_ID",member_id);
         Object resultMap = adminService.deleteAndList(params);
          modelAndView.addObject("resultMap", resultMap);
-         modelAndView.setViewName("/main/admin_member");
+         modelAndView.setViewName("/admin/admin_member");
          return modelAndView;
      }
 
      // 페이지네이션
-     @RequestMapping(value = { "/listPagination/{currentPage}"}, method = RequestMethod.GET)
+     @RequestMapping(value = { "/admin_member_pagination/{currentPage}"}, method = RequestMethod.GET)
      public ModelAndView listPagination(@RequestParam Map<String, Object> params
              , @PathVariable String currentPage, ModelAndView modelAndView) {
          params.put("currentPage", Integer.parseInt(currentPage));
          params.put("pageScale", 10);
          Object resultMap = adminService.listAndPagination(params);
          modelAndView.addObject("resultMap", resultMap);
-         modelAndView.setViewName("/poll/list_pagination");
+         modelAndView.setViewName("/admin_member_pagination");
          return modelAndView;
      }
 }

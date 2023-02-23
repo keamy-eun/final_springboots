@@ -2,5 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="Lecture">
+    <select id="selectLectureList" 
+        parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM LECTURE 
+    </select>
 
+    <select id="selectQuestionList" 
+        parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM POLL_QUESTIONS 
+    </select>
+    
+    <select id="selectAnswerList" 
+        parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM POLL_ANSWERS 
+    </select>
 </mapper>

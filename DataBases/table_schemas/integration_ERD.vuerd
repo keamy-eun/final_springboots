@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -1059.1770926382708,
-    "scrollLeft": -487.99999443690336,
+    "scrollTop": -498,
+    "scrollLeft": -316,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -143,7 +143,7 @@
           "active": false,
           "left": 54,
           "top": 1378.75,
-          "zIndex": 5,
+          "zIndex": 4,
           "widthName": 93.74267578125,
           "widthComment": 60
         },
@@ -497,7 +497,7 @@
           "active": false,
           "left": 751,
           "top": 1342.75,
-          "zIndex": 29,
+          "zIndex": 14,
           "widthName": 124.78271484375,
           "widthComment": 60
         },
@@ -582,7 +582,7 @@
           "active": false,
           "left": 1373.75,
           "top": 757.5,
-          "zIndex": 8,
+          "zIndex": 6,
           "widthName": 125.29052734375,
           "widthComment": 119
         },
@@ -713,7 +713,7 @@
           "active": false,
           "left": 1453,
           "top": 1126.5,
-          "zIndex": 7,
+          "zIndex": 5,
           "widthName": 111.78271484375,
           "widthComment": 60
         },
@@ -998,7 +998,7 @@
           "active": false,
           "left": 761.25,
           "top": 928.5,
-          "zIndex": 4,
+          "zIndex": 3,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1150,7 +1150,7 @@
           {
             "name": "LECTURE_INTRO",
             "comment": "강좌소개",
-            "dataType": "VARCHAR(100)",
+            "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -1175,7 +1175,7 @@
           "active": false,
           "left": 739.9163,
           "top": 511.3337,
-          "zIndex": 15,
+          "zIndex": 31,
           "widthName": 62.67724609375,
           "widthComment": 60
         },
@@ -1237,7 +1237,7 @@
           "active": false,
           "left": 24.5,
           "top": 762.75,
-          "zIndex": 6,
+          "zIndex": 15,
           "widthName": 72.0654296875,
           "widthComment": 60
         },
@@ -1322,7 +1322,7 @@
           "active": false,
           "left": 763,
           "top": 310,
-          "zIndex": 11,
+          "zIndex": 9,
           "widthName": 103.14990234375,
           "widthComment": 80
         },
@@ -1382,7 +1382,7 @@
           {
             "name": "ORDERS",
             "comment": "번호",
-            "dataType": "INTEGER",
+            "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -1397,7 +1397,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
             "id": "ddb3289f-3877-49e7-a90a-99560cae3d4f"
@@ -1407,7 +1407,7 @@
           "active": false,
           "left": 775.5,
           "top": 33.75,
-          "zIndex": 12,
+          "zIndex": 38,
           "widthName": 119.0380859375,
           "widthComment": 60
         },
@@ -1467,7 +1467,7 @@
           {
             "name": "ORDERS",
             "comment": "번호",
-            "dataType": "INTEGER",
+            "dataType": "VARCHAR(10)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -1482,7 +1482,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
             "id": "f50ec200-8c8a-4c0e-8f21-cf259ffc582d"
@@ -1515,7 +1515,7 @@
           "active": false,
           "left": 1466.75,
           "top": 305,
-          "zIndex": 13,
+          "zIndex": 27,
           "widthName": 108.20263671875,
           "widthComment": 60,
           "color": "#1D1010"
@@ -1578,7 +1578,7 @@
           "active": false,
           "left": 1373.4873,
           "top": 546.2,
-          "zIndex": 10,
+          "zIndex": 8,
           "widthName": 119.01904296875,
           "widthComment": 60
         },
@@ -1640,7 +1640,7 @@
           "active": false,
           "left": 1380,
           "top": 997.2,
-          "zIndex": 9,
+          "zIndex": 7,
           "widthName": 108.18359375,
           "widthComment": 60
         },
@@ -1702,7 +1702,7 @@
           "active": false,
           "left": 1465.5,
           "top": 13.5,
-          "zIndex": 14,
+          "zIndex": 12,
           "widthName": 61.25537109375,
           "widthComment": 60
         },

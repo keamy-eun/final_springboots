@@ -30,7 +30,7 @@ public class HomeController {
     @RequestMapping(value="/main_signUp_form", method = RequestMethod.GET)
     public ModelAndView getSighUpForm(@RequestParam Map<String, Object> params, ModelAndView modelAndView ){
         // Object resultMap = homeService.get서비스메소드(params);
-        modelAndView.addObject("resultMap", resultMap);
+        // modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/main/main_signUp");
         return modelAndView;
     }

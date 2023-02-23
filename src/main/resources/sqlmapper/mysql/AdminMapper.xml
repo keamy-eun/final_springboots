@@ -49,4 +49,5 @@
         SELECT COUNT(*) 
         FROM member 
     </select>
+
 </mapper>

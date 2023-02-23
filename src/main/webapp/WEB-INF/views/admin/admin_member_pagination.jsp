@@ -146,6 +146,33 @@
                 </c:forEach>
                 </tbody>
               </table>
+              <!-- <%-- pagination / 추가자료:pagination.jsp git --%>
+<nav aria-label="Page navigation example">
+<c:set var="_pagination" value="${resultMap.paginations}" />
+  <span>전체 회원수 : ${_pagination.totalCount}</span>
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="/admin_member_pagination/${_pagination.previousPage}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+	<%-- for(int i=0; i>9; i++) --%>
+	<c:forEach var="pageNum" begin="${_pagination.blockStart}" end="${_pagination.blockEnd}" varStatus="loop">
+    <c:set var="color" value="" />
+    <c:if test="${1 eq pageNum}">
+        <c:set var="color" value="bg-secondary bg-opacity-25" />
+    </c:if>
+    <li class="page-item"><a class="page-link ${color}" href="/admin_member_pagination/${pageNum}">${pageNum}</a></li>
+	</c:forEach>
+    <li class="page-item">
+      <a class="page-link" href="/admin_member_pagination/${_pagination.nextPage}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav> -->
             </div>
           </div>
         </div>
