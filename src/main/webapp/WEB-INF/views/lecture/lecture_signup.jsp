@@ -108,34 +108,34 @@
       </div>
       <!-- 본문 -->
       <div class="container col-9">
-        <div class="mt-4 mb-4">
+        <div class="mt-4 mb-4"> 
+
+          <!-- 설문문답 JSTL -->
           <form action="/lecture_signup" method="post">
-            <!-- title -->
             <h1 class="pb-3">수강신청</h1>
-            <div><h3> 회원님 안녕하세요!</h3></div>
+            <div class="fs-3">${resultList[2].MEMBER_NAME} 회원님 안녕하세요!</div>
             <c:forEach items="${resultList[0]}" var="Que" varStatus="loop">
-            
-            <c:if test="${Que.ORDERS eq '1' || Que.ORDERS eq '2' || Que.ORDERS eq '3'}">
-              <label for="" class="mt-4 mb-3">${Que.ORDERS}. ${Que.QUESTION}</label>
-              <div class="col">
-                <select name="" id="" class="form-control">
-                  <option class="text-secondary" selected>선택</option>
-                    <c:forEach items="${resultList[1]}" var="Ans" varStatus="loop">
-                      <c:if test="${Que.QUESTION_UID eq Ans.QUESTION_UID}">
-                        <option value="">${Ans.ANSWER}</option>
-                      </c:if>
-                    </c:forEach>
-                  </select>
+              <c:if test="${Que.ORDERS eq '1' || Que.ORDERS eq '2' || Que.ORDERS eq '3'}">
+                <label for="" class="mt-4 mb-3">${Que.ORDERS}. ${Que.QUESTION}</label>
+                <div class="col">
+                  <select name="" id="" class="form-control">
+                    <option class="text-secondary" selected>선택</option>
+                      <c:forEach items="${resultList[1]}" var="Ans" varStatus="loop">
+                        <c:if test="${Que.QUESTION_UID eq Ans.QUESTION_UID}">
+                          <option value="">${Ans.ANSWER}</option>
+                        </c:if>
+                      </c:forEach>
+                    </select>
+                  </div>
+              </c:if>
+              <c:if test="${Que.ORDERS eq '1-1' || Que.ORDERS eq '4'}">
+                <div class="mt-4 mb-2">
+                  <label for=""
+                    >${Que.ORDERS}. ${Que.QUESTION}</label
+                  >
+                  <input class="form-control mt-3" type="text" />
                 </div>
-            </c:if>
-            <c:if test="${Que.ORDERS eq '1-1' || Que.ORDERS eq '4'}">
-              <div class="mt-4 mb-2">
-                <label for=""
-                  >${Que.ORDERS}. ${Que.QUESTION}</label
-                >
-                <input class="form-control mt-3" type="text" />
-              </div>
-            </c:if>
+              </c:if>
             </c:forEach>
 
             <div class="form-group row">

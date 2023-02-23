@@ -17,6 +17,11 @@ public class LectureService {
         return result;
     }
     
+    public Object getMemberNameFromLectureListById(Object dataMap){
+        String sqlMapId = "Lecture.selectMemberNameFromLectureListById";
+        Object result = sharedDaos.getOne(sqlMapId, dataMap);
+        return result;
+    }
     public Object getQuestionList(Object dataMap){
         String sqlMapId = "Lecture.selectQuestionList";
         Object result = sharedDaos.getList(sqlMapId, dataMap);

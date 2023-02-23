@@ -8,6 +8,14 @@
         FROM LECTURE 
     </select>
 
+    <select id="selectMemberNameFromLectureListById" 
+        parameterType="Map" resultType="Map">
+        SELECT MEMBER.MEMBER_NAME  
+        FROM LECTURE 
+        INNER JOIN MEMBER ON MEMBER.MEMBER_ID = LECTURE.MEMBER_ID
+        WHERE LECTURE_NUMBER = #{LECTURE_NUMBER};
+    </select>
+
     <select id="selectQuestionList" 
         parameterType="Map" resultType="Map">
         SELECT * 

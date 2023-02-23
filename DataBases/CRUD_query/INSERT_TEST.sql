@@ -33,13 +33,6 @@ VALUES ('PA1-1', '지인의 추천으로', '1', 'PQ01'),('PA1-2', '인터넷 광
  ('PA3-1', '스마트폰', '1', 'PQ03'),('PA3-2', '컴퓨터', '2', 'PQ03'),('PA3-3', '테블릿', '3', 'PQ03'),('PA3-4', '기타', '4', 'PQ03'),
  ('PA4', NULL, NULL, 'PQ04');
  
-INSERT INTO poll_qa (QUESTION_UID,ANSWER_UID) 
-VALUES ('PQ01','PA1-1'),('PQ01','PA1-2'),('PQ01','PA1-3'),('PQ01','PA1-4'),('PQ01','PA1-5'),
-('PQ01-1','PA01-1'),
-('PQ02','PA2-1'),('PQ02','PA2-2'),('PQ02','PA2-3'),('PQ02','PA2-4'),
-('PQ03','PA3-1'),('PQ03','PA3-2'),('PQ03','PA3-3'),('PQ03','PA3-4'),
-('PQ04','PA4');
-
 
 insert into member_log 
 (CERTIFICATION_KEY,MEMBER_ID,LOGIN_DATE,LOGIN_STATUS) 

@@ -38,12 +38,11 @@ public class LectureController {
      }
  
      // 강좌신청
-     @RequestMapping(value="/lecture_signup/{lecture_number}", method = RequestMethod.POST)
-     public ModelAndView getPoll(@RequestParam Map<String, Object> params, @PathVariable String lecture_number, ModelAndView modelAndView ){
-        params.put("LECTURE_NUMBER",lecture_number);
+     @RequestMapping(value="/lecture_signup", method = RequestMethod.POST)
+     public ModelAndView getPoll(@RequestParam Map<String, Object> params, ModelAndView modelAndView ){
          Object resultMap = lectureService.getLectureList(params);
          modelAndView.addObject("resultMap", resultMap);
-         modelAndView.setViewName("/lecture/lecture_signup_list");
+         modelAndView.setViewName("/mypages/mypage_Lecture");
          return modelAndView;
      }
 
@@ -53,9 +52,11 @@ public class LectureController {
         params.put("LECTURE_NUMBER",lecture_number);
          Object resultMap1 = lectureService.getQuestionList(params);
          Object resultMap2 = lectureService.getAnswerList(params);
+         Object resultMap3 = lectureService.getMemberNameFromLectureListById(params);
          ArrayList<Object> resultList = new ArrayList<>();
          resultList.add(resultMap1);
          resultList.add(resultMap2);
+         resultList.add(resultMap3);
          modelAndView.addObject("resultList", resultList);
          modelAndView.setViewName("/lecture/lecture_signup");
          return modelAndView;
