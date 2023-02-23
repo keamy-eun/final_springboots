@@ -38,7 +38,7 @@ public class LectureController {
      }
  
      // 강좌신청
-     @RequestMapping(value="/lecture_signup/{lecture_number}", method = RequestMethod.GET)
+     @RequestMapping(value="/lecture_signup/{lecture_number}", method = RequestMethod.POST)
      public ModelAndView getPoll(@RequestParam Map<String, Object> params, @PathVariable String lecture_number, ModelAndView modelAndView ){
         params.put("LECTURE_NUMBER",lecture_number);
          Object resultMap = lectureService.getLectureList(params);
