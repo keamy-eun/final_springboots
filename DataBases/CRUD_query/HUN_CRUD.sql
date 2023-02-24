@@ -32,11 +32,11 @@ WHERE LECTURE_NUMBER='2'
 
 	-- mypage_selfTestResult
 -- CREATE
-INSERT INTO mypage_selfTestResult (MEMBER_NAME, MEMBER_TEST_SCORE, QUESTION_UID)
-VALUES ('홍길동', '720', '사물에 관련된 영어표현')
+-- INSERT INTO mypage_selfTestResult (MEMBER_NAME, MEMBER_TEST_SCORE, QUESTION_UID)
+-- VALUES ('홍길동', '720', '사물에 관련된 영어표현')
 ;
 -- READ
-SELECT  mypage_selfTestResult.MEMBER_NAME, mypage_selfTestResult.MEMBER_TEST_SCORE, TEST_QUESTIONS.QUESTION_UID
+SELECT  *
 FROM mypage_selfTestResult
 INNER JOIN TEST_QUESTIONS
 ON mypage_selfTestResult.QUESTION_UID = TEST_QUESTIONS.QUESTION_UID
@@ -44,11 +44,11 @@ ON mypage_selfTestResult.QUESTION_UID = TEST_QUESTIONS.QUESTION_UID
 -- UPDATE
 UPDATE mypage_selfTestResult 
 SET MEMBER_TEST_SCORE = '750'  -- 기존 720에서 750으로 변경
-WHERE MEMBER_ID = 'm1'
+WHERE MEMBER_ID = 'ceromi123'
 ;
 -- DELETE
 DELETE FROM mypage_selfTestResult
-WHERE MEMBER_ID='m1'
+WHERE MEMBER_ID='ceromi123	'
 ;
 
 
