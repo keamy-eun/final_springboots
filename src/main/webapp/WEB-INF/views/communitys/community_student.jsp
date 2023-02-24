@@ -7,17 +7,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>학생 게시판</title>
+    <title>공지사항</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css"
-    />
+
+    <!-- CSS링크 -->
+
+    <link rel="stylesheet" href="./css/commons.css" />
   </head>
   <body>
     <div class="container">
@@ -61,7 +61,7 @@
             온라인강의</a
           >
           <a
-            href="/community_lecture"
+            href="/community_student"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             커뮤니티</a
@@ -85,114 +85,108 @@
       <!-- -------------------------- -->
       <div class="text-center container-fluid">
         <div class="row">
-          <!-- Sidebar -->
-          <div class="col-auto wrapper border border-1 m-3 p-3">
-            <nav id="sidebar">
-              <div class="text-secondary">
-                <h3>은정이 아카데미</h3>
-              </div>
-              <ul class="list-unstyled components fs-5">
-                <li class="border-top border-1 p-2">
-                  <a
-                    href="/community_lecture"
-                    class="text-decoration-none text-secondary"
-                    >강좌 게시판</a
-                  >
-                </li>
-                <li class="border-top border-1 p-2">
-                  <a
-                    href="/community_lecturer"
-                    class="text-decoration-none text-secondary"
-                    >강사 게시판</a
-                  >
-                </li>
-                <li class="border-top border-1 p-2">
-                  <a
-                    href="/community_student"
-                    class="text-decoration-none text-secondary"
-                    >학생 게시판</a
-                  >
-                </li>
-                <li class="border-top border-1 p-2">
-                  <a
-                    href="/community_noctice"
-                    class="text-decoration-none text-secondary"
-                    >공지사항</a
-                  >
-                </li>
-              </ul>
-            </nav>
-          </div>
           <!--  -->
-          <div class="container col-7 mt-5">
-            <!-- 글쓰기 -->
-            <div class="mb-3 text-end">
-              <button class="border btn">글쓰기</button>
+          <div class="row">
+            <!-- Sidebar -->
+            <div class="col-auto wrapper border border-1 m-3 p-3">
+              <nav id="sidebar">
+                <div class="text-secondary">
+                  <h3>은정이 아카데미</h3>
+                </div>
+                <ul class="list-unstyled components fs-5">
+                  <li class="border-top border-1 p-2">
+                    <a
+                      href="/community_student"
+                      class="text-decoration-none text-secondary"
+                      >학생 커뮤니티</a
+                    >
+                  </li>
+                  <li class="border-top border-1 p-2">
+                    <a
+                      href="/community_lecturer"
+                      class="text-decoration-none text-secondary"
+                      >강사 게시판</a
+                    >
+                  </li>
+                </ul>
+              </nav>
             </div>
 
-            <!-- 게시판 테이블 -->
-            <div class="col-12 text-start">
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">학생 게시판</h3>
-                  <div class="card-tools">
-                    <div
-                      class="input-group input-group-sm"
-                      style="width: 150px"
+            <!--  -->
+            <div class="container col-7 mt-5">
+              <!-- 게시판 테이블 -->
+              <table class="table text-start">
+                <div
+                  class="row mb-3 bg-warning bg-opacity-10 p-3 border border-0 rounded-5"
+                >
+                  <div class="col-3 h4">
+                    <a
+                      href="/community_student"
+                      style="text-decoration: none"
+                      class="text-black"
+                      >학생게시판</a
                     >
-                      <input
-                        type="text"
-                        name="table_search"
-                        class="form-control float-right"
-                        placeholder="Search"
-                      />
-                      <div class="input-group-append">
-                        <button type="submit" class="btn btn-default">
-                          검색
-                        </button>
-                      </div>
-                    </div>
+                  </div>
+                  <!-- <div class="col-3 h4">
+                    <a
+                      href="/community_lecture"
+                      style="text-decoration: none"
+                      class="text-black"
+                      >강좌게시판</a
+                    >
+                  </div> -->
+                  <div class="col-3 h4">
+                    <a
+                      href="/community_notice"
+                      style="text-decoration: none"
+                      class="text-black"
+                      >공지사항</a
+                    >
                   </div>
                 </div>
-
-                <div class="card-body table-responsive p-0">
-                  <table class="table table-hover text-nowrap">
-                    <thead>
-                      <tr>
-                        <th>NO</th>
-                        <th>제목</th>
-                        <th>작성자</th>
-                        <th>작성일</th>
-                        <th>조회수</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>3</td>
-                        <td>안녕하세요!!! :)</td>
-                        <td>훈333</td>
-                        <td>2023-01-07</td>
-                        <td>12</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>교재 어디서 구입하나요?</td>
-                        <td>정훈22</td>
-                        <td>2023-01-06</td>
-                        <td>2</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>학원게시판입니다.</td>
-                        <td>이정훈</td>
-                        <td>2023-01-03</td>
-                        <td>37</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <!-- 글쓰기 -->
+                <div class="mb-3 text-end">
+                  <button class="border btn">
+                    <a
+                      href="/community_postWrite"
+                      class="text-black"
+                      style="text-decoration: none"
+                      >글쓰기</a
+                    >
+                  </button>
                 </div>
-              </div>
+                <tr>
+                  <th>NO</th>
+                  <th>제목</th>
+                  <th>작성자</th>
+                  <th>작성일</th>
+                  <th>조회수</th>
+                </tr>
 
+                <tbody>
+                  <tr>
+                    <td>3</td>
+                    <td>안녕하세요!!! :) [0]</td>
+                    <td>훈333</td>
+                    <td>2023-01-07</td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>교재 어디서 구입하나요? [1]</td>
+                    <td>정훈22</td>
+                    <td>2023-01-06</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>학원게시판입니다. [4]</td>
+                    <td>이정훈</td>
+                    <td>2023-01-03</td>
+                    <td>37</td>
+                  </tr>
+                </tbody>
+              </table>
               <!-- 페이징 -->
               <div class="text-center">
                 <button class="btn">이전</button>
@@ -202,6 +196,19 @@
                 <button class="btn">4</button>
                 <button class="btn">다음</button>
               </div>
+
+              <div class="input-group input-group-sm mt-3">
+                <input
+                  type="text"
+                  name="table_search"
+                  class="form-control float-right"
+                  placeholder="Search"
+                />
+
+                <button type="submit" class="btn btn-default border">
+                  검색
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -209,7 +216,12 @@
       <!-- footer -->
       <footer class="m-5">
         <div>
-          <img src="https://user-images.githubusercontent.com/115060986/219259301-39328314-70ed-4993-ba31-b11e987b1218.png" width="50" height="50" alt="" />
+          <img
+            src="https://user-images.githubusercontent.com/115060986/219259301-39328314-70ed-4993-ba31-b11e987b1218.png"
+            width="50"
+            height="50"
+            alt=""
+          />
           <span class="opacity-50"> 은정 아카데미</span>
           <span class="ms-4 opacity-50">
             언어교육에 열정을 가진 사람들의 모임

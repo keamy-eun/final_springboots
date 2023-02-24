@@ -9,7 +9,8 @@
     <!-- 학생게시판 강사게시판 공동 사용 -->
         SELECT *
         FROM community_post
-        inner join member where community_post.MEMBER_ID = member.MEMBER_ID
+        inner join member 
+        where community_post.MEMBER_ID = member.MEMBER_ID
     </select>
 
 </mapper>
