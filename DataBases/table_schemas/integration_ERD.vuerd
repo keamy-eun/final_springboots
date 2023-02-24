@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -579.499995132283,
-    "scrollLeft": -392.5104282233445,
-    "zoomLevel": 0.3,
+    "scrollTop": 0,
+    "scrollLeft": 0,
+    "zoomLevel": 0.8,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -251,7 +251,7 @@
           "active": false,
           "left": 80.25,
           "top": 90.25,
-          "zIndex": 16,
+          "zIndex": 13,
           "widthName": 75.1884765625,
           "widthComment": 60
         },
@@ -495,9 +495,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 751,
-          "top": 1342.75,
-          "zIndex": 3,
+          "left": 739.75,
+          "top": 1340.25,
+          "zIndex": 31,
           "widthName": 124.78271484375,
           "widthComment": 60
         },
@@ -580,9 +580,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1400,
-          "top": 741.25,
-          "zIndex": 6,
+          "left": 1311.25,
+          "top": 758.75,
+          "zIndex": 38,
           "widthName": 125.29052734375,
           "widthComment": 119
         },
@@ -773,9 +773,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 754.5,
-          "top": 1711.5,
-          "zIndex": 1,
+          "left": 744.5,
+          "top": 1724,
+          "zIndex": 33,
           "widthName": 82.158203125,
           "widthComment": 60
         },
@@ -998,7 +998,7 @@
           "active": false,
           "left": 752.3612,
           "top": 928.8473,
-          "zIndex": 35,
+          "zIndex": 16,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1146,13 +1146,36 @@
               "widthDefault": 60
             },
             "id": "2ddbe3c2-4ad3-4379-a46b-4812cbfdc157"
+          },
+          {
+            "name": "LECTURE_IMAGE",
+            "comment": "강좌이미지",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 111.8017578125,
+              "widthComment": 67,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "afc27f43-3645-4651-98fa-1e0b4d5ddc99"
           }
         ],
         "ui": {
           "active": false,
-          "left": 81.1663,
-          "top": 462.5837,
-          "zIndex": 10,
+          "left": 74.9163,
+          "top": 453.8337,
+          "zIndex": 29,
           "widthName": 62.67724609375,
           "widthComment": 60
         },
@@ -1214,7 +1237,7 @@
           "active": false,
           "left": 78.25,
           "top": 934,
-          "zIndex": 9,
+          "zIndex": 7,
           "widthName": 72.0654296875,
           "widthComment": 60
         },
@@ -1299,7 +1322,7 @@
           "active": false,
           "left": 640.2224,
           "top": 332.778,
-          "zIndex": 13,
+          "zIndex": 11,
           "widthName": 103.14990234375,
           "widthComment": 80
         },
@@ -1384,7 +1407,7 @@
           "active": false,
           "left": 1365.5,
           "top": 78.75,
-          "zIndex": 12,
+          "zIndex": 10,
           "widthName": 119.0380859375,
           "widthComment": 60
         },
@@ -1492,7 +1515,7 @@
           "active": false,
           "left": 653,
           "top": 33.75,
-          "zIndex": 11,
+          "zIndex": 9,
           "widthName": 108.20263671875,
           "widthComment": 60,
           "color": "#1D1010"
@@ -1553,9 +1576,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1532.0289,
-          "top": 527.6583,
-          "zIndex": 21,
+          "left": 1570.7789,
+          "top": 551.4083,
+          "zIndex": 41,
           "widthName": 119.01904296875,
           "widthComment": 60
         },
@@ -1638,9 +1661,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1538.5417,
-          "top": 1031.1585,
-          "zIndex": 28,
+          "left": 1462.2917,
+          "top": 1024.9085,
+          "zIndex": 43,
           "widthName": 108.18359375,
           "widthComment": 60
         },
@@ -1900,9 +1923,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 769.75,
-          "top": 532.5,
-          "zIndex": 15,
+          "left": 753.5,
+          "top": 537.5,
+          "zIndex": 30,
           "widthName": 90.84814453125,
           "widthComment": 60
         },
@@ -1935,8 +1958,8 @@
           "columnIds": [
             "c79d59a5-b2c5-480c-b9a1-d2dc7bfb0f24"
           ],
-          "x": 993.388916015625,
-          "y": 1342.75,
+          "x": 982.138916015625,
+          "y": 1340.25,
           "direction": "top"
         },
         "constraintName": "fk_member_to_community_post",
@@ -1978,8 +2001,8 @@
           "columnIds": [
             "ff7b6464-6d11-46b3-81fb-fea5a54f6cf1"
           ],
-          "x": 1235.77783203125,
-          "y": 1479.75,
+          "x": 1224.52783203125,
+          "y": 1477.25,
           "direction": "right"
         },
         "end": {
@@ -2039,8 +2062,8 @@
           "columnIds": [
             "e706545d-97b4-4d4b-8bed-c9d315cdf63a"
           ],
-          "x": 309.956094921875,
-          "y": 654.5837,
+          "x": 307.206094921875,
+          "y": 666.3337,
           "direction": "bottom"
         },
         "constraintName": "fk_lecturer_to_lecture",
@@ -2134,8 +2157,8 @@
           "columnIds": [
             "f2e47664-2c9b-42e8-80e9-84f2daaa64cd"
           ],
-          "x": 538.74588984375,
-          "y": 510.5837,
+          "x": 539.49588984375,
+          "y": 506.9587,
           "direction": "right"
         },
         "end": {
@@ -2186,8 +2209,8 @@
           "columnIds": [
             "7ad24af2-c832-489a-b871-8705046f77d9"
           ],
-          "x": 991.836181640625,
-          "y": 1711.5,
+          "x": 981.836181640625,
+          "y": 1724,
           "direction": "top"
         },
         "end": {
@@ -2195,8 +2218,8 @@
           "columnIds": [
             "a483804c-ea7b-4a17-8fa9-bc3106838db6"
           ],
-          "x": 993.388916015625,
-          "y": 1616.75,
+          "x": 982.138916015625,
+          "y": 1614.25,
           "direction": "bottom"
         },
         "constraintName": "fk_community_to_community_post",
@@ -2221,8 +2244,8 @@
           "columnIds": [
             "87cbf3ff-d5e7-42fe-bdfe-a14e231831d8"
           ],
-          "x": 1400,
-          "y": 806.5,
+          "x": 1311.25,
+          "y": 824,
           "direction": "left"
         },
         "constraintName": "fk_member_to_mypage_selftest",
@@ -2238,17 +2261,17 @@
           "columnIds": [
             "15164ba0-03d7-48c0-9d83-7f94f214c5af"
           ],
-          "x": 1637.3942564453125,
-          "y": 637.6583,
-          "direction": "bottom"
+          "x": 1570.7789,
+          "y": 606.4083,
+          "direction": "left"
         },
         "end": {
           "tableId": "0c71842c-f369-437e-8713-29fd66ff2f75",
           "columnIds": [
             "fe870e9a-e807-45f7-9a11-ff6743fb8625"
           ],
-          "x": 1610.730712890625,
-          "y": 741.25,
+          "x": 1521.980712890625,
+          "y": 758.75,
           "direction": "top"
         },
         "constraintName": "fk_문제문항_to_mypage_selftest_result",
@@ -2264,8 +2287,8 @@
           "columnIds": [
             "990deae8-e207-47de-8c9d-c219c56681a4"
           ],
-          "x": 1643.9070564453125,
-          "y": 1031.1585,
+          "x": 1567.6570564453125,
+          "y": 1024.9085,
           "direction": "top"
         },
         "end": {
@@ -2273,8 +2296,8 @@
           "columnIds": [
             "46e3cdf8-cf8a-4aac-ba84-e05e39b9618f"
           ],
-          "x": 1610.730712890625,
-          "y": 871.75,
+          "x": 1521.980712890625,
+          "y": 889.25,
           "direction": "bottom"
         },
         "constraintName": "fk_문제답항_to_mypage_selftest_result",
@@ -2290,8 +2313,8 @@
           "columnIds": [
             "f2e47664-2c9b-42e8-80e9-84f2daaa64cd"
           ],
-          "x": 538.74588984375,
-          "y": 606.5837,
+          "x": 539.49588984375,
+          "y": 613.2087,
           "direction": "right"
         },
         "end": {
@@ -2299,8 +2322,8 @@
           "columnIds": [
             "be8f4a95-0da8-4037-bac8-940c789287ce"
           ],
-          "x": 769.75,
-          "y": 608,
+          "x": 753.5,
+          "y": 613,
           "direction": "left"
         },
         "constraintName": "fk_lecture_to_enrollment",
@@ -2325,8 +2348,8 @@
           "columnIds": [
             "d7289f18-49de-4681-9aa0-3fcd269cdcbd"
           ],
-          "x": 997.345703125,
-          "y": 683.5,
+          "x": 981.095703125,
+          "y": 688.5,
           "direction": "bottom"
         },
         "constraintName": "fk_member_to_enrollment",
@@ -2342,8 +2365,8 @@
           "columnIds": [
             "15164ba0-03d7-48c0-9d83-7f94f214c5af"
           ],
-          "x": 1848.1249693359375,
-          "y": 637.6583,
+          "x": 1781.509612890625,
+          "y": 661.4083,
           "direction": "bottom"
         },
         "end": {
@@ -2351,8 +2374,8 @@
           "columnIds": [
             "5ae74a5e-b8c4-4891-97f8-b01293c078b1"
           ],
-          "x": 1854.6377693359375,
-          "y": 1031.1585,
+          "x": 1778.3877693359375,
+          "y": 1024.9085,
           "direction": "top"
         },
         "constraintName": "fk_test_questions_to_test_answers",
