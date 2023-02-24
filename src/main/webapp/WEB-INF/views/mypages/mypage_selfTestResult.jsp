@@ -145,11 +145,11 @@
                     <p>
                       <div>
                         <span class="h2">홍길동</span>님의 TOEIC 예상 점수는
-                        <span class="h2">720점</span>입니다
+                        <span class="h2">${resultMap.resultScore}점</span>입니다
                       </div>
                       <div class="mt-3">
                         <span class="h3 text-primary"
-                          >사물에 관련된 영어표현, 3인칭 단수의 영어문법</span
+                          >${resultMap.resultCategory}</span
                         >의 문제유형에 약한거 같아요
                       </div>
                       <div class="mt-3">자, 그럼 당신을 위한 무슨 강좌가 있는지 구경하러 가볼까요? </div>

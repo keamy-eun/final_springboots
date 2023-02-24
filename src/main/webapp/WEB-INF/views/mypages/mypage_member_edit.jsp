@@ -1,5 +1,6 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -143,8 +144,7 @@
                     type="text"
                     class="form-control"
                     id="name"
-                    placeholder="동그라미"
-                    value=""
+                    value="${resultMap.MEMBER_NAME}"
                     disabled
                   />
                   <div class="invalid-feedback">이름을 입력해주세요.</div>
@@ -155,8 +155,7 @@
                     type="text"
                     class="form-control"
                     id="nickname"
-                    placeholder="circle00"
-                    value=""
+                    value="${resultMap.MEMBER_ID}"
                     disabled
                   />
                   <div class="invalid-feedback">별명을 입력해주세요.</div>
@@ -169,6 +168,7 @@
                   type="password"
                   class="form-control"
                   id="password"
+                  value="${resultMap.PW}"
                   required
                 />
                 <div class="invalid-feedback">비밀번호를 입력해주세요.</div>
@@ -180,6 +180,7 @@
                   type="password"
                   class="form-control"
                   id="password_check"
+                  value="${resultMap.PW}"
                   required
                 />
                 <div class="invalid-feedback">비밀번호를 입력해주세요.</div>
@@ -191,7 +192,7 @@
                   type="email"
                   class="form-control"
                   id="email"
-                  placeholder="circle0014@naver.com"
+                  value="${resultMap.EMAIL}"
                   required
                 />
                 <div class="invalid-feedback">이메일을 입력해주세요.</div>
@@ -201,70 +202,26 @@
                 <label for="" class="col-sm-3 col-form-label">생년월일</label>
                 <div class="col-sm-2">
                   <select name="" id="" class="form-control">
-                    <option value="1">1990</option>
-                    <option value="2">1991</option>
-                    <option value="3">1992</option>
-                    <option value="4">1993</option>
-                    <option value="5">1994</option>
-                    <option value="6">1995</option>
-                    <option value="7">1996</option>
-                    <option value="8">1997</option>
-                    <option value="9">1998</option>
-                    <option value="10">1999</option>
-                    <option value="11">2000</option>
+                    <% for(int i=1; i<40; i++) { %>	
+                      <option value="<%=i%>"><%=i+1970%></option>
+                    <% } %>	
                   </select>
                 </div>
                 <div class="col-sm-1">년</div>
                 <div class="col-sm-2">
                   <select name="" id="" class="form-control">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
+                    <% for(int i=1; i<13; i++) { %>	
+                      <option value="<%=i%>"><%=i%></option>
+                    <% } %>	
                   </select>
                 </div>
                 <div class="col-sm-1">월</div>
                 <div class="col-sm-2">
                   <select name="" id="" class="form-control">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
-                    <option value="29">29</option>
-                    <option value="30">30</option>
-                    <option value="31">31</option>
+                  <%-- selected 구현 --%>
+                    <% for(int i=1; i<32; i++) { %>	
+                      <option value="<%=i%>"><%=i%></option>
+                    <% } %>	
                   </select>
                 </div>
                 <div class="col-sm-1">일</div>
@@ -273,8 +230,10 @@
               <div class="form-group row mt-3">
                 <div class="col-sm-3">광고수신여부 :</div>
                 <div class="col-sm-9">
-                  SMS <input type="checkbox" name="" class="" id="" /> / Email
-                  <input type="checkbox" name="" id="" checked/> 로 수신하겠습니다
+                  SMS <input type="checkbox" name="SMS_AD" class="form-check-input" id="" 
+                        ${resultMap.SMS_AD == 'YES' ? 'checked' : ''} /> 
+                        / Email
+                  <input type="checkbox" name="EMAIL_AD" class="form-check-input" id="" ${resultMap.EMAIL_AD == 'YES' ? 'checked' : ''}/> 로 수신하겠습니다
                 </div>
               </div>
   
