@@ -71,6 +71,7 @@ insert into selftest_result
 values('ceromi123','TQ01','TA01'),('ceromi123','TQ02','TA02'),('ceromi123','TQ03','TA03'),
 ('ceromi123','TQ04','TA04'),('ceromi123','TQ05','TA01'),('ceromi123','TQ06','TA04'),('ceromi123','TQ07','TA03');
 
+
 INSERT INTO TEST_ANSWERS (ANSWER_UID, ANSWER, QUESTION_UID)
 VALUES ('TA101', '(A)', 'TQ01'), ('TA102', '(B)', 'TQ01'), ('TA103', '(C)', 'TQ01'), ('TA104', '(D)', 'TQ01'),
 ('TA201', '(A)', 'TQ02'), ('TA202', '(B)', 'TQ02'), ('TA203', '(C)', 'TQ02'), ('TA204', '(D)', 'TQ02'),
