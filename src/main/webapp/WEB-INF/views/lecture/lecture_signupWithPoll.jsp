@@ -109,9 +109,9 @@
       <!-- 본문 -->
       <div class="container col-9">
         <div class="mt-4 mb-4"> 
-
           <!-- 설문문답 JSTL -->
           <form action="/lecture_signup" method="post">
+            <input type="hidden" name="LECTURE_NUMBER" value="${resultList[3].LECTURE_NUMBER}">
             <h1 class="pb-3">수강신청</h1>
             <div class="fs-3">${resultList[2].MEMBER_NAME} 회원님 안녕하세요!</div>
             <c:forEach items="${resultList[0]}" var="Que" varStatus="loop">

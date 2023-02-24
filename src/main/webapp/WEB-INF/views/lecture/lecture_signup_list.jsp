@@ -111,8 +111,6 @@
           <div class="container col m-3">
             <div class="mt-5 mb-5">
               <div class="h1 mt-4 mb-4">강좌 신청하기</div>
-
-
               <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
                 <div class="mt-5 mb-5">
                 <div class="card border-primary">

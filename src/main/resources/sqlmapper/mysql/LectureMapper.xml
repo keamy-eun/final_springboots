@@ -8,12 +8,19 @@
         FROM LECTURE 
     </select>
 
-    <select id="selectMemberNameFromLectureListById" 
+    <select id="selectLectureID" 
         parameterType="Map" resultType="Map">
-        SELECT MEMBER.MEMBER_NAME  
+        SELECT LECTURE_NUMBER  
         FROM LECTURE 
-        INNER JOIN MEMBER ON MEMBER.MEMBER_ID = LECTURE.MEMBER_ID
-        WHERE LECTURE_NUMBER = #{LECTURE_NUMBER};
+        WHERE LECTURE_NUMBER = #{LECTURE_NUMBER}; 
+    </select>
+
+<!-- 로그인 완료시 이름 가져오는 방식 변경해야함 -->
+    <select id="selectMemberName_TEMP" 
+        parameterType="Map" resultType="Map">
+        SELECT MEMBER_NAME   
+        FROM MEMBER 
+        WHERE MEMBER_ID = 'circle01' 
     </select>
 
     <select id="selectQuestionList" 
@@ -35,4 +42,11 @@
         value (#{PQ01},#{PQ01_1},#{PQ02},#{PQ03},#{PQ04},now());
     </insert>
 
+<!-- 로그인 완료시 이름 가져오는 방식 변경해야함 -->
+    <insert id="insertMyLecture" 
+        parameterType="Map">
+        insert into enrollment 
+        (LECTURE_NUMBER,MEMBER_ID,ENROLL_DATE,ENROLL_CANCEL) 
+        value (#{LECTURE_NUMBER},'circle01',now(),'NOT CANCELED');
+    </insert>
 </mapper>

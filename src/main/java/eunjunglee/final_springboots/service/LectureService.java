@@ -16,9 +16,15 @@ public class LectureService {
         Object result = sharedDaos.getList(sqlMapId, dataMap);
         return result;
     }
+
+    public Object getLectureID(Object dataMap){
+        String sqlMapId = "Lecture.selectLectureID";
+        Object result = sharedDaos.getOne(sqlMapId, dataMap);
+        return result;
+    }
     
-    public Object getMemberNameFromLectureListById(Object dataMap){
-        String sqlMapId = "Lecture.selectMemberNameFromLectureListById";
+    public Object getMemberName_TEMP(Object dataMap){
+        String sqlMapId = "Lecture.selectMemberName_TEMP";
         Object result = sharedDaos.getOne(sqlMapId, dataMap);
         return result;
     }
@@ -34,15 +40,15 @@ public class LectureService {
         return result;
     }
 
-    public Object insert(Object dataMap){
+    public Object insertQnA(Object dataMap){
         String sqlMapId = "Lecture.insertQnA";
         Object result = sharedDaos.insert(sqlMapId, dataMap);
         return result;
     }
 
-    public Object insertAndList(Object dataMap){
-        Object result = this.insert(dataMap);
-        result = this.getLectureList(dataMap);
+    public Object insertMyLecture(Object dataMap){
+        String sqlMapId = "Lecture.insertMyLecture";
+        Object result = sharedDaos.insert(sqlMapId, dataMap);
         return result;
     }
 }
