@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -134,
-    "scrollLeft": -165,
+    "scrollTop": -508.16665179861997,
+    "scrollLeft": -499.171875,
     "zoomLevel": 0.8,
     "show": {
       "tableComment": true,
@@ -143,7 +143,7 @@
           "active": false,
           "left": 54,
           "top": 1378.75,
-          "zIndex": 3,
+          "zIndex": 2,
           "widthName": 93.74267578125,
           "widthComment": 60
         },
@@ -251,7 +251,7 @@
           "active": false,
           "left": 21.5,
           "top": 91.5,
-          "zIndex": 34,
+          "zIndex": 10,
           "widthName": 75.1884765625,
           "widthComment": 60
         },
@@ -497,7 +497,7 @@
           "active": false,
           "left": 751,
           "top": 1342.75,
-          "zIndex": 7,
+          "zIndex": 6,
           "widthName": 124.78271484375,
           "widthComment": 60
         },
@@ -580,9 +580,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1373.75,
-          "top": 757.5,
-          "zIndex": 4,
+          "left": 1296.6665,
+          "top": 734.583,
+          "zIndex": 20,
           "widthName": 125.29052734375,
           "widthComment": 119
         },
@@ -713,7 +713,7 @@
           "active": false,
           "left": 1458,
           "top": 1176.5,
-          "zIndex": 11,
+          "zIndex": 8,
           "widthName": 111.78271484375,
           "widthComment": 60
         },
@@ -775,7 +775,7 @@
           "active": false,
           "left": 754.5,
           "top": 1711.5,
-          "zIndex": 2,
+          "zIndex": 1,
           "widthName": 82.158203125,
           "widthComment": 60
         },
@@ -998,7 +998,7 @@
           "active": false,
           "left": 766.25,
           "top": 922.25,
-          "zIndex": 16,
+          "zIndex": 9,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1175,7 +1175,7 @@
           "active": false,
           "left": 651.1663,
           "top": 515.0837,
-          "zIndex": 35,
+          "zIndex": 11,
           "widthName": 62.67724609375,
           "widthComment": 60
         },
@@ -1237,7 +1237,7 @@
           "active": false,
           "left": 24.5,
           "top": 762.75,
-          "zIndex": 8,
+          "zIndex": 7,
           "widthName": 72.0654296875,
           "widthComment": 60
         },
@@ -1322,7 +1322,7 @@
           "active": false,
           "left": 656.4724,
           "top": 272.778,
-          "zIndex": 36,
+          "zIndex": 12,
           "widthName": 103.14990234375,
           "widthComment": 80
         },
@@ -1407,7 +1407,7 @@
           "active": false,
           "left": 1394.25,
           "top": 57.5,
-          "zIndex": 44,
+          "zIndex": 14,
           "widthName": 119.0380859375,
           "widthComment": 60
         },
@@ -1515,7 +1515,7 @@
           "active": false,
           "left": 669.25,
           "top": 15,
-          "zIndex": 43,
+          "zIndex": 13,
           "widthName": 108.20263671875,
           "widthComment": 60,
           "color": "#1D1010"
@@ -1576,9 +1576,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1373.4873,
-          "top": 546.2,
-          "zIndex": 6,
+          "left": 1578.53857421875,
+          "top": 533.6996,
+          "zIndex": 24,
           "widthName": 119.01904296875,
           "widthComment": 60
         },
@@ -1634,13 +1634,36 @@
               "widthDefault": 60
             },
             "id": "70323cac-a2ec-422d-90c3-0bdfab3ab0e7"
+          },
+          {
+            "name": "QUESTION_UID",
+            "comment": "문제UID",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 99.5126953125,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "f6425415-29e4-4d99-9b93-0b57f0b39b30"
           }
         ],
         "ui": {
           "active": false,
-          "left": 1380,
-          "top": 997.2,
-          "zIndex": 5,
+          "left": 1533.1254,
+          "top": 985.7413,
+          "zIndex": 23,
           "widthName": 108.18359375,
           "widthComment": 60
         },
@@ -1725,7 +1748,7 @@
           "active": false,
           "left": 1379.25,
           "top": 375.25,
-          "zIndex": 45,
+          "zIndex": 15,
           "widthName": 114.71533203125,
           "widthComment": 80
         },
@@ -2070,8 +2093,8 @@
           "columnIds": [
             "87cbf3ff-d5e7-42fe-bdfe-a14e231831d8"
           ],
-          "x": 1373.75,
-          "y": 822.75,
+          "x": 1296.6665,
+          "y": 799.833,
           "direction": "left"
         },
         "constraintName": "fk_member_to_mypage_selftest",
@@ -2087,17 +2110,17 @@
           "columnIds": [
             "15164ba0-03d7-48c0-9d83-7f94f214c5af"
           ],
-          "x": 1584.218012890625,
-          "y": 656.2,
-          "direction": "bottom"
+          "x": 1578.53857421875,
+          "y": 588.6996,
+          "direction": "left"
         },
         "end": {
           "tableId": "0c71842c-f369-437e-8713-29fd66ff2f75",
           "columnIds": [
             "fe870e9a-e807-45f7-9a11-ff6743fb8625"
           ],
-          "x": 1584.480712890625,
-          "y": 757.5,
+          "x": 1507.397212890625,
+          "y": 734.583,
           "direction": "top"
         },
         "constraintName": "fk_문제문항_to_mypage_selftest_result",
@@ -2113,8 +2136,8 @@
           "columnIds": [
             "990deae8-e207-47de-8c9d-c219c56681a4"
           ],
-          "x": 1585.31298828125,
-          "y": 997.2,
+          "x": 1638.4907564453124,
+          "y": 985.7413,
           "direction": "top"
         },
         "end": {
@@ -2122,9 +2145,9 @@
           "columnIds": [
             "46e3cdf8-cf8a-4aac-ba84-e05e39b9618f"
           ],
-          "x": 1584.480712890625,
-          "y": 888,
-          "direction": "bottom"
+          "x": 1718.12792578125,
+          "y": 799.833,
+          "direction": "right"
         },
         "constraintName": "fk_문제답항_to_mypage_selftest_result",
         "visible": true,
@@ -2181,6 +2204,32 @@
         "constraintName": "fk_member_to_poll_response",
         "visible": true,
         "id": "fa574ce1-b58d-4f63-92b5-ffc447eb5ac4"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "6f848cdb-f4db-4b3c-9fa5-e8c3ba608b90",
+          "columnIds": [
+            "15164ba0-03d7-48c0-9d83-7f94f214c5af"
+          ],
+          "x": 1789.269287109375,
+          "y": 643.6996,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "49953769-ece9-46e9-bff7-4574be538e40",
+          "columnIds": [
+            "f6425415-29e4-4d99-9b93-0b57f0b39b30"
+          ],
+          "x": 1849.2214693359374,
+          "y": 985.7413,
+          "direction": "top"
+        },
+        "constraintName": "fk_test_questions_to_test_answers",
+        "visible": true,
+        "id": "c37e9eb0-963c-4f9d-b4f2-0436b51ca81d"
       }
     ]
   }
