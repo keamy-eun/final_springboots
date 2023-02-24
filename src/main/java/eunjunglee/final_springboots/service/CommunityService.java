@@ -10,10 +10,9 @@ public class CommunityService {
     @Autowired
     SharedDaos sharedDaos;
 
-    public Object 메소드명(Object dataMap){
-        String sqlMapId = "매퍼{namespace}.{ID}";
-        // Object result = communityDao.메소드명(sqlMapId, dataMap);
-        Object result = null;
+    public Object getList(Object dataMap){
+        String sqlMapId = "Community.selectListByID";
+        Object result = sharedDaos.getList(sqlMapId, dataMap);
         return result;
     }
 

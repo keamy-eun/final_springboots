@@ -2,5 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="Community">
+    <!-- call  Community.selectListByID-->
+    <select id="selectListByID"
+    parameterType="Map" resultType="Map">
+    <!-- 게시글과 멤버의 모든 column불러옴 -->
+    <!-- 학생게시판 강사게시판 공동 사용 -->
+        SELECT *
+        FROM community_post
+        <!-- inner join member  -->
+        <!-- where community_post.MEMBER_ID = member.MEMBER_ID -->
+    </select>
 
 </mapper>

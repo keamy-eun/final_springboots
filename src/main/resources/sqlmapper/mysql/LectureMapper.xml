@@ -2,5 +2,51 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="Lecture">
+    <select id="selectLectureList" 
+        parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM LECTURE 
+    </select>
 
+    <select id="selectLectureID" 
+        parameterType="Map" resultType="Map">
+        SELECT LECTURE_NUMBER  
+        FROM LECTURE 
+        WHERE LECTURE_NUMBER = #{LECTURE_NUMBER}; 
+    </select>
+
+<!-- 로그인 완료시 이름 가져오는 방식 변경해야함 -->
+    <select id="selectMemberName_TEMP" 
+        parameterType="Map" resultType="Map">
+        SELECT MEMBER_NAME   
+        FROM MEMBER 
+        WHERE MEMBER_ID = 'circle01' 
+    </select>
+
+    <select id="selectQuestionList" 
+        parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM POLL_QUESTIONS 
+    </select>
+    
+    <select id="selectAnswerList" 
+        parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM POLL_ANSWERS 
+    </select>
+
+    <insert id="insertQnA" 
+        parameterType="Map">
+        insert into poll_response 
+        (PQ01,PQ01_1,PQ02,PQ03,PQ04,POLL_DATE) 
+        value (#{PQ01},#{PQ01_1},#{PQ02},#{PQ03},#{PQ04},now());
+    </insert>
+
+<!-- 로그인 완료시 이름 가져오는 방식 변경해야함 -->
+    <insert id="insertMyLecture" 
+        parameterType="Map">
+        insert into enrollment 
+        (LECTURE_NUMBER,MEMBER_ID,ENROLL_DATE,ENROLL_CANCEL) 
+        value (#{LECTURE_NUMBER},'circle01',now(),'NOT CANCELED');
+    </insert>
 </mapper>

@@ -108,70 +108,40 @@
       </div>
       <!-- 본문 -->
       <div class="container col-9">
-        <div class="mt-4 mb-4">
-          <form class="" action="" method="get">
-            <!-- title -->
+        <div class="mt-4 mb-4"> 
+          <!-- 설문문답 JSTL -->
+          <form action="/lecture_signup" method="post">
+            <input type="hidden" name="LECTURE_NUMBER" value="${resultList[3].LECTURE_NUMBER}">
             <h1 class="pb-3">수강신청</h1>
+            <div class="fs-3">${resultList[2].MEMBER_NAME} 회원님 안녕하세요!</div>
+            <c:forEach items="${resultList[0]}" var="Que" varStatus="loop">
+              <c:if test="${Que.ORDERS eq '1' || Que.ORDERS eq '2' || Que.ORDERS eq '3'}">
+              <label class="mt-4 mb-3">${Que.ORDERS}. ${Que.QUESTION}</label>
+                <div class="col">
+                  <select name="${Que.QUESTION_UID}" id="" class="form-control">
+                    <option class="text-secondary" selected>선택</option>
+                      <c:forEach items="${resultList[1]}" var="Ans" varStatus="loop">
+                        <c:if test="${Que.QUESTION_UID eq Ans.QUESTION_UID}">
+                          <option>${Ans.ANSWER}</option>
+                        </c:if>
+                      </c:forEach>
+                    </select>
+                  </div>
+              </c:if>
+              <c:if test="${Que.ORDERS eq '1-1' || Que.ORDERS eq '4'}">
+                <div class="mt-4 mb-2">
+                  <label class="mt-4 mb-3"
+                    >${Que.ORDERS}. ${Que.QUESTION}</label
+                  >
+                  <input class="form-control mt-3" type="text" name="${Que.QUESTION_UID}"  />
+                </div>
+              </c:if>
+            </c:forEach>
 
-            <div></div>
-            <div><h3>홍길동 회원님 안녕하세요! (DB회원정보 불러옴)</h3></div>
             <div class="form-group row">
-              <!--  -->
-              <label for="" class="mt-4 mb-3"
-                >1. 선택하신 강의를 신청하게 된 계기가 무엇인가요?</label
-              >
-              <div class="col">
-                <select name="" id="" class="form-control">
-                  <option class="text-secondary" selected>선택</option>
-                  <option value="">지인의 추천으로</option>
-                  <option value="">인터넷 광고를 보고</option>
-                  <option value="">SMS 광고를 보고</option>
-                  <option value="">수업이 마음에 들어서 재신청</option>
-                  <option value="">기타</option>
-                </select>
-              </div>
-              <!--  -->
-              <div class="mt-3">
-                <label for=""
-                  >(1번 질문에서 기타를 선택한 경우) 이유를 적어주세요</label
-                >
-                <input class="form-control" type="text" />
-              </div>
-              <!-- 2 -->
-              <label for="" class="mt-4 mb-3"
-                >2. 하루에 공부하는 평균 시간은 어느정도 되시나요?</label
-              >
-              <div class="col">
-                <select name="" id="" class="form-control">
-                  <option class="text-secondary" selected>선택</option>
-                  <option value="">30분 이하</option>
-                  <option value="">1시간 내외</option>
-                  <option value="">2시간 내외</option>
-                  <option value="">3시간 이상</option>
-                </select>
-              </div>
-              <!-- 3 -->
-              <label for="" class="mt-4 mb-3"
-                >3. 강의를 수강하실 때 주로 어떤 기기를 사용하시나요?</label
-              >
-              <div class="col">
-                <select name="" id="" class="form-control">
-                  <option class="text-secondary" selected>선택</option>
-                  <option value="">스마트폰</option>
-                  <option value="">컴퓨터</option>
-                  <option value="">테블릿</option>
-                  <option value="">기타</option>
-                </select>
-              </div>
-              <div class="mt-4 mb-2">
-                <label for=""
-                  >4. 수업에 대해 바라는 점이나 기타 궁금한 사항이 있다면 적어주세요</label
-                >
-                <input class="form-control mt-3" type="text" />
-              </div>
             <!-- btn -->
             <div class="d-flex justify-content-end">
-              <button type="submit" class="btn btn-primary w-25 mt-5 mb-5" onclick="alert('수강신청 되었습니다! 마이페이지로 이동할게요')" >
+              <button class="btn btn-primary w-25 mt-5 mb-5" onclick="alert('수강신청 되었습니다! 마이페이지로 이동할게요')" >
                 수강신청하기
               </button>
             </div>
