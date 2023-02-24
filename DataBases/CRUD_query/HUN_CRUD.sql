@@ -54,21 +54,30 @@ WHERE MEMBER_ID='m1'
 
 	-- mypage_selfTest
 -- CREATE
-INSERT INTO mypage_selfTest (TEST_QUESTION, TEST_ANSWER)
-VALUES ('1. Mark your answer on your answer sheet', '(A)')
+INSERT INTO TEST_ANSWERS (ANSWER_UID, ANSWER)
+VALUES ('TA01', '(A)'), ('TA01', '(B)'), ('TA01', '(C)'), ('TA01', '(D)'),
+('TA02', '(A)'), ('TA02', '(B)'), ('TA02', '(C)'), ('TA02', '(D)'),
+('TA03', '(A)Mans political view'), ('TA03', '(B)Mans future plan'), ('TA03', '(C)Mans academic career'), ('TA03', '(D)Mans professional backgroud'),
+('TA04', '(A)They might be true'), ('TA04', '(B)They upset her'), ('TA04', '(C)They suprised her'), ('TA04', '(D)They suprised her'),
+('TA05', '(A)To arrange for the car'), ('TA05', '(B)To tell the man'), ('TA05', '(C)mans credit card number'), ('TA05', '(D)the work will be finished'),
+('TA06', '(A)quick'), ('TA06', '(B)quickly'), ('TA06', '(C)more quickly'), ('TA06', '(D)most quickly'),
+('TA07', '(A)method'), ('TA07', '(B)concern'), ('TA07', '(C)relief'), ('TA07', '(D)advice')
 ;
 -- READ
-SELECT  TEST_QUESTION, TEST_ANSWER  --  + 나중에 이미지
-FROM mypage_selfTest
+SELECT  *
+FROM TEST_QUESTIONS
+INNER JOIN TEST_ANSWERS
+-- WHERE TEST_QUESTIONS.QUESTION_UID = TEST_ANSWERS.QUESTION_UID
 ;
 -- UPDATE
-UPDATE mypage_selfTest 
-SET TEST_ANSWER = '(1)' 
-WHERE TEST_QUESTION = '1. Mark your answer on your answer sheet'
+UPDATE TEST_QUESTIONS 
+SET QUESTION = '7. The students _____ to Mr. Ellsworth was that he should exercise more to keep his wight down'
+--  그냥 doctor을 student로만 바꿔둠
+WHERE QUESTION_UID = 'TQ07'
 ;
 -- DELETE
-DELETE FROM mypage_selfTest
-WHERE TEST_QUESTION='1. Mark your answer on your answer sheet'
+DELETE FROM TEST_ANSWERS
+WHERE ANSWER_UID='TA07'
 ;
 
 
