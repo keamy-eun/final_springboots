@@ -1,58 +1,73 @@
 package eunjunglee.final_springboots.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import eunjunglee.final_springboots.service.MypageService;
+
 @Controller
+@RequestMapping(value = "/mypage")
 public class MypageController {
 
-    
-    // 내 강좌보기 ㅇ
-    @RequestMapping(value="/mypage_Lecture", method = RequestMethod.GET)
-    public ModelAndView getMypageLecture(ModelAndView modelAndView ){
-        // Object resultMap = 서비스.get서비스메소드(params);
-        // modelAndView.addObject("resultMap", resultMap);
+    @Autowired
+    MypageService mypageService;
+
+    // 내 강좌보기
+    @RequestMapping(value = { "/Lecture", "", "/" }, method = RequestMethod.GET)
+    public ModelAndView getMypageLecture(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+        Object resultMap = mypageService.getlistToMylectureMain(params);
+
+        // TODO :: 2개의 sql이 나올수 있도록 resultMap 합치기
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/mypages/mypage_Lecture");
         return modelAndView;
     }
 
-    // 내 정보수정 !@#
-    @RequestMapping(value="/mypage_member_edit", method = RequestMethod.GET)
-    public ModelAndView getMemberEdit(ModelAndView modelAndView ){
-        // Object resultMap = 서비스.get서비스메소드(params);
-        // modelAndView.addObject("resultMap", resultMap);
+    // 내 정보수정
+    @RequestMapping(value = "/Edit/{uniqueId}", method = RequestMethod.GET)
+    public ModelAndView mypageEdit(@RequestParam Map<String, Object> params, @PathVariable String uniqueId,
+            ModelAndView modelAndView) {
+        params.put("MEMBER_ID", uniqueId);
+        Object resultMap = mypageService.getOne(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/mypages/mypage_member_edit");
         return modelAndView;
     }
 
     // 자기실력 테스트 ㅇ
-    @RequestMapping(value="/mypage_selfTest", method = RequestMethod.GET)
-    public ModelAndView getSelfTest(ModelAndView modelAndView ){
-        // Object resultMap = 서비스.get서비스메소드(params);
-        // modelAndView.addObject("resultMap", resultMap);
+    @RequestMapping(value = "/selfTest", method = RequestMethod.GET)
+    public ModelAndView getSelfTest(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+        Object resultMap = mypageService.getQuestionList(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/mypages/mypage_selfTest");
         return modelAndView;
     }
 
-   // 자기실력 테스트 결과 ㅇ
-    @RequestMapping(value="/mypage_selfTestResult", method = RequestMethod.GET)
-    public ModelAndView getSelfTestResult(ModelAndView modelAndView ){
-        // Object resultMap = 서비스.get서비스메소드(params);
-        // modelAndView.addObject("resultMap", resultMap);
+    // 자기실력 테스트 결과 ㅇ
+    @RequestMapping(value = "/selfTestResult", method = RequestMethod.GET)
+    public ModelAndView getSelfTestResult(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+        Object resultMap = mypageService.calculateTestScore(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/mypages/mypage_selfTestResult");
         return modelAndView;
     }
 
-    // 수강강좌 확인 ㅇ 
-    @RequestMapping(value="/mypage_signup_lecturelist", method = RequestMethod.GET)
-    public ModelAndView getLectureList(ModelAndView modelAndView ){
-        // Object resultMap = 서비스.get서비스메소드(params);
-        // modelAndView.addObject("resultMap", resultMap);
+    // 수강강좌 확인 ㅇ
+    @RequestMapping(value = "/LectureSignUpList", method = RequestMethod.GET)
+    public ModelAndView getMypageSignupLecturelist(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+        Object resultMap = mypageService.getlistToMylectureMain(params);
+
+        // TODO :: 2개의 sql이 나올수 있도록 resultMap 합치기
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/mypages/mypage_signup_lecturelist");
         return modelAndView;
     }

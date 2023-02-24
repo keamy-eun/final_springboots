@@ -68,9 +68,9 @@ values('TQ01','1.Mark your answer on your answer sheet'),('TQ02','2. Mark your a
 
 insert into test_answers 
 (ANSWER_UID,ANSWER)
-value ('TA01','A'),('TA02','D'),('TA03','D'),('TA04','B'),('TA05','A'),('TA06','C'),('TA07','D');
+value ('TA01','A'),('TA02','B'),('TA03','C'),('TA04','D');
 
 insert into selftest_result 
 (MEMBER_ID,QUESTION_UID,ANSWER_UID) 
 values('ceromi123','TQ01','TA01'),('ceromi123','TQ02','TA02'),('ceromi123','TQ03','TA03'),
-('ceromi123','TQ04','TA04'),('ceromi123','TQ05','TA05'),('ceromi123','TQ06','TA06'),('ceromi123','TQ07','TA07');
+('ceromi123','TQ04','TA04'),('ceromi123','TQ05','TA01'),('ceromi123','TQ06','TA04'),('ceromi123','TQ07','TA03');

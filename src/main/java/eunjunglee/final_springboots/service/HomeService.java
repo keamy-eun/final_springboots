@@ -7,12 +7,11 @@ import eunjunglee.final_springboots.dao.SharedDaos;
 
 @Service
 public class HomeService {
-    
 
     @Autowired
     SharedDaos sharedDaos;
 
-    public Object insertOne(Object dataMap){
+    public Object insertOne(Object dataMap) {
         String sqlMapId = "Home.insertWithID";
         Object result = sharedDaos.insert(sqlMapId, dataMap);
         return result;

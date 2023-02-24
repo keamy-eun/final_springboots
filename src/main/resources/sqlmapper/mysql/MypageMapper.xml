@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="Mypage">
-
+<mapper namespace="mypage">
+    <!-- call mypage.selectByLectureNumber -->
+    <select id="selectByLectureNumber" 
+        parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM LECTURE
+        INNER JOIN LECTURER
+        WHERE LECTURE.LECTURER_NUMBER = LECTURER.LECTURER_NUMBER
+    </select>
+    <!-- call mypage.selectByMemberID -->
+    <select id="selectByMemberID" 
+        parameterType="Map" resultType="Map">
+    SELECT *
+    FROM MEMBER
+    WHERE MEMBER_ID = #{MEMBER_ID}
+    </select>
+    <!-- call mypage.getQuestions -->
+    <select id="getQuestions" 
+        parameterType="Map" resultType="Map">
+    SELECT * 
+    FROM test_questions
+    </select>
+    <!-- call mypage.insertWithUID -->
+    <insert id="insertWithUID" parameterType="Map">
+        insert into CIP_COMMON_CODE 
+            (COMMON_CODE_ID,NAME,ORDER_NUMBER,ATTRIBUTION_1,ATTRIBUTION_2,DESCRIPTION,
+            SYSTEM_CODE_YN,USE_YN,PARENT_COMMON_CODE_ID,REGISTER_SEQ,REGISTRY_DATE,MODIFY_DATE,MODIFIER_SEQ) 
+        VALUE 
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            #{COMMON_CODE_ID},#{NAME},#{ORDER_NUMBER},NULL,NULL,#{DESCRIPTION}
+            <choose>
+                <when test="SYSTEM_CODE_YN != null">
+                    , 'Yes'
+                </when>
+                <otherwise>
+                    ,'No'
+                </otherwise>
+            </choose>
+            <choose>
+                <when test="USE_YN != null">
+                    , 'Yes'
+                </when>
+                <otherwise>
+                    ,'No'
+                </otherwise>
+            </choose>
+            ,NULL,#{REGISTER_SEQ},sysdate(),sysdate(),
+            <if test="MODIFIER_SEQ != null">
+            #{MODIFIER_SEQ},
+            </if>
+        </trim>
+    </insert>
 </mapper>
