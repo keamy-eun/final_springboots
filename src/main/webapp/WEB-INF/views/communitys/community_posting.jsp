@@ -143,7 +143,7 @@
               <textarea rows="20" class="form-control" aria-label="With textarea" placeholder="내용입력" ></textarea>
             </div>
             <div class="d-flex justify-content-end mt-3">
-              <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">게시글 작성</a>
+              <a href="/community_post" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">게시글 작성</a>
                 
             </div>
           </div>
