@@ -97,7 +97,7 @@
         <div class="input-form-backgroud row">
           <div class="input-form col-md-12 mx-auto">
             <h4 class="mb-3">회원가입</h4>
-            <form class="validation-form" novalidate action="./main" method="post">
+            <form class="form-group" action="/home/SignupComplete" method="get">
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="name">이름</label>
@@ -105,20 +105,20 @@
                     type="text"
                     class="form-control"
                     id="name"
+                    name="MEMBER_NAME"
                     placeholder=""
                     value=""
                     required
                   />
                   <div class="invalid-feedback">이름을 입력해주세요.</div>
                 </div>
-
                 <div class="col-md-6 mb-3">
                   <label for="nickname">아이디</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="nickname" 
-                    name="nickname"
+                    id="nickname"
+                    name="MEMBER_ID"
                     placeholder=""
                     value=""
                     required
@@ -133,6 +133,7 @@
                   type="password"
                   class="form-control"
                   id="password"
+                  name="PW"
                   required
                 />
                 <div class="invalid-feedback">비밀번호를 입력해주세요.</div>
@@ -144,6 +145,7 @@
                   type="password"
                   class="form-control"
                   id="password_check"
+                  name="PW_check"
                   required
                 />
                 <div class="invalid-feedback">비밀번호를 입력해주세요.</div>
@@ -155,6 +157,7 @@
                   type="email"
                   class="form-control"
                   id="email"
+                  name="EMAIL"
                   placeholder="you@example.com"
                   required
                 />
@@ -164,26 +167,26 @@
               <div class="form-group row mt-3">
                 <label for="" class="col-sm-3 col-form-label">생년월일</label>
                 <div class="col-sm-2">
-                  <select name="" id="" class="form-control">
-                    <c:forEach var="num" begin="1990" end="2010">
-                      <option value="${num}">${num}</option>
-                    </c:forEach>
+                  <select id="" name="BIRTY_year" class="form-control">
+                    <% for(int i=1; i<40; i++) { %>	
+                      <option value="<%=i+1970%>"><%=i+1970%></option>
+                    <% } %>	
                   </select>
                 </div>
                 <div class="col-sm-1">년</div>
                 <div class="col-sm-2">
-                  <select name="" id="" class="form-control">
-                    <c:forEach var="num" begin="1" end="12">
-                      <option value="${num}">${num}</option>
-                    </c:forEach>
+                  <select id="" name="BIRTY_month" class="form-control">
+                    <% for(int i=1; i<13; i++) { %>	
+                      <option value="<%=i%>"><%=i%></option>
+                    <% } %>	
                   </select>
                 </div>
                 <div class="col-sm-1">월</div>
                 <div class="col-sm-2">
-                  <select name="" id="" class="form-control">
-                    <c:forEach var="num" begin="1" end="31">
-                      <option value="${num}">${num}</option>
-                    </c:forEach>
+                  <select id="" name="BIRTY_day" class="form-control">
+                    <% for(int i=1; i<32; i++) { %>	
+                      <option value="<%=i%>"><%=i%></option>
+                    <% } %>	
                   </select>
                 </div>
                 <div class="col-sm-1">일</div>
@@ -192,8 +195,9 @@
               <div class="form-group row mt-3">
                 <div class="col-sm-3">광고수신여부 :</div>
                 <div class="col-sm-9">
-                  SMS <input type="checkbox" name="" class="" id="" /> / Email
-                  <input type="checkbox" name="" id="" /> 로 수신하겠습니다
+                  SMS <input type="checkbox" name="SMS_AD" class="" id="" /> /
+                  Email <input type="checkbox" name="EMAIL_AD" id="" /> 로
+                  수신하겠습니다
                 </div>
               </div>
 
@@ -203,6 +207,7 @@
                   type="checkbox"
                   class="custom-control-input"
                   id="aggrement"
+                  name="PRIVACY_INFO"
                   required
                 />
                 <label class="custom-control-label" for="aggrement"
@@ -210,10 +215,11 @@
                 >
               </div>
               <div class="mb-4"></div>
-              <button class="btn btn-primary ms-3 mt-4 me-3" type="submit">
-                <a href="/main" class="text-decoration-none text-white"
-                  >가입 완료</a
-                >
+              <button
+                class="btn btn-primary ms-3 mt-4 me-3 text-decoration-none text-white"
+                type="submit"
+              >
+                가입 완료
               </button>
             </form>
           </div>

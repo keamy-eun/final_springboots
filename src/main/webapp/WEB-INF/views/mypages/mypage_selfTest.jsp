@@ -142,7 +142,7 @@
             <!-- 게시판 테이블 -->
             <div class="col text-start">
               <div class="mt-4 mb-4">
-                <form class="" action="" method="get">
+                <form class="" action="/mypage/selfTestResult" method="get">
                   <!-- title -->
                   <h1 class="pb-3"></h1>
       
@@ -154,227 +154,53 @@
                   </svg></a></div>
                   <div class="form-group row mt-4">
                      <!-- Prob1 -->
-                     <div class="mb-3">
-                      <div >1. Mark your answer on your answer sheet</div>
-                      <div class="mt-3"><img src="./prob1.JPG" alt="" class="w-100"></div>
-                      <div class="input-group-prepend d-flex justify-content-around mt-3">
-                        <div class="w-25">
-                          <label for="p1a1">
-                            <input type="radio" id="p1a1" name="Prob1" aria-label="Radio button for following text input">
-                            (A)
-                          </label>
+                    <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
+                      <div class="mb-3">
+                        <div >${resultData.QUESTION}</div>
+                        <div class="mt-3">
+                        <c:set var="QUESTION_NUM" value="${resultData.QUESTION_UID}" />
+                        <c:if test="${QUESTION_NUM eq 'TQ01'}">
+                        <img src="https://user-images.githubusercontent.com/115060986/220815179-4f9856af-42c8-457a-8724-0cef5133adea.JPG" alt="" class="w-100">
+                        </c:if>
+                        <c:if test="${QUESTION_NUM eq 'TQ02'}">
+                        <img src="https://user-images.githubusercontent.com/115060986/220815182-442d5f82-ac8a-42eb-bb02-6a8ea2db9986.JPG" alt="" class="w-100">
+                        </c:if>
                         </div>
-                        <div class="w-25">
-                          <label for="p1a2">
-                            <input type="radio" id="p1a2" name="Prob1" aria-label="Radio button for following text input">
-                            (B)
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p1a3">
-                            <input type="radio" id="p1a3" name="Prob1" aria-label="Radio button for following text input">
-                            (C)
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p1a4">
-                            <input type="radio" id="p1a4" name="Prob1" aria-label="Radio button for following text input">
-                            (D)
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                     <!-- Prob2 -->
-                     <div class="mb-3">
-                      <div >2. Mark your answer on your answer sheet</div>
-                      <div class="mt-3"><img src="./prob2.JPG" alt="" class="w-100"></div>
-                      <div class="input-group-prepend d-flex justify-content-around mt-3 text-start">
-                        <div class="w-25">
-                          <label for="p2a1">
-                            <input type="radio" id="p2a1" name="Prob2" aria-label="Radio button for following text input">
-                            (A)
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p2a2">
-                            <input type="radio" id="p2a2" name="Prob2" aria-label="Radio button for following text input">
-                            (B)
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p2a3">
-                            <input type="radio" id="p2a3" name="Prob2" aria-label="Radio button for following text input">
-                            (C)
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p2a4">
-                            <input type="radio" id="p2a4" name="Prob2" aria-label="Radio button for following text input">
-                            (D)
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <!-- Prob3 -->
-                    <div class="mb-3">
-                      <div >3. What will the speakers mainly talk about?</div>
-                      <div class="input-group-prepend d-flex justify-content-around mt-3">
-                        <div class="w-25">
-                          <label for="p3a1">
-                            <input type="radio" id="p3a1" name="Prob3" aria-label="Radio button for following text input">
-                            (A)Man's political view
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p3a2">
-                            <input type="radio" id="p3a2" name="Prob3" aria-label="Radio button for following text input">
-                            (B)Man's future plan
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p3a3">
-                            <input type="radio" id="p3a3" name="Prob3" aria-label="Radio button for following text input">
-                            (C)Man's academic career
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p3a4">
-                            <input type="radio" id="p3a4" name="Prob3" aria-label="Radio button for following text input">
-                            (D)Man's professional backgroud
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Prob4 -->
-                    <div class="mb-3">
-                      <div >4. What does the woman say about the stories about change?</div>
-                      <div class="input-group-prepend d-flex justify-content-around mt-3">
-                        <div class="w-25">
-                          <label for="p4a1">
-                            <input type="radio" id="p4a1" name="Prob4" aria-label="Radio button for following text input">
-                            (A) They might be true
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p4a2">
-                            <input type="radio" id="p4a2" name="Prob4" aria-label="Radio button for following text input">
-                            (B) They upset her
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p4a3">
-                            <input type="radio" id="p4a3" name="Prob4" aria-label="Radio button for following text input">
-                            (C) They suprised her
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p4a4">
-                            <input type="radio" id="p4a4" name="Prob4" aria-label="Radio button for following text input">
-                            (D) They are false
+                        <div class="input-group-prepend d-flex justify-content-around mt-3">
+                          <div class="w-25">
+                            <label for="${resultData.QUESTION_UID}a1">
+                              <input type="radio" id="${resultData.QUESTION_UID}a1" name="${resultData.QUESTION_UID}" value="${resultData.QUESTION_UID}a1" aria-label="Radio button for following text input">
+                              (A)
+                            </label>
                           </div>
-                        </label>
-                      </div>
-                    </div>
-                    <!-- Prob5 -->
-                    <div class="mb-3">
-                      <div >5. What is the woman's main purpose in calling?</div>
-                      <div class="input-group-prepend d-flex justify-content-around mt-3">
-                        <div class="w-25">
-                          <label for="p5a1">
-                            <input type="radio" id="p5a1" name="Prob5" aria-label="Radio button for following text input">
-                            (A) To arrange for the car
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p5a2">
-                            <input type="radio" id="p5a2" name="Prob5" aria-label="Radio button for following text input">
-                            (B) To tell the man
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p5a3">
-                            <input type="radio" id="p5a3" name="Prob5" aria-label="Radio button for following text input">
-                            (C) man's credit card number
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p5a4">
-                            <input type="radio" id="p5a4" name="Prob5" aria-label="Radio button for following text input">
-                            (D) the work will be finished
-                          </label>
+                          <div class="w-25">
+                            <label for="${resultData.QUESTION_UID}a2">
+                              <input type="radio" id="${resultData.QUESTION_UID}a2" name="${resultData.QUESTION_UID}" value="${resultData.QUESTION_UID}a2" aria-label="Radio button for following text input">
+                              (B)
+                            </label>
+                          </div>
+                          <div class="w-25">
+                            <label for="${resultData.QUESTION_UID}a3">
+                              <input type="radio" id="${resultData.QUESTION_UID}a3" name="${resultData.QUESTION_UID}" value="${resultData.QUESTION_UID}a3" aria-label="Radio button for following text input">
+                              (C)
+                            </label>
+                          </div>
+                          <div class="w-25">
+                            <label for="${resultData.QUESTION_UID}a4">
+                              <input type="radio" id="${resultData.QUESTION_UID}a4" name="${resultData.QUESTION_UID}" value="${resultData.QUESTION_UID}a4" aria-label="Radio button for following text input">
+                              (D)
+                            </label>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <!-- Prob6 -->
-                    <div class="mb-3">
-                      <div >6. Trebelers can earn reward points ______ than ever before with the new Perspectiva Plus credit card.</div>
-                      <div class="input-group-prepend d-flex justify-content-around mt-3">
-                        <div class="w-25">
-                          <label for="p6a1">
-                            <input type="radio" id="p6a1" name="Prob6" aria-label="Radio button for following text input">
-                            (A) quick
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p6a2">
-                            <input type="radio" id="p6a2" name="Prob6" aria-label="Radio button for following text input">
-                            (B) quickly
-                            
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p6a3">
-                            <input type="radio" id="p6a3" name="Prob6" aria-label="Radio button for following text input">
-                            (C) more quickly
-                            
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p6a4">
-                            <input type="radio" id="p6a4" name="Prob6" aria-label="Radio button for following text input">
-                            (D) most quickly
-                            
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Prob7 -->
-                    <div class="mb-3">
-                      <div >7. The doctor's _____ to Mr. Ellsworth was that he should exercise more to keep his wight down</div>
-                      <div class="input-group-prepend d-flex justify-content-around mt-3">
-                        <div class="w-25">
-                          <label for="p7a1">
-                            <input type="radio" id="p7a1" name="Prob7" aria-label="Radio button for following text input">
-                            (A) method
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p7a2">
-                            <input type="radio" id="p7a2" name="Prob7" aria-label="Radio button for following text input">
-                            (B) concern
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p7a3">
-                            <input type="radio" id="p7a3" name="Prob7" aria-label="Radio button for following text input">
-                            (C) relief
-                          </label>
-                        </div>
-                        <div class="w-25">
-                          <label for="p7a4">
-                            <input type="radio" id="p7a4" name="Prob7" aria-label="Radio button for following text input">
-                            (D) advice
-                          </label>
-                        </div>
-                      </div>
-                    </div>
+                    </c:forEach>
+                  </div>
                    
                     
 
                   <!-- btn -->
                   <div class="d-flex justify-content-end">
-                    <a class="btn btn-primary w-25 mt-5 mb-5" href="/mypage_selfTestResult">제출하고 점수 확인하기</a>
+                    <button class="btn btn-primary w-25 mt-5 mb-5" type="submit">제출하고 점수 확인하기</button>
                   </div>
                 </form>
               </div>

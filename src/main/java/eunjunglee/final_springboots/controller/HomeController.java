@@ -18,8 +18,8 @@ public class HomeController {
     HomeService homeService;
 
     // 로그인
-    @RequestMapping(value="/main_login", method = RequestMethod.GET)
-    public ModelAndView getLogin(ModelAndView modelAndView ){
+    @RequestMapping(value = "/main_login", method = RequestMethod.GET)
+    public ModelAndView getLogin(ModelAndView modelAndView) {
         // Object resultMap = 서비스.get서비스메소드(params);
         // modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/main/main_login");
@@ -27,26 +27,26 @@ public class HomeController {
     }
 
     // 회원가입
-    @RequestMapping(value="/main_signUp_form", method = RequestMethod.GET)
-    public ModelAndView getSighUpForm(@RequestParam Map<String, Object> params, ModelAndView modelAndView ){
-        // Object resultMap = homeService.get서비스메소드(params);
-        modelAndView.addObject("resultMap", resultMap);
+    @RequestMapping(value = "/home/Signupform", method = RequestMethod.GET)
+    public ModelAndView getSighUpForm(ModelAndView modelAndView) {
         modelAndView.setViewName("/main/main_signUp");
         return modelAndView;
     }
 
     // 회원가입 완료
-    @RequestMapping(value="/main_signUp", method = RequestMethod.POST)
-    public ModelAndView getSighUp(ModelAndView modelAndView ){
-        // Object resultMap = 서비스.get서비스메소드(params);
-        // modelAndView.addObject("resultMap", resultMap);
-        modelAndView.setViewName("/main/main_signUp");
+    @RequestMapping(value = "/home/SignupComplete", method = RequestMethod.GET)
+    public ModelAndView getSighUpData(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+        String birth = (String) params.get("BIRTY_year") + "-" + (String) params.get("BIRTY_month") + "-"
+                + (String) params.get("BIRTY_day");
+        params.put("BIRTH", birth);
+        homeService.insertOne(params);
+        modelAndView.setViewName("/main/main");
         return modelAndView;
     }
 
     // 메인페이지
-    @RequestMapping(value={"/main","/", ""}, method = RequestMethod.GET)
-    public ModelAndView getMain(ModelAndView modelAndView ){
+    @RequestMapping(value = { "/main", "/", "" }, method = RequestMethod.GET)
+    public ModelAndView getMain(ModelAndView modelAndView) {
         // Object resultMap = 서비스.get서비스메소드(params);
         // modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/main/main");
@@ -54,5 +54,4 @@ public class HomeController {
         return modelAndView;
     }
 
-    
 }

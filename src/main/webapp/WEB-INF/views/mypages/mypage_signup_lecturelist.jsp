@@ -14,7 +14,7 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/css/commons.css" />
+    <link rel="stylesheet" href="./css/commons.css" />
   </head>
   <body>
     <div class="container">
@@ -22,12 +22,12 @@
       <div class="m-5 mb-2">
         <div class="d-flex justify-content-end">
           <a
-            href="/main_login"
+            href="./main_login.html"
             class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
             >로그인</a
           >
           <a
-            href="/main_signUp"
+            href="./main_signUp.html"
             class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
             >회원가입</a
           >
@@ -35,7 +35,7 @@
         <!-- menu bar -->
         <div class="d-flex justify-content-around">
           <!-- logo -->
-          <a href="/main">
+          <a href="./main.html">
             <img
               src="https://user-images.githubusercontent.com/115060986/219259405-a08ffba7-6cbb-4a65-b3d1-a8a456b811b6.png"
               width="230"
@@ -45,31 +45,31 @@
             />
           </a>
           <a
-            href="/introduction_academy"
+            href="./introduction_academy.html"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             학원안내</a
           >
           <a
-            href="/lecture_signup_list"
+            href="./lecture_signup_list.html"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             온라인강의</a
           >
           <a
-            href="/community_lecture"
+            href="./community_student.html"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             커뮤니티</a
           >
           <a
-            href="/mypage_Lecture"
+            href="./mypage_Lecture.html"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             마이페이지</a
           >
           <a
-            href="/admin_member"
+            href="./admin_member.html"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             관리자페이지</a
@@ -90,15 +90,15 @@
               <ul class="list-unstyled components fs-5">
                 <li class="border-top border-1 p-2">
                   <a
-                    href="/mypage_Lecture"
+                    href="./mypage_Lecture.html"
                     target="_self"
                     class="text-decoration-none text-secondary"
-                    >내 강의보기</a
+                    >수강중인 강의</a
                   >
                 </li>
                 <li class="border-top border-1 p-2">
                   <a
-                    href="/mypage_signup_lecturelist"
+                    href="./mypage_signup_lecturelist.html"
                     target="_self"
                     class="text-decoration-none text-secondary"
                     >수강신청내역</a
@@ -106,7 +106,7 @@
                 </li>
                 <li class="border-top border-1 p-2">
                   <a
-                    href="/mypage_member_edit"
+                    href="./mypage_member_edit.html"
                     target="_self"
                     class="text-decoration-none text-secondary"
                     >개인정보수정</a
@@ -114,7 +114,7 @@
                 </li>
                 <li class="border-top border-1 p-2">
                   <a
-                    href="/mypage_selfTest"
+                    href="./mypage_selfTest.html"
                     target="_self"
                     class="text-decoration-none text-secondary"
                     >영어실력 테스트</a
@@ -130,72 +130,29 @@
 
               <!-- 게시글 목록 -->
               <div class="mt-3 mb-4">
-                <div class="row mt-5">
-                  <div class="col-6">내가 신청한 강의 이름</div>
-                  <div class="col-2 text-center">강사 이름</div>
+                <div class="row mt-5 fs-5 fw-bold">
+                  <div class="col-6">신청한 강의 내역</div>
+                  <div class="col-2 text-center">강사명</div>
+                  <div class="col-2 text-center">수강종료일</div>
                   <div class="col-2 text-center">바로가기</div>
-                  <div class="col-2 text-center">수강신청 취소</div>
                 </div>
               </div>
               <hr />
               <!-- 공지사항 -->
               <div class="">
+              <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
                 <div class="row mt-4 d-flex justify-content-around">
-                  <div class="col-6"><a href="">직장인 비즈니스 중국어</a></div>
-                  <div class="col-2 text-center">도우너</div>
+                  <div class="col-6">"${resultData.LECTURE_TITLE}"</div>
+                  <div class="col-2 text-center">"${resultData.MEMBER_ID}"</div>
+                  <div class="col-2 text-center">-</div>
                   <div class="col-2">
-                    <a href="/community_lecture" class="btn btn-primary"
+                    <a href="./community_lecture.html" class="btn btn-primary"
                       >강의 게시판</a
-                    >
-                  </div>
-                  <div class="col-2">
-                    <a
-                      href=""
-                      onclick="alert('수강신청을 취소하시겠습니까?')"
-                      class="btn btn-danger"
-                      >수강취소</a
                     >
                   </div>
                 </div>
                 <hr />
-                <div class="row mt-4 d-flex align-items-center">
-                  <div class="col-6"><a href="">850점 토익챌린지</a></div>
-                  <div class="col-2 text-center">둘리</div>
-                  <div class="col-2">
-                    <a href="/community_lecture" class="btn btn-primary"
-                      >강의 게시판</a
-                    >
-                  </div>
-                  <div class="col-2">
-                    <a
-                      href=""
-                      onclick="alert('수강신청을 취소하시겠습니까?')"
-                      class="btn btn-danger"
-                      >수강취소</a
-                    >
-                  </div>
-                </div>
-                <hr />
-                <div class="row mt-4 d-flex align-items-center">
-                  <div class="col-6">
-                    <a href="">누구나 할수있는 8주 영어문법 마스터</a>
-                  </div>
-                  <div class="col-2 text-center">고희동</div>
-                  <div class="col-2">
-                    <a href="/community_lecture" class="btn btn-primary"
-                      >강의 게시판</a
-                    >
-                  </div>
-                  <div class="col-2">
-                    <a
-                      href=""
-                      onclick="alert('수강신청을 취소하시겠습니까?')"
-                      class="btn btn-danger"
-                      >수강취소</a
-                    >
-                  </div>
-                </div>
-                <hr />
+                </c:forEach>
               </div>
             </div>
           </div>
@@ -204,7 +161,12 @@
       <!-- footer -->
       <footer class="m-5">
         <div>
-          <img src="https://user-images.githubusercontent.com/115060986/219259301-39328314-70ed-4993-ba31-b11e987b1218.png" width="50" height="50" alt="" />
+          <img
+            src="https://user-images.githubusercontent.com/115060986/219259301-39328314-70ed-4993-ba31-b11e987b1218.png"
+            width="50"
+            height="50"
+            alt=""
+          />
           <span class="opacity-50"> 은정 아카데미</span>
           <span class="ms-4 opacity-50">
             언어교육에 열정을 가진 사람들의 모임

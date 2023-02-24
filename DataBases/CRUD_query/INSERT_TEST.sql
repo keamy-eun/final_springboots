@@ -13,7 +13,7 @@ value ('LECTURER_06', 'ceromi123');
 insert into LECTURE 
 (LECTURE_NUMBER,LECTURE_TITLE,UPLOAD_DATE,STUDENT_COUNT,LECTURER_NUMBER,MEMBER_ID,LECTURE_INTRO) 
 values ('LECTURE_24', '영어회화초급01','2022-09-10',580,'LECTURER_06','ceromi123','영어회화능력을 향상시키는 기초 강좌'),
-('LECTURE_12', '영어문법중급A','2023-01-11',410,'LECTURER_05','ceromi123','문법에 재미를 느낄 수 있는 문법 중급 강좌');
+('LECTURE_12', '영어문법중급A','2023-01-11',410,'LECTURER_06','ceromi123','문법에 재미를 느낄 수 있는 문법 중급 강좌');
 
 insert into POLL_QUESTIONS 
 (QUESTION_UID,QUESTION,ORDERS) 
@@ -63,9 +63,9 @@ values('TQ01','1.Mark your answer on your answer sheet'),('TQ02','2. Mark your a
 
 insert into test_answers 
 (ANSWER_UID,ANSWER)
-value ('TA01','A'),('TA02','D'),('TA03','D'),('TA04','B'),('TA05','A'),('TA06','C'),('TA07','D');
+value ('TA01','A'),('TA02','B'),('TA03','C'),('TA04','D');
 
 insert into selftest_result 
 (MEMBER_ID,QUESTION_UID,ANSWER_UID) 
 values('ceromi123','TQ01','TA01'),('ceromi123','TQ02','TA02'),('ceromi123','TQ03','TA03'),
-('ceromi123','TQ04','TA04'),('ceromi123','TQ05','TA05'),('ceromi123','TQ06','TA06'),('ceromi123','TQ07','TA07');
+('ceromi123','TQ04','TA04'),('ceromi123','TQ05','TA01'),('ceromi123','TQ06','TA04'),('ceromi123','TQ07','TA03');
