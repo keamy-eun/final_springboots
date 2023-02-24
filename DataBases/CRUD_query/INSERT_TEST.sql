@@ -66,10 +66,6 @@ values('TQ01','1.Mark your answer on your answer sheet'),('TQ02','2. Mark your a
 ('TQ05','5. What is the womans main purpose in calling?'),('TQ06','6. Trebelers can earn reward points ______ than .'),
 ('TQ07','7. The doctors _____ to Mr. Ellsworth was that he should exercise more to keep his wight down');
 
-insert into test_answers 
-(ANSWER_UID,ANSWER)
-value ('TA01','A'),('TA02','B'),('TA03','C'),('TA04','D');
-
 insert into selftest_result 
 (MEMBER_ID,QUESTION_UID,ANSWER_UID) 
 values('ceromi123','TQ01','TA01'),('ceromi123','TQ02','TA02'),('ceromi123','TQ03','TA03'),
