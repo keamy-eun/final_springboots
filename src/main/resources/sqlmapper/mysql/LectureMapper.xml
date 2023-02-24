@@ -12,7 +12,7 @@
         parameterType="Map" resultType="Map">
         SELECT LECTURE_NUMBER  
         FROM LECTURE 
-        WHERE LECTURE_NUMBER = #{LECTURE_NUMBER}; 
+        WHERE LECTURE_NUMBER = #{LECTURE_NUMBER} 
     </select>
 
 <!-- 로그인 완료시 이름 가져오는 방식 변경해야함 -->

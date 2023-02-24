@@ -118,7 +118,7 @@
                     <div class="col-4">
                       <img
                         class="card-img h-100"
-                        src="https://img.lovepik.com/photo/50050/9741.jpg_wh860.jpg"
+                        src="${resultData.LECTURE_IMAGE}"
                         alt="Card image cap"
                       />
                     </div>
