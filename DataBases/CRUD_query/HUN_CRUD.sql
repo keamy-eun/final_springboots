@@ -54,14 +54,17 @@ WHERE MEMBER_ID='m1'
 
 	-- mypage_selfTest
 -- CREATE
-INSERT INTO TEST_ANSWERS (ANSWER_UID, ANSWER)
-VALUES ('TA01', '(A)'), ('TA01', '(B)'), ('TA01', '(C)'), ('TA01', '(D)'),
-('TA02', '(A)'), ('TA02', '(B)'), ('TA02', '(C)'), ('TA02', '(D)'),
-('TA03', '(A)Mans political view'), ('TA03', '(B)Mans future plan'), ('TA03', '(C)Mans academic career'), ('TA03', '(D)Mans professional backgroud'),
-('TA04', '(A)They might be true'), ('TA04', '(B)They upset her'), ('TA04', '(C)They suprised her'), ('TA04', '(D)They suprised her'),
-('TA05', '(A)To arrange for the car'), ('TA05', '(B)To tell the man'), ('TA05', '(C)mans credit card number'), ('TA05', '(D)the work will be finished'),
-('TA06', '(A)quick'), ('TA06', '(B)quickly'), ('TA06', '(C)more quickly'), ('TA06', '(D)most quickly'),
-('TA07', '(A)method'), ('TA07', '(B)concern'), ('TA07', '(C)relief'), ('TA07', '(D)advice')
+INSERT INTO TEST_QUESTIONS (QUESTION_UID, QUESTION)
+VALUES ('TQ08', '8. hi!! _ name is hun')
+;
+INSERT INTO TEST_ANSWERS (ANSWER_UID, ANSWER, QUESTION_UID)
+VALUES ('TA101', '(A)', 'TQ01'), ('TA102', '(B)', 'TQ01'), ('TA103', '(C)', 'TQ01'), ('TA104', '(D)', 'TQ01'),
+('TA201', '(A)', 'TQ02'), ('TA202', '(B)', 'TQ02'), ('TA203', '(C)', 'TQ02'), ('TA204', '(D)', 'TQ02'),
+('TA301', '(A)Mans political view', 'TQ03'), ('TA302', '(B)Mans future plan', 'TQ03'), ('TA303', '(C)Mans academic career', 'TQ03'), ('TA304', '(D)Mans professional backgroud', 'TQ03'),
+('TA401', '(A)They might be true', 'TQ04'), ('TA402', '(B)They upset her', 'TQ04'), ('TA403', '(C)They suprised her', 'TQ04'), ('TA404', '(D)They suprised her', 'TQ04'),
+('TA501', '(A)To arrange for the car', 'TQ05'), ('TA502', '(B)To tell the man', 'TQ05'), ('TA503', '(C)mans credit card number', 'TQ05'), ('TA504', '(D)the work will be finished', 'TQ05'),
+('TA601', '(A)quick', 'TQ06'), ('TA602', '(B)quickly', 'TQ06'), ('TA603', '(C)more quickly', 'TQ06'), ('TA604', '(D)most quickly', 'TQ06'),
+('TA701', '(A)method', 'TQ07'), ('TA702', '(B)concern', 'TQ07'), ('TA703', '(C)relief', 'TQ07'), ('TA704', '(D)advice', 'TQ07')
 ;
 -- READ
 SELECT  *
@@ -69,10 +72,16 @@ FROM TEST_QUESTIONS
 INNER JOIN TEST_ANSWERS
 -- WHERE TEST_QUESTIONS.QUESTION_UID = TEST_ANSWERS.QUESTION_UID
 ;
+SELECT  *
+FROM TEST_QUESTIONS
+;
+SELECT *
+FROM TEST_ANSWERS
+;
 -- UPDATE
 UPDATE TEST_QUESTIONS 
 SET QUESTION = '7. The students _____ to Mr. Ellsworth was that he should exercise more to keep his wight down'
---  그냥 doctor을 student로만 바꿔둠
+-- 그냥 doctor을 student로만 바꿔둠
 WHERE QUESTION_UID = 'TQ07'
 ;
 -- DELETE
