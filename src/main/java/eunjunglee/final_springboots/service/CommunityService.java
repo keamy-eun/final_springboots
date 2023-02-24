@@ -11,7 +11,7 @@ public class CommunityService {
     SharedDaos sharedDaos;
 
     public Object getList(Object dataMap){
-        String sqlMapId = "Community.selectListByUID";
+        String sqlMapId = "Community.selectListByID";
         Object result = sharedDaos.getList(sqlMapId, dataMap);
         return result;
     }

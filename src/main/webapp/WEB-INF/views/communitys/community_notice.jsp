@@ -14,10 +14,10 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css"
-    />
+
+    <!-- CSS링크 -->
+
+    <link rel="stylesheet" href="./css/commons.css" />
   </head>
   <body>
     <div class="container">
@@ -26,12 +26,12 @@
       <div class="m-5 mb-2">
         <div class="d-flex justify-content-end">
           <a
-            href="/main_login"
+            href="./main_login.html"
             class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
             >로그인</a
           >
           <a
-            href="/main_signUp"
+            href="./main_signUp.html"
             class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
             >회원가입</a
           >
@@ -39,7 +39,7 @@
         <!-- menu bar -->
         <div class="d-flex justify-content-around">
           <!-- logo -->
-          <a href="/main">
+          <a href="./main.html">
             <img
               src="https://user-images.githubusercontent.com/115060986/219259405-a08ffba7-6cbb-4a65-b3d1-a8a456b811b6.png"
               width="230"
@@ -49,31 +49,31 @@
             />
           </a>
           <a
-            href="/introduction_academy"
+            href="./introduction_academy.html"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             학원안내</a
           >
           <a
-            href="/lecture_signup_list"
+            href="./lecture_signup_list.html"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             온라인강의</a
           >
           <a
-            href="/community_lecture"
+            href="./community_student.html"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             커뮤니티</a
           >
           <a
-            href="/mypage_Lecture"
+            href="./mypage_Lecture.html"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             마이페이지</a
           >
           <a
-            href="/admin_member"
+            href="./admin_member.html"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             관리자페이지</a
@@ -96,133 +96,113 @@
                 <ul class="list-unstyled components fs-5">
                   <li class="border-top border-1 p-2">
                     <a
-                      href="/community_lecture"
+                      href="./community_student.html"
                       class="text-decoration-none text-secondary"
-                      >강좌 게시판</a
+                      >학생 커뮤니티</a
                     >
                   </li>
                   <li class="border-top border-1 p-2">
                     <a
-                      href="/community_lecturer"
+                      href="./community_lecturer.html"
                       class="text-decoration-none text-secondary"
                       >강사 게시판</a
-                    >
-                  </li>
-                  <li class="border-top border-1 p-2">
-                    <a
-                      href="/community_student"
-                      class="text-decoration-none text-secondary"
-                      >학생 게시판</a
-                    >
-                  </li>
-                  <li class="border-top border-1 p-2">
-                    <a
-                      href="/community_noctice"
-                      class="text-decoration-none text-secondary"
-                      >공지사항</a
                     >
                   </li>
                 </ul>
               </nav>
             </div>
+
             <!--  -->
             <div class="container col-7 mt-5">
-              <!-- 글쓰기 -->
-              <div class="mb-3 text-end">
-                <button class="border btn">글쓰기</button>
-              </div>
+              
 
               <!-- 게시판 테이블 -->
-              <div class="col-12 text-start">
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title">공지사항</h3>
-                    <div class="card-tools">
-                      <div
-                        class="input-group input-group-sm"
-                        style="width: 150px"
-                      >
-                        <input
-                          type="text"
-                          name="table_search"
-                          class="form-control float-right"
-                          placeholder="Search"
-                        />
-                        <div class="input-group-append">
-                          <button type="submit" class="btn btn-default">
-                            검색
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card-body table-responsive p-0">
-                    <table class="table table-hover text-nowrap">
-                      <thead>
-                        <tr>
-                          <th>NO</th>
-                          <th>제목</th>
-                          <th>작성자</th>
-                          <th>작성일</th>
-                          <th>조회수</th>
-                        </tr>
+              <table class="table text-start">
+                <div class="row mb-3 bg-warning bg-opacity-10 p-3 border border-0 rounded-5">
+                <div class="col-3 h4"><a href="./community_student.html" style="text-decoration: none;" class="text-black">학생게시판</a> </div>
+                <!-- <div class="col-3 h4"><a href="./community_lecture.html" style="text-decoration: none;" class="text-black">강좌게시판</a> </div> -->
+                <div class="col-3 h4"><a href="./community_notice.html" style="text-decoration: none;" class="text-black">공지사항</a></div>
+              </div>
+              <!-- 글쓰기 -->
+              <div class="mb-3 text-end">
+                <button class="border btn">
+                  <a href="./community_postWrite.html" class="text-black" style="text-decoration: none">글쓰기</a>
+                </button>
+              </div>
+                  <tr>
+                    <th>NO</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                    <th>조회수</th>
+                  </tr>
+                
                       </thead>
                       <tbody>
                         <tr>
-                          <td>공지</td>
-                          <td>[은정이아카데미] 강의 시간표</td>
+                          <td>5</td>
+                          <td>[은정이아카데미] 강의 시간표 [101]</td>
                           <td>관리자</td>
                           <td>2023-01-07</td>
                           <td>127</td>
                         </tr>
                         <tr>
-                          <td>공지</td>
-                          <td>[은정이아카데미] 이달의 이벤트와 할인 혜택</td>
+                          <td>4</td>
+                          <td>[은정이아카데미] 이달의 이벤트와 할인 혜택[1120]</td>
                           <td>관리자</td>
                           <td>2023-01-07</td>
                           <td>1122</td>
                         </tr>
                         <tr>
-                          <td>공지</td>
-                          <td>[은정이아카데미] 학사일정 안내</td>
+                          <td>3</td>
+                          <td>[은정이아카데미] 학사일정 안내[5]</td>
                           <td>관리자</td>
                           <td>2023-01-06</td>
                           <td>22</td>
                         </tr>
                         <tr>
-                          <td>공지</td>
-                          <td>[은정이아카데미] 겨울방학 특강 안내</td>
+                          <td>2</td>
+                          <td>[은정이아카데미] 겨울방학 특강 안내[124]</td>
                           <td>관리자</td>
                           <td>2023-01-03</td>
                           <td>777</td>
                         </tr>
                         <tr>
-                          <td>공지</td>
-                          <td>1월21(토) ~ 1월24일(화) 설연휴 휴무 안내</td>
+                          <td>1</td>
+                          <td>1월21(토) ~ 1월24일(화) 설연휴 휴무 안내[12]</td>
                           <td>관리자</td>
                           <td>2023-01-03</td>
                           <td>57</td>
                         </tr>
                       </tbody>
                     </table>
+                    <!-- 페이징 -->
+                    <div class="text-center">
+                      <button class="btn">이전</button>
+                      <button class="btn">1</button>
+                      <button class="btn">2</button>
+                      <button class="btn">3</button>
+                      <button class="btn">4</button>
+                      <button class="btn">다음</button>
+                    </div>
+      
+                    <div class="input-group input-group-sm mt-3">
+                      <input
+                        type="text"
+                        name="table_search"
+                        class="form-control float-right"
+                        placeholder="Search"
+                      />
+                      
+      
+                      <button type="submit" class="btn btn-default border">
+                        검색
+                      </button>
+                    </div>
                   </div>
-                </div>
-
-                <!-- 페이징 -->
-                <div class="text-center">
-                  <button class="btn">이전</button>
-                  <button class="btn">1</button>
-                  <button class="btn">2</button>
-                  <button class="btn">3</button>
-                  <button class="btn">4</button>
-                  <button class="btn">다음</button>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
       <!-- footer -->
       <footer class="m-5">
         <div>
