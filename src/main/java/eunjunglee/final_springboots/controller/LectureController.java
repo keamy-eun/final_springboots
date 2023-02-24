@@ -40,7 +40,7 @@ public class LectureController {
      // 강좌신청
      @RequestMapping(value="/lecture_signup", method = RequestMethod.POST)
      public ModelAndView getPoll(@RequestParam Map<String, Object> params, ModelAndView modelAndView ){
-         Object resultMap = lectureService.getLectureList(params);
+         Object resultMap = lectureService.insert(params);
          modelAndView.addObject("resultMap", resultMap);
          modelAndView.setViewName("/mypages/mypage_Lecture");
          return modelAndView;

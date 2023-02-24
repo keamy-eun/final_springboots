@@ -27,4 +27,12 @@
         SELECT * 
         FROM POLL_ANSWERS 
     </select>
+
+    <insert id="insertQnA" 
+        parameterType="Map">
+        insert into poll_response 
+        (PQ01,PQ01_1,PQ02,PQ03,PQ04,POLL_DATE) 
+        value (#{PQ01},#{PQ01_1},#{PQ02},#{PQ03},#{PQ04},now());
+    </insert>
+
 </mapper>

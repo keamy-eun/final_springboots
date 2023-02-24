@@ -116,13 +116,13 @@
             <div class="fs-3">${resultList[2].MEMBER_NAME} 회원님 안녕하세요!</div>
             <c:forEach items="${resultList[0]}" var="Que" varStatus="loop">
               <c:if test="${Que.ORDERS eq '1' || Que.ORDERS eq '2' || Que.ORDERS eq '3'}">
-                <label for="" class="mt-4 mb-3">${Que.ORDERS}. ${Que.QUESTION}</label>
+              <label class="mt-4 mb-3">${Que.ORDERS}. ${Que.QUESTION}</label>
                 <div class="col">
-                  <select name="" id="" class="form-control">
+                  <select name="${Que.QUESTION_UID}" id="" class="form-control">
                     <option class="text-secondary" selected>선택</option>
                       <c:forEach items="${resultList[1]}" var="Ans" varStatus="loop">
                         <c:if test="${Que.QUESTION_UID eq Ans.QUESTION_UID}">
-                          <option value="">${Ans.ANSWER}</option>
+                          <option>${Ans.ANSWER}</option>
                         </c:if>
                       </c:forEach>
                     </select>
@@ -130,10 +130,10 @@
               </c:if>
               <c:if test="${Que.ORDERS eq '1-1' || Que.ORDERS eq '4'}">
                 <div class="mt-4 mb-2">
-                  <label for=""
+                  <label class="mt-4 mb-3"
                     >${Que.ORDERS}. ${Que.QUESTION}</label
                   >
-                  <input class="form-control mt-3" type="text" />
+                  <input class="form-control mt-3" type="text" name="${Que.QUESTION_UID}"  />
                 </div>
               </c:if>
             </c:forEach>
@@ -141,7 +141,7 @@
             <div class="form-group row">
             <!-- btn -->
             <div class="d-flex justify-content-end">
-              <button type="submit" class="btn btn-primary w-25 mt-5 mb-5" onclick="alert('수강신청 되었습니다! 마이페이지로 이동할게요')" >
+              <button class="btn btn-primary w-25 mt-5 mb-5" onclick="alert('수강신청 되었습니다! 마이페이지로 이동할게요')" >
                 수강신청하기
               </button>
             </div>
