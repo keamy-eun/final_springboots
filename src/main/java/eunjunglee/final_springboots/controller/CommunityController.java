@@ -56,9 +56,9 @@ public class CommunityController {
 
     // 게시글 작성 페이지 ㅇ
     @RequestMapping(value="/community_posting", method = RequestMethod.GET)
-    public ModelAndView getPosting( ModelAndView modelAndView ){
-        // Object resultMap = 서비스.get서비스메소드(params);
-        // modelAndView.addObject("resultMap", resultMap);
+    public ModelAndView getPosting( ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
+        Object resultMap = communityService.getList(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/communitys/community_posting");
         return modelAndView;
     }
@@ -68,6 +68,7 @@ public class CommunityController {
     public ModelAndView getStudent( ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
         Object resultMap = communityService.getList(params);
         modelAndView.addObject("resultMap", resultMap);
+        // resultmap에 값이 다 들어있는 것 확인.
         modelAndView.setViewName("/communitys/community_student");
         return modelAndView;
     }
