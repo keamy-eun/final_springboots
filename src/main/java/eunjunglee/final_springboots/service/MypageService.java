@@ -55,45 +55,25 @@ public class MypageService {
         return result;
     }
 
-    // public Object getListWithSignUpLectureList(Object dataMap) {
-    // String sqlMapId = "mypage.selectByLectureNumber"; // SELECT * FROM ENROLLMENT
-    // where MEMBER_ID = 'circle01'
-    // Object enrollmentresult = sharedDaos.getList(sqlMapId, dataMap);
-    // // HashMap<String,Object> temphash = new HashMap<>();
-    // int enrollmentresult_length = ((ArrayList) enrollmentresult).size();
-    // // id에 맞는 수업번호와 이름을 가져옴
-    // for (int i = enrollmentresult_length - 1; i >= 0; i--) {
-    // if (!((HashMap<String, Object>) (((ArrayList)
-    // enrollmentresult).get(i))).get("MEMBER_ID")
-    // .equals(((HashMap<String, Object>) dataMap).get("MEMBER_ID"))) {
-    // ((ArrayList) enrollmentresult).remove(i);
-    // }
-    // }
-    // ArrayList result = new ArrayList<>();
-    // HashMap<String, Object> tempresult = new HashMap<>();
-    // // 가져온 memberID와 lecture번호에서 수업이름과 강사이름을 가져옴
+    public Object getEditList(Object dataMap) {
+        String sqlMapId = "mypage.selectByMemberID";
+        Object result = sharedDaos.getList(sqlMapId, dataMap);
+        String birthDay = (String) ((HashMap<String, Object>) (((ArrayList) result).get(0))).get("BIRTH");
+        String[] birthArr = birthDay.split("-", 3);
+        String birthDay_year = birthArr[0];
+        String BIRTY_month = birthArr[0];
+        String BIRTY_day = birthArr[0];
+        ((HashMap<String, Object>) (((ArrayList) result).get(0))).put("BIRTY_year", birthDay_year);
+        ((HashMap<String, Object>) (((ArrayList) result).get(0))).put("BIRTY_month", BIRTY_month);
+        ((HashMap<String, Object>) (((ArrayList) result).get(0))).put("BIRTY_day", BIRTY_day);
+        return (Object) (((ArrayList) result).get(0));
+    }
 
-    // Iterator it = ((ArrayList) enrollmentresult).iterator();
-    // while (it.hasNext()) {
-    // HashMap<String, Object> tempHash = new HashMap<>();
-    // tempHash = (HashMap<String, Object>) it.next();
-    // sqlMapId = "mypage.selectLectureNameByLectureNumber";
-    // Object iterResultLectureName = sharedDaos.getList(sqlMapId, tempHash);
-    // sqlMapId = "mypage.selectLecturerNameByMember";
-    // Object iterResultLecturerName = sharedDaos.getList(sqlMapId, tempHash);
-
-    // tempresult.put("LECTURER_TITLE",
-    // ((HashMap<String, Object>) (((ArrayList)
-    // iterResultLectureName).get(0))).get("LECTURE_TITLE"));
-    // tempresult.put("MEMBER_NAME",
-    // ((HashMap<String, Object>) (((ArrayList)
-    // iterResultLecturerName).get(0))).get("MEMBER_NAME"));
-
-    // result.add(tempresult.clone());
-    // }
-
-    // return result;
-    // }
+    public Object getList(Object dataMap) {
+        String sqlMapId = "mypage.selectByMemberID";
+        Object result = sharedDaos.getList(sqlMapId, dataMap);
+        return result;
+    }
 
     public Object getOne(Object dataMap) {
         String sqlMapId = "mypage.selectByMemberID";

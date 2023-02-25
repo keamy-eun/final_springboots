@@ -48,11 +48,11 @@ public class MypageController {
     }
 
     // 내 정보수정
-    @RequestMapping(value = "/Edit/{uniqueId}", method = RequestMethod.GET)
-    public ModelAndView mypageEdit(@RequestParam Map<String, Object> params, @PathVariable String uniqueId,
-            ModelAndView modelAndView) {
-        params.put("MEMBER_ID", uniqueId);
-        Object resultMap = mypageService.getOne(params);
+    @RequestMapping(value = "/EditForm", method = RequestMethod.GET)
+    public ModelAndView mypageEdit(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+        // 로그인에서 가져오는 아이디 저장(하드코딩)
+        params.put("MEMBER_ID", "circle01");
+        Object resultMap = mypageService.getEditList(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/mypages/mypage_member_edit");
         return modelAndView;

@@ -35,16 +35,18 @@
     <!-- call mypage.selectByMemberID -->
     <select id="selectByMemberID" 
         parameterType="Map" resultType="Map">
-    SELECT *
-    FROM MEMBER
-    WHERE MEMBER_ID = #{MEMBER_ID}
+        SELECT *
+        FROM MEMBER
+        WHERE MEMBER_ID = #{MEMBER_ID}
     </select>
+
     <!-- call mypage.getQuestions -->
     <select id="getQuestions" 
         parameterType="Map" resultType="Map">
     SELECT * 
     FROM test_questions
     </select>
+
     <!-- call mypage.insertWithUID -->
     <insert id="insertWithUID" parameterType="Map">
         insert into CIP_COMMON_CODE 
