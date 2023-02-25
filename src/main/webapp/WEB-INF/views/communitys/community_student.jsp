@@ -148,7 +148,7 @@
                 <div class="mb-3 text-end">
                   <button class="border btn">
                     <a
-                      href="/community_postWrite"
+                      href="/community_posting"
                       class="text-black"
                       style="text-decoration: none"
                       >글쓰기</a
