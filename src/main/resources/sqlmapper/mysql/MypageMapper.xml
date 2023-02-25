@@ -5,11 +5,33 @@
     <!-- call mypage.selectByLectureNumber -->
     <select id="selectByLectureNumber" 
         parameterType="Map" resultType="Map">
-        SELECT * 
-        FROM LECTURE
-        INNER JOIN LECTURER
-        WHERE LECTURE.LECTURER_NUMBER = LECTURER.LECTURER_NUMBER
+        SELECT MEMBER.MEMBER_ID, ENROLLMENT.LECTURE_NUMBER, ENROLLMENT.ENROLL_DATE
+        FROM ENROLLMENT
+        inner join MEMBER
+        ON MEMBER.MEMBER_ID = ENROLLMENT.MEMBER_ID
     </select>
+
+    <!-- 강의번호로 강의 이름알기 -->
+    <!-- call mypage.selectLectureNameByLectureNumber -->
+    <select id="selectLectureNameByLectureNumber" 
+        parameterType="Map" resultType="Map">
+        SELECT LECTURE_TITLE, LECTURER_NUMBER
+        FROM LECTURE
+        WHERE LECTURE_NUMBER = #{LECTURE_NUMBER}
+    </select>
+
+    <!-- 강의번호로 강사 이름알기 -->
+    <!-- call mypage.selectLecturerNameByMember -->
+    <select id="selectLecturerNameByMember" 
+        parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM LECTURER 
+        inner join LECTURE ON LECTURE.LECTURER_NUMBER = LECTURER.LECTURER_NUMBER
+        inner join MEMBER ON MEMBER.MEMBER_ID = LECTURER.MEMBER_ID
+        where LECTURE_NUMBER = #{LECTURE_NUMBER}
+    </select>
+
+
     <!-- call mypage.selectByMemberID -->
     <select id="selectByMemberID" 
         parameterType="Map" resultType="Map">

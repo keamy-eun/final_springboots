@@ -64,7 +64,7 @@
             커뮤니티</a
           >
           <a
-            href="./mypage_Lecture.html"
+            href="/mypage/Lecture"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             마이페이지</a
@@ -91,7 +91,7 @@
               <ul class="list-unstyled components fs-5">
                 <li class="border-top border-1 p-2">
                   <a
-                    href="./mypage_Lecture.html"
+                    href="/mypage/Lecture"
                     target="_self"
                     class="text-decoration-none text-secondary"
                     >수강중인 강의</a
@@ -99,7 +99,7 @@
                 </li>
                 <li class="border-top border-1 p-2">
                   <a
-                    href="./mypage_signup_lecturelist.html"
+                    href="/mypage/LectureSignUpList"
                     target="_self"
                     class="text-decoration-none text-secondary"
                     >수강신청내역</a
@@ -161,8 +161,8 @@
                 <hr /> --%>
                 <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
                   <div class="row mt-4 d-flex justify-content-around">
-                  <div class="col-6">"${resultData.LECTURE_TITLE}"</div>
-                  <div class="col-2 text-center">"${resultData.MEMBER_ID}"</div>
+                  <div class="col-6">${resultData.LECTURER_TITLE}</div>
+                  <div class="col-2 text-center">${resultData.MEMBER_NAME}</div>
                   <div class="col-2">
                     <a href="./community_lecture.html" class="btn btn-primary"
                       >강의보러가기</a

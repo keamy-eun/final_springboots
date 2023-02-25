@@ -23,11 +23,27 @@ public class MypageController {
     // 내 강좌보기
     @RequestMapping(value = { "/Lecture", "", "/" }, method = RequestMethod.GET)
     public ModelAndView getMypageLecture(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+        // 로그인에서 가져오는 아이디 저장(하드코딩)
+        params.put("MEMBER_ID", "circle01");
+        // result에 MEMBER_ID와 LECTURE_NUMBER만 필터링해서 가져옴
         Object resultMap = mypageService.getlistToMylectureMain(params);
 
-        // TODO :: 2개의 sql이 나올수 있도록 resultMap 합치기
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/mypages/mypage_Lecture");
+        return modelAndView;
+    }
+
+    // 수강강좌 확인 ㅇ
+    @RequestMapping(value = "/LectureSignUpList", method = RequestMethod.GET)
+    public ModelAndView getMypageSignupLecturelist(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+        // 로그인에서 가져오는 아이디 저장(하드코딩)
+        params.put("MEMBER_ID", "circle01");
+        // result에 MEMBER_ID와 LECTURE_NUMBER만 필터링해서 가져옴
+        Object resultMap = mypageService.getlistToMylectureMain(params);
+
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("/mypages/mypage_signup_lecturelist");
         return modelAndView;
     }
 
@@ -60,15 +76,4 @@ public class MypageController {
         return modelAndView;
     }
 
-    // 수강강좌 확인 ㅇ
-    @RequestMapping(value = "/LectureSignUpList", method = RequestMethod.GET)
-    public ModelAndView getMypageSignupLecturelist(@RequestParam Map<String, Object> params,
-            ModelAndView modelAndView) {
-        Object resultMap = mypageService.getlistToMylectureMain(params);
-
-        // TODO :: 2개의 sql이 나올수 있도록 resultMap 합치기
-        modelAndView.addObject("resultMap", resultMap);
-        modelAndView.setViewName("/mypages/mypage_signup_lecturelist");
-        return modelAndView;
-    }
 }
