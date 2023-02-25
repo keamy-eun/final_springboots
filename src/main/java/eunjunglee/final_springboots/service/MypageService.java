@@ -69,6 +69,25 @@ public class MypageService {
         return (Object) (((ArrayList) result).get(0));
     }
 
+    public Object getQAList(Object dataMap) {
+        String sqlMapId = "mypage.selectByQAlist";
+        Object result = sharedDaos.getList(sqlMapId, dataMap);
+        ArrayList resultList = new ArrayList<>();
+        HashMap<String, Object> tempHash = new HashMap<>();
+        for (int i = 0; i < ((ArrayList) result).size(); i++) {
+            tempHash.put("ANSWER" + Integer.toString((i % 4) + 1),
+                    ((HashMap<String, Object>) (((ArrayList) result).get(i))).get("ANSWER"));
+            if ((i % 4) == 3) {
+                tempHash.put("QUESTION", ((HashMap<String, Object>) (((ArrayList) result).get(i))).get("QUESTION"));
+                tempHash.put("QUESTION_UID",
+                        ((HashMap<String, Object>) (((ArrayList) result).get(i))).get("QUESTION_UID"));
+                resultList.add(tempHash.clone());
+                tempHash = new HashMap<>();
+            }
+        }
+        return (Object) resultList;
+    }
+
     public Object getList(Object dataMap) {
         String sqlMapId = "mypage.selectByMemberID";
         Object result = sharedDaos.getList(sqlMapId, dataMap);
@@ -78,12 +97,6 @@ public class MypageService {
     public Object getOne(Object dataMap) {
         String sqlMapId = "mypage.selectByMemberID";
         Object result = sharedDaos.getOne(sqlMapId, dataMap);
-        return result;
-    }
-
-    public Object getQuestionList(Object dataMap) {
-        String sqlMapId = "mypage.getQuestions";
-        Object result = sharedDaos.getList(sqlMapId, dataMap);
         return result;
     }
 

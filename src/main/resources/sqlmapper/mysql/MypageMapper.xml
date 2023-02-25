@@ -40,11 +40,13 @@
         WHERE MEMBER_ID = #{MEMBER_ID}
     </select>
 
-    <!-- call mypage.getQuestions -->
-    <select id="getQuestions" 
+    <!-- call mypage.selectByQAlist -->
+    <select id="selectByQAlist" 
         parameterType="Map" resultType="Map">
-    SELECT * 
-    FROM test_questions
+        SELECT * 
+        FROM test_answers
+        inner join test_questions
+        where test_answers.QUESTION_UID = test_questions.QUESTION_UID
     </select>
 
     <!-- call mypage.insertWithUID -->

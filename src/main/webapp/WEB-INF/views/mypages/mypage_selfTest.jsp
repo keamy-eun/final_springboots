@@ -156,6 +156,7 @@
                      <!-- Prob1 -->
                     <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
                       <div class="mb-3">
+                        
                         <div >${resultData.QUESTION}</div>
                         <div class="mt-3">
                         <c:set var="QUESTION_NUM" value="${resultData.QUESTION_UID}" />
@@ -170,25 +171,25 @@
                           <div class="w-25">
                             <label for="${resultData.QUESTION_UID}a1">
                               <input type="radio" id="${resultData.QUESTION_UID}a1" name="${resultData.QUESTION_UID}" value="${resultData.QUESTION_UID}a1" aria-label="Radio button for following text input">
-                              (A)
+                              ${resultData.ANSWER1}
                             </label>
                           </div>
                           <div class="w-25">
                             <label for="${resultData.QUESTION_UID}a2">
                               <input type="radio" id="${resultData.QUESTION_UID}a2" name="${resultData.QUESTION_UID}" value="${resultData.QUESTION_UID}a2" aria-label="Radio button for following text input">
-                              (B)
+                              ${resultData.ANSWER2}
                             </label>
                           </div>
                           <div class="w-25">
                             <label for="${resultData.QUESTION_UID}a3">
                               <input type="radio" id="${resultData.QUESTION_UID}a3" name="${resultData.QUESTION_UID}" value="${resultData.QUESTION_UID}a3" aria-label="Radio button for following text input">
-                              (C)
+                              ${resultData.ANSWER3}
                             </label>
                           </div>
                           <div class="w-25">
                             <label for="${resultData.QUESTION_UID}a4">
                               <input type="radio" id="${resultData.QUESTION_UID}a4" name="${resultData.QUESTION_UID}" value="${resultData.QUESTION_UID}a4" aria-label="Radio button for following text input">
-                              (D)
+                              ${resultData.ANSWER4}
                             </label>
                           </div>
                         </div>

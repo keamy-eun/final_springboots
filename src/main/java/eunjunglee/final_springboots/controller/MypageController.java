@@ -59,9 +59,9 @@ public class MypageController {
     }
 
     // 자기실력 테스트 ㅇ
-    @RequestMapping(value = "/selfTest", method = RequestMethod.GET)
+    @RequestMapping(value = "/selfTestForm", method = RequestMethod.GET)
     public ModelAndView getSelfTest(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
-        Object resultMap = mypageService.getQuestionList(params);
+        Object resultMap = mypageService.getQAList(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/mypages/mypage_selfTest");
         return modelAndView;
