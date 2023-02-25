@@ -3,14 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-<<<<<<< HEAD
-    "scrollTop": -603.4999951322902,
-    "scrollLeft": -194.4000000000004,
-=======
-    "scrollTop": -510,
-    "scrollLeft": -278,
->>>>>>> 40888b28dcc56755f0beb372c594a833243e8ec4
-    "zoomLevel": 0.8,
+    "scrollTop": -767.49998976785,
+    "scrollLeft": -483.33855034245124,
+    "zoomLevel": 0.6,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -148,7 +143,7 @@
           "active": false,
           "left": 54,
           "top": 1378.75,
-          "zIndex": 2,
+          "zIndex": 1,
           "widthName": 93.74267578125,
           "widthComment": 60
         },
@@ -256,11 +251,7 @@
           "active": false,
           "left": 80.25,
           "top": 90.25,
-<<<<<<< HEAD
-          "zIndex": 11,
-=======
-          "zIndex": 13,
->>>>>>> 40888b28dcc56755f0beb372c594a833243e8ec4
+          "zIndex": 8,
           "widthName": 75.1884765625,
           "widthComment": 60
         },
@@ -506,7 +497,7 @@
           "active": false,
           "left": 739.75,
           "top": 1340.25,
-          "zIndex": 31,
+          "zIndex": 10,
           "widthName": 124.78271484375,
           "widthComment": 60
         },
@@ -589,15 +580,9 @@
         ],
         "ui": {
           "active": false,
-<<<<<<< HEAD
-          "left": 1400,
-          "top": 741.25,
-          "zIndex": 14,
-=======
           "left": 1311.25,
           "top": 758.75,
-          "zIndex": 38,
->>>>>>> 40888b28dcc56755f0beb372c594a833243e8ec4
+          "zIndex": 12,
           "widthName": 125.29052734375,
           "widthComment": 119
         },
@@ -728,7 +713,7 @@
           "active": false,
           "left": 1458,
           "top": 1176.5,
-          "zIndex": 4,
+          "zIndex": 2,
           "widthName": 111.78271484375,
           "widthComment": 60
         },
@@ -790,7 +775,7 @@
           "active": false,
           "left": 744.5,
           "top": 1724,
-          "zIndex": 33,
+          "zIndex": 11,
           "widthName": 82.158203125,
           "widthComment": 60
         },
@@ -1011,9 +996,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 752.3612,
-          "top": 928.8473,
-          "zIndex": 16,
+          "left": 734.3055,
+          "top": 933.014,
+          "zIndex": 28,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1188,15 +1173,9 @@
         ],
         "ui": {
           "active": false,
-<<<<<<< HEAD
-          "left": 81.1663,
-          "top": 462.5837,
-          "zIndex": 33,
-=======
           "left": 74.9163,
           "top": 453.8337,
-          "zIndex": 50,
->>>>>>> 40888b28dcc56755f0beb372c594a833243e8ec4
+          "zIndex": 16,
           "widthName": 62.67724609375,
           "widthComment": 60
         },
@@ -1256,15 +1235,9 @@
         ],
         "ui": {
           "active": false,
-<<<<<<< HEAD
-          "left": 80.25,
-          "top": 938,
-          "zIndex": 17,
-=======
           "left": 78.25,
           "top": 934,
-          "zIndex": 7,
->>>>>>> 40888b28dcc56755f0beb372c594a833243e8ec4
+          "zIndex": 4,
           "widthName": 72.0654296875,
           "widthComment": 60
         },
@@ -1349,11 +1322,7 @@
           "active": false,
           "left": 640.2224,
           "top": 332.778,
-<<<<<<< HEAD
-          "zIndex": 9,
-=======
-          "zIndex": 11,
->>>>>>> 40888b28dcc56755f0beb372c594a833243e8ec4
+          "zIndex": 7,
           "widthName": 103.14990234375,
           "widthComment": 80
         },
@@ -1438,11 +1407,7 @@
           "active": false,
           "left": 1365.5,
           "top": 78.75,
-<<<<<<< HEAD
-          "zIndex": 8,
-=======
-          "zIndex": 10,
->>>>>>> 40888b28dcc56755f0beb372c594a833243e8ec4
+          "zIndex": 6,
           "widthName": 119.0380859375,
           "widthComment": 60
         },
@@ -1550,11 +1515,7 @@
           "active": false,
           "left": 653,
           "top": 33.75,
-<<<<<<< HEAD
-          "zIndex": 7,
-=======
-          "zIndex": 9,
->>>>>>> 40888b28dcc56755f0beb372c594a833243e8ec4
+          "zIndex": 5,
           "widthName": 108.20263671875,
           "widthComment": 60,
           "color": "#1D1010"
@@ -1615,15 +1576,9 @@
         ],
         "ui": {
           "active": false,
-<<<<<<< HEAD
-          "left": 1532.0289,
-          "top": 527.6583,
-          "zIndex": 12,
-=======
           "left": 1570.7789,
           "top": 551.4083,
-          "zIndex": 41,
->>>>>>> 40888b28dcc56755f0beb372c594a833243e8ec4
+          "zIndex": 23,
           "widthName": 119.01904296875,
           "widthComment": 60
         },
@@ -1706,15 +1661,9 @@
         ],
         "ui": {
           "active": false,
-<<<<<<< HEAD
-          "left": 1538.5417,
-          "top": 1031.1585,
-          "zIndex": 13,
-=======
           "left": 1462.2917,
           "top": 1024.9085,
-          "zIndex": 43,
->>>>>>> 40888b28dcc56755f0beb372c594a833243e8ec4
+          "zIndex": 26,
           "widthName": 108.18359375,
           "widthComment": 60
         },
@@ -1866,9 +1815,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1428,
-          "top": 257.75,
-          "zIndex": 5,
+          "left": 1483.5556,
+          "top": 322.9167,
+          "zIndex": 18,
           "widthName": 114.71533203125,
           "widthComment": 80
         },
@@ -1974,15 +1923,9 @@
         ],
         "ui": {
           "active": false,
-<<<<<<< HEAD
-          "left": 769.75,
-          "top": 532.5,
-          "zIndex": 10,
-=======
           "left": 753.5,
           "top": 537.5,
-          "zIndex": 44,
->>>>>>> 40888b28dcc56755f0beb372c594a833243e8ec4
+          "zIndex": 15,
           "widthName": 90.84814453125,
           "widthComment": 60
         },
@@ -2006,8 +1949,8 @@
           "columnIds": [
             "f54858c7-ed3a-42c0-8aed-2707490b530a"
           ],
-          "x": 981.7596375,
-          "y": 1182.3473,
+          "x": 963.7039375,
+          "y": 1186.5140000000001,
           "direction": "bottom"
         },
         "end": {
@@ -2032,8 +1975,8 @@
           "columnIds": [
             "f54858c7-ed3a-42c0-8aed-2707490b530a"
           ],
-          "x": 1211.158075,
-          "y": 1118.9723,
+          "x": 1193.102375,
+          "y": 1123.1390000000001,
           "direction": "right"
         },
         "end": {
@@ -2084,8 +2027,8 @@
           "columnIds": [
             "f54858c7-ed3a-42c0-8aed-2707490b530a"
           ],
-          "x": 752.3612,
-          "y": 1118.9723,
+          "x": 734.3055,
+          "y": 1123.1390000000001,
           "direction": "left"
         },
         "end": {
@@ -2110,8 +2053,8 @@
           "columnIds": [
             "222ad631-abe5-4faf-84b8-435d31839117"
           ],
-          "x": 309.039794921875,
-          "y": 938,
+          "x": 307.039794921875,
+          "y": 934,
           "direction": "top"
         },
         "end": {
@@ -2136,8 +2079,8 @@
           "columnIds": [
             "f54858c7-ed3a-42c0-8aed-2707490b530a"
           ],
-          "x": 752.3612,
-          "y": 992.2223,
+          "x": 734.3055,
+          "y": 996.389,
           "direction": "left"
         },
         "end": {
@@ -2145,8 +2088,8 @@
           "columnIds": [
             "0b6adef6-20ed-47fc-bb8d-ec4816214dfa"
           ],
-          "x": 537.82958984375,
-          "y": 993,
+          "x": 535.82958984375,
+          "y": 989,
           "direction": "right"
         },
         "constraintName": "fk_member_to_lecturer",
@@ -2292,8 +2235,8 @@
           "columnIds": [
             "f54858c7-ed3a-42c0-8aed-2707490b530a"
           ],
-          "x": 1211.158075,
-          "y": 992.2223,
+          "x": 1193.102375,
+          "y": 996.389,
           "direction": "right"
         },
         "end": {
@@ -2396,8 +2339,8 @@
           "columnIds": [
             "f54858c7-ed3a-42c0-8aed-2707490b530a"
           ],
-          "x": 981.7596375,
-          "y": 928.8473,
+          "x": 963.7039375,
+          "y": 933.014,
           "direction": "top"
         },
         "end": {
