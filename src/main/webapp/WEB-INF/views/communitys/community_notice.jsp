@@ -26,12 +26,12 @@
       <div class="m-5 mb-2">
         <div class="d-flex justify-content-end">
           <a
-            href="./main_login.html"
+            href="./main_login"
             class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
             >로그인</a
           >
           <a
-            href="./main_signUp.html"
+            href="./main_signUp"
             class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
             >회원가입</a
           >
@@ -39,7 +39,7 @@
         <!-- menu bar -->
         <div class="d-flex justify-content-around">
           <!-- logo -->
-          <a href="./main.html">
+          <a href="./main">
             <img
               src="https://user-images.githubusercontent.com/115060986/219259405-a08ffba7-6cbb-4a65-b3d1-a8a456b811b6.png"
               width="230"
@@ -49,31 +49,31 @@
             />
           </a>
           <a
-            href="./introduction_academy.html"
+            href="./introduction_academy"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             학원안내</a
           >
           <a
-            href="./lecture_signup_list.html"
+            href="./lecture_signup_list"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             온라인강의</a
           >
           <a
-            href="./community_student.html"
+            href="./community_student"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             커뮤니티</a
           >
           <a
-            href="/mypage/Lecture"
+            href="./mypage_Lecture"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             마이페이지</a
           >
           <a
-            href="./admin_member.html"
+            href="./admin_member"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             관리자페이지</a
@@ -96,14 +96,14 @@
                 <ul class="list-unstyled components fs-5">
                   <li class="border-top border-1 p-2">
                     <a
-                      href="./community_student.html"
+                      href="./community_student"
                       class="text-decoration-none text-secondary"
                       >학생 커뮤니티</a
                     >
                   </li>
                   <li class="border-top border-1 p-2">
                     <a
-                      href="./community_lecturer.html"
+                      href="./community_lecturer"
                       class="text-decoration-none text-secondary"
                       >강사 게시판</a
                     >
@@ -119,14 +119,14 @@
               <!-- 게시판 테이블 -->
               <table class="table text-start">
                 <div class="row mb-3 bg-warning bg-opacity-10 p-3 border border-0 rounded-5">
-                <div class="col-3 h4"><a href="./community_student.html" style="text-decoration: none;" class="text-black">학생게시판</a> </div>
-                <!-- <div class="col-3 h4"><a href="./community_lecture.html" style="text-decoration: none;" class="text-black">강좌게시판</a> </div> -->
-                <div class="col-3 h4"><a href="./community_notice.html" style="text-decoration: none;" class="text-black">공지사항</a></div>
+                <div class="col-3 h4"><a href="./community_student" style="text-decoration: none;" class="text-black">학생게시판</a> </div>
+                <!-- <div class="col-3 h4"><a href="./community_lecture" style="text-decoration: none;" class="text-black">강좌게시판</a> </div> -->
+                <div class="col-3 h4"><a href="./community_notice" style="text-decoration: none;" class="text-black">공지사항</a></div>
               </div>
               <!-- 글쓰기 -->
               <div class="mb-3 text-end">
                 <button class="border btn">
-                  <a href="./community_posting.html" class="text-black" style="text-decoration: none">글쓰기</a>
+                  <a href="./community_posting" class="text-black" style="text-decoration: none">글쓰기</a>
                 </button>
               </div>
                   <tr>

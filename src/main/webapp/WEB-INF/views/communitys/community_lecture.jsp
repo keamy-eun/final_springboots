@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>강좌</title>
+    <title>강사 게시판</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,71 +16,68 @@
     />
 
     <!-- CSS링크 -->
-
-    <link rel="stylesheet" href="./css/commons.css" />
   </head>
   <body>
     <div class="container">
-      <!-- -------------------- -->
-      <!-- navbar -->
-      <div class="m-5 mb-2">
-        <div class="d-flex justify-content-end">
-          <a
-            href="/main_login"
-            class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
-            >로그인</a
-          >
-          <a
-            href="/main_signUp"
-            class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
-            >회원가입</a
-          >
-        </div>
-        <!-- menu bar -->
-        <div class="d-flex justify-content-around">
-          <!-- logo -->
-          <a href="/main">
-            <img
-              src="https://user-images.githubusercontent.com/115060986/219259405-a08ffba7-6cbb-4a65-b3d1-a8a456b811b6.png"
-              width="230"
-              height="90"
-              class="me-5"
-              alt=""
-            />
-          </a>
-          <a
-            href="/introduction_academy"
-            class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
-          >
-            학원안내</a
-          >
-          <a
-            href="/lecture_signup_list"
-            class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
-          >
-            온라인강의</a
-          >
-          <a
-            href="/community_student"
-            class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
-          >
-            커뮤니티</a
-          >
-          <a
-            href="/mypage_Lecture"
-            class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
-          >
-            마이페이지</a
-          >
-          <a
-            href="/admin_member"
-            class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
-          >
-            관리자페이지</a
-          >
-        </div>
+    <!-- navbar -->
+    <div class="m-5 mb-2">
+      <div class="d-flex justify-content-end">
+        <a
+          href="/main_login"
+          class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
+          >로그인</a
+        >
+        <a
+          href="/main_signUp"
+          class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
+          >회원가입</a
+        >
       </div>
-      <hr />
+      <!-- menu bar -->
+      <div class="d-flex justify-content-around">
+        <!-- logo -->
+        <a href="/main">
+          <img
+            src="https://user-images.githubusercontent.com/115060986/219259405-a08ffba7-6cbb-4a65-b3d1-a8a456b811b6.png"
+            width="230"
+            height="90"
+            class="me-5"
+            alt=""
+          />
+        </a>
+        <a
+          href="/introduction_academy"
+          class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
+        >
+          학원안내</a
+        >
+        <a
+          href="/lecture_signup_list"
+          class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
+        >
+          온라인강의</a
+        >
+        <a
+          href="/community_student"
+          class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
+        >
+          커뮤니티</a
+        >
+        <a
+          href="/mypage_Lecture"
+          class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
+        >
+          마이페이지</a
+        >
+        <a
+          href="/admin_member"
+          class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
+        >
+          관리자페이지</a
+        >
+      </div>
+    </div>
+    <hr />
 
       <!-- -------------------------- -->
       <div class="text-center container-fluid">
@@ -96,14 +93,14 @@
                 <ul class="list-unstyled components fs-5">
                   <li class="border-top border-1 p-2">
                     <a
-                      href="/community_student "
+                      href="/community_student"
                       class="text-decoration-none text-secondary"
                       >학생 커뮤니티</a
                     >
                   </li>
                   <li class="border-top border-1 p-2">
                     <a
-                      href="/community_lecturer "
+                      href="/community_lecturer"
                       class="text-decoration-none text-secondary"
                       >강사 게시판</a
                     >
@@ -111,170 +108,132 @@
                 </ul>
               </nav>
             </div>
-
             <!--  -->
-            <div class="container col-8 mt-5">
-              <h3 class="mb-5">누구나 할수있는 8주 영어문법 마스터</h3>
+            <div class="container col-7 mt-5">
               
 
-
-                <!-- 카드 1 -->
-                  <div class="card border-primary mb-3">
-                    <div class="row no-gutters">
-                      <div class="col-4">
-                        <img
-                          class="card-img h-100"
-                          src="https://s3.orbi.kr/data/file/united2/7362b16e-1b3a-4f98-a560-482b34af18f748ffcafbd24f505d37c0f84ab6d2d3dc.gif"
-                          alt="Card image cap"
-                        />
-                      </div>
-                      <div class="col-8">
-                        <div class="card-body border-primary">
-                          <div class="card-text">
-                            <h4> <a href="/community_post">  기초 문법 공부 3단계 /(확인용 링크) [5]</a></h4>
-                           <div class="m-3">03. 품사를 알면 문장구조가 보인다!!</div>
-                           
-                           <div class="text-start">문장성분은 단어들의 자리 배치도 역할을 합니다. 각 문장성분의 자리에는 올 수 있는 단어를 알아봅시다.</div>
-                            
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                <!-- 카드 2 -->
-                  <div class="card border-primary mb-3">
-                    <div class="row no-gutters">
-                      <div class="col-4">
-                        <img
-                          class="card-img h-100"
-                          src="https://s3.orbi.kr/data/file/united2/7362b16e-1b3a-4f98-a560-482b34af18f748ffcafbd24f505d37c0f84ab6d2d3dc.gif"
-                          alt="Card image cap"
-                        />
-                      </div>
-                      <div class="col-8">
-                        <div class="card-body border-primary">
-                          <div class="card-text">
-                            <h4>  기초 문법 공부 2단계 [16]</h4>
-                            <div class="m-3"> 02.영어의 문장성분이란?</div>
-                            <div class="text-start"> 문장성분이란 문장을 이루는 구성요소입니다. 단어 보다는 큰 개념입니다. 영어의 문장성분을 나눠봅시다.</div>
-                           
-                            
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                <!-- 카드 3 -->
-                  <div class="card border-primary mb-3">
-                    <div class="row no-gutters">
-                      <div class="col-4">
-                        <img
-                          class="card-img h-100"
-                          src="https://s3.orbi.kr/data/file/united2/7362b16e-1b3a-4f98-a560-482b34af18f748ffcafbd24f505d37c0f84ab6d2d3dc.gif"
-                          alt="Card image cap"
-                        />
-                      </div>
-                      <div class="col-8">
-                        <div class="card-body border-primary">
-                          <div class="card-text">
-                            <h4>기초 문법 공부 1단계 [16]</h4>
-                            <div class="m-3">01.문장성분과 품사</div>
-                            <div class="text-start">영어는 우리말과 어순이 다르기 때문에 영어문장을 이해하는데 가장 중요한 것은 문장의 구조를 파악하는 것입니다. </div>
-                                                
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                <!-- 카드 4 -->
-                  <div class="card border-primary mb-3">
-                    <div class="row no-gutters">
-                      <div class="col-4">
-                        <img
-                          class="card-img h-100"
-                          src="https://s3.orbi.kr/data/file/united2/7362b16e-1b3a-4f98-a560-482b34af18f748ffcafbd24f505d37c0f84ab6d2d3dc.gif"
-                          alt="Card image cap"
-                        />
-                      </div>
-                      <div class="col-8">
-                        <div class="card-body border-primary">
-                          <div class="card-text">
-                            <h4>회화, 영어로 말해봐!! 30일의 기적 1단계 [9]</h4>
-                            <div class="m-3">1. 말하기의 중요성</div>
-                            <div class="text-start">영어에서 가장 중요한건 입이 트이는 것입니다 간단한 회화부터 차근차근 익혀봅시다</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                
-              <!-- 페이징 -->
-              <div class="text-center">
-                <button class="btn">이전</button>
-                <button class="btn">1</button>
-                <button class="btn">2</button>
-                <button class="btn">3</button>
-                <button class="btn">4</button>
-                <button class="btn">다음</button>
+              <!-- 게시판 테이블 -->
+              <table class="table text-start">
+                <div class="row mb-3 bg-warning bg-opacity-10 p-3 border border-0 rounded-5">
+                <div class="col-3 h4"><a href="#" style="text-decoration: none;" class="text-black">강사게시판</a> </div>
+               
               </div>
-
-              <div class="input-group input-group-sm mt-3">
-                <input
-                  type="text"
-                  name="table_search"
-                  class="form-control float-right"
-                  placeholder="Search"
-                />
-                
-
-                <button type="submit" class="btn btn-default border">
-                  검색
+              <!-- 글쓰기 -->
+              <div class="mb-3 text-end">
+                <button class="border btn">
+                  <a
+                    href="/community_posting"
+                    class="text-black"
+                    style="text-decoration: none"
+                    >글쓰기</a
+                  >
                 </button>
+              </div>
+                  <tr>
+                    <th>NO</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                    <th>조회수</th>
+                  </tr>
+                
+                <tbody>
+                  <tr>
+                    <td>4</td>
+                    <td>특강 강사 필수 연수 목록</td>
+                    <td>이은정</td>
+                    <td>2023-01-12</td>
+                    <td>420</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>겨울방학 특강 운영 및 안전관리 연수자료</td>
+                    <td>이훈정</td>
+                    <td>2023-01-11</td>
+                    <td>233</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>성범죄 조회 동의서(양식)</td>
+                    <td>이정훈</td>
+                    <td>2023-01-03</td>
+                    <td>1242</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2023 프로그램 연간계획서</td>
+                    <td>이정훈</td>
+                    <td>2023-01-03</td>
+                    <td>231</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              
+
+                <!-- 페이징 -->
+                <div class="text-center">
+                  <button class="btn">이전</button>
+                  <button class="btn">1</button>
+                  <button class="btn">2</button>
+                  <button class="btn">3</button>
+                  <button class="btn">4</button>
+                  <button class="btn">다음</button>
+                </div>
+                <div class="input-group input-group-sm mt-3">
+                  <input
+                    type="text"
+                    name="table_search"
+                    class="form-control float-right"
+                    placeholder="Search"
+                  />
+  
+                  <button type="submit" class="btn btn-default border">
+                    검색
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- footer -->
-      <footer class="m-5">
-        <div>
-          <img src="https://user-images.githubusercontent.com/115060986/219259301-39328314-70ed-4993-ba31-b11e987b1218.png" width="50" height="50" alt="" />
-          <span class="opacity-50"> 은정 아카데미</span>
-          <span class="ms-4 opacity-50">
-            언어교육에 열정을 가진 사람들의 모임
-          </span>
-        </div>
-        <div></div>
-        <hr />
-        <div class="h6 opacity-75">
-          회사소개 | 인재채용 | 제휴제안 | 이용약관개인정보처리방침 |
-          정책고객센터 | ⓒ EJ Corp
-        </div>
-        <hr />
-        <div>
-          <span class="opacity-75">찾아오시는 길 : </span>
-          <a
-            href="https://www.google.co.kr/maps/place/KH%EC%A0%95%EB%B3%B4%EA%B5%90%EC%9C%A1%EC%9B%90/data=!3m1!4b1!4m5!3m4!1s0x357c9ec255555555:0x3565475c3365c5bb!8m2!3d37.498993!4d127.032909?hl=ko"
-          >
-            서울특별시 강남구 테헤란로 123길 456 은정이어학원 2F
-          </a>
-          / 지하철 2호선 역삼역 3번출구
-        </div>
-        <div>
-          <span class="opacity-75">Git address :</span>
-          <a href="https://github.com/keamy-eun/toy_servletsWithDB">
-            github.com/keamy-eun/toy_servletsWithDB.git</a
-          >
-        </div>
-        <div class="opacity-75">
-          Email address : anxi0015@gmail.com / eun.wonki014@gmail.com /
-          jhun1020.kh@gmail.com
-        </div>
-      </footer>
     </div>
+    <!-- footer -->
+    <footer class="m-5">
+      <div>
+        <img src="https://user-images.githubusercontent.com/115060986/219259301-39328314-70ed-4993-ba31-b11e987b1218.png" width="50" height="50" alt="" />
+        <span class="opacity-50"> 은정 아카데미</span>
+        <span class="ms-4 opacity-50">
+          언어교육에 열정을 가진 사람들의 모임
+        </span>
+      </div>
+      <div></div>
+      <hr />
+      <div class="h6 opacity-75">
+        회사소개 | 인재채용 | 제휴제안 | 이용약관개인정보처리방침 |
+        정책고객센터 | ⓒ EJ Corp
+      </div>
+      <hr />
+      <div>
+        <span class="opacity-75">찾아오시는 길 : </span>
+        <a
+          href="https://www.google.co.kr/maps/place/KH%EC%A0%95%EB%B3%B4%EA%B5%90%EC%9C%A1%EC%9B%90/data=!3m1!4b1!4m5!3m4!1s0x357c9ec255555555:0x3565475c3365c5bb!8m2!3d37.498993!4d127.032909?hl=ko"
+        >
+          서울특별시 강남구 테헤란로 123길 456 은정이어학원 2F
+        </a>
+        / 지하철 2호선 역삼역 3번출구
+      </div>
+      <div>
+        <span class="opacity-75">Git address :</span>
+        <a href="https://github.com/keamy-eun/toy_servletsWithDB">
+          github.com/keamy-eun/toy_servletsWithDB.git</a
+        >
+      </div>
+      <div class="opacity-75">
+        Email address : anxi0015@gmail.com / eun.wonki014@gmail.com /
+        jhun1020.kh@gmail.com
+      </div>
+    </footer>
   </div>
 
     <script
@@ -286,6 +245,3 @@
     <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
   </body>
 </html>
-
-<!-- https://getbootstrap.com/docs/4.0/components/navbar/
- 참고 -->

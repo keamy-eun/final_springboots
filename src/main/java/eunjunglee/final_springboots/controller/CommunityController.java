@@ -20,9 +20,9 @@ public class CommunityController {
     
     // 강좌게시판 ㅇ
     @RequestMapping(value="/community_lecture", method = RequestMethod.GET)
-    public ModelAndView getLecture(ModelAndView modelAndView ){
-        // Object resultMap = communityService.getList(params);
-        // modelAndView.addObject("resultMap", resultMap);
+    public ModelAndView getLecture(ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
+        Object resultMap = communityService.getList(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/communitys/community_lecture");
         return modelAndView;
     }
@@ -62,6 +62,14 @@ public class CommunityController {
         modelAndView.setViewName("/communitys/community_posting");
         return modelAndView;
     }
+    // 게시글 작성 페이지 ㅇ
+    @RequestMapping(value="/community_posting", method = RequestMethod.POST)
+    public ModelAndView getPosting_POST( ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
+        Object resultMap = communityService.insertPostAndGetList(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("/communitys/community_posting");
+        return modelAndView;
+    }
 
     // 학생게시판 ㅇ
     @RequestMapping(value="/community_student", method = RequestMethod.GET)
@@ -69,6 +77,17 @@ public class CommunityController {
         Object resultMap = communityService.getList(params);
         modelAndView.addObject("resultMap", resultMap);
         // resultmap에 값이 다 들어있는 것 확인.
+        modelAndView.setViewName("/communitys/community_student");
+        return modelAndView;
+    }
+
+    // 게시글 작성 누르면 insert하고 이 링크로 옴
+    @RequestMapping(value="/community_student", method = RequestMethod.POST)
+    public ModelAndView getStudentPOST( ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
+
+        Object resultMap = communityService.insertPostAndGetList(params);
+        modelAndView.addObject("resultMap", resultMap);
+        // params 에 게시글제목, 게시판 번호, 첨부파일, 게시글 내용까지 확인  
         modelAndView.setViewName("/communitys/community_student");
         return modelAndView;
     }
