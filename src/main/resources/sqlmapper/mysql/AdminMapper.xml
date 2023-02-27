@@ -6,6 +6,10 @@
         parameterType="Map" resultType="Map">
         SELECT * 
         FROM member 
+        <if test="pageScale != null">
+        ORDER BY MEMBER_ID 
+        LIMIT #{pageBegin}, #{pageScale}
+        </if>
     </select>
 
     <select id="selectListByID" 
@@ -49,5 +53,15 @@
         SELECT COUNT(*) 
         FROM member 
     </select>
+    
+    <!-- <select id="fixedCurrentPage" 
+        parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM member 
+        <if test="pageScale != null">
+        ORDER BY MEMBER_ID 
+        LIMIT 1, 10
+        </if>
+    </select> -->
 
 </mapper>
