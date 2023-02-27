@@ -4,7 +4,7 @@
 <mapper namespace="Home">
     <!-- call "Home.insertWithID" -->
     <insert id="insertWithID" parameterType="Map">
-        insert into member 
+        insert into MEMBER 
         (MEMBER_ID,PW,MEMBER_NAME,POSITION,BIRTH,EMAIL,SMS_AD,EMAIL_AD,PRIVACY_INFO)
         values(#{MEMBER_ID},#{PW},#{MEMBER_NAME},'학생','1992-02-12',#{EMAIL}
         <choose>
