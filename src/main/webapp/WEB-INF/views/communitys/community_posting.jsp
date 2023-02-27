@@ -110,7 +110,7 @@
         <div class="col-6 mt-5 ms-5 text-center">
           <!-- 제목 -->
           <h1 class="mb-5">게시글 작성</h1>
-          <form action="/community_student" method="get" class="form-group">
+          <form action="/community_student" method="post" class="form-group">
           <%-- 게시글 작성  이후 작성한 페이지로 돌아가는 법을 아직 모르겠다, 좀 더 생각해 볼 것 --%>
           <%-- 우선은 student로 가도록 해두었다. --%>
             <!--  -->

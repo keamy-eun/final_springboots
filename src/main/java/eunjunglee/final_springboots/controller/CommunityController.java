@@ -85,11 +85,12 @@ public class CommunityController {
     @RequestMapping(value="/community_student", method = RequestMethod.POST)
     public ModelAndView getStudentPOST( ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
 
+        // 여기까지 params에 값이 들어온 것은 확인
         Object resultMap = communityService.insertPostAndGetList(params);
         modelAndView.addObject("resultMap", resultMap);
         // params 에 게시글제목, 게시판 번호, 첨부파일, 게시글 내용까지 확인  
         modelAndView.setViewName("/communitys/community_student");
         return modelAndView;
     }
-
+    // community_number=C03
 }
