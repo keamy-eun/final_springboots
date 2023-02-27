@@ -147,11 +147,8 @@
                     </c:forEach>
                   </tbody>
             </table>
-          </div>
-        </div>
-
-          <!-- 페이징 -->
-          <div class="text-center">
+                      <!-- 페이징 -->
+          <div class="container text-center">
             <button class="btn">이전</button>
             <button class="btn">1</button>
             <button class="btn">2</button>
@@ -160,6 +157,10 @@
             <button class="btn">5</button>
             <button class="btn">다음</button>
           </div>
+          </div>
+        </div>
+
+
         </div>
       </div>
       <!-- footer -->
