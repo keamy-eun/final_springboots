@@ -19,11 +19,11 @@ public class LectureController {
     @Autowired
     LectureService lectureService;
 
-     // 강좌 리뷰 조회 ㅇ
+     // 강좌 리뷰 조회
      @RequestMapping(value="/lecture_review", method = RequestMethod.GET)
-     public ModelAndView getReview(ModelAndView modelAndView ){
-         // Object resultMap = lectureService.get서비스메소드(params);
-         // modelAndView.addObject("resultMap", resultMap);
+     public ModelAndView getReview(@RequestParam Map<String, Object> params, ModelAndView modelAndView ){
+         Object resultMap = lectureService.getLectureReview(params);
+         modelAndView.addObject("resultMap", resultMap);
          modelAndView.setViewName("/lecture/lecture_review");
          return modelAndView;
      }

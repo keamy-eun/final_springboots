@@ -49,4 +49,15 @@
         (LECTURE_NUMBER,MEMBER_ID,ENROLL_DATE,ENROLL_CANCEL) 
         value (#{LECTURE_NUMBER},'circle01',now(),'NOT CANCELED');
     </insert>
+
+    <select id="selectLectureReview" 
+        parameterType="Map" resultType="Map">
+        select community_post.POST_NUMBER, community_post.COMMUNITY_TITLE, community_post.MEMBER_ID, community_post.COMMUNITY_DATE, community_post.VIEW_COUNT, (select count(*) from post_comment WHERE POST_NUMBER = community_post.POST_NUMBER) as cmt_cnt  
+        from community_post 
+        join post_comment on post_comment.POST_NUMBER = community_post.POST_NUMBER 
+        GROUP BY community_post.POST_NUMBER 
+        ;
+    </select>
+
+
 </mapper>

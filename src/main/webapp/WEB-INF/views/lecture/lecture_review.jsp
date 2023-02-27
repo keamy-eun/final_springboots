@@ -18,7 +18,6 @@
   </head>
   <body>
     <div class="container">
-      <!-- -------------------- -->
       <!-- navbar -->
       <div class="m-5 mb-2">
         <div class="d-flex justify-content-end">
@@ -79,10 +78,8 @@
       </div>
       <hr />
 
-      <!-- -------------------------- -->
       <div class="text-center container-fluid">
         <div class="row">
-          <!--  -->
           <!-- Sidebar -->
           <div class="col-auto wrapper border border-1 m-3 p-3">
             <nav id="sidebar text-start">
@@ -109,154 +106,59 @@
               </ul>
             </nav>
           </div>
-
-          <!--  -->
-          <div class="container col p-5">
-            <div class="text-start">
-              <h2>누구나 할수있는 8주 영어문법 마스터 게시판</h2>
+          <div class="container col-7 mt-5">
+            <!-- 게시판 테이블 -->
+            <table class="table text-start">
+              <div class="row mb-3 bg-warning bg-opacity-10 p-3 border border-0 rounded-5">
+              <div class="text-center h3">온라인 강의 후기</div>
+              
             </div>
             <!-- 글쓰기 -->
             <div class="mb-3 text-end">
               <button class="border btn">
-                <a href="/community_posting" class="text-black">글쓰기</a>
+                <a
+                  href="/community_posting"
+                  class="text-black"
+                  style="text-decoration: none"
+                  >글쓰기</a
+                >
               </button>
             </div>
+                <tr class="text-center">
+                  <th class="p-0 pb-3">NO</th>
+                  <th class="p-0">제목</th>
+                  <th class="p-0">작성자</th>
+                  <th class="p-0">작성일</th>
+                  <th class="p-0">조회수</th>
+                </tr>
+                  <tbody>
+                    <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
+                      <tr>
+                        <td>${resultData.POST_NUMBER}</td>
+                        <td>
+                          <form action="/community_post/${resultData.POST_NUMBER}" method="get">
+                            <button class="btn btn-link viewPopup text-decoration-none text-black">${resultData.COMMUNITY_TITLE} [${resultData.cmt_cnt}]</button>
+                          </form>
+                        </td>
+                        <td>${resultData.MEMBER_ID}</td>
+                        <td>${resultData.COMMUNITY_DATE}</td>
+                        <td>${resultData.VIEW_COUNT}</td>
+                      </tr>
+                    </c:forEach>
+                  </tbody>
+            </table>
+          </div>
+        </div>
 
-            <!-- 게시판 테이블 -->
-            <div class="col text-start">
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">온라인강의 후기 게시판</h3>
-                  <div class="card-tools">
-                    <div
-                      class="input-group input-group-sm"
-                      style="width: 150px"
-                    >
-                      <input
-                        type="text"
-                        name="table_search"
-                        class="form-control float-right"
-                        placeholder="Search"
-                      />
-                      <div class="input-group-append">
-                        <button type="submit" class="btn btn-default">
-                          검색
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card-body table-responsive p-0">
-                  <table class="table table-hover text-nowrap">
-                    <thead>
-                      <tr>
-                        <th>NO</th>
-                        <th>제목</th>
-                        <th>작성자</th>
-                        <th>작성일</th>
-                        <th>조회수</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>5</td>
-                        <td>
-                          <a href="/community_post" class=""
-                            >[공지사항] 홈페이지 건의사항이 있다면... [32]</a
-                          >
-                        </td>
-                        <td>관리자</td>
-                        <td>2023-01-12</td>
-                        <td>12</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>
-                          [공지사항] 코로나 관련 결석제출 서류양식입니다 [24]
-                        </td>
-                        <td>관리자</td>
-                        <td>2023-01-12</td>
-                        <td>20</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>
-                          [공지사항]강사님에게 개인적인 연락은 자제해주세요[19]
-                        </td>
-                        <!-- <td>Alexander Pierce</td> -->
-                        <td>관리자</td>
-                        <td>2023-01-11</td>
-                        <td>32</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>[질문]used to의 사용법을 잘 모르겠어요 [4]</td>
-                        <td>둘리</td>
-                        <td>2023-01-03</td>
-                        <td>40</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>
-                          [고민상담]기초 영어실력을 쌓는데 어떤 강좌가 제일
-                          좋을까요? [9]
-                        </td>
-                        <td>도우너</td>
-                        <td>2023-01-02</td>
-                        <td>52</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>
-                          [강좌 추천]길동 선생님의 영어문법강좌 강추합니다! [6]
-                        </td>
-                        <td>희동이</td>
-                        <td>2023-01-02</td>
-                        <td>52</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>[질문]used to의 사용법을 잘 모르겠어요 [4]</td>
-                        <td>둘리</td>
-                        <td>2023-01-03</td>
-                        <td>40</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>
-                          [고민상담]기초 영어실력을 쌓는데 어떤 강좌가 제일
-                          좋을까요? [9]
-                        </td>
-                        <td>도우너</td>
-                        <td>2023-01-02</td>
-                        <td>52</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>
-                          [강좌 추천]길동 선생님의 영어문법강좌 강추합니다! [6]
-                        </td>
-                        <td>희동이</td>
-                        <td>2023-01-02</td>
-                        <td>52</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <!-- 페이징 -->
-              <div class="text-center">
-                <button class="btn">이전</button>
-                <button class="btn">1</button>
-                <button class="btn">2</button>
-                <button class="btn">3</button>
-                <button class="btn">4</button>
-                <button class="btn">5</button>
-                <button class="btn">다음</button>
-              </div>
-            </div>
+          <!-- 페이징 -->
+          <div class="text-center">
+            <button class="btn">이전</button>
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">다음</button>
           </div>
         </div>
       </div>
@@ -296,7 +198,6 @@
           jhun1020.kh@gmail.com
         </div>
       </footer>
-    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
