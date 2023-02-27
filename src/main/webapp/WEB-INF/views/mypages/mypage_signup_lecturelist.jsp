@@ -106,7 +106,7 @@
                 </li>
                 <li class="border-top border-1 p-2">
                   <a
-                    href="./mypage_member_edit.html"
+                    href="/mypage/EditForm"
                     target="_self"
                     class="text-decoration-none text-secondary"
                     >개인정보수정</a
@@ -114,7 +114,7 @@
                 </li>
                 <li class="border-top border-1 p-2">
                   <a
-                    href="./mypage_selfTest.html"
+                    href="/mypage/selfTestForm"
                     target="_self"
                     class="text-decoration-none text-secondary"
                     >영어실력 테스트</a
