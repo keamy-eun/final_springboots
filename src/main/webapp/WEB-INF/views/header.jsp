@@ -63,7 +63,7 @@
             커뮤니티</a
           >
           <a
-            href="/mypage_Lecture"
+            href="/mypage"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             마이페이지</a

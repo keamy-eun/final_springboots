@@ -203,7 +203,7 @@
                 <div class="col-sm-2">
                   <select name="" id="" class="form-control">
                     <% for(int i=1; i<40; i++) { %>	
-                      <option <% if  %>  value="<%=i%>"><%=i+1970%></option>
+                      <option value="<%=i%>"><%=i+1970%></option>
                     <% } %>	
                   </select>
                 </div>
