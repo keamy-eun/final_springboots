@@ -1,6 +1,8 @@
 package eunjunglee.final_springboots.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -46,8 +48,25 @@ public class MypageService {
                     ((HashMap<String, Object>) (((ArrayList) iterResultLectureName).get(0))).get("LECTURE_TITLE"));
             tempresult.put("MEMBER_NAME",
                     ((HashMap<String, Object>) (((ArrayList) iterResultLecturerName).get(0))).get("MEMBER_NAME"));
-            tempresult.put("ENROLL_DATE",
-                    ((HashMap<String, Object>) (((ArrayList) enrollmentresult).get(0))).get("ENROLL_DATE"));
+
+            // 수강종료일 설정
+            LocalDate now = LocalDate.now();
+            String ExpireLectureTime = ((String) ((HashMap<String, Object>) (((ArrayList) enrollmentresult).get(0)))
+                    .get("ENROLL_EXPIRED_DATE")).split(" ")[0];
+            String[] ExpireLectureTimeArrStr = ExpireLectureTime.split("-");
+            int[] ExpireLectureTimeArr = Arrays.stream(ExpireLectureTimeArrStr).mapToInt(Integer::parseInt).toArray();
+            // 수강종료일과 현재 시간 비교
+            if (now.getYear() <= ExpireLectureTimeArr[0] && now.getMonthValue() <= ExpireLectureTimeArr[1]
+                    && now.getDayOfMonth() <= ExpireLectureTimeArr[2]) {
+                tempresult.put("ENROLL_EXPIRED_DATE",
+                        ((HashMap<String, Object>) (((ArrayList) enrollmentresult).get(0))).get("ENROLL_EXPIRED_DATE"));
+            } else {
+                tempresult.put("ENROLL_EXPIRED_DATE",
+                        "-");
+            }
+
+            tempresult.put("LECTURE_NUMBER",
+                    ((HashMap<String, Object>) (((ArrayList) iterResultLecturerName).get(0))).get("LECTURE_NUMBER"));
 
             result.add(tempresult.clone());
         }
@@ -135,6 +154,12 @@ public class MypageService {
         result.put("resultCategory", CategoryStr);
         result.put("resultScore", score);
         // result : 앞에는 틀린문제유형, 마지막에 int로 점수
+        return result;
+    }
+
+    public Object delete(Object dataMap) {
+        String sqlMapId = "mypage.deleteByLECTURE_NUMBER";
+        Object result = sharedDaos.delete(sqlMapId, dataMap);
         return result;
     }
 

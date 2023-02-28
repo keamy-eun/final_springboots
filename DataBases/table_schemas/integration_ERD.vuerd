@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -767.49998976785,
-    "scrollLeft": -483.33855034245124,
-    "zoomLevel": 0.6,
+    "scrollTop": -465.8999897678485,
+    "scrollLeft": -520.0000000000002,
+    "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -251,7 +251,7 @@
           "active": false,
           "left": 80.25,
           "top": 90.25,
-          "zIndex": 8,
+          "zIndex": 16,
           "widthName": 75.1884765625,
           "widthComment": 60
         },
@@ -497,7 +497,7 @@
           "active": false,
           "left": 739.75,
           "top": 1340.25,
-          "zIndex": 10,
+          "zIndex": 7,
           "widthName": 124.78271484375,
           "widthComment": 60
         },
@@ -582,7 +582,7 @@
           "active": false,
           "left": 1311.25,
           "top": 758.75,
-          "zIndex": 12,
+          "zIndex": 9,
           "widthName": 125.29052734375,
           "widthComment": 119
         },
@@ -775,7 +775,7 @@
           "active": false,
           "left": 744.5,
           "top": 1724,
-          "zIndex": 11,
+          "zIndex": 8,
           "widthName": 82.158203125,
           "widthComment": 60
         },
@@ -998,7 +998,7 @@
           "active": false,
           "left": 734.3055,
           "top": 933.014,
-          "zIndex": 28,
+          "zIndex": 15,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1175,7 +1175,7 @@
           "active": false,
           "left": 74.9163,
           "top": 453.8337,
-          "zIndex": 16,
+          "zIndex": 11,
           "widthName": 62.67724609375,
           "widthComment": 60
         },
@@ -1237,7 +1237,7 @@
           "active": false,
           "left": 78.25,
           "top": 934,
-          "zIndex": 4,
+          "zIndex": 3,
           "widthName": 72.0654296875,
           "widthComment": 60
         },
@@ -1322,7 +1322,7 @@
           "active": false,
           "left": 640.2224,
           "top": 332.778,
-          "zIndex": 7,
+          "zIndex": 6,
           "widthName": 103.14990234375,
           "widthComment": 80
         },
@@ -1407,7 +1407,7 @@
           "active": false,
           "left": 1365.5,
           "top": 78.75,
-          "zIndex": 6,
+          "zIndex": 5,
           "widthName": 119.0380859375,
           "widthComment": 60
         },
@@ -1515,7 +1515,7 @@
           "active": false,
           "left": 653,
           "top": 33.75,
-          "zIndex": 5,
+          "zIndex": 4,
           "widthName": 108.20263671875,
           "widthComment": 60,
           "color": "#1D1010"
@@ -1578,7 +1578,7 @@
           "active": false,
           "left": 1570.7789,
           "top": 551.4083,
-          "zIndex": 23,
+          "zIndex": 13,
           "widthName": 119.01904296875,
           "widthComment": 60
         },
@@ -1663,7 +1663,7 @@
           "active": false,
           "left": 1462.2917,
           "top": 1024.9085,
-          "zIndex": 26,
+          "zIndex": 14,
           "widthName": 108.18359375,
           "widthComment": 60
         },
@@ -1817,7 +1817,7 @@
           "active": false,
           "left": 1483.5556,
           "top": 322.9167,
-          "zIndex": 18,
+          "zIndex": 12,
           "widthName": 114.71533203125,
           "widthComment": 80
         },
@@ -1898,8 +1898,8 @@
             "id": "db233968-9ee1-4f8e-8ae9-1fe1ddebef00"
           },
           {
-            "name": "ENROLL_CANCEL",
-            "comment": "수강취소",
+            "name": "ENROLL_EXPIRED_DATE",
+            "comment": "수강종료일",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -1913,8 +1913,8 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 113.9853515625,
-              "widthComment": 60,
+              "widthName": 159.2568359375,
+              "widthComment": 67,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
@@ -1925,7 +1925,7 @@
           "active": false,
           "left": 753.5,
           "top": 537.5,
-          "zIndex": 15,
+          "zIndex": 35,
           "widthName": 90.84814453125,
           "widthComment": 60
         },
@@ -2348,7 +2348,7 @@
           "columnIds": [
             "d7289f18-49de-4681-9aa0-3fcd269cdcbd"
           ],
-          "x": 981.095703125,
+          "x": 997.602783203125,
           "y": 688.5,
           "direction": "bottom"
         },

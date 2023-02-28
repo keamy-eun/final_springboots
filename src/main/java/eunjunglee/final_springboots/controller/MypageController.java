@@ -76,4 +76,15 @@ public class MypageController {
         return modelAndView;
     }
 
+    @RequestMapping(value = { "/delete/{uniqueId}" }, method = RequestMethod.GET)
+    public ModelAndView delete(@RequestParam Map<String, Object> params, @PathVariable String uniqueId,
+            ModelAndView modelAndView) {
+        params.put("MEMBER_ID", "circle01");
+        params.put("LECTURE_NUMBER", uniqueId);
+        Object resultMap = mypageService.delete(params);
+        resultMap = mypageService.getlistToMylectureMain(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("/mypages/mypage_Lecture");
+        return modelAndView;
+    }
 }

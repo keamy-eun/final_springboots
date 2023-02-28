@@ -47,6 +47,6 @@
         parameterType="Map">
         insert into enrollment 
         (LECTURE_NUMBER,MEMBER_ID,ENROLL_DATE,ENROLL_CANCEL) 
-        value (#{LECTURE_NUMBER},'circle01',now(),'NOT CANCELED');
+        value (#{LECTURE_NUMBER},'circle01',now(),DATE_ADD(now(), INTERVAL 6 MONTH));
     </insert>
 </mapper>
