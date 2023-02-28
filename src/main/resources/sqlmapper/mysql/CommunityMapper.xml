@@ -3,16 +3,38 @@
 
 <mapper namespace="Community">
     <!-- call  Community.selectListByID-->
-    <select id="selectListByID"
+    <select id="selectListStudent"
     parameterType="Map" resultType="Map">
     <!-- 게시글과 멤버의 모든 column불러옴 -->
-    <!-- 학생게시판 강사게시판 공동 사용 -->
+    <!-- 학생게시판   -->
        SELECT *
         FROM COMMUNITY_POST 
         inner join MEMBER 
-        <!-- ON member.MEMBER_ID = community_post.MEMBER_ID -->
+        where COMMUNITY_NUMBER = 'C03'
         group by COMMUNITY_CONTENT
         order by POST_NUMBER DESC
+    </select>
+
+<!-- 강사게시판의 게시글만 나오도록 -->
+    <select id="selectListLecturer"
+    parameterType="Map" resultType="Map">
+
+        select *
+        from community_post
+        WHERE COMMUNITY_NUMBER = 'C02'
+        order by post_number desc
+
+    </select>
+
+<!-- 공지사항 -->
+ <select id="selectListNotice"
+    parameterType="Map" resultType="Map">
+
+        select *
+        from community_post
+        WHERE COMMUNITY_NUMBER = 'C04'
+        order by post_number desc
+
     </select>
 
     <!-- call  Community.insertPost-->
@@ -20,11 +42,9 @@
         parameterType="Map">
         insert into COMMUNITY_POST                           
         (POST_NUMBER, COMMUNITY_CONTENT, COMMUNITY_TITLE, FILE_ATTACHIMENT, COMMUNITY_DATE, VIEW_COUNT, MEMBER_ID, COMMUNITY_NUMBER, COMMENT_CONTENT, COMMENT_DATE)
-        value (NEXTVAL('post'),#{community_content},#{community_title},#{file_Attachiment},now(),'0','ceromi123',#{community_number}, null, null); 
-        
-        <!-- value ('post15','15번째 테스트 시작합니다',#{community_title},null ,now(), '50', 'ceromi123', 'C03', null, null); / 여기가 제목제목목--> 
-        <!-- POST_NUMBER 가 자동으로 안겹치게 넣는 방법이 어떻게 될까 모르겠다.. 일단 하드코딩 -->
-        <!-- 나 뭘까먹은거지 -->
+        value (NEXTVAL('post'),#{community_content},#{community_title},#{file_Attachiment},now(),'0','circle01',#{community_number}, null, null); 
+        <!-- id값과 조회수, 댓글기능만  -->
     </insert>
+
 
 </mapper>

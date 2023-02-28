@@ -126,7 +126,7 @@
               <!-- 글쓰기 -->
               <div class="mb-3 text-end">
                 <button class="border btn">
-                  <a href="./community_posting" class="text-black" style="text-decoration: none">글쓰기</a>
+                  <a href="./community_postingNotice" class="text-black" style="text-decoration: none">글쓰기</a>
                 </button>
               </div>
                   <tr>
@@ -138,43 +138,18 @@
                   </tr>
                 
                       </thead>
-                      <tbody>
-                        <tr>
-                          <td>5</td>
-                          <td>[은정이아카데미] 강의 시간표 [101]</td>
-                          <td>관리자</td>
-                          <td>2023-01-07</td>
-                          <td>127</td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>[은정이아카데미] 이달의 이벤트와 할인 혜택[1120]</td>
-                          <td>관리자</td>
-                          <td>2023-01-07</td>
-                          <td>1122</td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>[은정이아카데미] 학사일정 안내[5]</td>
-                          <td>관리자</td>
-                          <td>2023-01-06</td>
-                          <td>22</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>[은정이아카데미] 겨울방학 특강 안내[124]</td>
-                          <td>관리자</td>
-                          <td>2023-01-03</td>
-                          <td>777</td>
-                        </tr>
-                        <tr>
-                          <td>1</td>
-                          <td>1월21(토) ~ 1월24일(화) 설연휴 휴무 안내[12]</td>
-                          <td>관리자</td>
-                          <td>2023-01-03</td>
-                          <td>57</td>
-                        </tr>
-                      </tbody>
+                <tbody>
+                <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
+                  <tr>
+                    <td>${resultData.POST_NUMBER}</td>
+                    <td>${resultData.COMMUNITY_TITLE}</td>
+                    <td>${resultData.MEMBER_ID}</td>
+                    <td>${resultData.COMMUNITY_DATE}</td>
+                    <td>${resultData.VIEW_COUNT}</td>
+                  </tr>
+                 
+                </c:forEach>
+                </tbody>
                     </table>
                     <!-- 페이징 -->
                     <div class="text-center">

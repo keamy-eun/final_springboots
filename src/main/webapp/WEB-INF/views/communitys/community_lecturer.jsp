@@ -122,7 +122,7 @@
               <div class="mb-3 text-end">
                 <button class="border btn">
                   <a
-                    href="/community_posting"
+                    href="/community_postingLecturer"
                     class="text-black"
                     style="text-decoration: none"
                     >글쓰기</a
@@ -137,35 +137,17 @@
                     <th>조회수</th>
                   </tr>
                 
-                <tbody>
+               <tbody>
+                <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
                   <tr>
-                    <td>4</td>
-                    <td>특강 강사 필수 연수 목록</td>
-                    <td>이은정</td>
-                    <td>2023-01-12</td>
-                    <td>420</td>
+                    <td>${resultData.POST_NUMBER}</td>
+                    <td>${resultData.COMMUNITY_TITLE}</td>
+                    <td>${resultData.MEMBER_ID}</td>
+                    <td>${resultData.COMMUNITY_DATE}</td>
+                    <td>${resultData.VIEW_COUNT}</td>
                   </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>겨울방학 특강 운영 및 안전관리 연수자료</td>
-                    <td>이훈정</td>
-                    <td>2023-01-11</td>
-                    <td>233</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>성범죄 조회 동의서(양식)</td>
-                    <td>이정훈</td>
-                    <td>2023-01-03</td>
-                    <td>1242</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>2023 프로그램 연간계획서</td>
-                    <td>이정훈</td>
-                    <td>2023-01-03</td>
-                    <td>231</td>
-                  </tr>
+                 
+                </c:forEach>
                 </tbody>
               </table>
 

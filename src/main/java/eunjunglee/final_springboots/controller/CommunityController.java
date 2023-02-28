@@ -29,11 +29,28 @@ public class CommunityController {
         modelAndView.setViewName("/communitys/community_lecture");
         return modelAndView;
     }
+    // 강좌게시판 ㅇ
+    @RequestMapping(value="/community_lecture", method = RequestMethod.POST)
+    public ModelAndView getLecturePost(ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
+        Object resultMap = communityService.getList(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("/communitys/community_lecture");
+        return modelAndView;
+    }
 
     // 강사게시판 ㅇ
     @RequestMapping(value="/community_lecturer", method = RequestMethod.GET)
     public ModelAndView getLecturer(ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
-        Object resultMap = communityService.getList(params);
+        Object resultMap = communityService.getListLecturer(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("/communitys/community_lecturer");
+        return modelAndView;
+    }
+    // 강사게시판 ㅇ    
+
+    @RequestMapping(value="/community_lecturer", method = RequestMethod.POST)
+    public ModelAndView getLecturerPost(ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
+        Object resultMap = communityService.insertPostAndGetLecturerList(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/communitys/community_lecturer");
         return modelAndView;
@@ -42,7 +59,15 @@ public class CommunityController {
     //공지사항 게시판 ㅇ
     @RequestMapping(value="/community_notice", method = RequestMethod.GET)
     public ModelAndView getNotice(ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
-        Object resultMap = communityService.getList(params);
+        Object resultMap = communityService.getListNotice(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("/communitys/community_notice");
+        return modelAndView;
+    }
+    //공지사항 게시판 ㅇ
+    @RequestMapping(value="/community_notice", method = RequestMethod.POST)
+    public ModelAndView getNoticePost(ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
+        Object resultMap = communityService.insertPostAndGetNoticeList(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/communitys/community_notice");
         return modelAndView;
@@ -56,18 +81,10 @@ public class CommunityController {
         modelAndView.setViewName("/communitys/community_post");
         return modelAndView;
     }
-
+//  ---------------------------------------------------------
     // 게시글 작성 페이지 ㅇ
-    @RequestMapping(value="/community_posting{uniqueId}", method = RequestMethod.GET)
+    @RequestMapping(value="/community_posting", method = RequestMethod.GET)
     public ModelAndView getPosting( ModelAndView modelAndView, @RequestParam Map<String, Object> params){
-        String last_post_number ="";
-
-        // while(변수.hasnext()){
-
-        // }
-        
-        // params.put("last_post_number", uniqueId);
-
         Object resultMap = communityService.getList(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/communitys/community_posting");
@@ -79,6 +96,37 @@ public class CommunityController {
         Object resultMap = communityService.insertPostAndGetList(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/communitys/community_posting");
+        return modelAndView;
+    }
+    @RequestMapping(value="/community_postingLecturer", method = RequestMethod.GET)
+    public ModelAndView getPosting_lecturer( ModelAndView modelAndView, @RequestParam Map<String, Object> params){
+        Object resultMap = communityService.getList(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("/communitys/community_postingLecturer");
+        return modelAndView;
+    }
+    // 게시글 작성 페이지 ㅇ
+    @RequestMapping(value="/community_postingLecturer", method = RequestMethod.POST)
+    public ModelAndView getPosting_lecturerPost( ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
+        Object resultMap = communityService.insertPostAndGetList(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("/communitys/community_postingLecturer");
+        return modelAndView;
+    }
+
+    @RequestMapping(value="/community_postingNotice", method = RequestMethod.GET)
+    public ModelAndView getPosting_notice(ModelAndView modelAndView, @RequestParam Map<String, Object> params){
+        Object resultMap = communityService.getList(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("/communitys/community_postingNotice");
+        return modelAndView;
+    }
+    // 게시글 작성 페이지 ㅇ
+    @RequestMapping(value="/community_postingNotice", method = RequestMethod.POST)
+    public ModelAndView getPosting_noticePost( ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
+        Object resultMap = communityService.insertPostAndGetList(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("/communitys/community_postingNotice");
         return modelAndView;
     }
 
@@ -103,5 +151,5 @@ public class CommunityController {
         modelAndView.setViewName("/communitys/community_student");
         return modelAndView;
     }
-    // community_number=C03
+   
 }

@@ -11,7 +11,7 @@ public class CommunityService {
     SharedDaos sharedDaos;
 
     public Object getList(Object dataMap){
-        String sqlMapId = "Community.selectListByID";
+        String sqlMapId = "Community.selectListStudent";
         Object result = sharedDaos.getList(sqlMapId, dataMap);
         return result;
     }
@@ -22,9 +22,34 @@ public class CommunityService {
         return result;
     }
 
+    public Object getListLecturer(Object dataMap){
+        String sqlMapId = "Community.selectListLecturer";
+        Object result = sharedDaos.getList(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object getListNotice(Object dataMap){
+        String sqlMapId = "Community.selectListNotice";
+        Object result = sharedDaos.getList(sqlMapId, dataMap);
+        return result;
+    }
+    // -------------------------
+
+
     public Object insertPostAndGetList(Object dataMap){
         Object result = this.insertPost(dataMap);
         result = this.getList(dataMap);
+        return result; 
+    }
+
+    public Object insertPostAndGetLecturerList(Object dataMap){
+        Object result = this.insertPost(dataMap);
+        result = this.getListLecturer(dataMap);
+        return result; 
+    }
+    public Object insertPostAndGetNoticeList(Object dataMap){
+        Object result = this.insertPost(dataMap);
+        result = this.getListNotice(dataMap);
         return result; 
     }
 }
