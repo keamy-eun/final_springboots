@@ -19,7 +19,7 @@
         parameterType="Map">
         insert into COMMUNITY_POST                           
         (POST_NUMBER, COMMUNITY_CONTENT, COMMUNITY_TITLE, FILE_ATTACHIMENT, COMMUNITY_DATE, VIEW_COUNT, MEMBER_ID, COMMUNITY_NUMBER, COMMENT_CONTENT, COMMENT_DATE)
-        value ('post17',#{community_content},#{community_title},#{file_Attachiment},now(),'50','ceromi123','C03', null, null); 
+        value ('post19',#{community_content},#{community_title},#{file_Attachiment},now(),'50','ceromi123','C03', null, null); 
         
         <!-- value ('post15','15번째 테스트 시작합니다',#{community_title},null ,now(), '50', 'ceromi123', 'C03', null, null); / 여기가 제목제목목--> 
         <!-- POST_NUMBER 가 자동으로 안겹치게 넣는 방법이 어떻게 될까 모르겠다.. 일단 하드코딩 -->

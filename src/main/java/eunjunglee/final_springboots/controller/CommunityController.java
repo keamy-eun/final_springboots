@@ -2,8 +2,11 @@ package eunjunglee.final_springboots.controller;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -55,8 +58,16 @@ public class CommunityController {
     }
 
     // 게시글 작성 페이지 ㅇ
-    @RequestMapping(value="/community_posting", method = RequestMethod.GET)
-    public ModelAndView getPosting( ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
+    @RequestMapping(value="/community_posting{uniqueId}", method = RequestMethod.GET)
+    public ModelAndView getPosting( ModelAndView modelAndView, @RequestParam Map<String, Object> params){
+        String last_post_number ="";
+
+        // while(변수.hasnext()){
+
+        // }
+        
+        // params.put("last_post_number", uniqueId);
+
         Object resultMap = communityService.getList(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/communitys/community_posting");
