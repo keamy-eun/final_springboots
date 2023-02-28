@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%@ include file= "/WEB-INF/views/header.jsp" %>
+<%@ include file= "/WEB-INF/views/main/header.jsp" %>
 
     <div class="container">
       <hr />
@@ -83,7 +83,7 @@
           </div>
         </div>
       </div>
-      <%@ include file= "/WEB-INF/views/footer.jsp" %>
+      <%@ include file= "/WEB-INF/views/main/footer.jsp" %>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
