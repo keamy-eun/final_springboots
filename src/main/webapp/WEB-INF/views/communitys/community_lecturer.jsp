@@ -58,7 +58,7 @@
           온라인강의</a
         >
         <a
-          href="/community_lecture"
+          href="/community_student"
           class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
         >
           커뮤니티</a
@@ -93,7 +93,7 @@
                 <ul class="list-unstyled components fs-5">
                   <li class="border-top border-1 p-2">
                     <a
-                      href="/community_lecture"
+                      href="/community_student"
                       class="text-decoration-none text-secondary"
                       >학생 커뮤니티</a
                     >

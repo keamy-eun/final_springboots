@@ -37,7 +37,7 @@
 
     <insert id="insertQnA" 
         parameterType="Map">
-        insert into poll_response 
+        insert into POLL_RESPONSE 
         (PQ01,PQ01_1,PQ02,PQ03,PQ04,POLL_DATE) 
         value (#{PQ01},#{PQ01_1},#{PQ02},#{PQ03},#{PQ04},now());
     </insert>
@@ -45,8 +45,19 @@
 <!-- 로그인 완료시 이름 가져오는 방식 변경해야함 -->
     <insert id="insertMyLecture" 
         parameterType="Map">
-        insert into enrollment 
+        insert into ENROLLMENT  
         (LECTURE_NUMBER,MEMBER_ID,ENROLL_DATE,ENROLL_CANCEL) 
         value (#{LECTURE_NUMBER},'circle01',now(),DATE_ADD(now(), INTERVAL 6 MONTH));
     </insert>
+
+    <select id="selectLectureReview" 
+        parameterType="Map" resultType="Map">
+        select COMMUNITY_POST.POST_NUMBER, COMMUNITY_POST.COMMUNITY_TITLE, COMMUNITY_POST.MEMBER_ID, COMMUNITY_POST.COMMUNITY_DATE, COMMUNITY_POST.VIEW_COUNT, (select count(*) from COMMUNITY_POST WHERE POST_NUMBER = COMMUNITY_POST.POST_NUMBER) as cmt_cnt  
+        from COMMUNITY_POST 
+        join POST_COMMENT on POST_COMMENT.POST_NUMBER = community_post.POST_NUMBER 
+        GROUP BY COMMUNITY_POST.POST_NUMBER, COMMUNITY_POST.COMMUNITY_TITLE , COMMUNITY_POST.MEMBER_ID, COMMUNITY_POST.COMMUNITY_DATE, COMMUNITY_POST.VIEW_COUNT
+        ;
+    </select>
+
+
 </mapper>

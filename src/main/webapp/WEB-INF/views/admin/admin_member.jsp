@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/css/commons.css" />
   </head>
   <body>
+
     <div class="container">
       <!-- navbar -->
       <div class="m-5 mb-2">
@@ -119,34 +120,60 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
-                  <tr>
-                    <td><input type="checkbox" name="" id="" /></td>
-                    <td>${resultData.MEMBER_ID}</td>
-                    <td>${resultData.MEMBER_NAME}</td>
-                    <td>${resultData.POSITION}</td>
-                    <td>${resultData.BIRTH}</td>
-                    <td>${resultData.EMAIL}</td>
-                    <td>${resultData.SMS_AD}</td>
-                    <td>${resultData.EMAIL_AD}</td>
-                    <td>
-                      <div class="container">
-                        <form action="/admin_edit_form/${resultData.MEMBER_ID}" method="get">
-                          <button class="btn btn-primary">수정</button>
-                        </form>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="container">
-                        <form action="/admin_member/${resultData.MEMBER_ID}" method="post">
-                          <button class="btn btn-danger">삭제</button>
-                        </form>
-                      </div>
-                    </td>
-                  </tr>
-                </c:forEach>
+                  <c:forEach items="${resultMap.resultList}" var="resultData" varStatus="loop">
+                    <tr>
+                      <td><input type="checkbox" name="" id="" /></td>
+                      <td>${resultData.MEMBER_ID}</td>
+                      <td>${resultData.MEMBER_NAME}</td>
+                      <td>${resultData.POSITION}</td>
+                      <td>${resultData.BIRTH}</td>
+                      <td>${resultData.EMAIL}</td>
+                      <td>${resultData.SMS_AD}</td>
+                      <td>${resultData.EMAIL_AD}</td>
+                      <td>
+                        <div class="container">
+                          <form action="/admin_edit_form/${resultData.MEMBER_ID}" method="get">
+                            <button class="btn btn-primary">수정</button>
+                          </form>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="container">
+                          <form action="/admin_member/${resultData.MEMBER_ID}" method="post">
+                            <button class="btn btn-danger">삭제</button>
+                          </form>
+                        </div>
+                      </td>
+                    </tr>
+                  </c:forEach>
                 </tbody>
               </table>
+            <nav aria-label="Page navigation example">
+              <c:set var="pagination" value="${resultMap.paginations}" />
+                <span>전체 회원수 : ${pagination.totalCount}</span>
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="/admin_member_pagination/${pagination.previousPage}" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only"></span>
+                    </a>
+                  </li>
+                
+                <c:forEach var="pageNum" begin="${pagination.blockStart}" end="${pagination.blockEnd+1}" varStatus="loop">
+                  <c:set var="color" value="" />
+                  <c:if test="${pageNum eq 1}">
+                      <c:set var="color" value="bg-secondary bg-opacity-25" />
+                  </c:if>
+                  <li class="page-item"><a class="page-link ${color}" href="/admin_member_pagination/${pageNum}">${pageNum}</a></li>
+                </c:forEach>
+                  <li class="page-item">
+                    <a class="page-link" href="/admin_member_pagination/${pagination.nextPage}" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only"></span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>

@@ -58,7 +58,7 @@
           온라인강의</a
         >
         <a
-          href="/community_lecture"
+          href="/community_student"
           class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
         >
           커뮤니티</a
@@ -91,7 +91,7 @@
             <ul class="list-unstyled components fs-5">
               <li class="border-top border-1 p-2">
                 <a
-                  href="/community_lecture"
+                  href="/community_student"
                   class="text-decoration-none text-secondary"
                   >학생 커뮤니티</a
                 >
@@ -110,20 +110,22 @@
         <div class="col-6 mt-5 ms-5 text-center">
           <!-- 제목 -->
           <h1 class="mb-5">게시글 작성</h1>
-          <form action="./community_post" method="post" class="form-group">
+          <form action="/community_student" method="post" class="form-group">
+          <%-- 게시글 작성  이후 작성한 페이지로 돌아가는 법을 아직 모르겠다, 좀 더 생각해 볼 것 --%>
+          <%-- 우선은 student로 가도록 해두었다. --%>
             <!--  -->
             <div class="text-start input-group">
-              <label class="input-group-text" for="postTitle">게시글 제목</label>
-              <input type="text" id="postTitle" class="form-control" required/>
+              <label class="input-group-text" for="community_title">게시글 제목</label>
+              <input type="text" id="community_title" class="form-control" name="community_title" required/>
             </div>
                        
               <div class="mt-3">
               
-                <select class="form-select col-" id="exampleDataList" placeholder="">
-                  <option selected value="1">강좌 게시판</option>
-                  <option value="2">강사 게시판</option>
-                  <option value="3">학생 게시판</option>
-                  <option value="4">공지사항</option>
+                <select class="form-select col-" id="community_number" name="community_number" placeholder="">
+                  <option selected value="C01">강좌 게시판</option>
+                  <option value="C02">강사 게시판</option>
+                  <option value="C03">학생 게시판</option>
+                  <option value="C04">공지사항</option>
                 </select>
                
            
@@ -133,17 +135,20 @@
                 <span class="input-group-text me-1">Upload</span>
               </div>
               <div class="custom-file">
-                <input type="file" class="custom-file-input form-control" id="inputGroupFile01">
-                <label class="custom-file-label form-file" for="inputGroupFile01"></label>
+                <input type="file" class="custom-file-input form-control" id="file_Attachiment" name="file_Attachiment">
+                <label class="custom-file-label form-file" for="file_Attachiment"></label>
               </div>
             </div>
 
 
             <div class="input-group">
-              <textarea rows="20" class="form-control" aria-label="With textarea" placeholder="내용입력" ></textarea>
+              <textarea rows="20" class="form-control" aria-label="With textarea" placeholder="내용입력" id="community_content" name="community_content" ></textarea>
             </div>
             <div class="d-flex justify-content-end mt-3">
-              <a href="/community_post" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">게시글 작성</a>
+              <button type="submit" class="btn btn-secondary btn-lg active">
+                 게시글 작성
+              </button>
+              <%-- <a href="/community_post" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">게시글 작성</a> --%>
                 
             </div>
           </div>

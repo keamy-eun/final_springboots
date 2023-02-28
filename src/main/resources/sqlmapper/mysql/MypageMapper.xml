@@ -44,9 +44,9 @@
     <select id="selectByQAlist" 
         parameterType="Map" resultType="Map">
         SELECT * 
-        FROM test_answers
-        inner join test_questions
-        where test_answers.QUESTION_UID = test_questions.QUESTION_UID
+        FROM TEST_ANSWERS 
+        inner join TEST_QUESTIONS 
+        where TEST_ANSWERS.QUESTION_UID = TEST_QUESTIONS.QUESTION_UID
     </select>
 
     <!-- call mypage.insertWithUID -->

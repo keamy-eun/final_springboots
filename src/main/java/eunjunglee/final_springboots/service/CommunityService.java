@@ -16,5 +16,15 @@ public class CommunityService {
         return result;
     }
 
+    public Object insertPost(Object dataMap){
+        String sqlMapId = "Community.insertPost";
+        Object result = sharedDaos.insert(sqlMapId, dataMap);
+        return result;
+    }
 
+    public Object insertPostAndGetList(Object dataMap){
+        Object result = this.insertPost(dataMap);
+        result = this.getList(dataMap);
+        return result; 
+    }
 }

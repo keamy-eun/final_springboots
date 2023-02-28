@@ -51,4 +51,10 @@ public class LectureService {
         Object result = sharedDaos.insert(sqlMapId, dataMap);
         return result;
     }
+
+    public Object getLectureReview(Object dataMap){
+        String sqlMapId = "Lecture.selectLectureReview";
+        Object result = sharedDaos.getList(sqlMapId, dataMap);
+        return result;
+    }
 }
