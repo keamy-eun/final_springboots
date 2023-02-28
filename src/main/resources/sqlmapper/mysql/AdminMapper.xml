@@ -5,25 +5,29 @@
     <select id="selectList" 
         parameterType="Map" resultType="Map">
         SELECT * 
-        FROM member 
+        FROM MEMBER 
+        <if test="pageScale != null">
+        ORDER BY MEMBER_ID 
+        LIMIT #{pageBegin}, #{pageScale}
+        </if>
     </select>
 
     <select id="selectListByID" 
         parameterType="Map" resultType="Map">
         SELECT * 
-        FROM member 
+        FROM MEMBER 
         WHERE MEMBER_ID=#{MEMBER_ID} 
     </select>
 
     <update id="deleteByID" 
         parameterType="Map"> 
-        DELETE FROM member 
+        DELETE FROM MEMBER 
         WHERE MEMBER_ID=#{MEMBER_ID} 
     </update> 
 
     <update id="updateByID" 
         parameterType="Map">
-        UPDATE member 
+        UPDATE MEMBER 
         SET MEMBER_NAME=#{MEMBER_NAME}, POSITION=#{POSITION}, BIRTH=#{BIRTH}, EMAIL=#{EMAIL} 
         <choose>
             <when test="SMS_AD != null">
@@ -47,7 +51,7 @@
     <select id="selectTotal" 
         parameterType="Map" resultType="int">
         SELECT COUNT(*) 
-        FROM member 
+        FROM MEMBER 
     </select>
 
 </mapper>

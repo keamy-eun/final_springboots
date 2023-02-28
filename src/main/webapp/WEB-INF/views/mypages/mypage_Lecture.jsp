@@ -170,8 +170,8 @@
                   </div>
                   <div class="col-2">
                     <a
-                      href=""
-                      onclick="alert('수강신청을 취소하시겠습니까?')"
+                      href="/mypage/delete/${resultData.LECTURE_NUMBER}"
+                      onclick="alert('수강신청을 취소하였습니다')"
                       class="btn btn-danger"
                       >수강취소</a
                     >

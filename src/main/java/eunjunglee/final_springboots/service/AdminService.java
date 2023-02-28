@@ -30,8 +30,15 @@ public class AdminService {
         return result;
     }
     public Object deleteAndList(Object dataMap){
-        Object result = this.delete(dataMap);
-        result = this.getList(dataMap);
+        Map<String, Object> result = new HashMap<String, Object>();
+        int totalCount = (int) this.getTotal(dataMap);
+        int currentPage = (int) ((Map<String, Object>) dataMap).get("currentPage");
+        Paginations paginations = new Paginations(totalCount, currentPage);
+        result.put("paginations", paginations);
+        ((Map<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin());
+        Object result_query = this.delete(dataMap);
+        result_query = this.getList(dataMap);
+        result.put("resultList", result_query);
         return result;
     }
     public Object update(Object dataMap){
@@ -39,16 +46,26 @@ public class AdminService {
         Object result = sharedDaos.updateOne(sqlId, dataMap);
         return result;
     }
+
     public Object updateAndList(Object dataMap){
-        Object result = this.update(dataMap);
-        result = this.getList(dataMap);
+        Map<String, Object> result = new HashMap<String, Object>();
+        int totalCount = (int) this.getTotal(dataMap);
+        int currentPage = (int) ((Map<String, Object>) dataMap).get("currentPage");
+        Paginations paginations = new Paginations(totalCount, currentPage);
+        result.put("paginations", paginations);
+        ((Map<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin());
+        Object result_query = this.update(dataMap);
+        result_query = this.getList(dataMap);
+        result.put("resultList", result_query);
         return result;
     }
+
     public Object getTotal(Object dataMap){
-        String sqlMapId = "Poll.selectTotal";
+        String sqlMapId = "Admin.selectTotal";
         Object result = sharedDaos.getOne(sqlMapId, dataMap);
         return result;
     }
+    
     public Object listAndPagination(Object dataMap){
         Map<String, Object> result = new HashMap<String, Object>();
         int totalCount = (int) this.getTotal(dataMap);

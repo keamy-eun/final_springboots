@@ -8,8 +8,8 @@
     <!-- 게시글과 멤버의 모든 column불러옴 -->
     <!-- 학생게시판 강사게시판 공동 사용 -->
        SELECT *
-        FROM community_post
-        inner join member 
+        FROM COMMUNITY_POST 
+        inner join MEMBER 
         <!-- ON member.MEMBER_ID = community_post.MEMBER_ID -->
         group by COMMUNITY_CONTENT
     </select>
@@ -17,7 +17,7 @@
     <!-- call  Community.insertPost-->
     <insert id="insertPost" 
         parameterType="Map">
-        insert into community_post                          
+        insert into COMMUNITY_POST                           
         (POST_NUMBER, COMMUNITY_CONTENT, COMMUNITY_TITLE, FILE_ATTACHIMENT, COMMUNITY_DATE, VIEW_COUNT, MEMBER_ID, COMMUNITY_NUMBER, COMMENT_CONTENT, COMMENT_DATE)
         value ('post19',#{community_content},#{community_title},#{file_Attachiment},now(),'50','ceromi123','C03', null, null); 
         

@@ -1,5 +1,5 @@
 
-insert into member 
+insert into MEMBER 
 (MEMBER_ID,PW,MEMBER_NAME,POSITION,BIRTH,EMAIL,SMS_AD,EMAIL_AD,PRIVACY_INFO)
 values('ceromi123','비번1234','세로미','강사','1995-01-04','dnjsrl014@hanmail.net','YES','NO','YES'),
 ('nas8808','비번1234','남혜인','학생','1997-11-15','hein55@hanmail.net','NO','NO','YES'),
@@ -21,11 +21,10 @@ values ('LECTURE_24', '영어회화초급01','2022-09-10',580,'LECTURER_06','영
 ('LECTURE_17', '나의 행동을 표현하는 모든 영어 1','2022-11-27',14610,'LECTURER_06','결재 서류를 올리다? QR코드를 찍다? 일상생활에서의 나의 행동을 사소하지만 영어로 어떻게 표현하는지 미처 알지 못했던 단어와 표현이 있으셨죠? 친구나 동료와 나의 평범한 일상을 영어로 이야기 할 수 있도록, 어휘력 업그레이드가 필요합니다.','https://en.pimg.jp/085/079/410/1/85079410.jpg');
 
 insert into enrollment 
-(LECTURE_NUMBER,MEMBER_ID,ENROLL_DATE,ENROLL_CANCEL) 
-values ('LECTURE_14','circle01',now(),'CANCELED'),('LECTURE_15','circle01',now(),'NOT CANCELED'),('LECTURE_16','circle01',now(),'NOT CANCELED'),
-('LECTURE_17','circle01',now(),'NOT CANCELED'),('LECTURE_24','nas8808',now(),'NOT CANCELED'),('LECTURE_12','nas8808',now(),'NOT CANCELED'),
-('LECTURE_13','nas8808',now(),'CANCELED'),('LECTURE_14','nas8808',now(),'CANCELED'),('LECTURE_15','nas8808',now(),'NOT CANCELED');
-
+(LECTURE_NUMBER,MEMBER_ID,ENROLL_DATE,ENROLL_EXPIRED_DATE) 
+values ('LECTURE_14','circle01',now(),DATE_ADD(now(), INTERVAL 6 MONTH)),('LECTURE_15','circle01',now(),DATE_ADD(now(), INTERVAL 6 MONTH)),('LECTURE_16','circle01',now(),DATE_ADD(now(), INTERVAL 6 MONTH)),
+('LECTURE_17','circle01',now(),DATE_ADD(now(), INTERVAL 6 MONTH)),('LECTURE_24','nas8808',now(),DATE_ADD(now(), INTERVAL 6 MONTH)),('LECTURE_12','nas8808',now(),DATE_ADD(now(), INTERVAL 6 MONTH)),
+('LECTURE_13','nas8808',now(),DATE_ADD(now(), INTERVAL 6 MONTH)),('LECTURE_14','nas8808',now(),DATE_ADD(now(), INTERVAL 6 MONTH)),('LECTURE_15','nas8808',now(),DATE_ADD(now(), INTERVAL 6 MONTH));
 
 insert into POLL_QUESTIONS 
 (QUESTION_UID,QUESTION,ORDERS) 
@@ -41,17 +40,17 @@ VALUES ('PA1-1', '지인의 추천으로', '1', 'PQ01'),('PA1-2', '인터넷 광
  ('PA4', NULL, NULL, 'PQ04');
  
 
-insert into member_log 
+insert into MEMBER_LOG 
 (CERTIFICATION_KEY,MEMBER_ID,LOGIN_DATE,LOGIN_STATUS) 
 values('C9483WFDJJ1','ceromi123',now(),'login'),
 ('UUGH831231','circle01',now(),'login'),
 ('IVO3W6DYY1','admin',now(),'logout');
 
-insert into community
+insert into COMMUNITY
 (COMMUNITY_NUMBER,COMMUNITY_NAME) 
 values('C01','강좌게시판'),('C02','강사게시판'),('C03','학생게시판'),('C04','공지사항'),('C05','강의후기게시판');
 
-insert into community_post 
+insert into COMMUNITY_POST 
 (POST_NUMBER,COMMUNITY_CONTENT,COMMUNITY_TITLE,FILE_ATTACHIMENT,COMMUNITY_DATE,VIEW_COUNT,MEMBER_ID,COMMUNITY_NUMBER) 
 value('POST48','강의추천','최치열샘 강의를 추천합니다','2','2023-10-25',412,'ceromi123','C03'),
 ('POST49','시험을 준비하면서 3개의 다른 인터넷 강의를 결제해서 들어보았습니다. N3를 준비하면서 해커스 일본어를 N2를 준비하면서 일단기 인강을 이용했고 현재는 N2까지 합격한 상태로 올해 12월 N1합격을 준비하며 파고다 일본어 인강을 들었는데요, 나름 3개 회사의 인강을 들으며 개인적으로 느낀 장단점을 분석해보려고 합니다. (모두 어떠한 금전적인 지원도 받지 않은 지극히 주관적인 내 돈 내산 후기임을 앞서 밝힙니다.) Coverage : 일단기, 파고다 Good - N1까지 학습 가능 우선 N1부터 N5까지 있는 JLPT의 응시 난이도에 대하여 일단기와 파고다의 경우 N1까지 강의 패키지에 포함이 되어있지만 해커스의 경우 N2까지만 강의를 제공하고 있습니다.','시험공부의 가장 복병이던 문자/어휘 공략에 도움','1','2023-04-31',4212,'nas8808','C05'),
@@ -64,7 +63,7 @@ value('POST48','강의추천','최치열샘 강의를 추천합니다','2','2023
 ('POST56','지방이라서 마땅한 토익 학원도 없었구요 그러다 그냥 응시한 토익에서는 그냥 덜 만족할만한 성적만을 받았고 그렇게 응시료와 시간만 날리고 있었습니다 그러다 인강을 듣게 되었을때는 이거다!하는 생각이 들었어요 특히 켈리정 강사님의 경우 오답best 선지를 리플레이 해주시면서 특유의 표정과 함께 수강생들이 낚일만한 선지를 딱!짚어주시면서 강의를 해주셨습니다. 저같은 경우 어려운 회차에서는 강의를 2회독하며 활용했습니다.','이번에 다른 수강생의 추천으 토익 인강 강의를 듣게 되었습니다','2','2023-11-09',132,'circle01','C05')
 ;
 
-insert into post_comment 
+insert into POST_COMMENT 
 (COMMENT_NUMBER,COMMENT_CONTENT,POST_DATE,MEMBER_ID,POST_NUMBER) 
 values ('CMN04','추천드려요!!','2023-11-11','ceromi123','POST48'),
 ('CMN10','내일 시험에서는 만점을!!','2022-10-14','circle01','POST48'),('CMN11','저도 이부분은 수정됐으면 좋겠습니다.','2022-08-17','nas8808','POST49'),
@@ -74,7 +73,7 @@ values ('CMN04','추천드려요!!','2023-11-11','ceromi123','POST48'),
 ('CMN18','저는 여전히 틀립니다 ㅠㅠ','2022-08-14','circle01','POST56'),('CMN19','앞으로 더 잘되시길 응원합니다~','2023-02-22','nas8808','POST56'),
 ('CMN20','문제가 너무 복잡하게 아닌가싶어요','2023-01-15','nas8808','POST55'),('CMN21','그건 스타일 차이인것 같아요.','2023-01-31','circle01','POST54');
 
-insert into test_questions 
+insert into TEST_QUESTIONS 
 (QUESTION_UID,QUESTION) 
 values('TQ01','1.Mark your answer on your answer sheet'),('TQ02','2. Mark your answer on your answer sheet'),
 ('TQ03','3. What will the speakers mainly talk about?'),('TQ04','4. What does the woman say about the stories about change?'),
@@ -91,7 +90,7 @@ VALUES ('TA101', '(A)', 'TQ01'), ('TA102', '(B)', 'TQ01'), ('TA103', '(C)', 'TQ0
 ('TA701', '(A)method', 'TQ07'), ('TA702', '(B)concern', 'TQ07'), ('TA703', '(C)relief', 'TQ07'), ('TA704', '(D)advice', 'TQ07')
 ;
 
-insert into selftest_result 
+insert into SELFTEST_RESULT 
 (MEMBER_ID,QUESTION_UID,ANSWER_UID) 
 values('ceromi123','TQ01','TA101'),('ceromi123','TQ02','TA202'),('ceromi123','TQ03','TA303'),
 ('ceromi123','TQ04','TA404'),('ceromi123','TQ05','TA502'),('ceromi123','TQ06','TA601'),('ceromi123','TQ07','TA702');
