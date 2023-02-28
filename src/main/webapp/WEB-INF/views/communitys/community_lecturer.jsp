@@ -139,8 +139,8 @@
                 
                <tbody>
                 <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
-                  <tr>
-                    <td>${resultData.POST_NUMBER}</td>
+                  <tr class="line">
+                    <td class="post">${resultData.POST_NUMBER}</td>
                     <td>${resultData.COMMUNITY_TITLE}</td>
                     <td>${resultData.MEMBER_ID}</td>
                     <td>${resultData.COMMUNITY_DATE}</td>
@@ -226,5 +226,16 @@
     <!-- SCRIPT -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
+    <script>
+      $(document).on('click','.line',function(){
+        let community_title = $(this).children('.post').text();
+        location.href = "/community_post/"+community_title;
+      });
+
+      $(document).on('mouseover','.line',function(){
+        $('.line').css('padding','none');
+        $(this).css('padding','0.5px solid lightgrey');
+      });
+    </script>
   </body>
 </html>

@@ -83,43 +83,29 @@
       <div class="text-center container-fluid">
         <div class="row">
           <!-- Sidebar -->
-          <div class="col-auto wrapper border border-1 m-3 p-3">
-            <nav id="sidebar">
-              <div class="text-secondary">
-                <h3>은정이 아카데미</h3>
-              </div>
-              <ul class="list-unstyled components fs-5">
-                <li class="border-top border-1 p-2">
-                  <a
-                    href="/community_lecture"
-                    class="text-decoration-none text-secondary"
-                    >강좌 게시판</a
-                  >
-                </li>
-                <li class="border-top border-1 p-2">
-                  <a
-                    href="/community_lecturer"
-                    class="text-decoration-none text-secondary"
-                    >강사 게시판</a
-                  >
-                </li>
-                <li class="border-top border-1 p-2">
-                  <a
-                    href="/community_student"
-                    class="text-decoration-none text-secondary"
-                    >학생 게시판</a
-                  >
-                </li>
-                <li class="border-top border-1 p-2">
-                  <a
-                    href="/community_noctice"
-                    class="text-decoration-none text-secondary"
-                    >공지사항</a
-                  >
-                </li>
-              </ul>
-            </nav>
-          </div>
+            <div class="col-auto wrapper border border-1 m-3 p-3">
+              <nav id="sidebar">
+                <div class="text-secondary">
+                  <h3>은정이 아카데미</h3>
+                </div>
+                <ul class="list-unstyled components fs-5">
+                  <li class="border-top border-1 p-2">
+                    <a
+                      href="/community_student"
+                      class="text-decoration-none text-secondary"
+                      >학생 커뮤니티</a
+                    >
+                  </li>
+                  <li class="border-top border-1 p-2">
+                    <a
+                      href="/community_lecturer"
+                      class="text-decoration-none text-secondary"
+                      >강사 게시판</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
           <!-- 게시글 -->
           <div class="container col-7 mt-5 text-start">
                 <%-- 제목  --%>
