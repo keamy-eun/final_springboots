@@ -44,7 +44,7 @@ public class MypageService {
             sqlMapId = "mypage.selectLecturerNameByMember";
             Object iterResultLecturerName = sharedDaos.getList(sqlMapId, tempHash);
 
-            tempresult.put("LECTURER_TITLE",
+            tempresult.put("LECTURE_TITLE",
                     ((HashMap<String, Object>) (((ArrayList) iterResultLectureName).get(0))).get("LECTURE_TITLE"));
             tempresult.put("MEMBER_NAME",
                     ((HashMap<String, Object>) (((ArrayList) iterResultLecturerName).get(0))).get("MEMBER_NAME"));
@@ -56,8 +56,9 @@ public class MypageService {
             String[] ExpireLectureTimeArrStr = ExpireLectureTime.split("-");
             int[] ExpireLectureTimeArr = Arrays.stream(ExpireLectureTimeArrStr).mapToInt(Integer::parseInt).toArray();
             // 수강종료일과 현재 시간 비교
-            if (now.getYear() <= ExpireLectureTimeArr[0] && now.getMonthValue() <= ExpireLectureTimeArr[1]
-                    && now.getDayOfMonth() <= ExpireLectureTimeArr[2]) {
+            if (now.getYear() * 30 * 12 + now.getMonthValue() * 30
+                    + now.getDayOfMonth() <= ExpireLectureTimeArr[0] * 30 * 12 + ExpireLectureTimeArr[1] * 30
+                            + ExpireLectureTimeArr[2]) {
                 tempresult.put("ENROLL_EXPIRED_DATE",
                         ((HashMap<String, Object>) (((ArrayList) enrollmentresult).get(0))).get("ENROLL_EXPIRED_DATE"));
             } else {

@@ -71,7 +71,7 @@
               <div class="">
               <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
                 <div class="row mt-4 d-flex justify-content-around">
-                  <div class="col-6">${resultData.LECTURER_TITLE}</div>
+                  <div class="col-6">${resultData.LECTURE_TITLE}</div>
                   <div class="col-2 text-center">${resultData.MEMBER_NAME}</div>
                   <div class="col-2 text-center">${resultData.ENROLL_EXPIRED_DATE}</div>
                   <div class="col-2">
