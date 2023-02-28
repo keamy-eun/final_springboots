@@ -72,8 +72,8 @@ public class LectureService {
 
     public Object insertQnAAndMyLectureAndGetList(Object dataMap){
         Object result = this.insertMyLecture(dataMap);
-        result = this.getMyLectureList(dataMap);
         result = this.insertQnA(dataMap);
+        result = this.getMyLectureList(dataMap);
         return result;
     }
 }
