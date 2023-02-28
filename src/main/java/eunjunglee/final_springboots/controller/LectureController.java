@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import eunjunglee.final_springboots.service.LectureService;
+import eunjunglee.final_springboots.service.MypageService;
 
 @Controller
 public class LectureController {
@@ -40,12 +42,10 @@ public class LectureController {
      // 강좌신청
      @RequestMapping(value="/lecture_signup", method = RequestMethod.POST)
      public ModelAndView getPoll(@RequestParam Map<String, Object> params, ModelAndView modelAndView ){
-         Object resultMap1 = lectureService.insertQnA(params);
-         Object resultMap2 = lectureService.insertMyLecture(params);
-         ArrayList<Object> resultList = new ArrayList<>();
-         resultList.add(resultMap1);
-         resultList.add(resultMap2);
-         modelAndView.addObject("resultList", resultList);
+        params.put("MEMBER_ID", "circle01");
+        params.put("LECTURER_TITLE", "세로미");
+        Object resultMap = lectureService.insertQnAAndMyLectureAndGetList(params);
+         modelAndView.addObject("resultMap", resultMap);
          modelAndView.setViewName("/mypages/mypage_Lecture");
          return modelAndView;
      }

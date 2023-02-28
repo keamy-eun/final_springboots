@@ -57,4 +57,23 @@ public class LectureService {
         Object result = sharedDaos.getList(sqlMapId, dataMap);
         return result;
     }
+
+    public Object getMyLectureList(Object dataMap){
+        String sqlMapId = "Lecture.selectMyLectureList";
+        Object result = sharedDaos.getList(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object insertMyLectureAndGetList(Object dataMap){
+        Object result = this.insertMyLecture(dataMap);
+        result = this.getMyLectureList(dataMap);
+        return result; 
+    }
+
+    public Object insertQnAAndMyLectureAndGetList(Object dataMap){
+        Object result = this.insertMyLecture(dataMap);
+        result = this.getMyLectureList(dataMap);
+        result = this.insertQnA(dataMap);
+        return result;
+    }
 }
