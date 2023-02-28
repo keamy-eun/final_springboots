@@ -97,37 +97,37 @@
             </div>
             <ul class="list-unstyled components fs-5">
               <li class="border-top border-1 p-2">
-                <a
-                  href="/mypage_Lecture"
-                  target="_self"
-                  class="text-decoration-none text-secondary"
-                  >내 강의보기</a
-                >
-              </li>
-              <li class="border-top border-1 p-2">
-                <a
-                  href="/mypage_signup_lecturelist"
-                  target="_self"
-                  class="text-decoration-none text-secondary"
-                  >수강신청내역</a
-                >
-              </li>
-              <li class="border-top border-1 p-2">
-                <a
-                  href="/mypage_member_edit"
-                  target="_self"
-                  class="text-decoration-none text-secondary"
-                  >개인정보수정</a
-                >
-              </li>
-              <li class="border-top border-1 p-2">
-                <a
-                  href="/mypage_selfTest"
-                  target="_self"
-                  class="text-decoration-none text-secondary"
-                  >영어실력 테스트</a
-                >
-              </li>
+                  <a
+                    href="/mypage/Lecture"
+                    target="_self"
+                    class="text-decoration-none text-secondary"
+                    >수강중인 강의</a
+                  >
+                </li>
+                <li class="border-top border-1 p-2">
+                  <a
+                    href="/mypage/LectureSignUpList"
+                    target="_self"
+                    class="text-decoration-none text-secondary"
+                    >수강신청내역</a
+                  >
+                </li>
+                <li class="border-top border-1 p-2">
+                  <a
+                    href="/mypage/EditForm"
+                    target="_self"
+                    class="text-decoration-none text-secondary"
+                    >개인정보수정</a
+                  >
+                </li>
+                <li class="border-top border-1 p-2">
+                  <a
+                    href="/mypage/selfTestForm"
+                    target="_self"
+                    class="text-decoration-none text-secondary"
+                    >영어실력 테스트</a
+                  >
+                </li>
             </ul>
           </nav>
         </div>

@@ -20,12 +20,11 @@ values ('LECTURE_24', '영어회화초급01','2022-09-10',580,'LECTURER_06','영
 ('LECTURE_16', '시추에이션 영작문','2022-07-25',41630,'LECTURER_06','★ 상황으로 쉽고 재밌게 배우는 영작문 강의! 직장, 여행, 일상회화, 인터뷰 상황에서 쓸 수 있는 다양한 문장을 영작해볼 수 있고 상황 별로 자주 사용하는 표현, 패턴을 기반으로 쉽고 효과적으로 문장을 영작할 수 있게됩니다. 영작 뿐 아니라 회화에도 활용할 수 있는 강의','https://t1.daumcdn.net/cfile/tistory/2668344B585505222E'),
 ('LECTURE_17', '나의 행동을 표현하는 모든 영어 1','2022-11-27',14610,'LECTURER_06','결재 서류를 올리다? QR코드를 찍다? 일상생활에서의 나의 행동을 사소하지만 영어로 어떻게 표현하는지 미처 알지 못했던 단어와 표현이 있으셨죠? 친구나 동료와 나의 평범한 일상을 영어로 이야기 할 수 있도록, 어휘력 업그레이드가 필요합니다.','https://en.pimg.jp/085/079/410/1/85079410.jpg');
 
-insert into ENROLLMENT  
-(LECTURE_NUMBER,MEMBER_ID,ENROLL_DATE,ENROLL_CANCEL) 
-values ('LECTURE_14','circle01',now(),'CANCELED'),('LECTURE_15','circle01',now(),'NOT CANCELED'),('LECTURE_16','circle01',now(),'NOT CANCELED'),
-('LECTURE_17','circle01',now(),'NOT CANCELED'),('LECTURE_24','nas8808',now(),'NOT CANCELED'),('LECTURE_12','nas8808',now(),'NOT CANCELED'),
-('LECTURE_13','nas8808',now(),'CANCELED'),('LECTURE_14','nas8808',now(),'CANCELED'),('LECTURE_15','nas8808',now(),'NOT CANCELED');
-
+insert into enrollment 
+(LECTURE_NUMBER,MEMBER_ID,ENROLL_DATE,ENROLL_EXPIRED_DATE) 
+values ('LECTURE_14','circle01',now(),DATE_ADD(now(), INTERVAL 6 MONTH)),('LECTURE_15','circle01',now(),DATE_ADD(now(), INTERVAL 6 MONTH)),('LECTURE_16','circle01',now(),DATE_ADD(now(), INTERVAL 6 MONTH)),
+('LECTURE_17','circle01',now(),DATE_ADD(now(), INTERVAL 6 MONTH)),('LECTURE_24','nas8808',now(),DATE_ADD(now(), INTERVAL 6 MONTH)),('LECTURE_12','nas8808',now(),DATE_ADD(now(), INTERVAL 6 MONTH)),
+('LECTURE_13','nas8808',now(),DATE_ADD(now(), INTERVAL 6 MONTH)),('LECTURE_14','nas8808',now(),DATE_ADD(now(), INTERVAL 6 MONTH)),('LECTURE_15','nas8808',now(),DATE_ADD(now(), INTERVAL 6 MONTH));
 
 insert into POLL_QUESTIONS 
 (QUESTION_UID,QUESTION,ORDERS) 
