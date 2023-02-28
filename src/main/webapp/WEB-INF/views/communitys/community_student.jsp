@@ -149,14 +149,23 @@
                 </div>
                 <!-- 글쓰기 -->
                 <div class="mb-3 text-end">
+                <%-- <c:forEach items="${resultMap}" var="postData" varStatus="loop">
+
+                  <form action ="/communitys/community_posting/${postData.POST_NUMBER}" method="get"> 
+				              	<%-- action 주소에 uid를 담아 보냄 
+                </c:forEach> --%>
                   <button class="border btn">
                     <a
-                      href="/community_posting"
-                      class="text-black"
-                      style="text-decoration: none"
-                      >글쓰기</a
-                    >
+                     href="/community_posting"
+                     class="text-black"
+                     style="text-decoration: none"
+                    >글쓰기</a
+                    >  
                   </button>
+			              		
+					        </form>
+
+                  
                 </div>
                 <tr>
                   <th>NO</th>
