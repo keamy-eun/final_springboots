@@ -177,8 +177,8 @@
 
                 <tbody>
                 <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
-                  <tr>
-                    <td>${resultData.POST_NUMBER}</td>
+                  <tr class="line">
+                    <td class="post">${resultData.POST_NUMBER}</td>
                     <td>${resultData.COMMUNITY_TITLE}</td>
                     <td>${resultData.MEMBER_ID}</td>
                     <td>${resultData.COMMUNITY_DATE}</td>
@@ -262,5 +262,17 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+      $(document).on('click','.line',function(){
+        let community_title = $(this).children('.post').text();
+        location.href = "/community_post/"+community_title;
+      });
+
+      $(document).on('mouseover','.line',function(){
+        $('.line').css('padding','none');
+        $(this).css('padding','0.5px solid lightgrey');
+      });
+    </script>
   </body>
 </html>

@@ -122,37 +122,18 @@
           </div>
           <!-- 게시글 -->
           <div class="container col-7 mt-5 text-start">
-            <div class="fs-1">[문법 입문] 기초 문법 공부 3단계</div>
+                <%-- 제목  --%>
+              <c:set var="map" value="${resultMap[0]}"/>
+            <%-- <div class="fs-1">${map}</div>  확인용--%>
+            <div class="fs-1">${map.COMMUNITY_TITLE}</div>
             <hr class="opacity-100" />
 
-            <img
-              src="https://assets.blog.engoo.com/wp-content/uploads/sites/2/2021/07/22171447/005-1-1024x1024.png.webp"
-              alt=""
-              width="500px"
-              class="m-3"
-            />
-            <p>첫번째는 부사에 관한 영어 문법입니다.</p>
-
-            <p>
-              “집으로 가자!” 라는 말에서 많은 분들이 Go to home! 이라는 말을
-              쓰곤 하는데요
-            </p>
-            <p>
-              여기서 home은 추상적인 장소이기 때문에 to를 함께 쓰지 않습니다!
-            </p>
-
-            <p>
-              이처럼 정해진 실체를 갖추지 않은 추상적인 장소의 경우 부사처럼
-              사용되기 때문에
-            </p>
-            <p>
-              to를 사용하지 않습니다. 하지만 Home에 summer, mobile, second 등의
-              특정한 단어들이 붙어
-            </p>
-            <p>실체가 생긴 경우는 예외로 home을 to와 함께 씁니다.</p>
-
-            <p>We are going to our summer home this weekend.</p>
-            <p>우리는 이번 주말에 우리의 여름 주택에 간다.</p>
+            
+            <%-- <c:if test="${board.title eq paramTitle}">
+             ${board.title}
+            </c:if>
+            --%>
+        
             <div>
               <iframe
                 width="560"
@@ -165,7 +146,8 @@
                 class="m-3"
               ></iframe>
             </div>
-
+            <%-- 게시글 내용 --%>
+            ${map.COMMUNITY_CONTENT}
             <!-- 댓글 -->
             <div class="" style="width: 50rem">
               <div

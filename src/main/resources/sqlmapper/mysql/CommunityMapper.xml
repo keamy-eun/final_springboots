@@ -3,6 +3,26 @@
 
 <mapper namespace="Community">
     <!-- call  Community.selectListByID-->
+    <select id="selectPostList"
+    parameterType="Map" resultType="Map">
+    <!-- 게시글과 멤버의 모든 column불러옴 -->
+       SELECT *
+        FROM COMMUNITY_POST 
+        inner join MEMBER 
+        group by COMMUNITY_CONTENT
+        order by POST_NUMBER DESC
+    </select>
+
+<!-- 하나만 가져오는 코드 -->
+<select id="selectPost"
+    parameterType="String" resultType="Map">
+    <!-- 게시글과 멤버의 모든 column불러옴 -->
+       SELECT *
+        FROM COMMUNITY_POST 
+        where POST_NUMBER = #{parameter}
+    </select>
+
+    <!-- call  Community.selectListByID-->
     <select id="selectListStudent"
     parameterType="Map" resultType="Map">
     <!-- 게시글과 멤버의 모든 column불러옴 -->
@@ -46,5 +66,10 @@
         <!-- id값과 조회수, 댓글기능만  -->
     </insert>
 
+    <update id="updatePostView" parameterType="String">
+    update COMMUNITY_POST
+    set VIEW_COUNT  = VIEW_COUNT +1
+    where post_number = #{parameter}
+    </update>
 
 </mapper>

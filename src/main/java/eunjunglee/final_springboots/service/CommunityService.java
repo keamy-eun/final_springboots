@@ -10,8 +10,19 @@ public class CommunityService {
     @Autowired
     SharedDaos sharedDaos;
 
+
     public Object getList(Object dataMap){
         String sqlMapId = "Community.selectListStudent";
+        Object result = sharedDaos.getList(sqlMapId, dataMap);
+        return result;
+    }
+    public Object getPostList(Object dataMap){
+        String sqlMapId = "Community.selectPostList";
+        Object result = sharedDaos.getList(sqlMapId, dataMap);
+        return result;
+    }
+    public Object getPost(Object dataMap){
+        String sqlMapId = "Community.selectPost";
         Object result = sharedDaos.getList(sqlMapId, dataMap);
         return result;
     }
@@ -51,5 +62,11 @@ public class CommunityService {
         Object result = this.insertPost(dataMap);
         result = this.getListNotice(dataMap);
         return result; 
+    }
+
+    public Object updatePostView(Object dataMap){
+        String sqlMapId = "Community.updatePostView";
+        Object result = sharedDaos.updateOne(sqlMapId, dataMap);
+        return result;
     }
 }
