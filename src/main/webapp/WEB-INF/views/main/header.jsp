@@ -27,7 +27,7 @@
             >로그인</a
           >
           <a
-            href="/main_signUp"
+            href="/home/Signupform"
             class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
             >회원가입</a
           >
