@@ -138,6 +138,7 @@
                   </tr>
                 
                <tbody>
+               <%-- foreach로 모두 꺼내서 출력 --%>
                 <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
                   <tr class="line">
                     <td class="post">${resultData.POST_NUMBER}</td>

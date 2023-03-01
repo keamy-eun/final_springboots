@@ -222,6 +222,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <%-- 스크립트 추가 --%>
     <script>
       $(document).on('click','.line',function(){
         let community_title = $(this).children('.post').text();

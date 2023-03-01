@@ -22,6 +22,16 @@
         where POST_NUMBER = #{parameter}
     </select>
 
+    <!-- 강사게시판의 게시글만 나오도록 -->
+    <select id="selectListLecturer"
+    parameterType="Map" resultType="Map">
+
+        select *
+        from community_post
+        WHERE COMMUNITY_NUMBER = 'C02'
+        order by post_number desc
+    </select>
+
     <!-- call  Community.selectListByID-->
     <select id="selectListStudent"
     parameterType="Map" resultType="Map">
@@ -33,17 +43,6 @@
         where COMMUNITY_NUMBER = 'C03'
         group by COMMUNITY_CONTENT
         order by POST_NUMBER DESC
-    </select>
-
-<!-- 강사게시판의 게시글만 나오도록 -->
-    <select id="selectListLecturer"
-    parameterType="Map" resultType="Map">
-
-        select *
-        from community_post
-        WHERE COMMUNITY_NUMBER = 'C02'
-        order by post_number desc
-
     </select>
 
 <!-- 공지사항 -->
