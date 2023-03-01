@@ -109,6 +109,7 @@ public class CommunityController {
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/communitys/community_postingLecturer");
         return modelAndView;
+    }
 
     // 게시글 작성 페이지
     @RequestMapping(value="/community_postingLecturer", method = RequestMethod.POST)
