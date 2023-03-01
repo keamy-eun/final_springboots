@@ -28,6 +28,7 @@ public class CommunityService {
         String sqlMapId = "Community.selectPost";
         Object result = sharedDaos.getList(sqlMapId, dataMap);
         return result;
+    }
     
         // 인서트
     public Object insertPost(Object dataMap){
