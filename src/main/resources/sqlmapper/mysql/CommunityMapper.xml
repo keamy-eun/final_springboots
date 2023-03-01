@@ -14,12 +14,23 @@
     </select>
 
 <!-- 하나만 가져오는 코드 -->
-<select id="selectPost"
+    <select id="selectPost"
     parameterType="String" resultType="Map">
     <!-- 게시글과 멤버의 모든 column불러옴 -->
-       SELECT *
+        SELECT * 
         FROM COMMUNITY_POST 
-        where POST_NUMBER = #{parameter}
+        where POST_NUMBER = #{parameter} 
+        <!-- post67 게시글 번호가 넘어감 -->
+    </select>
+
+    <!-- 댓글까지 같이 가져오는 코드 -->
+    <select id="selectComment"
+    parameterType="String" resultType="Map">
+        SELECT member.MEMBER_NAME, comment.COMMENT_NUMBER, comment.COMMENT_CONTENT, comment.COMMENT_DATE
+        FROM COMMUNITY_POST 
+        inner join comment ON comment.POST_NUMBER = COMMUNITY_POST.POST_NUMBER
+        inner join MEMBER ON MEMBER.MEMBER_ID = COMMUNITY_POST.MEMBER_ID
+        where COMMUNITY_POST.POST_NUMBER = #{parameter} 
     </select>
 
     <!-- 강사게시판의 게시글만 나오도록 -->

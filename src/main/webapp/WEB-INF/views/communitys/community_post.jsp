@@ -115,12 +115,7 @@
             <div class="fs-1">${map.COMMUNITY_TITLE}</div>
             <hr class="opacity-100" />
 
-            
-            <%-- <c:if test="${board.title eq paramTitle}">
-             ${board.title}
-            </c:if>
-            --%>
-        
+          
             <div>
               <iframe
                 width="560"
@@ -136,19 +131,37 @@
             <%-- 게시글 내용 --%>
             ${map.COMMUNITY_CONTENT}
             <!-- 댓글 -->
+<%-- ---------------- --%>
+  <div>연습</div>
+
+
+
+  <%--  --%>
+  <%-- ------------ --%>
+              
+              
+              <%-- <c:set var="practice" value="${resultComment[number]['MEMBER_NAME']}"/> --%>
             <div class="" style="width: 50rem">
-              <div
-                class="mb-1 mt-1 border border-opacity-50 border-left-0 border-right-0"
-              >
-                <span class="text-black text-opacity-75">이정훈</span>
-                <span class="opacity-50"> 2022-02-02</span>
-                <div>너무 유익해요</div>
+                <%-- 반복부분 start --%>
+           <%-- <div class="mb-1 mt-1 border border-opacity-50 border-left-0 border-right-0">
+                <span class="text-black text-opacity-75">${map_comment.MEMBER_NAME}</span>
+                <span class="opacity-50">${map_comment.COMMENT_DATE}</span>
+                <div>${map_comment.COMMENT_CONTENT}</div>
+                </div> --%>
+              <%-- <div>${practice}</div> --%> 
+                  <%--varstatus에 현재 index있음 => 0부터 시작 count 1부터시작--%>
+              <c:forEach items="${resultComment}" var="map_comment" varStatus="loop" >
+              <div class="mb-1 mt-1 border border-opacity-50 border-left-0 border-right-0">
+              <span class="text-black text-opacity-75">${map_comment.MEMBER_NAME}</span>
+              <span class="opacity-50">${map_comment.COMMENT_DATE}</span>
+              <div>${map_comment.COMMENT_CONTENT}</div>  
+              <div>${loop.count}</div>
               </div>
-              <div class="mb-1 mt-1 border border-left-0 border-right-0">
-                <span class="text-black text-opacity-75">이은정</span>
-                <span class="opacity-50"> 2022-02-01</span>
-                <div>3분20초부터 이해가 안돼요...</div>
-              </div>
+
+              </c:forEach>
+                    <%-- 반복부분 end --%>
+
+             
               <div class="row mt-3">
                 <input
                   type="text"
@@ -162,6 +175,8 @@
               <hr />
             </div>
           </div>
+
+
           <!--  -->
 
           <p class="text-black opacity-25">

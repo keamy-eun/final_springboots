@@ -85,8 +85,10 @@ public class CommunityController {
 
         Object result = communityService.updatePostView(uniqueId);
         Object resultMap = communityService.getPost(uniqueId); // 여긴 params가 아닌uniqueId
+        Object resultComment = communityService.getComment(uniqueId);
         // 겟포스트로 매퍼에서 원하는 컬럼 골라서 가져오고 resultMap에 담아둠
         modelAndView.addObject("resultMap", resultMap);  
+        modelAndView.addObject("resultComment", resultComment);  
         modelAndView.setViewName("/communitys/community_post");
         return modelAndView;
     }

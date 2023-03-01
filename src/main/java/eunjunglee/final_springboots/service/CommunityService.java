@@ -29,6 +29,13 @@ public class CommunityService {
         Object result = sharedDaos.getList(sqlMapId, dataMap);
         return result;
     }
+  // 게시판 리스트 중 파라미터와 일치하는 하나의 컬럼만
+  public Object getComment(Object dataMap){
+    String sqlMapId = "Community.selectComment";
+    Object result = sharedDaos.getList(sqlMapId, dataMap);
+    return result;
+}
+
     
         // 인서트
     public Object insertPost(Object dataMap){
