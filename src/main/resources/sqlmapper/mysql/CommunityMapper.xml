@@ -45,6 +45,17 @@
         order by POST_NUMBER DESC
     </select>
 
+    <!-- 강좌게시판 -->
+    <select id="selectLectureList" 
+        parameterType="Map" resultType="Map">
+        SELECT lecture.LECTURE_NUMBER, lecture.LECTURE_TITLE, lecture.LECTURE_INTRO, lecture.LECTURE_IMAGE, member.MEMBER_ID
+        FROM enrollment 
+        inner join LECTURE ON LECTURE.LECTURE_NUMBER = enrollment.LECTURE_NUMBER
+        inner join MEMBER ON MEMBER.MEMBER_ID = ENROLLMENT.MEMBER_ID
+        <!-- where enrollment.MEMBER_ID = #{MEMBER_ID}  -->
+        where enrollment.MEMBER_ID = 'circle01'
+    </select>
+
 <!-- 공지사항 -->
  <select id="selectListNotice"
     parameterType="Map" resultType="Map">

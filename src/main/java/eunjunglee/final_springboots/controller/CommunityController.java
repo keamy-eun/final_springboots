@@ -13,30 +13,34 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import eunjunglee.final_springboots.service.CommunityService;
+import eunjunglee.final_springboots.service.LectureService;
 
 @Controller
 public class CommunityController {
 
     @Autowired
     CommunityService communityService;
+
+    @Autowired
+    LectureService lectureService;
  
     
     // 강좌게시판
-    @RequestMapping(value="/community_lecture", method = RequestMethod.GET)
-    public ModelAndView getLecture(ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
-        Object resultMap = communityService.getList(params);
-        modelAndView.addObject("resultMap", resultMap);
-        modelAndView.setViewName("/communitys/community_lecture");
-        return modelAndView;
-    }
-    // 강좌게시판
-    @RequestMapping(value="/community_lecture", method = RequestMethod.POST)
-    public ModelAndView getLecturePost(ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
-        Object resultMap = communityService.getList(params);
-        modelAndView.addObject("resultMap", resultMap);
-        modelAndView.setViewName("/communitys/community_lecture");
-        return modelAndView;
-    }
+    // @RequestMapping(value="/community_lecture", method = RequestMethod.GET)
+    // public ModelAndView getLecture(ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
+    //     Object resultMap = communityService.getList(params);
+    //     modelAndView.addObject("resultMap", resultMap);
+    //     modelAndView.setViewName("/communitys/community_lecture");
+    //     return modelAndView;
+    // }
+    // // 강좌게시판
+    // @RequestMapping(value="/community_lecture", method = RequestMethod.POST)
+    // public ModelAndView getLecturePost(ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
+    //     Object resultMap = communityService.getList(params);
+    //     modelAndView.addObject("resultMap", resultMap);
+    //     modelAndView.setViewName("/communitys/community_lecture");
+    //     return modelAndView;
+    // }
 
     // 강사게시판
     @RequestMapping(value="/community_lecturer", method = RequestMethod.GET)
@@ -84,6 +88,18 @@ public class CommunityController {
         // 겟포스트로 매퍼에서 원하는 컬럼 골라서 가져오고 resultMap에 담아둠
         modelAndView.addObject("resultMap", resultMap);  
         modelAndView.setViewName("/communitys/community_post");
+        return modelAndView;
+    }
+    @RequestMapping(value="/community_lecturepost/{uniqueId}", method = RequestMethod.GET)
+    public ModelAndView getlecturePost( ModelAndView modelAndView, @PathVariable String uniqueId, @RequestParam Map<String, Object> params ){
+        //여기에 게시글 가져오기전에 uniqueId로 조회수 1 올리는 업데이트 해주면 됨 그러면 게시글 들어가면서 조회수 1올라있음
+        // updatePostView는 viewCount불러서 + 1 해주는 mapper  uniqueId를 받아가서 postNumber과 비교하고 해당 컬럼만 update함
+
+        Object result = communityService.updatePostView(uniqueId);
+        Object resultMap = communityService.getPost(uniqueId); // 여긴 params가 아닌uniqueId
+        // 겟포스트로 매퍼에서 원하는 컬럼 골라서 가져오고 resultMap에 담아둠
+        modelAndView.addObject("resultMap", resultMap);  
+        modelAndView.setViewName("/communitys/community_lecturepost");
         return modelAndView;
     }
 //  --------------------------------------------------------
@@ -155,6 +171,15 @@ public class CommunityController {
         modelAndView.addObject("resultMap", resultMap);
         // params 에 게시글제목, 게시판 번호, 첨부파일, 게시글 내용까지 확인  
         modelAndView.setViewName("/communitys/community_student");
+        return modelAndView;
+    }
+
+    // community_lecture
+    @RequestMapping(value="/community_lecture", method = RequestMethod.GET)
+    public ModelAndView getLectureList(@RequestParam Map<String, Object> params, ModelAndView modelAndView ){
+        Object resultMap = communityService.getLectureList(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("/communitys/community_lecture");
         return modelAndView;
     }
    

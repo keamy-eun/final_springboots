@@ -48,6 +48,13 @@ public class CommunityService {
         Object result = sharedDaos.getList(sqlMapId, dataMap);
         return result;
     }
+
+    // 강좌게시판
+    public Object getLectureList(Object dataMap){
+        String sqlMapId = "Community.selectLectureList";
+        Object result = sharedDaos.getList(sqlMapId, dataMap);
+        return result;
+    }
     // -------------------------
 
     public Object insertPostAndGetList(Object dataMap){
