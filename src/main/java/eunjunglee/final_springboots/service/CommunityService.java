@@ -43,6 +43,13 @@ public class CommunityService {
         Object result = sharedDaos.insert(sqlMapId, dataMap);
         return result;
     }
+    public Object insertComment(Object dataMap){
+        String sqlMapId = "Community.insertComment";
+        Object result = sharedDaos.insert(sqlMapId, dataMap);
+        return result;
+    }
+
+
     // 강사 리스트
     public Object getListLecturer(Object dataMap){
         String sqlMapId = "Community.selectListLecturer";
@@ -85,5 +92,11 @@ public class CommunityService {
         String sqlMapId = "Community.updatePostView";
         Object result = sharedDaos.updateOne(sqlMapId, dataMap);
         return result;
+    }
+
+    public Object insertCommentAndGetComment(Object dataMap){
+        Object result = this.insertComment(dataMap);
+        result = this.getComment(dataMap);
+        return result; 
     }
 }
