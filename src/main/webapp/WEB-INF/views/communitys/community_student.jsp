@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%-- <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 이부분이 달라서 에러가 발생했었음.--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -214,6 +215,7 @@
           </div>
         </div>
       </div>
+      <%@ include file= "/WEB-INF/views/main/footer.jsp" %>
       <!-- footer -->
       <footer class="m-5">
         <div>
