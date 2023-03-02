@@ -26,11 +26,15 @@
     <!-- 댓글까지 같이 가져오는 코드 -->
     <select id="selectComment"
     parameterType="String" resultType="Map">
-        SELECT member.MEMBER_NAME, comment.COMMENT_NUMBER, comment.COMMENT_CONTENT, comment.COMMENT_DATE
-        FROM COMMUNITY_POST 
-        inner join comment ON comment.POST_NUMBER = COMMUNITY_POST.POST_NUMBER
-        inner join MEMBER ON MEMBER.MEMBER_ID = COMMUNITY_POST.MEMBER_ID
-        where COMMUNITY_POST.POST_NUMBER = #{parameter} 
+        <!-- SELECT member.MEMBER_NAME, POST_COMMENT.COMMENT_NUMBER, POST_COMMENT.COMMENT_CONTENT, POST_COMMENT.POST_DATE
+        FROM member 
+        inner join POST_COMMENT ON comment.MEMBER_ID = COMMUNITY_POST.MEMBER_ID
+        inner join COMMUNITY_POST ON MEMBER.MEMBER_ID = COMMUNITY_POST.POST_NUMBER
+        where COMMUNITY_POST.POST_NUMBER = #{parameter}   기존코드 왜 조인 두개썼는지 기억이안남.. 그래서 일단 킵-->
+        SELECT MEMBER.MEMBER_NAME, POST_COMMENT.COMMENT_CONTENT, POST_COMMENT.POST_DATE
+        FROM MEMBER
+        INNER JOIN POST_COMMENT ON MEMBER.MEMBER_ID = POST_COMMENT.MEMBER_ID
+        where POST_COMMENT.POST_NUMBER = #{parameter}
     </select>
 
     <!-- 강사게시판의 게시글만 나오도록 -->
