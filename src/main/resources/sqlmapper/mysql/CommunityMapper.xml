@@ -6,12 +6,13 @@
     <select id="selectPostList"
     parameterType="Map" resultType="Map">
     <!-- 게시글과 멤버의 모든 column불러옴 -->
-       SELECT *
+       SELECT COMMUNITY_POST.COMMUNITY_TITLE, MEMBER.MEMBER_NAME, POST_COMMENT.POST_DATE, POST_COMMENT.COMMENT_CONTENT 
         FROM COMMUNITY_POST 
-        inner join MEMBER 
-        group by COMMUNITY_CONTENT
-        order by POST_NUMBER DESC
+        inner join MEMBER on COMMUNITY_POST.MEMBER_ID = MEMBER.MEMBER_ID 
+        inner join POST_COMMENT on POST_COMMENT.POST_NUMBER = COMMUNITY_POST.POST_NUMBER 
+        order by COMMUNITY_POST.POST_NUMBER DESC
     </select>
+
 
 <!-- 하나만 가져오는 코드 -->
     <select id="selectPost"
@@ -52,13 +53,14 @@
     parameterType="Map" resultType="Map">
     <!-- 게시글과 멤버의 모든 column불러옴 -->
     <!-- 학생게시판   -->
-       SELECT *
+       SELECT COMMUNITY_POST.POST_NUMBER, COMMUNITY_POST.COMMUNITY_TITLE, COMMUNITY_POST.COMMUNITY_DATE, COMMUNITY_POST.VIEW_COUNT
         FROM COMMUNITY_POST 
         inner join MEMBER 
-        where COMMUNITY_NUMBER = 'C03'
-        group by COMMUNITY_CONTENT
+        where COMMUNITY_NUMBER = 'C03' 
+        group by COMMUNITY_POST.POST_NUMBER, COMMUNITY_POST.COMMUNITY_TITLE, COMMUNITY_POST.COMMUNITY_DATE, COMMUNITY_POST.VIEW_COUNT 
         order by POST_NUMBER DESC
     </select>
+
 
     <!-- 강좌게시판 -->
     <select id="selectLectureList" 
