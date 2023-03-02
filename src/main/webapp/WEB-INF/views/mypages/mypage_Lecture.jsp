@@ -2,8 +2,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-    <div class="container">
-      <%@ include file= "/WEB-INF/views/main/header.jsp" %>
+<%@ include file= "/WEB-INF/views/main/header.jsp" %>
+<div class="container">
       <hr />
 
       <!--  -->
