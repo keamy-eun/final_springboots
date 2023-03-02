@@ -1,7 +1,5 @@
 package eunjunglee.final_springboots.controller;
 
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,15 +7,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Map;
 
 import eunjunglee.final_springboots.service.LectureService;
-import eunjunglee.final_springboots.service.MypageService;
 
 @Controller
+@RequestMapping(value = "/lecture")
 public class LectureController {
-    
+
     @Autowired
     LectureService lectureService;
 
@@ -31,7 +30,7 @@ public class LectureController {
      }
  
      // 강좌신청목록
-     @RequestMapping(value="/lecture_signup_list", method = RequestMethod.GET)
+     @RequestMapping(value={"/lecture_signup_list","/",""}, method = RequestMethod.GET)
      public ModelAndView getLectureList(@RequestParam Map<String, Object> params, ModelAndView modelAndView ){
          Object resultMap = lectureService.getLectureList(params);
          modelAndView.addObject("resultMap", resultMap);
@@ -40,15 +39,13 @@ public class LectureController {
      }
  
      // 강좌신청
-     @RequestMapping(value="/lecture_signup", method = RequestMethod.POST)
-     public ModelAndView getPoll(@RequestParam Map<String, Object> params, ModelAndView modelAndView ){
-        params.put("MEMBER_ID", "circle01");
-        params.put("LECTURER_TITLE", "세로미");
-        Object resultMap = lectureService.insertQnAAndMyLectureAndGetList(params);
-         modelAndView.addObject("resultMap", resultMap);
-         modelAndView.setViewName("/mypages/mypage_Lecture");
-         return modelAndView;
-     }
+    @RequestMapping(value="/lecture_signup", method = RequestMethod.POST)
+    public String getPoll(@RequestParam Map<String, Object> params, ModelAndView modelAndView ){
+       params.put("MEMBER_ID", "circle01");
+       params.put("LECTURER_TITLE", "세로미");
+       Object resultMap = lectureService.insertQnAAndMyLecture(params);
+        return "redirect:/mypage/Lecture";
+    }
 
      // 설문조사
      @RequestMapping(value="/lecture_poll/{lecture_number}", method = RequestMethod.GET)

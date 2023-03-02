@@ -18,7 +18,7 @@
           <ul class="list-unstyled components fs-5">
             <li class="border-top border-1 p-2">
               <a
-                href="/lecture_signup_list"
+                href="/lecture/lecture_signup_list"
                 target="_self"
                 class="text-decoration-none text-secondary"
                 >온라인 강의 신청</a
@@ -26,7 +26,7 @@
             </li>
             <li class="border-top border-1 p-2">
               <a
-                href="/lecture_review"
+                href="/lecture/lecture_review"
                 target="_self"
                 class="text-decoration-none text-secondary"
                 >온라인 강의 후기</a
@@ -39,7 +39,7 @@
       <div class="container col-9">
         <div class="mt-4 mb-4"> 
           <!-- 설문문답 JSTL -->
-          <form action="/lecture_signup" method="post">
+          <form action="/lecture/lecture_signup" method="post">
             <input type="hidden" name="LECTURE_NUMBER" value="${resultList[3].LECTURE_NUMBER}">
             <h1 class="pb-3">수강신청</h1>
             <div class="fs-3">${resultList[2].MEMBER_NAME} 회원님 안녕하세요!</div>
@@ -66,6 +66,7 @@
                 </div>
               </c:if>
             </c:forEach>
+
 
             <div class="form-group row">
             <!-- btn -->

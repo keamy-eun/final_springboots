@@ -76,4 +76,16 @@ public class AdminService {
         result.put("resultList", this.getList(dataMap));
         return result;
     }
+
+    public Object deleteMulti(Object dataMap){
+        String sqlMapId = "Admin.deleteMultiByIDs";
+        Object result = sharedDaos.delete(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object deleteMultiAndList(Object dataMap){
+        Object result = this.deleteMulti(dataMap);
+        result = this.getList(dataMap);
+        return result;
+    }
 }

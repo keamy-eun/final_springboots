@@ -17,7 +17,7 @@
               <ul class="list-unstyled components fs-5">
                 <li class="border-top border-1 p-2">
                   <a
-                    href="/lecture_signup_list"
+                    href="/lecture/lecture_signup_list"
                     target="_self"
                     class="text-decoration-none text-secondary"
                     >온라인 강의 신청</a
@@ -25,7 +25,7 @@
                 </li>
                 <li class="border-top border-1 p-2">
                   <a
-                    href="/lecture_review"
+                    href="/lecture/lecture_review"
                     target="_self"
                     class="text-decoration-none text-secondary"
                     >온라인 강의 후기</a

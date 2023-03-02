@@ -51,13 +51,13 @@
             학원안내</a
           >
           <a
-            href="/lecture_signup_list"
+            href="/lecture"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             온라인강의</a
           >
           <a
-            href="/community_lecture"
+            href="/community_student"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             커뮤니티</a
@@ -69,7 +69,7 @@
             마이페이지</a
           >
           <a
-            href="/admin_member"
+            href="/admin"
             class="mt-5 mb-5 btn btn-link btn-outline-warning text-dark text-decoration-none w-100 fs-5 fw-bold"
           >
             관리자페이지</a
