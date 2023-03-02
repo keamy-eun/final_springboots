@@ -83,7 +83,7 @@ public class CommunityController {
         //여기에 게시글 가져오기전에 uniqueId로 조회수 1 올리는 업데이트 해주면 됨 그러면 게시글 들어가면서 조회수 1올라있음
         // updatePostView는 viewCount불러서 + 1 해주는 mapper  uniqueId를 받아가서 postNumber과 비교하고 해당 컬럼만 update함
         
-        
+        // 커밋용 주석 추가
         Object result = communityService.updatePostView(uniqueId);
         Object resultMap = communityService.getPost(uniqueId); // 여긴 params가 아닌uniqueId      이 코드가 기존코드 밑의 코드가 새 코드
         Object resultComment = communityService.getComment(uniqueId);
