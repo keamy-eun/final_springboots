@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -938.5052194263412,
-    "scrollLeft": -579.8437608281776,
+    "scrollTop": -1199.5052194263412,
+    "scrollLeft": -299,
     "zoomLevel": 0.8,
     "show": {
       "tableComment": true,
@@ -289,7 +289,7 @@
             "id": "56470afa-d481-496e-bafd-b7d3f8f5c81f",
             "name": "COMMUNITY_CONTENT",
             "comment": "게시글내용",
-            "dataType": "VARCHAR(100)",
+            "dataType": "MEDIUMTEXT",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -304,7 +304,7 @@
               "pfk": false,
               "widthName": 152.21728515625,
               "widthComment": 67,
-              "widthDataType": 94.94873046875,
+              "widthDataType": 87.94091796875,
               "widthDefault": 60
             }
           },
@@ -451,7 +451,7 @@
           "active": false,
           "left": 724.0097,
           "top": 1334.6944,
-          "zIndex": 19,
+          "zIndex": 25,
           "widthName": 124.78271484375,
           "widthComment": 60
         },

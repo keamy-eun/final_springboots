@@ -88,8 +88,8 @@
     <insert id="insertPost" 
         parameterType="Map">
         insert into COMMUNITY_POST                           
-        (POST_NUMBER, COMMUNITY_CONTENT, COMMUNITY_TITLE, FILE_ATTACHIMENT, COMMUNITY_DATE, VIEW_COUNT, MEMBER_ID, COMMUNITY_NUMBER, COMMENT_CONTENT, COMMENT_DATE)
-        value (NEXTVAL('post'),#{community_content},#{community_title},#{file_Attachiment},now(),'0','circle01',#{community_number}, null, null); 
+        (POST_NUMBER, COMMUNITY_CONTENT, COMMUNITY_TITLE, FILE_ATTACHIMENT, COMMUNITY_DATE, VIEW_COUNT, MEMBER_ID, COMMUNITY_NUMBER)
+        value (NEXTVAL('post'),#{community_content},#{community_title},#{file_Attachiment},now(),'0','circle01',#{community_number}); 
         <!-- id값과 조회수, 댓글기능만  -->
     </insert> 
     
