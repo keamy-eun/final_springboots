@@ -1,6 +1,12 @@
 package eunjunglee.final_springboots.service;
 
 
+import java.util.ArrayList;
+import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -70,10 +76,10 @@ public class LectureService {
         return result; 
     }
 
-    public Object insertQnAAndMyLectureAndGetList(Object dataMap){
+    public Object insertQnAAndMyLecture(Object dataMap){
         Object result = this.insertMyLecture(dataMap);
         result = this.insertQnA(dataMap);
-        result = this.getMyLectureList(dataMap);
         return result;
     }
+
 }
