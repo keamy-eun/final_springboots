@@ -46,7 +46,7 @@
         parameterType="Map">
         insert into ENROLLMENT  
         (LECTURE_NUMBER,MEMBER_ID,ENROLL_DATE,ENROLL_EXPIRED_DATE) 
-        value (#{LECTURE_NUMBER},'circle01',now(),DATE_ADD(now(), INTERVAL 6 MONTH));
+        value (#{LECTURE_NUMBER},#{MEMBER_ID},now(),DATE_ADD(now(), INTERVAL 6 MONTH));
     </insert>
 
     <select id="selectLectureReview" 

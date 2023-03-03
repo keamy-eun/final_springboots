@@ -95,6 +95,7 @@ public class AdminService {
         return result;
     }
 
+    // MEMBER_LOG 삭제 (MEMBER 삭제 이전에 필수로 삭제)
     public Object deleteMultiMemberLog(Object dataMap){
         String sqlMapId = "Admin.deleteMultiMemberLogByIDs";
         Object result = sharedDaos.delete(sqlMapId, dataMap);
@@ -107,6 +108,7 @@ public class AdminService {
         return result;
     }
 
+    // 순서: 1.MEMBER_LOG 삭제  2.MEMBER 삭제
     public Object deleteMultiMemberAndLog(Object dataMap){
         Object result = this.deleteMultiMemberLog(dataMap);
         result = this.deleteMultiMember(dataMap);
