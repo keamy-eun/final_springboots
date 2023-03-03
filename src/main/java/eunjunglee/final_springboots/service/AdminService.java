@@ -24,11 +24,25 @@ public class AdminService {
         Object result = sharedDaos.getOne(statement, dataMap);
         return result;
     }
-    public Object delete(Object dataMap){
-        String sqlId = "Admin.deleteByID";
+
+    public Object deleteMemberLog(Object dataMap){
+        String sqlId = "Admin.deleteMemberLogByID";
+        Object result = sharedDaos.delete(sqlId, dataMap);
+        return result;
+    }    
+
+    public Object deleteMember(Object dataMap){
+        String sqlId = "Admin.deleteMemberByID";
         Object result = sharedDaos.delete(sqlId, dataMap);
         return result;
     }
+
+    public Object deleteMemberAndLog(Object dataMap){
+        Object result = this.deleteMemberLog(dataMap);
+        result = this.deleteMember(dataMap);
+        return result;
+    }
+
     public Object deleteAndList(Object dataMap){
         ((Map<String, Object>) dataMap).put("currentPage", 1);
         ((Map<String, Object>) dataMap).put("pageScale", 10);
@@ -38,7 +52,7 @@ public class AdminService {
         Paginations paginations = new Paginations(totalCount, currentPage);
         result.put("paginations", paginations);
         ((Map<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin());
-        Object result_query = this.delete(dataMap);
+        Object result_query = this.deleteMemberAndLog(dataMap);
         result_query = this.getList(dataMap);
         result.put("resultList", result_query);
         return result;
@@ -81,9 +95,23 @@ public class AdminService {
         return result;
     }
 
-    public Object deleteMulti(Object dataMap){
-        String sqlMapId = "Admin.deleteMultiByIDs";
+    // MEMBER_LOG 삭제 (MEMBER 삭제 이전에 필수로 삭제)
+    public Object deleteMultiMemberLog(Object dataMap){
+        String sqlMapId = "Admin.deleteMultiMemberLogByIDs";
         Object result = sharedDaos.delete(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object deleteMultiMember(Object dataMap){
+        String sqlMapId = "Admin.deleteMultiMemberByIDs";
+        Object result = sharedDaos.delete(sqlMapId, dataMap);
+        return result;
+    }
+
+    // 순서: 1.MEMBER_LOG 삭제  2.MEMBER 삭제
+    public Object deleteMultiMemberAndLog(Object dataMap){
+        Object result = this.deleteMultiMemberLog(dataMap);
+        result = this.deleteMultiMember(dataMap);
         return result;
     }
 
@@ -96,7 +124,7 @@ public class AdminService {
         Paginations paginations = new Paginations(totalCount, currentPage);
         result.put("paginations", paginations);
         ((Map<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin());
-        Object result_query = this.deleteMulti(dataMap);
+        Object result_query = this.deleteMultiMemberAndLog(dataMap);
         result_query = this.getList(dataMap);
         result.put("resultList", result_query);
         return result;

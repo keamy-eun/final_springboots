@@ -1,6 +1,8 @@
 package eunjunglee.final_springboots.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,15 +43,33 @@ public class LectureController {
      // 강좌신청
     @RequestMapping(value="/lecture_signup", method = RequestMethod.POST)
     public String getPoll(@RequestParam Map<String, Object> params, ModelAndView modelAndView ){
-       params.put("MEMBER_ID", "circle01");
-       params.put("LECTURER_TITLE", "세로미");
-       Object resultMap = lectureService.insertQnAAndMyLecture(params);
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        String username = null;
+        if (principal instanceof UserDetails) {
+            username = ((UserDetails)principal).getUsername();   // 로그인 상태 확인
+        } else {
+            username = principal.toString();     // 로그 아웃 상태 확인
+        }
+        params.put("MEMBER_ID", username);
+    //    params.put("MEMBER_ID", "circle01");
+    //    params.put("LECTURER_TITLE", "세로미");
+        lectureService.insertQnAAndMyLecture(params);
         return "redirect:/mypage/Lecture";
     }
 
      // 설문조사
      @RequestMapping(value="/lecture_poll/{lecture_number}", method = RequestMethod.GET)
      public ModelAndView getLecture(@RequestParam Map<String, Object> params, @PathVariable String lecture_number, ModelAndView modelAndView ){
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        String username = null;
+        if (principal instanceof UserDetails) {
+            username = ((UserDetails)principal).getUsername();   // 로그인 상태 확인
+        } else {
+            username = principal.toString();     // 로그 아웃 상태 확인
+        }
+        params.put("MEMBER_ID", username);
         params.put("LECTURE_NUMBER",lecture_number);
          Object resultMap1 = lectureService.getQuestionList(params);
          Object resultMap2 = lectureService.getAnswerList(params);

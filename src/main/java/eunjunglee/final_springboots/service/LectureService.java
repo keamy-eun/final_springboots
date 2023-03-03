@@ -30,7 +30,7 @@ public class LectureService {
     }
     
     public Object getMemberName_TEMP(Object dataMap){
-        String sqlMapId = "Lecture.selectMemberName_TEMP";
+        String sqlMapId = "Lecture.selectMemberName";
         Object result = sharedDaos.getOne(sqlMapId, dataMap);
         return result;
     }
