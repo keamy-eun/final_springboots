@@ -4,7 +4,7 @@
 <%@ include file= "/WEB-INF/views/main/header.jsp" %>
 <div class="container">
 <hr />
-<%-- --%>
+
     <!-- -------------------------- -->
     <div class="container-fluid">
       <div class="row">
@@ -36,7 +36,7 @@
         <div class="col-6 mt-5 ms-5 text-center">
           <!-- 제목 -->
           <h1 class="mb-5">게시글 작성</h1>
-          <form action="/community_student" method="post" class="form-group">
+          <form action="/community_notice" method="post" class="form-group">
         <%-- 글쓰기 누른 페이지별로 추가하는법...어떻게하지 --%>
         <%-- 방법이 떠오르지 않는다면 페이지별로 글쓰기 JSP를 만들면 가능하긴 하다.. --%>
           <%-- 우선은 student로 가도록 해두었다. --%>
@@ -85,7 +85,7 @@
         <!--  -->
       </div>
       <!-- footer -->
-      <%@ include file= "/WEB-INF/views/main/footer.jsp" %>
+    <%@ include file= "/WEB-INF/views/main/footer.jsp" %>
     </div>
   </div>
 

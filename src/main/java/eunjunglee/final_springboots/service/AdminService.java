@@ -30,6 +30,8 @@ public class AdminService {
         return result;
     }
     public Object deleteAndList(Object dataMap){
+        ((Map<String, Object>) dataMap).put("currentPage", 1);
+        ((Map<String, Object>) dataMap).put("pageScale", 10);
         Map<String, Object> result = new HashMap<String, Object>();
         int totalCount = (int) this.getTotal(dataMap);
         int currentPage = (int) ((Map<String, Object>) dataMap).get("currentPage");
@@ -48,6 +50,8 @@ public class AdminService {
     }
 
     public Object updateAndList(Object dataMap){
+        ((Map<String, Object>) dataMap).put("currentPage", 1);
+        ((Map<String, Object>) dataMap).put("pageScale", 10);
         Map<String, Object> result = new HashMap<String, Object>();
         int totalCount = (int) this.getTotal(dataMap);
         int currentPage = (int) ((Map<String, Object>) dataMap).get("currentPage");
@@ -74,6 +78,39 @@ public class AdminService {
         result.put("paginations", paginations);
         ((Map<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin());
         result.put("resultList", this.getList(dataMap));
+        return result;
+    }
+
+    public Object deleteMulti(Object dataMap){
+        String sqlMapId = "Admin.deleteMultiByIDs";
+        Object result = sharedDaos.delete(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object deleteMultiAndList(Object dataMap){
+        ((Map<String, Object>) dataMap).put("currentPage", 1);
+        ((Map<String, Object>) dataMap).put("pageScale", 10);
+        Map<String, Object> result = new HashMap<String, Object>();
+        int totalCount = (int) this.getTotal(dataMap);
+        int currentPage = (int) ((Map<String, Object>) dataMap).get("currentPage");
+        Paginations paginations = new Paginations(totalCount, currentPage);
+        result.put("paginations", paginations);
+        ((Map<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin());
+        Object result_query = this.deleteMulti(dataMap);
+        result_query = this.getList(dataMap);
+        result.put("resultList", result_query);
+        return result;
+    }
+
+    public Object deleteMultiAndList2(Object dataMap){
+        Object result = this.deleteMultiAndList(dataMap);
+        result = this.listAndPagination(dataMap);
+        return result;
+    }
+    
+    public Object deleteAndList2(Object dataMap){
+        Object result = this.deleteAndList(dataMap);
+        result = this.listAndPagination(dataMap);
         return result;
     }
 }

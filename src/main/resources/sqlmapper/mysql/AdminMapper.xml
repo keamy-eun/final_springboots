@@ -54,4 +54,16 @@
         FROM MEMBER 
     </select>
 
+    <delete id="deleteMultiByIDs" 
+        parameterType="Map">
+        DELETE FROM MEMBER 
+        WHERE MEMBER_ID IN (
+        <!-- 'No', 'System_Code_Yes' -->
+        <foreach collection="deleteMultis" item="item" 
+        separator=", ">
+        #{item}
+        </foreach>
+        )
+    </delete>
+
 </mapper>

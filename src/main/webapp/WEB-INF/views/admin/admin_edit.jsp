@@ -24,7 +24,7 @@
                 <th>수정</th>
               </tr>
             </thead>
-            <form action="/admin_edit" method="post">
+            <form action="/admin/edit" method="post">
             <tbody>
               <tr>
                 <td>

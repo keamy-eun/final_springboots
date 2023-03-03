@@ -3,28 +3,109 @@
 
 <mapper namespace="Community">
     <!-- call  Community.selectListByID-->
-    <select id="selectListByID"
+    <select id="selectPostList"
     parameterType="Map" resultType="Map">
     <!-- 게시글과 멤버의 모든 column불러옴 -->
-    <!-- 학생게시판 강사게시판 공동 사용 -->
-       SELECT *
+       SELECT COMMUNITY_POST.COMMUNITY_TITLE, MEMBER.MEMBER_NAME, POST_COMMENT.POST_DATE, POST_COMMENT.COMMENT_CONTENT 
+        FROM COMMUNITY_POST 
+        inner join MEMBER on COMMUNITY_POST.MEMBER_ID = MEMBER.MEMBER_ID 
+        inner join POST_COMMENT on POST_COMMENT.POST_NUMBER = COMMUNITY_POST.POST_NUMBER 
+        order by COMMUNITY_POST.POST_NUMBER DESC
+    </select>
+
+
+<!-- 하나만 가져오는 코드 -->
+    <select id="selectPost"
+    parameterType="String" resultType="Map">
+    <!-- 게시글과 멤버의 모든 column불러옴 -->
+        SELECT * 
+        FROM COMMUNITY_POST 
+        where POST_NUMBER = #{parameter} 
+        <!-- post67 게시글 번호가 넘어감 -->
+    </select>
+
+    <!-- 댓글까지 같이 가져오는 코드 -->
+    <select id="selectComment"
+    parameterType="String" resultType="Map">
+        <!-- SELECT member.MEMBER_NAME, POST_COMMENT.COMMENT_NUMBER, POST_COMMENT.COMMENT_CONTENT, POST_COMMENT.POST_DATE
+        FROM member 
+        inner join POST_COMMENT ON comment.MEMBER_ID = COMMUNITY_POST.MEMBER_ID
+        inner join COMMUNITY_POST ON MEMBER.MEMBER_ID = COMMUNITY_POST.POST_NUMBER
+        where COMMUNITY_POST.POST_NUMBER = #{parameter}   기존코드 왜 조인 두개썼는지 기억이안남.. 그래서 일단 킵-->
+        SELECT MEMBER.MEMBER_NAME, POST_COMMENT.COMMENT_CONTENT, POST_COMMENT.POST_DATE
+        FROM MEMBER
+        INNER JOIN POST_COMMENT ON MEMBER.MEMBER_ID = POST_COMMENT.MEMBER_ID
+        where POST_COMMENT.POST_NUMBER = #{parameter}
+    </select>
+
+    <!-- 강사게시판의 게시글만 나오도록 -->
+    <select id="selectListLecturer"
+    parameterType="Map" resultType="Map">
+
+        select *
+        from community_post
+        WHERE COMMUNITY_NUMBER = 'C02'
+        order by post_number desc
+    </select>
+
+    <!-- call  Community.selectListByID-->
+    <select id="selectListStudent"
+    parameterType="Map" resultType="Map">
+    <!-- 게시글과 멤버의 모든 column불러옴 -->
+    <!-- 학생게시판   -->
+       SELECT COMMUNITY_POST.POST_NUMBER, COMMUNITY_POST.COMMUNITY_TITLE, COMMUNITY_POST.COMMUNITY_DATE, COMMUNITY_POST.VIEW_COUNT
         FROM COMMUNITY_POST 
         inner join MEMBER 
-        <!-- ON member.MEMBER_ID = community_post.MEMBER_ID -->
-        group by COMMUNITY_CONTENT
+        where COMMUNITY_NUMBER = 'C03' 
+        group by COMMUNITY_POST.POST_NUMBER, COMMUNITY_POST.COMMUNITY_TITLE, COMMUNITY_POST.COMMUNITY_DATE, COMMUNITY_POST.VIEW_COUNT 
         order by POST_NUMBER DESC
+    </select>
+
+
+    <!-- 강좌게시판 -->
+    <select id="selectLectureList" 
+        parameterType="Map" resultType="Map">
+        SELECT lecture.LECTURE_NUMBER, lecture.LECTURE_TITLE, lecture.LECTURE_INTRO, lecture.LECTURE_IMAGE, member.MEMBER_ID
+        FROM enrollment 
+        inner join LECTURE ON LECTURE.LECTURE_NUMBER = enrollment.LECTURE_NUMBER
+        inner join MEMBER ON MEMBER.MEMBER_ID = ENROLLMENT.MEMBER_ID
+        <!-- where enrollment.MEMBER_ID = #{MEMBER_ID}  -->
+        where enrollment.MEMBER_ID = 'circle01'
+    </select>
+
+<!-- 공지사항 -->
+ <select id="selectListNotice"
+    parameterType="Map" resultType="Map">
+
+        select *
+        from community_post
+        WHERE COMMUNITY_NUMBER = 'C04'
+        order by post_number desc
+
     </select>
 
     <!-- call  Community.insertPost-->
     <insert id="insertPost" 
         parameterType="Map">
         insert into COMMUNITY_POST                           
-        (POST_NUMBER, COMMUNITY_CONTENT, COMMUNITY_TITLE, FILE_ATTACHIMENT, COMMUNITY_DATE, VIEW_COUNT, MEMBER_ID, COMMUNITY_NUMBER, COMMENT_CONTENT, COMMENT_DATE)
-        value (NEXTVAL('post'),#{community_content},#{community_title},#{file_Attachiment},now(),'0','ceromi123',#{community_number}, null, null); 
-        
-        <!-- value ('post15','15번째 테스트 시작합니다',#{community_title},null ,now(), '50', 'ceromi123', 'C03', null, null); / 여기가 제목제목목--> 
-        <!-- POST_NUMBER 가 자동으로 안겹치게 넣는 방법이 어떻게 될까 모르겠다.. 일단 하드코딩 -->
-        <!-- 나 뭘까먹은거지 -->
+        (POST_NUMBER, COMMUNITY_CONTENT, COMMUNITY_TITLE, FILE_ATTACHIMENT, COMMUNITY_DATE, VIEW_COUNT, MEMBER_ID, COMMUNITY_NUMBER)
+        value (NEXTVAL('post'),#{community_content},#{community_title},#{file_Attachiment},now(),'0','circle01',#{community_number})
+        <!-- id값과 조회수, 댓글기능만  -->
+        <!-- post unique string 값 -->
+    </insert> 
+    
+    <insert id="insertComment" 
+        parameterType="Map">
+        insert into post_comment                           
+        (COMMENT_NUMBER, POST_NUMBER, COMMENT_CONTENT, POST_DATE, MEMBER_ID)
+        value (NEXTVAL2('comm'),#{POST_NUMBER},#{COMMENT_CONTENT},now(),'circle01')
+        <!-- id값과 조회수, 댓글기능만  -->
     </insert>
+
+    <update id="updatePostView" parameterType="String">
+    update COMMUNITY_POST
+    set VIEW_COUNT  = VIEW_COUNT +1
+    where post_number = #{parameter}
+    </update>
 
 </mapper>
