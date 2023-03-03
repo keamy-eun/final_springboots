@@ -33,6 +33,9 @@ public class SecurityConfiguration {
                 .loginProcessingUrl("/login")
                 .defaultSuccessUrl("/");
 
+        httpSecurity.exceptionHandling()
+                .accessDeniedPage("/main/access_deny");
+
         return httpSecurity.build();
     }
 
