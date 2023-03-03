@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Memberwithauthority">
+	<select id="selectByUID" parameterType="String"
+		resultType="Map">
+		SELECT * 
+		FROM member
+		inner join member_log
+		ON member.MEMBER_ID = member_log.MEMBER_ID
+		where member_log.MEMBER_ID = #{username}
+	</select>
+	
+	<insert id="insertWithUID" parameterType="Map">
+		insert into member_log 
+		(CERTIFICATION_KEY,MEMBER_ID,LOGIN_DATE,LOGIN_STATUS) 
+		values(#{CERTIFICATION_KEY},#{MEMBER_ID},now(),'signUp')
+	</insert>
+</mapper>

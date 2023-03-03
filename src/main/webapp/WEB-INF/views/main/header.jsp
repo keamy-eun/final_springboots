@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,16 +22,22 @@
       <!-- navbar -->
       <div class="m-5 mb-2">
         <div class="d-flex justify-content-end">
-          <a
-            href="/main_login"
-            class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
-            >로그인</a
-          >
-          <a
-            href="/home/Signupform"
-            class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
-            >회원가입</a
-          >
+          <sec:authentication property="principal" var="userDetailsBean" />
+          <sec:authorize access="isAnonymous()">
+          <a href="/loginForm" class="btn btn-link btn-outline-info text-dark text-decoration-none me-3">로그인</a>
+          <a href="/main_signUp" class="btn btn-link btn-outline-info text-dark text-decoration-none me-3">회원가입</a>
+          </sec:authorize>
+          <%-- 로그인이 된 상태 --%>
+          <sec:authorize access="isAuthenticated()">
+              <div> 
+                <form class="form-signin" method="post" action="/logout">
+                ${userDetailsBean.memberName}님 안녕하세요
+                <%-- <a href="/logoutForm" class="btn btn-link btn-outline-info text-dark text-decoration-none me-3">로그아웃</a> --%>
+                  <button class="btn btn-link btn-outline-info text-dark text-decoration-none me-3" type="submit" onclick= "alert('로그아웃 되었습니다!')">로그아웃</button>
+                </form>
+              </div>
+          </sec:authorize>
+          
         </div>
         <!-- menu bar -->
         <div class="d-flex justify-content-around">

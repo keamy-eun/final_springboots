@@ -107,34 +107,39 @@
             </div>
             <div class="p-3">
               <h5 class="form-signin-heading mb-4">로그인 정보를 입력하세요</h5>
-              <div class="ms-5 me-5">
+              <c:if test="${not empty param.fail}">
+                <div><font color="red"> Login Fail ! </font></div>
+              </c:if>
+              <form class="" action="/login" method="post">
                 <div class="ms-5 me-5">
-                  <input
-                    type="text"
-                    placeholder="아이디"
-                    class="form-control"
-                  />
-                  <input
-                    type="text"
-                    placeholder="비밀번호"
-                    class="col-xs-2 form-control mt-3"
-                  />
+                  <div class="ms-5 me-5">
+                    <input
+                      type="text"
+                      placeholder="아이디"
+                      name="username"
+                      class="form-control"
+                    />
+                    <input
+                      type="password"
+                      placeholder="비밀번호"
+                      name = "password"
+                      class="col-xs-2 form-control mt-3"
+                    />
+                  </div>
                 </div>
-              </div>
-              <button class="btn btn-primary ms-4 mt-4 me-3">
-                <a href="/main" class="text-decoration-none text-white"
-                  >로그인</a
-                >
-              </button>
-              <button class="btn btn-primary mt-4 ms-2">
-                <a
-                  href="/main_signUp"
-                  class="text-decoration-none text-white"
-                  >회원가입</a
-                >
-              </button>
+                <button class="btn btn-primary ms-4 mt-4 me-3" type="submit">
+                  로그인
+                </button>
+                <button class="btn btn-primary mt-4 ms-2">
+                  <a
+                    href="/home/Signupform"
+                    class="text-decoration-none text-white" type="submit"
+                    >회원가입</a
+                  >
+                </button>
+              </form>
             </div>
-            <a
+            <%-- <a
               href="#modalTarget01"
               class="btn btn-primary"
               data-bs-toggle="modal"
@@ -164,7 +169,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --%>
             <div class="mt-3">
               <a href="#">아이디나 비밀번호를 찾을 수 없으신가요?</a>
             </div>

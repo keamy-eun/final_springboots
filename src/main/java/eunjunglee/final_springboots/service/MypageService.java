@@ -63,7 +63,7 @@ public class MypageService {
                         ((HashMap<String, Object>) (((ArrayList) enrollmentresult).get(0))).get("ENROLL_EXPIRED_DATE"));
             } else {
                 tempresult.put("ENROLL_EXPIRED_DATE",
-                        "-");
+                        "수강기간만료");
             }
 
             tempresult.put("LECTURE_NUMBER",
@@ -136,13 +136,13 @@ public class MypageService {
         modelAnswer.put("TQ06", "TQ06a4");
         modelAnswer.put("TQ07", "TQ07a3");
         HashMap<String, String> modelAnswerCategory = new HashMap<>();
-        modelAnswerCategory.put("TQ01", "1번문제유형");
-        modelAnswerCategory.put("TQ02", "2번문제유형");
-        modelAnswerCategory.put("TQ03", "3번문제유형");
-        modelAnswerCategory.put("TQ04", "4번문제유형");
-        modelAnswerCategory.put("TQ05", "5번문제유형");
-        modelAnswerCategory.put("TQ06", "6번문제유형");
-        modelAnswerCategory.put("TQ07", "7번문제유형");
+        modelAnswerCategory.put("TQ01", "인칭대명사");
+        modelAnswerCategory.put("TQ02", "사물의 위치");
+        modelAnswerCategory.put("TQ03", "긍정문과 부정문");
+        modelAnswerCategory.put("TQ04", "시간 전치사");
+        modelAnswerCategory.put("TQ05", "형용사의 표현");
+        modelAnswerCategory.put("TQ06", "현재진행형");
+        modelAnswerCategory.put("TQ07", "수동태 문법");
 
         for (String key : ((HashMap<String, String>) params).keySet()) {
             if (modelAnswer.get(key).equals(((HashMap<String, String>) params).get(key))) {

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,16 +22,19 @@
       <!-- navbar -->
       <div class="m-5 mb-2">
         <div class="d-flex justify-content-end">
-          <a
-            href="/main_login"
-            class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
-            >로그인</a
-          >
-          <a
-            href="/main_signUp"
-            class="btn btn-link btn-outline-info text-dark text-decoration-none me-3"
-            >회원가입</a
-          >
+          <sec:authentication property="principal" var="userDetailsBean" />
+          <sec:authorize access="isAnonymous()">
+          <a href="/main_login" class="btn btn-link btn-outline-info text-dark text-decoration-none me-3">로그인</a>
+          <a href="/main_signUp" class="btn btn-link btn-outline-info text-dark text-decoration-none me-3">회원가입</a>
+          </sec:authorize>
+          <%-- 로그인이 된 상태 --%>
+          <sec:authorize access="isAuthenticated()">
+              <div> 
+                ${userDetailsBean.memberName}님 안녕하세요
+                <a href="/logoutForm" class="btn btn-link btn-outline-info text-dark text-decoration-none me-3">로그아웃</a>
+              </div>
+          </sec:authorize>
+          
         </div>
         <!-- menu bar -->
         <div class="d-flex justify-content-around">
@@ -79,7 +83,7 @@
       <hr />
       <!-- image -->
       <div class="d-flex justify-content-center mt-4">
-        <img src="./mainImage1.jpg" alt="" class="img-fluid w-75" />
+        <img src="https://user-images.githubusercontent.com/115060986/222607691-0978f4b3-b156-4bdc-9b44-4fbc5aa562e4.jpg" alt="" class="img-fluid rounded" />
       </div>
       <!-- 웰컴 -->
       <div class="text-center container mb-5">

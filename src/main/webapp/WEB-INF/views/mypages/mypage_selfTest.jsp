@@ -80,6 +80,8 @@
                     <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
                   </svg></a></div>
                   <div class="form-group row mt-4">
+                    <%-- 문제답항 비어있을때 --%>
+                    
                      <!-- Prob1 -->
                     <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
                       <div class="mb-3">
@@ -97,7 +99,7 @@
                         <div class="input-group-prepend d-flex justify-content-around mt-3">
                           <div class="w-25">
                             <label for="${resultData.QUESTION_UID}a1">
-                              <input type="radio" id="${resultData.QUESTION_UID}a1" name="${resultData.QUESTION_UID}" value="${resultData.QUESTION_UID}a1" aria-label="Radio button for following text input">
+                              <input type="radio" required id="${resultData.QUESTION_UID}a1" name="${resultData.QUESTION_UID}" value="${resultData.QUESTION_UID}a1" aria-label="Radio button for following text input">
                               ${resultData.ANSWER1}
                             </label>
                           </div>
@@ -124,8 +126,6 @@
                     </c:forEach>
                   </div>
                    
-                    
-
                   <!-- btn -->
                   <div class="d-flex justify-content-end">
                     <button class="btn btn-primary w-25 mt-5 mb-5" type="submit">제출하고 점수 확인하기</button>

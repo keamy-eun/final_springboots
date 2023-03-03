@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +26,14 @@ public class MypageController {
     @RequestMapping(value = { "/Lecture", "", "/" }, method = RequestMethod.GET)
     public ModelAndView getMypageLecture(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         // 로그인에서 가져오는 아이디 저장(하드코딩)
-        params.put("MEMBER_ID", "circle01");
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = null;
+        if (principal instanceof UserDetails) {
+            username = ((UserDetails) principal).getUsername(); // 로그인 상태 확인
+        } else {
+            username = principal.toString(); // 로그 아웃 상태 확인
+        }
+        params.put("MEMBER_ID", username);
         // result에 MEMBER_ID와 LECTURE_NUMBER만 필터링해서 가져옴
         Object resultMap = mypageService.getlistToMylectureMain(params);
 
@@ -38,7 +47,14 @@ public class MypageController {
     public ModelAndView getMypageSignupLecturelist(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
         // 로그인에서 가져오는 아이디 저장(하드코딩)
-        params.put("MEMBER_ID", "circle01");
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = null;
+        if (principal instanceof UserDetails) {
+            username = ((UserDetails) principal).getUsername(); // 로그인 상태 확인
+        } else {
+            username = principal.toString(); // 로그 아웃 상태 확인
+        }
+        params.put("MEMBER_ID", username);
         // result에 MEMBER_ID와 LECTURE_NUMBER만 필터링해서 가져옴
         Object resultMap = mypageService.getlistToMylectureMain(params);
 
@@ -51,7 +67,14 @@ public class MypageController {
     @RequestMapping(value = "/EditForm", method = RequestMethod.GET)
     public ModelAndView mypageEdit(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         // 로그인에서 가져오는 아이디 저장(하드코딩)
-        params.put("MEMBER_ID", "circle01");
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = null;
+        if (principal instanceof UserDetails) {
+            username = ((UserDetails) principal).getUsername(); // 로그인 상태 확인
+        } else {
+            username = principal.toString(); // 로그 아웃 상태 확인
+        }
+        params.put("MEMBER_ID", username);
         Object resultMap = mypageService.getEditList(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/mypages/mypage_member_edit");
@@ -79,7 +102,14 @@ public class MypageController {
     @RequestMapping(value = { "/delete/{uniqueId}" }, method = RequestMethod.GET)
     public ModelAndView delete(@RequestParam Map<String, Object> params, @PathVariable String uniqueId,
             ModelAndView modelAndView) {
-        params.put("MEMBER_ID", "circle01");
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = null;
+        if (principal instanceof UserDetails) {
+            username = ((UserDetails) principal).getUsername(); // 로그인 상태 확인
+        } else {
+            username = principal.toString(); // 로그 아웃 상태 확인
+        }
+        params.put("MEMBER_ID", username);
         params.put("LECTURE_NUMBER", uniqueId);
         Object resultMap = mypageService.delete(params);
         resultMap = mypageService.getlistToMylectureMain(params);

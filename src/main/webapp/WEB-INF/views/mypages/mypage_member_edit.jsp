@@ -168,7 +168,6 @@
                   type="password"
                   class="form-control"
                   id="password"
-                  value="${resultMap.PW}"
                   required
                 />
                 <div class="invalid-feedback">비밀번호를 입력해주세요.</div>
@@ -180,7 +179,6 @@
                   type="password"
                   class="form-control"
                   id="password_check"
-                  value="${resultMap.PW}"
                   required
                 />
                 <div class="invalid-feedback">비밀번호를 입력해주세요.</div>
@@ -197,7 +195,7 @@
                 />
                 <div class="invalid-feedback">이메일을 입력해주세요.</div>
               </div>
-  
+
               <div class="form-group row mt-3">
                 <label for="" class="col-sm-3 col-form-label">생년월일</label>
                 <div class="col-sm-2">
@@ -231,9 +229,9 @@
                 <div class="col-sm-3">광고수신여부 :</div>
                 <div class="col-sm-9">
                   SMS <input type="checkbox" name="SMS_AD" class="form-check-input" id="" 
-                        ${resultMap.SMS_AD == 'YES' ? 'checked' : ''} /> 
+                        ${resultMap.SMS_AD == 'Yes' ? 'checked' : ''} /> 
                         / Email
-                  <input type="checkbox" name="EMAIL_AD" class="form-check-input" id="" ${resultMap.EMAIL_AD == 'YES' ? 'checked' : ''}/> 로 수신하겠습니다
+                  <input type="checkbox" name="EMAIL_AD" class="form-check-input" id="" ${resultMap.EMAIL_AD == 'Yes' ? 'checked' : ''}/> 로 수신하겠습니다
                 </div>
               </div>
   
