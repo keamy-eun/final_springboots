@@ -45,4 +45,10 @@ public class SecurityController {
         modelAndView.setViewName("/main");
         return modelAndView;
     }
+
+    @GetMapping({ "/access_deny" }) // 권한거부 폼 작성
+    public ModelAndView accessDeny(ModelAndView modelAndView) {
+        modelAndView.setViewName("/main/access_deny");
+        return modelAndView;
+    }
 }
