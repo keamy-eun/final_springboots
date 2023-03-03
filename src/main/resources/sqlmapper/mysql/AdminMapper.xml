@@ -19,9 +19,15 @@
         WHERE MEMBER_ID=#{MEMBER_ID} 
     </select>
 
-    <update id="deleteByID" 
+    <update id="deleteMemberByID" 
         parameterType="Map"> 
         DELETE FROM MEMBER 
+        WHERE MEMBER_ID=#{MEMBER_ID} 
+    </update> 
+
+    <update id="deleteMemberLogByID" 
+        parameterType="Map"> 
+        DELETE FROM MEMBER_LOG 
         WHERE MEMBER_ID=#{MEMBER_ID} 
     </update> 
 
@@ -54,9 +60,21 @@
         FROM MEMBER 
     </select>
 
-    <delete id="deleteMultiByIDs" 
+    <delete id="deleteMultiMemberByIDs" 
         parameterType="Map">
         DELETE FROM MEMBER 
+        WHERE MEMBER_ID IN (
+        <!-- 'No', 'System_Code_Yes' -->
+        <foreach collection="deleteMultis" item="item" 
+        separator=", ">
+        #{item}
+        </foreach>
+        )
+    </delete>
+
+    <delete id="deleteMultiMemberLogByIDs" 
+        parameterType="Map">
+        DELETE FROM MEMBER_LOG 
         WHERE MEMBER_ID IN (
         <!-- 'No', 'System_Code_Yes' -->
         <foreach collection="deleteMultis" item="item" 

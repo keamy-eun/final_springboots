@@ -15,12 +15,11 @@
         WHERE LECTURE_NUMBER = #{LECTURE_NUMBER} 
     </select>
 
-<!-- 로그인 완료시 이름 가져오는 방식 변경해야함 -->
-    <select id="selectMemberName_TEMP" 
+    <select id="selectMemberName" 
         parameterType="Map" resultType="Map">
         SELECT MEMBER_NAME   
         FROM MEMBER 
-        WHERE MEMBER_ID = 'circle01' 
+        WHERE MEMBER_ID = #{MEMBER_ID} 
     </select>
 
     <select id="selectQuestionList" 
@@ -65,7 +64,7 @@
         from LECTURE 
         join ENROLLMENT on LECTURE.LECTURE_NUMBER = ENROLLMENT.LECTURE_NUMBER 
         join MEMBER on MEMBER.MEMBER_ID = ENROLLMENT.MEMBER_ID 
-        WHERE MEMBER.MEMBER_ID = 'circle01'
+        WHERE MEMBER.MEMBER_ID = #{MEMBER_ID}
     </select>
 
 

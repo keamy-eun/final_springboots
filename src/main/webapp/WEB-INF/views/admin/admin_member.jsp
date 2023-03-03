@@ -49,7 +49,7 @@
                     <tbody>
                       <c:forEach items="${resultMap.resultList}" var="resultData" varStatus="loop">
                         <tr>
-                          <td><input type="checkbox" name="deleteList" value="${resultData.MEMBER_ID}" /></td>
+                          <td><input type="checkbox" name="MEMBER_ID" value="${resultData.MEMBER_ID}" /></td>
                           <td>${resultData.MEMBER_ID}</td>
                           <td>${resultData.MEMBER_NAME}</td>
                           <td>${resultData.POSITION}</td>
