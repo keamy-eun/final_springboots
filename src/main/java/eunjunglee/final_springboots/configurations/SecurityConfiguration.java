@@ -28,7 +28,7 @@ public class SecurityConfiguration {
                 .anyRequest().permitAll(); // 설정한 URL 이외는 접근 가능(로그인 & 로그아웃).
 
         // 로그인에 대한 부분
-        httpSecurity.formLogin().loginPage("/home/login")
+        httpSecurity.formLogin().loginPage("/loginForm")
                 .failureUrl("/loginForm?fail=true")
                 .loginProcessingUrl("/login")
                 .defaultSuccessUrl("/");

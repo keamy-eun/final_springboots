@@ -25,7 +25,7 @@
           <sec:authentication property="principal" var="userDetailsBean" />
           <sec:authorize access="isAnonymous()">
           <a href="/loginForm" class="btn btn-link btn-outline-info text-dark text-decoration-none me-3">로그인</a>
-          <a href="/main_signUp" class="btn btn-link btn-outline-info text-dark text-decoration-none me-3">회원가입</a>
+          <a href="/home/Signupform" class="btn btn-link btn-outline-info text-dark text-decoration-none me-3">회원가입</a>
           </sec:authorize>
           <%-- 로그인이 된 상태 --%>
           <sec:authorize access="isAuthenticated()">

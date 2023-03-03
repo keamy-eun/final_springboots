@@ -24,7 +24,7 @@ public class HomeController {
     MemberWithAuthorityService memberWithAuthorityService;
 
     // 로그인
-    @RequestMapping(value = "/home/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView getLogin(ModelAndView modelAndView) {
         // Object resultMap = 서비스.get서비스메소드(params);
         // modelAndView.addObject("resultMap", resultMap);

@@ -1,17 +1,17 @@
 
 insert into MEMBER 
 (MEMBER_ID,PW,MEMBER_NAME,POSITION,BIRTH,EMAIL,SMS_AD,EMAIL_AD,PRIVACY_INFO)
-values('ceromi123','비번1234','세로미','강사','1995-01-04','dnjsrl014@hanmail.net','YES','NO','YES'),
-('nas8808','비번1234','남혜인','학생','1997-11-15','hein55@hanmail.net','NO','NO','YES'),
-('circle01','비번4321','동그라미','학생','2005-11-04','circle@hanmail.net','NO','NO','YES'),
-('admin','비번7777','은정이','관리자','1885-08-04','admin@hanmail.net',NULL,NULL,'YES'),
-('nice443','비번1234','은원기','학생','1995-01-04','dnjsrl014@hanmail.net','YES','NO','YES'),
-('neo108','비번1234','박달래','학생','1997-11-15','hein55@hanmail.net','NO','NO','YES'),
-('bkf99','비번4321','진가은','학생','2005-11-04','wfdde@hanmail.net','NO','NO','YES'),
-('moodo01','비번4321','강세호','학생','2005-11-04','vvrrg@hanmail.net','NO','NO','YES'),
-('basie73','비번4321','전나연','학생','2005-11-04','conik@hanmail.net','NO','NO','YES'),
-('woodiga1','비번4321','한아름','학생','2005-11-04','sokid@hanmail.net','NO','NO','YES'),
-('jointo01','비번7777','우리미','학생','1885-08-04','wnidk@hanmail.net',NULL,NULL,'YES');
+values('ceromi123','비번1234','세로미','ROLE_MANAGER','1995-01-04','dnjsrl014@hanmail.net','YES','NO','YES'),
+('nas8808','비번1234','남혜인','ROLE_USER','1997-11-15','hein55@hanmail.net','NO','NO','YES'),
+('circle01','비번4321','동그라미','ROLE_USER','2005-11-04','circle@hanmail.net','NO','NO','YES'),
+('admin','비번7777','은정이','ROLE_ADMIN','1885-08-04','admin@hanmail.net',NULL,NULL,'YES'),
+('nice443','비번1234','은원기','ROLE_USER','1995-01-04','dnjsrl014@hanmail.net','YES','NO','YES'),
+('neo108','비번1234','박달래','ROLE_USER','1997-11-15','hein55@hanmail.net','NO','NO','YES'),
+('bkf99','비번4321','진가은','ROLE_USER','2005-11-04','wfdde@hanmail.net','NO','NO','YES'),
+('moodo01','비번4321','강세호','ROLE_USER','2005-11-04','vvrrg@hanmail.net','NO','NO','YES'),
+('basie73','비번4321','전나연','ROLE_USER','2005-11-04','conik@hanmail.net','NO','NO','YES'),
+('woodiga1','비번4321','한아름','ROLE_USER','2005-11-04','sokid@hanmail.net','NO','NO','YES'),
+('jointo01','비번7777','우리미','ROLE_USER','1885-08-04','wnidk@hanmail.net',NULL,NULL,'YES');
 
 insert into LECTURER 
 (LECTURER_NUMBER, MEMBER_ID) 
