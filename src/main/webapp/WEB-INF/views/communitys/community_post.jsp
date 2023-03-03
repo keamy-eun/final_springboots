@@ -86,8 +86,8 @@
 
               </c:forEach>
                     <%-- 반복부분 end --%>
-
-             
+<%-- ${resultData.POST_NUMBER} --%>
+            <form action="/community_post/${resultMap[0].POST_NUMBER}" method="get" class="form-group">
               <div class="row mt-3">
                 <input
                   type="text"
@@ -98,6 +98,10 @@
                   작성
                 </button>
               </div>
+              <hr>
+              <div>${resultMap[0]}</div>
+              <hr>
+            </form>
               <hr />
             </div>
           </div>
