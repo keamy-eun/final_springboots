@@ -35,8 +35,6 @@ public class AdminController {
      // 회원수정
      @RequestMapping(value="/edit", method = RequestMethod.POST)
      public ModelAndView getEdit(@RequestParam Map<String, Object> params, ModelAndView modelAndView ){
-        params.put("currentPage", 1);
-        params.put("pageScale", 10);
          Object resultMap = adminService.updateAndList(params);
          modelAndView.addObject("resultMap", resultMap);
          modelAndView.setViewName("/admin/admin_member");
@@ -70,9 +68,7 @@ public class AdminController {
      @RequestMapping(value="/member/{member_id}", method = RequestMethod.POST)
      public ModelAndView getDelete(@RequestParam Map<String, Object> params, @PathVariable String member_id, ModelAndView modelAndView ){
         params.put("MEMBER_ID",member_id);
-        params.put("currentPage", 1);
-        params.put("pageScale", 10);
-        Object resultMap = adminService.deleteAndList(params);
+        Object resultMap = adminService.deleteAndList2(params);
          modelAndView.addObject("resultMap", resultMap);
          modelAndView.setViewName("/admin/admin_member");
          return modelAndView;
@@ -80,12 +76,12 @@ public class AdminController {
 
      // 다중삭제
     @RequestMapping(value = {"/deleteMulti"}, method = RequestMethod.POST)
-    public String deleteMulti(@RequestParam("deleteList") List<String> MEMBER_ID) {
-        Map<String, Object> param = new HashMap<>();
-        for(int i=0; i<MEMBER_ID.size(); i++){
-            param.put("MEMBER_ID", MEMBER_ID.get(i));
-            adminService.delete(param);
-        }
-        return "redirect:/admin/member";
+    public ModelAndView deleteMulti(HttpServletRequest httpServletRequest, @RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+        String[] deleteMultis = httpServletRequest.getParameterMap().get("MEMBER_ID");
+        params.put("deleteMultis", deleteMultis);
+        Object resultMap = adminService.deleteMultiAndList2(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("/admin/admin_member");
+        return modelAndView;
     }
 }

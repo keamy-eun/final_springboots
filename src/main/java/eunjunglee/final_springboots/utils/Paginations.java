@@ -29,7 +29,7 @@ public class Paginations {
     }
 
     public void setTotalPage(int totalCount){
-        this.totalPage = (int) Math.ceil(totalCount / this.pageScale);
+        this.totalPage = (int) Math.ceil((double)totalCount / this.pageScale);
     }
 
     public void setPageRange(){

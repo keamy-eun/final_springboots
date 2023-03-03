@@ -73,36 +73,35 @@
                           </td>
                         </tr>
                       </c:forEach>
-                      
                     </tbody>
                   </table>
-                  <button class="btn btn-secondary d-flex justify-content-end mb-4 ms-3">선택삭제</button>
+                <button class="btn btn-secondary d-flex justify-content-end mb-4 ms-3">선택삭제</button>
               </form>
-            <nav aria-label="Page navigation example">
-              <c:set var="pagination" value="${resultMap.paginations}" />
-                <ul class="pagination">
+              <nav aria-label="Page navigation example">
+                <c:set var="_pagination" value="${resultMap.paginations}" />
+                  <span>전체 회원수 : ${_pagination.totalCount}</span>
+                  <ul class="pagination">
+                    <li class="page-item">
+                      <a class="page-link" href="/admin/member_pagination/${_pagination.previousPage}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                    </li>
+                  <c:forEach var="pageNum" begin="${_pagination.blockStart}" end="${_pagination.blockEnd}" varStatus="loop">
+                    <c:set var="color" value="" />
+                    <c:if test="${1 eq pageNum}">
+                        <c:set var="color" value="bg-secondary bg-opacity-25" />
+                    </c:if>
+                    <li class="page-item"><a class="page-link ${color}" href="/admin/member_pagination/${pageNum}">${pageNum}</a></li>
+                  </c:forEach>
                   <li class="page-item">
-                    <a class="page-link" href="/admin/member_pagination/${pagination.previousPage}" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                      <span class="sr-only"></span>
-                    </a>
-                  </li>
-                
-                <c:forEach var="pageNum" begin="${pagination.blockStart}" end="${pagination.blockEnd+1}" varStatus="loop">
-                  <c:set var="color" value="" />
-                  <c:if test="${pageNum eq 1}">
-                      <c:set var="color" value="bg-secondary bg-opacity-25" />
-                  </c:if>
-                  <li class="page-item"><a class="page-link ${color}" href="/admin/member_pagination/${pageNum}">${pageNum}</a></li>
-                </c:forEach>
-                  <li class="page-item">
-                    <a class="page-link" href="/admin/member_pagination/${pagination.nextPage}" aria-label="Next">
+                    <a class="page-link" href="/admin/member_pagination/${_pagination.nextPage}" aria-label="Next">
                       <span aria-hidden="true">&raquo;</span>
                       <span class="sr-only"></span>
                     </a>
                   </li>
-                </ul>
-              </nav>
+                  </ul>
+                </nav>
             </div>
           </div>
         </div>
