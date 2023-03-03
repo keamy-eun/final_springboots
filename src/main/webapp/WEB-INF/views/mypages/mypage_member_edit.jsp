@@ -64,7 +64,7 @@
         <div class="input-form-backgroud row">
           <div class="input-form col-md-12 m-5 p-5">
             <h4 class="mb-4 fs-3 d-flex justify-content-start">개인정보수정</h4>
-            <form class="validation-form" novalidate>
+            <form class="validation-form" method="post" novalidate>
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="name">이름</label>
