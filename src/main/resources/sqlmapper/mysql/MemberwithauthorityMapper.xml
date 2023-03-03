@@ -4,14 +4,14 @@
 	<select id="selectByUID" parameterType="String"
 		resultType="Map">
 		SELECT * 
-		FROM member
-		inner join member_log
-		ON member.MEMBER_ID = member_log.MEMBER_ID
-		where member_log.MEMBER_ID = #{username}
+		FROM MEMBER
+		inner join MEMBER_LOG
+		ON MEMBER.MEMBER_ID = MEMBER_LOG.MEMBER_ID
+		where MEMBER_LOG.MEMBER_ID = #{username}
 	</select>
 	
 	<insert id="insertWithUID" parameterType="Map">
-		insert into member_log 
+		insert into MEMBER_LOG 
 		(CERTIFICATION_KEY,MEMBER_ID,LOGIN_DATE,LOGIN_STATUS) 
 		values(#{CERTIFICATION_KEY},#{MEMBER_ID},now(),'signUp')
 	</insert>
