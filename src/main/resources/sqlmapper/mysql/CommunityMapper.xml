@@ -89,15 +89,16 @@
         parameterType="Map">
         insert into COMMUNITY_POST                           
         (POST_NUMBER, COMMUNITY_CONTENT, COMMUNITY_TITLE, FILE_ATTACHIMENT, COMMUNITY_DATE, VIEW_COUNT, MEMBER_ID, COMMUNITY_NUMBER)
-        value (NEXTVAL('post'),#{community_content},#{community_title},#{file_Attachiment},now(),'0','circle01',#{community_number}); 
+        value (NEXTVAL('post'),#{community_content},#{community_title},#{file_Attachiment},now(),'0','circle01',#{community_number})
         <!-- id값과 조회수, 댓글기능만  -->
+        <!-- post unique string 값 -->
     </insert> 
     
     <insert id="insertComment" 
         parameterType="Map">
         insert into post_comment                           
         (COMMENT_NUMBER, POST_NUMBER, COMMENT_CONTENT, POST_DATE, MEMBER_ID)
-        value (NEXTVAL('comm'),#{POST_NUMBER},#{COMMENT_CONTENT},now(),'circle01'); 
+        value (NEXTVAL2('comm'),#{POST_NUMBER},#{COMMENT_CONTENT},now(),'circle01')
         <!-- id값과 조회수, 댓글기능만  -->
     </insert>
 
