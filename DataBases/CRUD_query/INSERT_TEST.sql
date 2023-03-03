@@ -1,17 +1,17 @@
 
 insert into MEMBER 
 (MEMBER_ID,PW,MEMBER_NAME,POSITION,BIRTH,EMAIL,SMS_AD,EMAIL_AD,PRIVACY_INFO)
-values('ceromi123','비번1234','세로미','ROLE_MANAGER','1995-01-04','dnjsrl014@hanmail.net','YES','NO','YES'),
-('nas8808','비번1234','남혜인','ROLE_USER','1997-11-15','hein55@hanmail.net','NO','NO','YES'),
-('circle01','비번4321','동그라미','ROLE_USER','2005-11-04','circle@hanmail.net','NO','NO','YES'),
-('admin','비번7777','은정이','ROLE_ADMIN','1885-08-04','admin@hanmail.net',NULL,NULL,'YES'),
-('nice443','비번1234','은원기','ROLE_USER','1995-01-04','dnjsrl014@hanmail.net','YES','NO','YES'),
-('neo108','비번1234','박달래','ROLE_USER','1997-11-15','hein55@hanmail.net','NO','NO','YES'),
-('bkf99','비번4321','진가은','ROLE_USER','2005-11-04','wfdde@hanmail.net','NO','NO','YES'),
-('moodo01','비번4321','강세호','ROLE_USER','2005-11-04','vvrrg@hanmail.net','NO','NO','YES'),
-('basie73','비번4321','전나연','ROLE_USER','2005-11-04','conik@hanmail.net','NO','NO','YES'),
-('woodiga1','비번4321','한아름','ROLE_USER','2005-11-04','sokid@hanmail.net','NO','NO','YES'),
-('jointo01','비번7777','우리미','ROLE_USER','1885-08-04','wnidk@hanmail.net',NULL,NULL,'YES');
+values('ceromi123','$2a$10$s0btR7hXpUMKABwaxQHPGOTM54YJQWlmQu8xOCF4KP22gl4beNBXe','세로미','ROLE_MANAGER','1995-01-04','dnjsrl014@hanmail.net','YES','NO','YES'),
+('nas8808','$2a$10$jsjnlrBvLZfO69pdfGs5heSuLZ6Ej1HaAmR26PSIEoZcA8RaG58rO','남혜인','ROLE_USER','1997-11-15','hein55@hanmail.net','NO','NO','YES'),
+('circle01','$2a$10$lCFpH5mEXXzPayax2./JtebIsS0HfxPmWJmNiAMYluFRXts8yztfa','동그라미','ROLE_USER','2005-11-04','circle@hanmail.net','NO','NO','YES'),
+('admin','$2a$10$l/GnBscUpMTTTENg2xMGCOSVeIEr49u1ln2VjYR9Mah1rw0kZddvK','은정이','ROLE_ADMIN','1885-08-04','admin@hanmail.net',NULL,NULL,'YES'),
+('nice443','$2a$10$zrTEeEHmpfuO48aV8a3CTO.QJpE4KXz1s0wdhdh4yQpQO88JIFtbu','은원기','ROLE_USER','1995-01-04','dnjsrl014@hanmail.net','YES','NO','YES'),
+('neo108','$2a$10$TxpZp.9U4NjZC5iNzAVJpuR7LoGZO99eFrxK8Qa97cBB5yR/wi5zS','박달래','ROLE_USER','1997-11-15','hein55@hanmail.net','NO','NO','YES'),
+('bkf99','$2a$10$guZzW7YRyP/u9B4izaVnHuR8nYnFMPOMGPsCks1/a5z1u84PFAS8y','진가은','ROLE_USER','2005-11-04','wfdde@hanmail.net','NO','NO','YES'),
+('moodo01','$2a$10$kg13nyL0vX/lTzlFwVr5Mux2eYIiu5pcXNVNxZlX8ncXvZTa9V1X2','강세호','ROLE_USER','2005-11-04','vvrrg@hanmail.net','NO','NO','YES'),
+('basie73','$2a$10$jbZRXivn33ttVbh5VxMLE.pnlPhdp0iBTxguQVn6bGS.4iCypEk8W','전나연','ROLE_USER','2005-11-04','conik@hanmail.net','NO','NO','YES'),
+('woodiga1','$2a$10$/vRkgxHpYSXnJyEXp8qK/O2lChVEu8s.LssKfq9c6Ec9BWGQDhTha','한아름','ROLE_USER','2005-11-04','sokid@hanmail.net','NO','NO','YES'),
+('jointo01','$2a$10$.iv0tDULY3H6up71LUTHROdvNNB8aaPLiuV.FAFCTkF0LXctx4qdm','우리미','ROLE_USER','1885-08-04','wnidk@hanmail.net',NULL,NULL,'YES');
 
 insert into LECTURER 
 (LECTURER_NUMBER, MEMBER_ID) 
