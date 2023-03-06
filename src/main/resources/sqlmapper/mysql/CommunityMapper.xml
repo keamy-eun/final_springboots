@@ -36,6 +36,8 @@
         FROM MEMBER
         INNER JOIN POST_COMMENT ON MEMBER.MEMBER_ID = POST_COMMENT.MEMBER_ID
         where POST_COMMENT.POST_NUMBER = #{parameter}
+        <!-- uid로 넘긴 post??값이 붙어서 비교. -->
+        <!-- 파라미터를 받아와서 지금 댓글 불러오기도 이 파라미터를 받아오기 때문에 comment_content가 post72가 나오는 것 같음 -->
     </select>
 
     <!-- 강사게시판의 게시글만 나오도록 -->
@@ -94,11 +96,11 @@
         <!-- post unique string 값 -->
     </insert> 
     
-    <insert id="insertComment" 
+    <insert id="insertComment"  
         parameterType="Map">
         insert into POST_COMMENT                           
         (COMMENT_NUMBER, POST_NUMBER, COMMENT_CONTENT, POST_DATE, MEMBER_ID)
-        value (NEXTVAL2('comm'),#{POST_NUMBER},#{COMMENT_CONTENT},now(),'circle01')
+        value (NEXTVAL2('comm'),#{Id},#{content},now(),'circle01')
         <!-- id값과 조회수, 댓글기능만  -->
     </insert>
 

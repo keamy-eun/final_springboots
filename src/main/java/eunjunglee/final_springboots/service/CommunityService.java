@@ -46,6 +46,7 @@ public class CommunityService {
     public Object insertComment(Object dataMap){
         String sqlMapId = "Community.insertComment";
         Object result = sharedDaos.insert(sqlMapId, dataMap);
+        System.out.println(dataMap);
         return result;
     }
 
@@ -98,5 +99,12 @@ public class CommunityService {
         Object result = this.insertComment(dataMap);
         result = this.getComment(dataMap);
         return result; 
+    }
+
+    public Object insertComment2(Object dataMap){
+        System.out.println(dataMap);
+        Object result = this.insertComment(dataMap);
+      
+        return result;
     }
 }

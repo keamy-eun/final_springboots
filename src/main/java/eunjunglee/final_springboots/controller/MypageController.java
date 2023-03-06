@@ -99,7 +99,7 @@ public class MypageController {
         return modelAndView;
     }
 
-    @RequestMapping(value = { "/delete/{uniqueId}" }, method = RequestMethod.GET)
+    @RequestMapping(value = { "/delete/{uniqueId}" }, method = RequestMethod.POST)
     public ModelAndView delete(@RequestParam Map<String, Object> params, @PathVariable String uniqueId,
             ModelAndView modelAndView) {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();

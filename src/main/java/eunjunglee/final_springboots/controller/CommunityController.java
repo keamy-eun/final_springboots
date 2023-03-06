@@ -1,7 +1,7 @@
 package eunjunglee.final_springboots.controller;
 
 import java.util.Map;
-
+import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import eunjunglee.final_springboots.service.CommunityService;
@@ -87,8 +88,7 @@ public class CommunityController {
         Object result = communityService.updatePostView(uniqueId);
         Object resultMap = communityService.getPost(uniqueId); // 여긴 params가 아닌uniqueId      이 코드가 기존코드 밑의 코드가 새 코드
         Object resultComment = communityService.getComment(uniqueId);
-        // Object resultComment = communityService.insertCommentAndGetComment(uniqueId); // 여긴 params가 아닌uniqueId
-        // 겟포스트로 매퍼에서 원하는 컬럼 골라서 가져오고 resultMap에 담아둠
+   
         modelAndView.addObject("resultMap", resultMap);  
         modelAndView.addObject("resultComment", resultComment);  
         modelAndView.setViewName("/communitys/community_post");
@@ -100,12 +100,12 @@ public class CommunityController {
         // updatePostView는 viewCount불러서 + 1 해주는 mapper  uniqueId를 받아가서 postNumber과 비교하고 해당 컬럼만 update함
         
         // 커밋용 주석 추가
-        Object result = communityService.updatePostView(uniqueId);
-        Object resultMap = communityService.getPost(uniqueId); // 여긴 params가 아닌uniqueId      이 코드가 기존코드 밑의 코드가 새 코드
-        // Object resultComment = communityService.getComment(uniqueId);
-        Object resultComment = communityService.insertCommentAndGetComment(uniqueId); // 여긴 params가 아닌uniqueId
-        // 겟포스트로 매퍼에서 원하는 컬럼 골라서 가져오고 resultMap에 담아둠
-        modelAndView.addObject("current_comment", params);
+        // 게시글 출력
+        Object resultMap = communityService.getPost(uniqueId); 
+        // 댓글 추가 및 댓글   
+        Object resultComment = communityService.insertCommentAndGetComment(uniqueId);
+    
+        modelAndView.addObject("content", params);
         modelAndView.addObject("resultMap", resultMap);  
         modelAndView.addObject("resultComment", resultComment);  
         modelAndView.setViewName("/communitys/community_post");
@@ -204,5 +204,27 @@ public class CommunityController {
         modelAndView.setViewName("/communitys/community_lecture");
         return modelAndView;
     }
+
+    @ResponseBody
+    @RequestMapping(value="/insertComment/{uniqueId}")
+    public ModelAndView insertComment(@PathVariable String uniqueId, @RequestParam Map<String, Object> params, ModelAndView modelAndView  ){
+        Object result = communityService.updatePostView(uniqueId);
+        Object resultMap = communityService.getPost(uniqueId); // 여긴 params가 아닌uniqueId      이 코드가 기존코드 밑의 코드가 새 코드
+        HashMap<String,String> rtn = new HashMap();
+        params.put("Id", uniqueId);
+        Object resultInsertComment = communityService.insertComment2(params); 
+        Object resultComment = communityService.getComment(uniqueId);
+        modelAndView.addObject("rtn", rtn);  
+        modelAndView.addObject("result", result);  
+        modelAndView.addObject("resultMap", resultMap);  
+        modelAndView.addObject("resultComment", resultComment);  
+        modelAndView.addObject("resultInsertComment", resultInsertComment);  
+        modelAndView.setViewName("/communitys/community_post");
+        return modelAndView;
+    }
+
+    // // 커밋용 주석 추가
+
+    // return modelAndView;
    
 }
