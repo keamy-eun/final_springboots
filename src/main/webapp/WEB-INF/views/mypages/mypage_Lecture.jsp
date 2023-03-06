@@ -72,7 +72,7 @@
                   <div class="col-6">${resultData.LECTURE_TITLE}</div>
                   <div class="col-2 text-center">${resultData.MEMBER_NAME}</div>
                   <div class="col-2">
-                    <a href="/lecture_signup_list" class="btn btn-primary"
+                    <a href="/lecture/lecture_signup_list" class="btn btn-primary"
                       >강의보러가기</a
                     >
                   </div>

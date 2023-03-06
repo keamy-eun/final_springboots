@@ -24,7 +24,7 @@ public class HomeController {
     MemberWithAuthorityService memberWithAuthorityService;
 
     // 로그인
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ModelAndView getLogin(ModelAndView modelAndView) {
         // Object resultMap = 서비스.get서비스메소드(params);
         // modelAndView.addObject("resultMap", resultMap);
@@ -40,7 +40,7 @@ public class HomeController {
     }
 
     // 회원가입 완료
-    @RequestMapping(value = "/home/SignupComplete", method = RequestMethod.GET)
+    @RequestMapping(value = "/home/SignupComplete", method = RequestMethod.POST)
     public String getSighUpData(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         String birth = (String) params.get("BIRTY_year") + "-" + (String) params.get("BIRTY_month") + "-"
                 + (String) params.get("BIRTY_day");

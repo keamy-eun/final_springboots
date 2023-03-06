@@ -26,7 +26,7 @@
         <div class="input-form-backgroud row">
           <div class="input-form col-md-6 mx-auto">
             <h4 class="mb-3">회원가입</h4>
-            <form class="form-group" action="/home/SignupComplete" method="get">
+            <form class="form-group" action="/home/SignupComplete" method="post">
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="nickname">아이디</label>

@@ -47,7 +47,7 @@
         select *
         from community_post
         WHERE COMMUNITY_NUMBER = 'C02'
-        order by post_number desc
+        order by POST_NUMBER desc
     </select>
 
     <!-- call  Community.selectListByID-->
@@ -67,12 +67,12 @@
     <!-- 강좌게시판 -->
     <select id="selectLectureList" 
         parameterType="Map" resultType="Map">
-        SELECT lecture.LECTURE_NUMBER, lecture.LECTURE_TITLE, lecture.LECTURE_INTRO, lecture.LECTURE_IMAGE, member.MEMBER_ID
-        FROM enrollment 
-        inner join LECTURE ON LECTURE.LECTURE_NUMBER = enrollment.LECTURE_NUMBER
+        SELECT LECTURE.LECTURE_NUMBER, LECTURE.LECTURE_TITLE, LECTURE.LECTURE_INTRO, LECTURE.LECTURE_IMAGE, MEMBER.MEMBER_ID
+        FROM ENROLLMENT 
+        inner join LECTURE ON LECTURE.LECTURE_NUMBER = ENROLLMENT.LECTURE_NUMBER
         inner join MEMBER ON MEMBER.MEMBER_ID = ENROLLMENT.MEMBER_ID
-        <!-- where enrollment.MEMBER_ID = #{MEMBER_ID}  -->
-        where enrollment.MEMBER_ID = 'circle01'
+        <!-- where ENROLLMENT.MEMBER_ID = #{MEMBER_ID}  -->
+        where ENROLLMENT.MEMBER_ID = 'circle01'
     </select>
 
 <!-- 공지사항 -->
@@ -80,9 +80,9 @@
     parameterType="Map" resultType="Map">
 
         select *
-        from community_post
+        from COMMUNITY_POST
         WHERE COMMUNITY_NUMBER = 'C04'
-        order by post_number desc
+        order by POST_NUMBER desc
 
     </select>
 
@@ -98,7 +98,7 @@
     
     <insert id="insertComment"  
         parameterType="Map">
-        insert into post_comment                           
+        insert into POST_COMMENT                           
         (COMMENT_NUMBER, POST_NUMBER, COMMENT_CONTENT, POST_DATE, MEMBER_ID)
         value (NEXTVAL2('comm'),#{Id},#{content},now(),'circle01')
         <!-- id값과 조회수, 댓글기능만  -->
@@ -107,7 +107,7 @@
     <update id="updatePostView" parameterType="String">
     update COMMUNITY_POST
     set VIEW_COUNT  = VIEW_COUNT +1
-    where post_number = #{parameter}
+    where POST_NUMBER = #{parameter}
     </update>
 
 </mapper>
