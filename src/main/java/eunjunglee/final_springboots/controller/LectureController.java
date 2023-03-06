@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.ArrayList;
 import java.util.Map;
 
+import eunjunglee.final_springboots.service.AdminService;
 import eunjunglee.final_springboots.service.LectureService;
 
 @Controller
@@ -22,15 +23,33 @@ public class LectureController {
     @Autowired
     LectureService lectureService;
 
+    @Autowired
+    AdminService adminService;
+    
+
      // 강좌 리뷰 조회
      @RequestMapping(value="/lecture_review", method = RequestMethod.GET)
      public ModelAndView getReview(@RequestParam Map<String, Object> params, ModelAndView modelAndView ){
-         Object resultMap = lectureService.getLectureReview(params);
+        params.put("currentPage", 1);
+        params.put("pageScale", 10);
+        Object resultMap = lectureService.listAndPagination(params);
          modelAndView.addObject("resultMap", resultMap);
          modelAndView.setViewName("/lecture/lecture_review");
          return modelAndView;
      }
  
+    // 페이지네이션
+    @RequestMapping(value = { "/lecture_review_pagination/{currentPage}"}, method = RequestMethod.GET)
+    public ModelAndView listPagination(@RequestParam Map<String, Object> params
+            , @PathVariable String currentPage, ModelAndView modelAndView) {
+        params.put("currentPage", Integer.parseInt(currentPage));
+        params.put("pageScale", 10);
+        Object resultMap = lectureService.listAndPagination(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("/lecture/lecture_review_pagination");
+        return modelAndView;
+    }
+    
      // 강좌신청목록
      @RequestMapping(value={"/lecture_signup_list","/",""}, method = RequestMethod.GET)
      public ModelAndView getLectureList(@RequestParam Map<String, Object> params, ModelAndView modelAndView ){
@@ -73,7 +92,7 @@ public class LectureController {
         params.put("LECTURE_NUMBER",lecture_number);
          Object resultMap1 = lectureService.getQuestionList(params);
          Object resultMap2 = lectureService.getAnswerList(params);
-         Object resultMap3 = lectureService.getMemberName_TEMP(params);
+         Object resultMap3 = lectureService.getMemberName(params);
          Object resultMap4 = lectureService.getLectureID(params);
          ArrayList<Object> resultList = new ArrayList<>();
          resultList.add(resultMap1);
@@ -84,4 +103,5 @@ public class LectureController {
          modelAndView.setViewName("/lecture/lecture_signupWithPoll");
          return modelAndView;
      }
+
 }
