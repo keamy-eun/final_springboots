@@ -39,7 +39,7 @@
       <div class="container col-9">
         <div class="mt-4 mb-4"> 
           <!-- 설문문답 JSTL -->
-          <form action="/lecture/lecture_signup" method="post">
+          <form action="/lecture/lecture_signup" name="poll" method="post">
             <input type="hidden" name="LECTURE_NUMBER" value="${resultList[3].LECTURE_NUMBER}">
             <h1 class="pb-3">수강신청</h1>
             <div class="fs-3">${resultList[2].MEMBER_NAME} 회원님 안녕하세요!</div>
@@ -47,8 +47,8 @@
               <c:if test="${Que.ORDERS eq '1' || Que.ORDERS eq '2' || Que.ORDERS eq '3'}">
               <label class="mt-4 mb-3">${Que.ORDERS}. ${Que.QUESTION}</label>
                 <div class="col">
-                  <select name="${Que.QUESTION_UID}" id="" class="form-control">
-                    <option class="text-secondary" name="${Que.QUESTION_UID}" selected>선택${Que.QUESTION_UID}</option>
+                  <select name="${Que.QUESTION_UID}" id="${Que.QUESTION_UID}" class="form-control">
+                    <option class="text-secondary" selected>선택</option>
                       <c:forEach items="${resultList[1]}" var="Ans" varStatus="loop">
                         <c:if test="${Que.QUESTION_UID eq Ans.QUESTION_UID}">
                           <option>${Ans.ANSWER}</option>
@@ -60,20 +60,17 @@
               <c:if test="${Que.ORDERS eq '1-1' || Que.ORDERS eq '4'}">
                 <div class="mt-4 mb-2">
                   <label class="mt-4 mb-3"
-                    >${Que.ORDERS}. ${Que.QUESTION}</label
+                    >${Que.ORDERS}. ${Que.QUESTION} ${Que.QUESTION_UID}</label
                   >
-                  <input class="form-control mt-3" type="text" name="${Que.QUESTION_UID}"  />
+                  <input class="form-control mt-3" type="text" name="${Que.QUESTION_UID}" id="${Que.QUESTION_UID}"/>
                 </div>
               </c:if>
             </c:forEach>
-
-
             <div class="form-group row">
             <!-- btn -->
             <div class="d-flex justify-content-end">
-              <button class="btn btn-primary w-25 mt-5 mb-5" onclick="check(); alert('수강신청 되었습니다! 마이페이지로 이동할게요');" >
-                수강신청하기
-              </button>
+              <input type="button" class="btn btn-primary w-25 mt-5 mb-5" value="수강신청하기" onclick="check()">
+            </input>
             </div>
           </form>
         </div>
@@ -87,18 +84,23 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
-
-      function check(){
-        if(document.getElementById("PQ01").value=="선택PQ01"){
-            alert("이름을 입력하세요");
-            return;
-        }
-        if(document.getElementById("studentNum").value==""){
-            alert("학번을 입력하세요");
-            return;
-        }
-        frm.submit();
-    }
     ></script>
+    <script type="text/javascript">
+      function check(){
+        if(document.getElementById("PQ01").value=="선택"){
+            alert("PQ01을 입력하세요");
+            return false;
+        }else if(document.getElementById("PQ01").value=="기타" && document.getElementById("PQ01_1").value==""){
+            alert("PQ01-1을 입력하세요");
+            return false;
+        }else if(document.getElementById("PQ02").value=="선택"){
+            alert("PQ02을 입력하세요");
+            return false;
+        }else if(document.getElementById("PQ03").value=="선택"){
+            alert("PQ03을 입력하세요");
+            return false;
+        }else document.poll.submit();
+    }
+    </script>
   </body>
 </html>

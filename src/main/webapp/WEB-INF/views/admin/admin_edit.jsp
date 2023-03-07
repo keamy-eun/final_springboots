@@ -36,9 +36,9 @@
                 <td>
                   <select name="POSITION" class="form-control ms-1 me-2 text-center" value="${resultMap.POSITION}">
                     <option value="${resultMap.POSITION}">선택</option>
-                      <option value="">학생</option>
-                      <option value="">강사</option>
-                      <option value="">관리자</option>
+                      <option value="ROLE_USER">학생</option>
+                      <option value="ROLE_MANAGER">강사</option>
+                      <option value="ROLE_ADMIN">관리자</option>
                   </select>
                 </td>
                 <td>
