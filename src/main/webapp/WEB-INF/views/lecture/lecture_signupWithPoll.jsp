@@ -48,7 +48,7 @@
               <label class="mt-4 mb-3">${Que.ORDERS}. ${Que.QUESTION}</label>
                 <div class="col">
                   <select name="${Que.QUESTION_UID}" id="" class="form-control">
-                    <option class="text-secondary" selected>선택</option>
+                    <option class="text-secondary" name="${Que.QUESTION_UID}" selected>선택${Que.QUESTION_UID}</option>
                       <c:forEach items="${resultList[1]}" var="Ans" varStatus="loop">
                         <c:if test="${Que.QUESTION_UID eq Ans.QUESTION_UID}">
                           <option>${Ans.ANSWER}</option>
@@ -71,7 +71,7 @@
             <div class="form-group row">
             <!-- btn -->
             <div class="d-flex justify-content-end">
-              <button class="btn btn-primary w-25 mt-5 mb-5" onclick="alert('수강신청 되었습니다! 마이페이지로 이동할게요')" >
+              <button class="btn btn-primary w-25 mt-5 mb-5" onclick="check(); alert('수강신청 되었습니다! 마이페이지로 이동할게요');" >
                 수강신청하기
               </button>
             </div>
@@ -87,6 +87,18 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
+
+      function check(){
+        if(document.getElementById("PQ01").value=="선택PQ01"){
+            alert("이름을 입력하세요");
+            return;
+        }
+        if(document.getElementById("studentNum").value==""){
+            alert("학번을 입력하세요");
+            return;
+        }
+        frm.submit();
+    }
     ></script>
   </body>
 </html>
