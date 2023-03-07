@@ -51,10 +51,30 @@
 
     <!-- call mypage.deleteByLECTURE_NUMBER -->
     <delete id="deleteByLECTURE_NUMBER" parameterType="Map">
-        delete
-        from ENROLLMENT
+        DELETE
+        FROM ENROLLMENT
         WHERE LECTURE_NUMBER = #{LECTURE_NUMBER} and MEMBER_ID = #{MEMBER_ID}
     </delete>
 
+    <!-- call mypage.deleteFromMemberlogByMEMBERID -->
+    <delete id="deleteFromMemberlogByMEMBERID" parameterType="Map">
+        DELETE 
+        FROM MEMBER_LOG
+        WHERE MEMBER_ID = #{MEMBER_ID}
+    </delete>
+
+    <!-- call mypage.deleteFromMemberByMEMBERID -->
+    <delete id="deleteFromMemberByMEMBERID" parameterType="Map">
+        DELETE 
+        FROM MEMBER
+        WHERE MEMBER_ID = #{MEMBER_ID}
+    </delete>
+
+    <!-- call mypage.updateByMEMBERID -->
+    <update id="updateByMEMBERID" parameterType="Map">
+        UPDATE MEMBER
+        SET PW = #{PW}, BIRTH = #{BIRTH}, EMAIL = #{EMAIL}, SMS_AD = #{SMS_AD}, EMAIL_AD = #{EMAIL_AD}
+        WHERE MEMBER_ID = #{MEMBER_ID};
+    </update>
 
 </mapper>

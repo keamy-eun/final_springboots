@@ -81,6 +81,40 @@ public class MypageController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/EditFormComplete", method = RequestMethod.GET)
+    public String mypageEditComplete(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+        // 로그인에서 가져오는 아이디 저장
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = null;
+        if (principal instanceof UserDetails) {
+            username = ((UserDetails) principal).getUsername(); // 로그인 상태 확인
+        } else {
+            username = principal.toString(); // 로그 아웃 상태 확인
+        }
+        params.put("MEMBER_ID", username);
+
+        Object resultMap = mypageService.EditMember(params);
+        return "redirect:/";
+    }
+
+    @RequestMapping(value = "/deleteMember", method = RequestMethod.GET)
+    public String deleteMember(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+        // 로그인에서 가져오는 아이디 저장
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = null;
+        if (principal instanceof UserDetails) {
+            username = ((UserDetails) principal).getUsername(); // 로그인 상태 확인
+        } else {
+            username = principal.toString(); // 로그 아웃 상태 확인
+        }
+        params.put("MEMBER_ID", username);
+
+        mypageService.deleteMemberLog(params);
+        mypageService.deleteMember(params);
+        return "redirect:/logout";
+    }
+
     // 자기실력 테스트 ㅇ
     @RequestMapping(value = "/selfTestForm", method = RequestMethod.GET)
     public ModelAndView getSelfTest(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
@@ -99,7 +133,7 @@ public class MypageController {
         return modelAndView;
     }
 
-    @RequestMapping(value = { "/delete/{uniqueId}" }, method = RequestMethod.POST)
+    @RequestMapping(value = { "/delete/{uniqueId}" }, method = RequestMethod.GET)
     public ModelAndView delete(@RequestParam Map<String, Object> params, @PathVariable String uniqueId,
             ModelAndView modelAndView) {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();

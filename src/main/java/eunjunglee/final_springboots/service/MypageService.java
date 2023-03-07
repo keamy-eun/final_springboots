@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import eunjunglee.final_springboots.dao.SharedDaos;
 
@@ -16,6 +17,9 @@ public class MypageService {
 
     @Autowired
     SharedDaos sharedDaos;
+
+    @Autowired
+    BCryptPasswordEncoder bcryptPasswordEncoder;
 
     public Object getlistToMylectureMain(Object dataMap) {
         String sqlMapId = "mypage.selectByLectureNumber"; // SELECT * FROM ENROLLMENT where MEMBER_ID = 'circle01'
@@ -161,6 +165,30 @@ public class MypageService {
     public Object delete(Object dataMap) {
         String sqlMapId = "mypage.deleteByLECTURE_NUMBER";
         Object result = sharedDaos.delete(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object deleteMemberLog(Object dataMap) {
+        String sqlMapId = "mypage.deleteFromMemberlogByMEMBERID";
+        Object result = sharedDaos.delete(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object deleteMember(Object dataMap) {
+        String sqlMapId = "mypage.deleteFromMemberByMEMBERID";
+        Object result = sharedDaos.delete(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object EditMember(Object dataMap) {
+        String sqlMapId = "mypage.updateByMEMBERID";
+        ((HashMap<String, Object>) dataMap).put("BIRTH",
+                ((HashMap<String, Object>) dataMap).get("BIRTY_year") + "-"
+                        + ((HashMap<String, Object>) dataMap).get("BIRTY_month") + "-"
+                        + ((HashMap<String, Object>) dataMap).get("BIRTY_day"));
+        String password = (String) ((HashMap<String, Object>) dataMap).get("password");
+        ((HashMap<String, Object>) dataMap).put("PW", bcryptPasswordEncoder.encode(password));
+        Object result = sharedDaos.updateOne(sqlMapId, dataMap);
         return result;
     }
 

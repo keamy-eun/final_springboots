@@ -64,7 +64,7 @@
         <div class="input-form-backgroud row">
           <div class="input-form col-md-12 m-5 p-5">
             <h4 class="mb-4 fs-3 d-flex justify-content-start">개인정보수정</h4>
-            <form class="validation-form" method="post" novalidate>
+            <form class="validation-form" action="/mypage/EditFormComplete"  method="get" novalidate>
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="name">이름</label>
@@ -83,6 +83,7 @@
                     type="text"
                     class="form-control"
                     id="nickname"
+                    name="MEMBER_ID"
                     value="${resultMap.MEMBER_ID}"
                     disabled
                   />
@@ -96,6 +97,7 @@
                   type="password"
                   class="form-control"
                   id="password"
+                  name="password"
                   required
                 />
                 <div class="invalid-feedback">비밀번호를 입력해주세요.</div>
@@ -118,6 +120,7 @@
                   type="email"
                   class="form-control"
                   id="email"
+                  name="EMAIL"
                   value="${resultMap.EMAIL}"
                   required
                 />
@@ -127,15 +130,15 @@
               <div class="form-group row mt-3">
                 <label for="" class="col-sm-3 col-form-label">생년월일</label>
                 <div class="col-sm-2">
-                  <select name="" id="" class="form-control">
+                  <select name="BIRTY_year" id="" class="form-control">
                     <% for(int i=1; i<40; i++) { %>	
-                      <option value="<%=i%>"><%=i+1970%></option>
+                      <option value="<%=i+1970%>"><%=i+1970%></option>
                     <% } %>	
                   </select>
                 </div>
                 <div class="col-sm-1">년</div>
                 <div class="col-sm-2">
-                  <select name="" id="" class="form-control">
+                  <select name="BIRTY_month" id="" class="form-control">
                     <% for(int i=1; i<13; i++) { %>	
                       <option value="<%=i%>"><%=i%></option>
                     <% } %>	
@@ -143,7 +146,7 @@
                 </div>
                 <div class="col-sm-1">월</div>
                 <div class="col-sm-2">
-                  <select name="" id="" class="form-control">
+                  <select name="BIRTY_day" id="" class="form-control">
                   <%-- selected 구현 --%>
                     <% for(int i=1; i<32; i++) { %>	
                       <option value="<%=i%>"><%=i%></option>
@@ -166,12 +169,16 @@
               <hr class="mb-4" />
               <div class="d-flex justify-content-between">
                 <div>
-                  <a href="/main" class="btn btn-primary"
-                    >수정</a
-                  >
+                  <button
+                    class="btn btn-primary text-decoration-none text-white"
+                    type="submit"
+                     onclick= "alert('수정 되었습니다! 다시 로그인해주세요')"
+                    >
+                    수정
+                  </button>
                 </div>
               <div>
-                <a href="/main" onclick="alert('정말 회원을 탈퇴하시겠습니까?')" class="btn btn-danger"
+                <a href="/mypage/deleteMember" onclick="alert('탈퇴가 완료되었습니다')" class="btn btn-danger"
                   >회원탈퇴</a
                 >
               </div>
@@ -217,6 +224,20 @@
         </div>
       </footer>
     </div>
+    <%-- 비밀번호 추천 --%>
+    <script>
+      var password = document.getElementById("password"),
+      confirm_password = document.getElementById("password_check");
+      function validatePassword() {
+        if (password.value != confirm_password.value) {
+          confirm_password.setCustomValidity("비밀번호가 일치하지 않습니다");
+        } else {
+          confirm_password.setCustomValidity(""); // 오류가 없으면 메시지를 빈 문자열로 설정해야한다. 오류 메시지가 비어 있지 않은 한 양식은 유효성 검사를 통과하지 않고 제출되지 않는다.
+        }
+    }
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
