@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -807.8999897678466,
-    "scrollLeft": -210.61250000000302,
-    "zoomLevel": 0.8,
+    "scrollTop": -1246.671875,
+    "scrollLeft": -630.8385416997803,
+    "zoomLevel": 1,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -143,7 +143,7 @@
           "active": false,
           "left": 54,
           "top": 1378.75,
-          "zIndex": 20,
+          "zIndex": 16,
           "widthName": 93.74267578125,
           "widthComment": 60
         },
@@ -1175,7 +1175,7 @@
           "active": false,
           "left": 74.9163,
           "top": 453.8337,
-          "zIndex": 16,
+          "zIndex": 15,
           "widthName": 62.67724609375,
           "widthComment": 60
         },
@@ -1322,7 +1322,7 @@
           "active": false,
           "left": 639.2224,
           "top": 323.778,
-          "zIndex": 15,
+          "zIndex": 14,
           "widthName": 103.14990234375,
           "widthComment": 80
         },
@@ -1931,6 +1931,130 @@
         },
         "visible": true,
         "id": "d1bdab8e-61b9-4346-bbe0-554500123860"
+      },
+      {
+        "name": "tb_seq",
+        "comment": "게시판번호증가테이블",
+        "columns": [
+          {
+            "name": "ID",
+            "comment": "INT부분",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "45aad838-49e3-4633-8235-924eacf46b38"
+          },
+          {
+            "name": "SEQ_NM",
+            "comment": "STRING부분",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 77.11181640625,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "42f20821-1c04-4982-9dc6-7caa12aa2927"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 1294.6609,
+          "top": 1600.8768,
+          "zIndex": 82,
+          "widthName": 60,
+          "widthComment": 120
+        },
+        "visible": true,
+        "id": "ee2b1416-9d47-4e41-87fb-fac78f3e58cf"
+      },
+      {
+        "name": "COMMENT_NUM_SEQ",
+        "comment": "",
+        "columns": [
+          {
+            "name": "ID",
+            "comment": "INT부분",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "46a25025-9bbe-428d-8b06-8973009a080b"
+          },
+          {
+            "name": "SEQ_SM",
+            "comment": "STRING부분 ",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 80.7236328125,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "e289cf7b-6830-4060-a98d-fb65acb3f7e7"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 1295.0055,
+          "top": 1727.5045,
+          "zIndex": 80,
+          "widthName": 140.67724609375,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "e0266ba6-4425-497a-a997-0cd251ca45a8"
       }
     ],
     "indexes": []
