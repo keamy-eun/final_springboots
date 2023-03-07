@@ -41,7 +41,6 @@
         value (#{PQ01},#{PQ01_1},#{PQ02},#{PQ03},#{PQ04},now());
     </insert>
 
-<!-- 로그인 완료시 이름 가져오는 방식 변경해야함 -->
     <insert id="insertMyLecture" 
         parameterType="Map">
         insert into ENROLLMENT  
@@ -54,8 +53,12 @@
         select COMMUNITY_POST.POST_NUMBER, COMMUNITY_POST.COMMUNITY_TITLE, COMMUNITY_POST.MEMBER_ID, COMMUNITY_POST.COMMUNITY_DATE, COMMUNITY_POST.VIEW_COUNT, (select count(*) from POST_COMMENT WHERE POST_NUMBER = COMMUNITY_POST.POST_NUMBER) as cmt_cnt  
         from COMMUNITY_POST 
         join POST_COMMENT on POST_COMMENT.POST_NUMBER = COMMUNITY_POST.POST_NUMBER 
+        where COMMUNITY_POST.COMMUNITY_NUMBER = 'C05' 
         GROUP BY COMMUNITY_POST.POST_NUMBER, COMMUNITY_POST.COMMUNITY_TITLE , COMMUNITY_POST.MEMBER_ID, COMMUNITY_POST.COMMUNITY_DATE, COMMUNITY_POST.VIEW_COUNT
-        ;
+       <if test="pageScale != null">
+        ORDER BY COMMUNITY_POST.POST_NUMBER 
+        LIMIT #{pageBegin}, #{pageScale}
+        </if>
     </select>
 
      <select id="selectMyLectureList" 
@@ -67,6 +70,12 @@
         WHERE MEMBER.MEMBER_ID = #{MEMBER_ID}
     </select>
 
-
+    <select id="selectTotal" 
+        parameterType="Map" resultType="int">
+        SELECT COUNT(*)  
+        FROM COMMUNITY_POST 
+        join COMMUNITY on COMMUNITY_POST.COMMUNITY_NUMBER = COMMUNITY.COMMUNITY_NUMBER 
+        where COMMUNITY_POST.COMMUNITY_NUMBER = 'C05'
+    </select>
 
 </mapper>

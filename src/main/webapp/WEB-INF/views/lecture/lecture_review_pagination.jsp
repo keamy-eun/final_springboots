@@ -87,7 +87,7 @@
                 </li>
               <c:forEach var="pageNum" begin="${_pagination.blockStart}" end="${_pagination.blockEnd}" varStatus="loop">
                 <c:set var="color" value="" />
-                <c:if test="${1 eq pageNum}">
+                <c:if test="${currentPage eq pageNum}">
                     <c:set var="color" value="bg-secondary bg-opacity-25" />
                 </c:if>
                 <li class="page-item"><a class="page-link ${color}" href="/lecture/lecture_review_pagination/${pageNum}">${pageNum}</a></li>

@@ -36,7 +36,9 @@
           <!-- 게시글 -->
           <div class="container col-7 mt-5 text-start">
                 <%-- 제목  --%>
+              
               <c:set var="map" value="${resultMap[0]}"/>
+              <c:set var="comment" value="${content}"/>
             <%-- <div class="fs-1">${map}</div>  확인용--%>
             <div class="fs-1">${map.COMMUNITY_TITLE}</div>
             <hr class="opacity-100" />
@@ -78,31 +80,34 @@
                   <%--varstatus에 현재 index있음 => 0부터 시작 count 1부터시작--%>
               <c:forEach items="${resultComment}" var="map_comment" varStatus="loop" >
               <div class="mb-1 mt-1 border border-opacity-50 border-left-0 border-right-0">
+              <%-- <div>${map_comment}</div>
+              <hr>
+              <div>${map}</div> --%>
               <span class="text-black text-opacity-75">${map_comment.MEMBER_NAME}</span>
-              <span class="opacity-50">${map_comment.COMMENT_DATE}</span>
-              <div>${map_comment.COMMENT_CONTENT}</div>  
-              <div>${loop.count}</div>
+              <span class="opacity-50">${map_comment.POST_DATE}</span>
+              <div>${map_comment.COMMENT_CONTENT}</div>
+              <%-- <div>${map_comment}</div> --%>
+              <%-- <div>${loop.count}</div> --%>
               </div>
 
               </c:forEach>
                     <%-- 반복부분 end --%>
 <%-- ${resultData.POST_NUMBER} --%>
-            <form action="/community_post/${resultMap[0].POST_NUMBER}" method="get" class="form-group">
+            <input id="commentForm" value="/insertComment/${resultMap[0].POST_NUMBER}" class="form-group" hidden/>
               <div class="row mt-3">
                 <input
                   type="text"
                   class="col-9 ms-2"
                   placeholder="댓글을 입력하세요"
+                  id="content"
+                  name="content"
                 />
-                <button class="btn col-2 ms-5 btn-primary opacity-50">
+                <button id="submitComment" class="btn col-2 ms-5 btn-primary opacity-50">
                   작성
                 </button>
               </div>
               <hr>
-              <div>${resultMap[0]}</div>
-              <hr>
-            </form>
-              <hr />
+
             </div>
           </div>
 
@@ -122,7 +127,28 @@
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>  
+    <script>
+        $(document).on('click','#submitComment',function(){
+          if($('#content').val().trim() == ''){
+            alert('댓글을 입력해주세요!');
+            return;
+          }
+
+          $.ajax({
+            type : 'POST',
+            url : $('#commentForm').val(),
+            data : {
+              content : $('#content').val()
+            },
+            success : function(){
+              location.reload();
+            }, error : function(e){
+              alert('error');  
+            }
+          });
+        });
+    </script>
   </body>
 </html>

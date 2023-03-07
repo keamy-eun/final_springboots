@@ -6,11 +6,13 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import eunjunglee.final_springboots.dao.SharedDaos;
+import eunjunglee.final_springboots.utils.Paginations;
 
 @Service
 public class LectureService {
@@ -29,7 +31,7 @@ public class LectureService {
         return result;
     }
     
-    public Object getMemberName_TEMP(Object dataMap){
+    public Object getMemberName(Object dataMap){
         String sqlMapId = "Lecture.selectMemberName";
         Object result = sharedDaos.getOne(sqlMapId, dataMap);
         return result;
@@ -82,4 +84,20 @@ public class LectureService {
         return result;
     }
 
+    public Object getTotal(Object dataMap){
+        String sqlMapId = "Lecture.selectTotal";
+        Object result = sharedDaos.getOne(sqlMapId, dataMap);
+        return result;
+    }
+    
+    public Object listAndPagination(Object dataMap){
+        Map<String, Object> result = new HashMap<String, Object>();
+        int totalCount = (int) this.getTotal(dataMap);
+        int currentPage = (int) ((Map<String, Object>) dataMap).get("currentPage");
+        Paginations paginations = new Paginations(totalCount, currentPage);
+        result.put("paginations", paginations);
+        ((Map<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin());
+        result.put("resultList", this.getLectureReview(dataMap));
+        return result;
+    }
 }
