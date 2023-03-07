@@ -29,6 +29,7 @@
               로그인을 하시면 은정이아카데미의 다양한 컨텐츠를 이용하실 수
               있습니다.
             </div>
+            <div class="text-primary mt-3">일반회원 id: moodo01 / pw: moodo01</div>
             <div class="text-primary mt-3">관리자 id: admin / pw: admin</div>
             <div>
               <img src="https://user-images.githubusercontent.com/115060986/219259301-39328314-70ed-4993-ba31-b11e987b1218.png" alt="" width="150" />
