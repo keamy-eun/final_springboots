@@ -59,9 +59,7 @@
                           <td>${resultData.EMAIL_AD}</td>
                           <td>
                             <div class="container">
-                              <form action="/admin/edit_form/${resultData.MEMBER_ID}" method="get">
-                                <button class="btn btn-primary">수정</button>
-                              </form>
+                                <button formaction="/admin/edit_form/${resultData.MEMBER_ID}" formmethod="get"class="btn btn-primary">수정</button>
                             </div>
                           </td>
                           <td>
