@@ -24,7 +24,7 @@
 
       <div class="container mb-5">
         <div class="input-form-backgroud row">
-          <div class="input-form col-md-6 mx-auto">
+          <div class="input-form col-md-6 mx-auto p-5 mt-5">
             <h4 class="mb-3">회원가입</h4>
             <form class="form-group" action="/home/SignupComplete" method="post">
               <div class="row">
