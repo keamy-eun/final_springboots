@@ -101,9 +101,4 @@ public class LectureService {
         return result;
     }
 
-    public Object getLectureListByMemberId(Object dataMap){
-        String sqlMapId = "Lecture.selectLectureListByMemberId";
-        Object result = sharedDaos.getList(sqlMapId, dataMap);
-        return result;
-    }
 }

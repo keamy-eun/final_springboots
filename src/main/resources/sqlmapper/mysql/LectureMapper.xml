@@ -78,12 +78,4 @@
         where COMMUNITY_POST.COMMUNITY_NUMBER = 'C05'
     </select>
 
-    <select id="selectLectureListByMemberId" 
-        parameterType="Map" resultType="int">
-        select ENROLLMENT.LECTURE_NUMBER  
-        from ENROLLMENT 
-        join MEMBER on MEMBER.MEMBER_ID = ENROLLMENT.MEMBER_ID 
-        WHERE MEMBER.MEMBER_ID = #{MEMBER_ID}
-    </select>
-
 </mapper>

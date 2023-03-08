@@ -53,20 +53,8 @@ public class LectureController {
      // 강좌신청목록
      @RequestMapping(value={"/lecture_signup_list","/",""}, method = RequestMethod.GET)
      public ModelAndView getLectureList(@RequestParam Map<String, Object> params, ModelAndView modelAndView ){
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String username = null;
-        if (principal instanceof UserDetails) {
-            username = ((UserDetails)principal).getUsername();   // 로그인 상태 확인
-        }
-        params.put("MEMBER_ID", username); 
-        Object resultMap1 = lectureService.getLectureListByMemberId(params);
-        Object resultMap2 = lectureService.getLectureList(params);
-        ArrayList<Object> resultList = new ArrayList<>();
-        resultList.add(resultMap1);
-        resultList.add(resultMap2);
-
-        
-         modelAndView.addObject("resultList", resultList);
+        Object resultMap = lectureService.getLectureList(params);
+         modelAndView.addObject("resultMap", resultMap);
          modelAndView.setViewName("/lecture/lecture_signup_list");
          return modelAndView;
      }
