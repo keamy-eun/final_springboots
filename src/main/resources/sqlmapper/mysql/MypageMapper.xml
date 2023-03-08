@@ -2,6 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="mypage">
+    <!-- 날짜만료된거는 안가져오기 -->
+    <!-- call mypage.selectByLectureNumberWithDate -->
+    <select id="selectByLectureNumberWithDate" 
+        parameterType="Map" resultType="Map">
+        SELECT DISTINCT MEMBER.MEMBER_ID, ENROLLMENT.LECTURE_NUMBER, ENROLLMENT.ENROLL_DATE, ENROLLMENT.ENROLL_EXPIRED_DATE
+        FROM ENROLLMENT
+        INNER JOIN MEMBER
+        ON MEMBER.MEMBER_ID = ENROLLMENT.MEMBER_ID
+        WHERE DATEDIFF(ENROLL_EXPIRED_DATE, SYSDATE()) > 0
+        GROUP BY MEMBER_ID, LECTURE_NUMBER
+    </select>
+
     <!-- call mypage.selectByLectureNumber -->
     <select id="selectByLectureNumber" 
         parameterType="Map" resultType="Map">
@@ -9,7 +21,9 @@
         FROM ENROLLMENT
         INNER JOIN MEMBER
         ON MEMBER.MEMBER_ID = ENROLLMENT.MEMBER_ID
+        GROUP BY MEMBER_ID, LECTURE_NUMBER
     </select>
+
 
     <!-- 강의번호로 강의 이름알기 -->
     <!-- call mypage.selectLectureNameByLectureNumber -->
@@ -49,12 +63,14 @@
         where TEST_ANSWERS.QUESTION_UID = TEST_QUESTIONS.QUESTION_UID
     </select>
 
-    <!-- call mypage.deleteByLECTURE_NUMBER -->
-    <delete id="deleteByLECTURE_NUMBER" parameterType="Map">
-        DELETE
-        FROM ENROLLMENT
+    <!-- call mypage.updateOneByLECTURE_NUMBER -->
+    <update id="updateOneByLECTURE_NUMBER" parameterType="Map">
+        UPDATE ENROLLMENT
+        SET ENROLL_EXPIRED_DATE  = SYSDATE()
         WHERE LECTURE_NUMBER = #{LECTURE_NUMBER} and MEMBER_ID = #{MEMBER_ID}
-    </delete>
+        ORDER BY ENROLL_DATE DESC
+        LIMIT 1
+    </update>
 
     <!-- call mypage.deleteFromMemberlogByMEMBERID -->
     <delete id="deleteFromMemberlogByMEMBERID" parameterType="Map">

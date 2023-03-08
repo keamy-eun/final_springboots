@@ -35,7 +35,7 @@ public class MypageController {
         }
         params.put("MEMBER_ID", username);
         // result에 MEMBER_ID와 LECTURE_NUMBER만 필터링해서 가져옴
-        Object resultMap = mypageService.getlistToMylectureMain(params);
+        Object resultMap = mypageService.getlistToMylectureMainWithDate(params);
 
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/mypages/mypage_Lecture");
@@ -57,7 +57,6 @@ public class MypageController {
         params.put("MEMBER_ID", username);
         // result에 MEMBER_ID와 LECTURE_NUMBER만 필터링해서 가져옴
         Object resultMap = mypageService.getlistToMylectureMain(params);
-
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/mypages/mypage_signup_lecturelist");
         return modelAndView;
@@ -134,7 +133,7 @@ public class MypageController {
     }
 
     @RequestMapping(value = { "/delete/{uniqueId}" }, method = RequestMethod.GET)
-    public ModelAndView delete(@RequestParam Map<String, Object> params, @PathVariable String uniqueId,
+    public String delete(@RequestParam Map<String, Object> params, @PathVariable String uniqueId,
             ModelAndView modelAndView) {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username = null;
@@ -145,10 +144,11 @@ public class MypageController {
         }
         params.put("MEMBER_ID", username);
         params.put("LECTURE_NUMBER", uniqueId);
-        Object resultMap = mypageService.delete(params);
+        Object resultMap = mypageService.updateExpireDate(params);
         resultMap = mypageService.getlistToMylectureMain(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/mypages/mypage_Lecture");
-        return modelAndView;
+        // return modelAndView;
+        return "redirect:/mypage";
     }
 }
