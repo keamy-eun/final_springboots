@@ -1933,7 +1933,7 @@
         "id": "d1bdab8e-61b9-4346-bbe0-554500123860"
       },
       {
-        "name": "tb_seq",
+        "name": "TB_SEQ",
         "comment": "게시판번호증가테이블",
         "columns": [
           {
@@ -1987,7 +1987,7 @@
           "active": false,
           "left": 1294.6609,
           "top": 1600.8768,
-          "zIndex": 18,
+          "zIndex": 24,
           "widthName": 60,
           "widthComment": 120
         },
@@ -2046,7 +2046,7 @@
           }
         ],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 1295.0055,
           "top": 1727.5045,
           "zIndex": 22,
