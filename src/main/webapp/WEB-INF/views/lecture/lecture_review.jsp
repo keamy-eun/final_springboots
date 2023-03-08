@@ -82,7 +82,7 @@
                 <li class="page-item">
                   <a class="page-link" href="/lecture/lecture_review_pagination/${_pagination.previousPage}" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
+                    <span class="sr-only"></span>
                   </a>
                 </li>
               <c:forEach var="pageNum" begin="${_pagination.blockStart}" end="${_pagination.blockEnd}" varStatus="loop">
