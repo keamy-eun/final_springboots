@@ -136,10 +136,10 @@ values('ceromi123','TQ01','TA101'),('ceromi123','TQ02','TA202'),('ceromi123','TQ
 -- 0308 에러사항 개선 /  테이블에 데이터가 없어서 비교 증가 불가 이유 같음.
 
 -- 기존 값을 건드리지 않기 위해 ID값 60부터 시작
-INSERT INTO tb_Seq (SEQ_NM, ID)
+INSERT INTO TB_SEQ (SEQ_NM, ID)
 VALUES ('POST', '60')
 ;
-INSERT INTO comment_num_seq(SEQ_NM, ID)
+INSERT INTO COMMENT_NUM_SEQ(SEQ_NM, ID)
 VALUES ('COMM', '01')
 ;
 
