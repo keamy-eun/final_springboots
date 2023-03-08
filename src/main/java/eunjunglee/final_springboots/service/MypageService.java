@@ -21,6 +21,64 @@ public class MypageService {
     @Autowired
     BCryptPasswordEncoder bcryptPasswordEncoder;
 
+    public Object getlistToMylectureMainWithDate(Object dataMap) {
+        String sqlMapId = "mypage.selectByLectureNumberWithDate"; // SELECT * FROM ENROLLMENT where MEMBER_ID =
+                                                                  // 'circle01'
+        Object enrollmentresult = sharedDaos.getList(sqlMapId, dataMap);
+        // HashMap<String,Object> temphash = new HashMap<>();
+        int enrollmentresult_length = ((ArrayList) enrollmentresult).size();
+        // id에 맞는 수업번호와 이름을 가져옴
+        for (int i = enrollmentresult_length - 1; i >= 0; i--) {
+            if (!((HashMap<String, Object>) (((ArrayList) enrollmentresult).get(i))).get("MEMBER_ID")
+                    .equals(((HashMap<String, Object>) dataMap).get("MEMBER_ID"))) {
+                ((ArrayList) enrollmentresult).remove(i);
+            }
+        }
+        ArrayList result = new ArrayList<>();
+        HashMap<String, Object> tempresult = new HashMap<>();
+        // 가져온 memberID와 lecture번호에서 수업이름과 사용자이름을 가져옴
+
+        Iterator it = ((ArrayList) enrollmentresult).iterator();
+        while (it.hasNext()) {
+            HashMap<String, Object> tempHash = new HashMap<>();
+            tempHash = (HashMap<String, Object>) it.next();
+            // 강의번호로 강의 이름알기
+            sqlMapId = "mypage.selectLectureNameByLectureNumber";
+            Object iterResultLectureName = sharedDaos.getList(sqlMapId, tempHash);
+            // 강의번호로 강사 이름알기
+            sqlMapId = "mypage.selectLecturerNameByMember";
+            Object iterResultLecturerName = sharedDaos.getList(sqlMapId, tempHash);
+
+            tempresult.put("LECTURE_TITLE",
+                    ((HashMap<String, Object>) (((ArrayList) iterResultLectureName).get(0))).get("LECTURE_TITLE"));
+            tempresult.put("MEMBER_NAME",
+                    ((HashMap<String, Object>) (((ArrayList) iterResultLecturerName).get(0))).get("MEMBER_NAME"));
+
+            // 수강종료일 설정
+            LocalDate now = LocalDate.now();
+            String ExpireLectureTime = ((String) ((HashMap<String, Object>) (((ArrayList) enrollmentresult).get(0)))
+                    .get("ENROLL_EXPIRED_DATE")).split(" ")[0];
+            String[] ExpireLectureTimeArrStr = ExpireLectureTime.split("-");
+            int[] ExpireLectureTimeArr = Arrays.stream(ExpireLectureTimeArrStr).mapToInt(Integer::parseInt).toArray();
+            // 수강종료일과 현재 시간 비교
+            if (now.getYear() * 30 * 12 + now.getMonthValue() * 30
+                    + now.getDayOfMonth() <= ExpireLectureTimeArr[0] * 30 * 12 + ExpireLectureTimeArr[1] * 30
+                            + ExpireLectureTimeArr[2]) {
+                tempresult.put("ENROLL_EXPIRED_DATE",
+                        ((HashMap<String, Object>) (((ArrayList) enrollmentresult).get(0))).get("ENROLL_EXPIRED_DATE"));
+            } else {
+                tempresult.put("ENROLL_EXPIRED_DATE",
+                        "수강기간만료");
+            }
+
+            tempresult.put("LECTURE_NUMBER",
+                    ((HashMap<String, Object>) (((ArrayList) iterResultLecturerName).get(0))).get("LECTURE_NUMBER"));
+
+            result.add(tempresult.clone());
+        }
+        return result;
+    }
+
     public Object getlistToMylectureMain(Object dataMap) {
         String sqlMapId = "mypage.selectByLectureNumber"; // SELECT * FROM ENROLLMENT where MEMBER_ID = 'circle01'
         Object enrollmentresult = sharedDaos.getList(sqlMapId, dataMap);
@@ -75,7 +133,6 @@ public class MypageService {
 
             result.add(tempresult.clone());
         }
-
         return result;
     }
 
@@ -162,9 +219,9 @@ public class MypageService {
         return result;
     }
 
-    public Object delete(Object dataMap) {
-        String sqlMapId = "mypage.deleteByLECTURE_NUMBER";
-        Object result = sharedDaos.delete(sqlMapId, dataMap);
+    public Object updateExpireDate(Object dataMap) {
+        String sqlMapId = "mypage.updateOneByLECTURE_NUMBER";
+        Object result = sharedDaos.updateOne(sqlMapId, dataMap);
         return result;
     }
 
