@@ -100,4 +100,10 @@ public class LectureService {
         result.put("resultList", this.getLectureReview(dataMap));
         return result;
     }
+
+    public Object getLectureListByMemberId(Object dataMap){
+        String sqlMapId = "Lecture.selectLectureListByMemberId";
+        Object result = sharedDaos.getList(sqlMapId, dataMap);
+        return result;
+    }
 }

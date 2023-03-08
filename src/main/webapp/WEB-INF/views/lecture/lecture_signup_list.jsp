@@ -39,26 +39,32 @@
           <div class="container col m-3">
             <div class="mt-5 mb-5">
               <div class="h1 mt-4 mb-4">강좌 신청하기</div>
-              <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
+              <c:forEach items="${resultList}" var="resultData" varStatus="loop">
+                ${resultData[0]}
+                <hr>
+                ${resultData[1]}
+                <hr>
+                ${resultData[2]}
+                <hr>
                 <div class="mt-5 mb-5">
                 <div class="card border-primary">
                   <div class="row no-gutters">
                     <div class="col-4">
                       <img
                         class="card-img h-100"
-                        src="${resultData.LECTURE_IMAGE}"
+                        src="${resultData[1].LECTURE_IMAGE}"
                         alt="Card image cap"
                       />
                     </div>
                     <div class="col-8">
                       <div class="card-body border-primary">
                         <div class="card-text">
-                          <h3>${resultData.LECTURE_TITLE}</h3>
+                          <h3>${resultData[1].LECTURE_TITLE}</h3>
                           <div class="card-text">
-                            ${resultData.LECTURE_INTRO}
+                            ${resultData[1].LECTURE_INTRO}
                           </div>
                           <div class="d-flex flex-row-reverse">
-                            <form action="/lecture/lecture_poll/${resultData.LECTURE_NUMBER}" method="get">
+                            <form action="/lecture/lecture_poll/${resultData[1].LECTURE_NUMBER}" method="get">
                               <button class="btn btn-primary mt-4">무료수강신청하기</button>
                             </form>
                           </div>
