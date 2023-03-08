@@ -45,7 +45,7 @@
     parameterType="Map" resultType="Map">
 
         select *
-        from community_post
+        from COMMUNITY_POST 
         WHERE COMMUNITY_NUMBER = 'C02'
         order by POST_NUMBER desc
     </select>
