@@ -137,10 +137,10 @@ values('ceromi123','TQ01','TA101'),('ceromi123','TQ02','TA202'),('ceromi123','TQ
 
 -- 기존 값을 건드리지 않기 위해 ID값 60부터 시작
 INSERT INTO TB_SEQ (SEQ_NM, ID)
-VALUES ('POST', '60')
+VALUES ('POST', '100')
 ;
 INSERT INTO COMMENT_NUM_SEQ(SEQ_NM, ID)
-VALUES ('COMM', '01')
+VALUES ('COMM', '100')
 ;
 
 -- 게시판 번호 FUNCTION
