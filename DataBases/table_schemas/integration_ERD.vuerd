@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -1246.671875,
-    "scrollLeft": -630.8385416997803,
+    "scrollTop": -1281.671873609227,
+    "scrollLeft": -844.1718665560096,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -1987,7 +1987,7 @@
           "active": false,
           "left": 1294.6609,
           "top": 1600.8768,
-          "zIndex": 82,
+          "zIndex": 18,
           "widthName": 60,
           "widthComment": 120
         },
@@ -2022,7 +2022,7 @@
             "id": "46a25025-9bbe-428d-8b06-8973009a080b"
           },
           {
-            "name": "SEQ_SM",
+            "name": "SEQ_NM",
             "comment": "STRING부분 ",
             "dataType": "VARCHAR",
             "default": "",
@@ -2046,10 +2046,10 @@
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 1295.0055,
           "top": 1727.5045,
-          "zIndex": 80,
+          "zIndex": 22,
           "widthName": 140.67724609375,
           "widthComment": 60
         },
