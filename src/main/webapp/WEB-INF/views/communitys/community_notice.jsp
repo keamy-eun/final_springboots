@@ -60,7 +60,7 @@
                     <th>조회수</th>
                   </tr>
                 
-                      </thead>
+               
                 <tbody>
                 <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
                   <tr class="line">
@@ -73,7 +73,8 @@
                  
                 </c:forEach>
                 </tbody>
-                    </table>
+              </table>
+              
                     <!-- 페이징 -->
                     <div class="text-center">
                       <button class="btn">이전</button>
