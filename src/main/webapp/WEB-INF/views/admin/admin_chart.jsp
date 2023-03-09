@@ -34,7 +34,7 @@
             };
             var options3 = {
                 title: '강의를 수강하실 때 주로 어떤 기기를 사용하시나요?',
-                hAxis: { title: '질문3', minValue: 0, maxValue: 15 },
+                hAxis: { title: '1. 스마트폰 \n 2. 컴퓨터 \n 3. 테플릿 \n 4. 기타', minValue: 0, maxValue: 15 },
                 vAxis: { title: '선택수', minValue: 0, maxValue: 15 },
                 legend: 'none'  // 범례
             };
