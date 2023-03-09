@@ -53,6 +53,7 @@
                   <option value="C02">강사 게시판</option>
                   <option value="C03">학생 게시판</option>
                   <option value="C04">공지사항</option>
+                  <option value="C05">강의후기 게시판</option>
                 </select>
                
            

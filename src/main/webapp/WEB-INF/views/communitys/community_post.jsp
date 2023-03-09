@@ -84,7 +84,7 @@
               <hr>
               <div>${map}</div> --%>
               <span class="text-black text-opacity-75">${map_comment.MEMBER_NAME}</span>
-              <span class="opacity-50">${map_comment.POST_DATE}</span>
+              <span class="opacity-50">${map_comment.POST_DATE.substring(0,10)}</span>
               <div>${map_comment.COMMENT_CONTENT}</div>
               <%-- <div>${map_comment}</div> --%>
               <%-- <div>${loop.count}</div> --%>

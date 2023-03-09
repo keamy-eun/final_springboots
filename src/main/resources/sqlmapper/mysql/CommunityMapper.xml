@@ -54,7 +54,7 @@
     <select id="selectListStudent"
     parameterType="Map" resultType="Map">
     <!-- 게시글과 멤버의 모든 column불러옴 -->
-    <!-- 학생게시판                                                     SUBSTR(COMMUNITY_POST.COMMUNITY_DATE, 1, 10) 하는 순간 작성자까지 사라짐.. 왜... -->
+    <!-- 학생게시판                                                SUBSTR(COMMUNITY_POST.COMMUNITY_DATE, 1, 10) 하는 순간 작성자까지 사라짐.. 왜... -->
        SELECT COMMUNITY_POST.POST_NUMBER, COMMUNITY_POST.COMMUNITY_TITLE, COMMUNITY_POST.COMMUNITY_DATE, COMMUNITY_POST.VIEW_COUNT
         FROM COMMUNITY_POST 
         INNER JOIN MEMBER 
