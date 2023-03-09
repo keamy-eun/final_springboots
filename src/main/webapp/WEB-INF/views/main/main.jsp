@@ -5,8 +5,10 @@
 
 <%@ include file= "/WEB-INF/views/main/header.jsp" %>
 <div class="container">
-<c:set var="recentPost" value="${resultMap[0]}"/>
-<c:set var="recentPost2" value="${resultMap[1]}"/>
+<c:set var="getStudent" value="${getStudent[0]}"/>
+<c:set var="getLecturer" value="${getLecturer[0]}"/>
+<c:set var="getNotice" value="${getNotice[0]}"/>
+<c:set var="getLectureReview" value="${getLectureReview[0]}"/>
       <hr />
       <!-- image -->
       <div class="d-flex justify-content-center mt-4">
@@ -122,61 +124,90 @@
           <div class="card-group col-9 p-3">
             <!-- card 1 -->
             <div class="card">
-              <img
+           <%-- <img
                 class="card-img-top"
                 src="https://assets.blog.engoo.com/wp-content/uploads/sites/2/2021/07/22171447/005-1.png.webp"
                 alt="Card image cap"
-              />
+              /> --%>
+
+<%-- <c:set var="getStudent" value="${getStudent[0]}"/>
+<c:set var="getLecturer" value="${getLecturer[0]}"/>
+<c:set var="getNotice" value="${getNotice[0]}"/>
+<c:set var="getLectureReview" value="${getLectureReview[0]}"/> --%>
+
               <div class="card-body h-50">
-                <%-- <h5 class="card-title">[문법 입문] 기초 문법 공부 3단계 ${recentPost}</h5> --%>
-                <h5 class="card-title">${recentPost.COMMUNITY_TITLE}</h5>
+                <b class="text-center"><h4>[&nbsp강사 게시판 ]</h4></b>
                 <hr>
-                <%-- <h5>${recentPost2}</h5> --%>
+                <h5 class="card-title">${getLecturer.COMMUNITY_TITLE}</h5>
                 <p class="card-text">
-                  ${recentPost.COMMUNITY_CONTENT}
+                  ${getLecturer.COMMUNITY_CONTENT}
                 </p>
+                <div class="hidden_Post_number_lecturer" style="display:none;">${getLecturer.POST_NUMBER}</div>
                 <div class="text-end">
-                  <button class="recent_post1 btn btn-success m-3 w-25">더 읽기</button>
-                  <%-- <a
-                    href="/community_post"
-                    class="btn btn-success m-3 w-25"
-                    >더 읽기</a
-                  > --%>
+                  <button class="recent_post_lecturer btn btn-success m-3 w-25">더 읽기</button>
+                </div>
+                <p class="card-text mb-5">
+                  <small class="text-muted">updated ${getLecturer.COMMUNITY_DATE}</small>
+                </p>
+              <%--  --%>
+              <%-- card 3  --%>
+              <hr class="border-info mb-5">
+              <b class="text-center"><h4>[&nbsp 공지 게시판 ]</h4></b>
+                <hr>
+                <h5 class="card-title">${getNotice.COMMUNITY_TITLE}</h5>
+                <p class="card-text">
+                  ${getNotice.COMMUNITY_CONTENT}
+                </p>
+                <div class="hidden_Post_number_notice" style="display:none;">${getNotice.POST_NUMBER}</div>
+                <div class="text-end">
+                <button class="recent_post_notice btn btn-success m-3 w-25">더 읽기</button>
                 </div>
                 <p class="card-text">
-                  <small class="text-muted">Last updated 2 hours ago</small>
+                  <small class="text-muted">updated ${getNotice.COMMUNITY_DATE}</small>
                 </p>
+              <%--  --%>
               </div>
+              
             </div>
+            
             <!-- card 2 -->
             <div class="card">
-              <img
-                class="card-img-bottom"
-                src="https://assets.blog.engoo.com/wp-content/uploads/sites/2/2021/07/22171432/006-1-1024x1024.png.webp"
-                alt="Card image cap"
-              />
               <div class="card-body">
-                <h5 class="card-title">
-                  [회화 입문] 회화, 영어로 말해봐!! 30일의 기적
-                </h5>
+              <b class="text-center"><h4>[&nbsp학생 게시판 ]</h4></b>
+                <hr>
+                <h5 class="card-title">${getStudent.COMMUNITY_TITLE}</h5>
                 <p class="card-text">
-                  두번째는 대명사에 관한 영어 문법입니다.“Kevin and me went to
-                  the park. 케빈과 나는 공원에 갔다.” 이라는 문장에서 me를
-                  사용하면 틀린 문법일까요?힌트를 드리자면, "일인칭 대명사의
-                  주어인지 목적어인지에 따라 다릅니다...
+                  ${getStudent.COMMUNITY_CONTENT}
                 </p>
+                <div class="hidden_Post_number_student" style="display:none;">${getStudent.POST_NUMBER}</div>
                 <div class="text-end">
-                  <a
-                    href="/community_post"
-                    class="btn btn-success m-3 w-25"
-                    >더 읽기</a
-                  >
+                <button class="recent_post_student btn btn-success m-3 w-25">더 읽기</button>
                 </div>
                 <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
+                  <small class="text-muted">updated ${getStudent.COMMUNITY_DATE}</small>
                 </p>
+                <%--  --%>
+                <%-- card 3  --%>
+              <hr class="border-info mb-5">
+              <b class="text-center"><h4>[&nbsp 강의후기 게시판 ]</h4></b>
+                <hr>
+                <h5 class="card-title">${getLectureReview.COMMUNITY_TITLE}</h5>
+                <p class="card-text">
+                  ${getLectureReview.COMMUNITY_CONTENT}
+                </p>
+                <div class="hidden_Post_number_review" style="display:none;">${getLectureReview.POST_NUMBER}</div>
+                <div class="text-end">
+                <button class="recent_post_review btn btn-success m-3 w-25">더 읽기</button>
+                </div>
+                <p class="card-text">
+                  <small class="text-muted">updated ${getLectureReview.COMMUNITY_DATE}</small>
+                </p>
+                <%--  --%>
               </div>
             </div>
+
+            <%--  --%>
+            
           </div>
 
           <div class="col-3">
@@ -192,7 +223,7 @@
                 />
               </div>
               <div class="d-flex align-items-center fs-bold">
-                <a href="/community_post">
+                <a href="/community_lecturepost/강의듣기">
                   [독해 입문] 물마시듯 매일매일 영어독해
                 </a>
               </div>
@@ -209,7 +240,7 @@
                 />
               </div>
               <div class="d-flex align-items-center fs-bold">
-                <a href="/community_post">
+                <a href="/community_lecturepost/강의듣기">
                   [문법 입문] 기초 문법 공부 2단계
                 </a>
               </div>
@@ -226,7 +257,7 @@
                 />
               </div>
               <div class="d-flex align-items-center fs-bold">
-                <a href="/community_post">
+                <a href="/community_lecturepost/강의듣기">
                   [문법 입문] 기초 문법 공부 2단계
                 </a>
               </div>
@@ -243,7 +274,7 @@
                 />
               </div>
               <div class="d-flex align-items-center fs-bold">
-                <a href="/community_post">
+                <a href="/community_lecturepost/강의듣기">
                   [문법 입문] 기초 문법 공부 1단계
                 </a>
               </div>
@@ -333,18 +364,57 @@
     ></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script>
-      $(document).on('click','.recent_post1',function(){
+    // 강사게시판
+      $(document).on('click','.recent_post_lecturer',function(){
         // 여기에 주소값을 넣어야함 post11 이런식으로 들어가야함
-        let community_title = $('.recent_post1').text();
+        let community_title = $('.recent_post_lecturer').text();
+        let hidden_Post_number_lecturer = $('.hidden_Post_number_lecturer').text();
         // 그 값을 받고 링크에 담아서 이동
-        location.href = "/community_post/"+community_title;
+        location.href = "/community_post/"+hidden_Post_number_lecturer
       });
-
-      $(document).on('mouseover','.recent_post1',function(){
-        $('.recent_post1').css('padding','none');
+      $(document).on('mouseover','.recent_post_lecturer',function(){
+        $('.recent_post_lecturer').css('padding','none');
         $(this).css('padding','0.5px solid lightgrey');
       });
 
+      // 학생게시판
+      $(document).on('click','.recent_post_student',function(){
+        // 여기에 주소값을 넣어야함 post11 이런식으로 들어가야함
+        let community_title = $('.recent_post_student').text();
+        let hidden_Post_number_student = $('.hidden_Post_number_student').text();
+        // 그 값을 받고 링크에 담아서 이동
+        location.href = "/community_post/"+hidden_Post_number_student
+      });
+      $(document).on('mouseover','.recent_post_student',function(){
+        $('.recent_post_student').css('padding','none');
+        $(this).css('padding','0.5px solid lightgrey');
+      });
+
+      // 공지게시판
+      $(document).on('click','.recent_post_notice',function(){
+        // 여기에 주소값을 넣어야함 post11 이런식으로 들어가야함
+        let community_title = $('.recent_post_notice').text();
+        let hidden_Post_number_notice = $('.hidden_Post_number_notice').text();
+        // 그 값을 받고 링크에 담아서 이동
+        location.href = "/community_post/"+hidden_Post_number_notice
+      });
+      $(document).on('mouseover','.recent_post_notice',function(){
+        $('.recent_post_notice').css('padding','none');
+        $(this).css('padding','0.5px solid lightgrey');
+      });
+
+      // 리뷰게시판
+      $(document).on('click','.recent_post_review',function(){
+        // 여기에 주소값을 넣어야함 post11 이런식으로 들어가야함
+        let community_title = $('.recent_post_review').text();
+        let hidden_Post_number_review= $('.hidden_Post_number_review').text();
+        // 그 값을 받고 링크에 담아서 이동
+        location.href = "/community_post/"+hidden_Post_number_review
+      });
+      $(document).on('mouseover','.recent_post_review',function(){
+        $('.recent_post_review').css('padding','none');
+        $(this).css('padding','0.5px solid lightgrey');
+      });
     </script>
   </body>
 </html>

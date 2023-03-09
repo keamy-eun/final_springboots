@@ -78,4 +78,13 @@
         where COMMUNITY_POST.COMMUNITY_NUMBER = 'C05'
     </select>
 
+    <select id="selectListLecturerReview"
+    parameterType="Map" resultType="Map">
+
+        SELECT *
+        FROM COMMUNITY_POST 
+        WHERE COMMUNITY_NUMBER = 'C05'
+        ORDER BY POST_NUMBER DESC
+    </select>
+
 </mapper>

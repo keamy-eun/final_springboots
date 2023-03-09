@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import eunjunglee.final_springboots.service.HomeService;
 import eunjunglee.final_springboots.service.CommunityService;
 import eunjunglee.final_springboots.service.MemberWithAuthorityService;
+import eunjunglee.final_springboots.service.LectureService;
 
 @Controller
 public class HomeController {
@@ -26,6 +27,9 @@ public class HomeController {
 
     @Autowired
     CommunityService communityService;
+
+    @Autowired
+    LectureService lectureService;
 
     // 로그인
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -62,8 +66,16 @@ public class HomeController {
     public ModelAndView getMain(ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-        Object resultMap = communityService.getList(params);
-        modelAndView.addObject("resultMap", resultMap);
+        Object getStudent = communityService.getList(params);// 학생게시판
+        Object getLecturer = communityService.getListLecturer(params);// 강사게시판
+        Object getNotice = communityService.getListNotice(params);// 강사게시판
+        Object getLectureReview = lectureService.selectListLecturerReview(params);
+
+
+        modelAndView.addObject("getStudent", getStudent);
+        modelAndView.addObject("getLecturer", getLecturer);
+        modelAndView.addObject("getNotice", getNotice);
+        modelAndView.addObject("getLectureReview", getLectureReview);
         String username = null;
         if (principal instanceof UserDetails) {
             username = ((UserDetails) principal).getUsername(); // 로그인 상태 확인
