@@ -35,6 +35,7 @@ public class MypageController {
         }
         params.put("MEMBER_ID", username);
         // result에 MEMBER_ID와 LECTURE_NUMBER만 필터링해서 가져옴
+
         Object resultMap = mypageService.getlistToMylectureMainWithDate(params);
 
         modelAndView.addObject("resultMap", resultMap);

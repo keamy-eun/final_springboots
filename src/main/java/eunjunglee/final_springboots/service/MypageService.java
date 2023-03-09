@@ -166,6 +166,8 @@ public class MypageService {
                 tempHash = new HashMap<>();
             }
         }
+        int i = 1;
+
         return (Object) resultList;
     }
 
