@@ -1,7 +1,7 @@
 package eunjunglee.final_springboots.controller;
 
-import java.util.HashMap;
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,12 +15,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import eunjunglee.final_springboots.service.AdminService;
 
+import com.google.gson.Gson;
+
 @Controller
 @RequestMapping(value = "/admin")
 public class AdminController {
     
     @Autowired
     AdminService adminService;
+
+    @Autowired
+    private Gson gson;
 
     // 회원수정form
     @RequestMapping(value="/edit_form/{member_id}", method = RequestMethod.GET)
@@ -82,6 +87,26 @@ public class AdminController {
         Object resultMap = adminService.deleteMultiAndList2(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/admin/admin_member");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/chart", method = RequestMethod.GET)  
+    public ModelAndView edit(ModelAndView modelAndView) {
+        ArrayList datas = new ArrayList();
+        // ['Age', 'Weight'],[8, 12],[4, 5.5],[11, 14],[4, 5],[3, 3.5],[6.5, 7];
+        datas.add(Arrays.asList("Age", "Weight"));
+        datas.add(Arrays.asList(8, 12));
+        datas.add(Arrays.asList(4, 5.5));
+        datas.add(Arrays.asList(11, 14));
+        datas.add(Arrays.asList(4, 5));
+        datas.add(Arrays.asList(3, 3.5));
+        datas.add(Arrays.asList(6.5, 7));
+        ArrayList dataArray = new ArrayList<>();
+        dataArray.add(datas);
+
+        modelAndView.addObject("dataArray", gson.toJson(datas));
+        
+        modelAndView.setViewName("/admin/admin_chart");
         return modelAndView;
     }
 }

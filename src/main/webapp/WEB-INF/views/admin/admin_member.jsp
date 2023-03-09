@@ -6,6 +6,32 @@
       <hr />
       <div class="text-center container-fluid">
         <div class="row">
+          <!-- Sidebar -->
+          <div class="col-auto wrapper border border-1 m-3 p-3">
+            <nav id="sidebar">
+              <div class="text-secondary">
+                <h3>은정이 아카데미</h3>
+              </div>
+              <ul class="list-unstyled components fs-5">
+                <li class="border-top border-1 p-2">
+                  <a
+                    href="/admin"
+                    target="_self"
+                    class="text-decoration-none text-secondary"
+                    >회원관리</a
+                  >
+                </li>
+                <li class="border-top border-1 p-2">
+                  <a
+                    href="/admin/chart"
+                    target="_self"
+                    class="text-decoration-none text-secondary"
+                    >통계</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
           <div class="col container p-5">
             <h1>회원관리</h1>
             <br />
