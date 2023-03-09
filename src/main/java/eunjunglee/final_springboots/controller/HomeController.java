@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import eunjunglee.final_springboots.service.HomeService;
+import eunjunglee.final_springboots.service.CommunityService;
 import eunjunglee.final_springboots.service.MemberWithAuthorityService;
 
 @Controller
@@ -22,6 +23,9 @@ public class HomeController {
 
     @Autowired
     MemberWithAuthorityService memberWithAuthorityService;
+
+    @Autowired
+    CommunityService communityService;
 
     // 로그인
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -55,9 +59,11 @@ public class HomeController {
 
     // 메인페이지
     @RequestMapping(value = { "/main", "/", "" }, method = RequestMethod.GET)
-    public ModelAndView getMain(ModelAndView modelAndView) {
+    public ModelAndView getMain(ModelAndView modelAndView, @RequestParam Map<String, Object> params ){
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
+        Object resultMap = communityService.getList(params);
+        modelAndView.addObject("resultMap", resultMap);
         String username = null;
         if (principal instanceof UserDetails) {
             username = ((UserDetails) principal).getUsername(); // 로그인 상태 확인

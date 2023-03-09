@@ -1,10 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <%@ include file= "/WEB-INF/views/main/header.jsp" %>
 <div class="container">
-
+<c:set var="recentPost" value="${resultMap[0]}"/>
+<c:set var="recentPost2" value="${resultMap[1]}"/>
       <hr />
       <!-- image -->
       <div class="d-flex justify-content-center mt-4">
@@ -126,19 +128,20 @@
                 alt="Card image cap"
               />
               <div class="card-body h-50">
-                <h5 class="card-title">[문법 입문] 기초 문법 공부 3단계</h5>
+                <%-- <h5 class="card-title">[문법 입문] 기초 문법 공부 3단계 ${recentPost}</h5> --%>
+                <h5 class="card-title">${recentPost.COMMUNITY_TITLE}</h5>
+                <hr>
+                <%-- <h5>${recentPost2}</h5> --%>
                 <p class="card-text">
-                  첫번째는 부사에 관한 영어 문법입니다.“집으로 가자!” 라는
-                  말에서 많은 분들이 Go to home! 이라는 말을 쓰곤 하는데요,
-                  여기서 home은 추상적인 장소이기 때문에 to를 함께 쓰지
-                  않습니다!...
+                  ${recentPost.COMMUNITY_CONTENT}
                 </p>
                 <div class="text-end">
-                  <a
+                  <button class="recent_post1 btn btn-success m-3 w-25">더 읽기</button>
+                  <%-- <a
                     href="/community_post"
                     class="btn btn-success m-3 w-25"
                     >더 읽기</a
-                  >
+                  > --%>
                 </div>
                 <p class="card-text">
                   <small class="text-muted">Last updated 2 hours ago</small>
@@ -318,7 +321,30 @@
           jhun1020.kh@gmail.com
         </div>
       </footer>
+
+                  
       <!--  -->
     </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+      $(document).on('click','.recent_post1',function(){
+        // 여기에 주소값을 넣어야함 post11 이런식으로 들어가야함
+        let community_title = $('.recent_post1').text();
+        // 그 값을 받고 링크에 담아서 이동
+        location.href = "/community_post/"+community_title;
+      });
+
+      $(document).on('mouseover','.recent_post1',function(){
+        $('.recent_post1').css('padding','none');
+        $(this).css('padding','0.5px solid lightgrey');
+      });
+
+    </script>
   </body>
 </html>
