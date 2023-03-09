@@ -6,12 +6,14 @@
     <!-- call mypage.selectByLectureNumberWithDate -->
     <select id="selectByLectureNumberWithDate" 
         parameterType="Map" resultType="Map">
-        SELECT DISTINCT MEMBER.MEMBER_ID, ENROLLMENT.LECTURE_NUMBER, ENROLLMENT.ENROLL_DATE, ENROLLMENT.ENROLL_EXPIRED_DATE
+         <![CDATA[
+        SELECT MEMBER.MEMBER_ID, ENROLLMENT.LECTURE_NUMBER, ENROLLMENT.ENROLL_DATE, ENROLLMENT.ENROLL_EXPIRED_DATE
         FROM ENROLLMENT
         INNER JOIN MEMBER
         ON MEMBER.MEMBER_ID = ENROLLMENT.MEMBER_ID
         WHERE DATEDIFF(ENROLL_EXPIRED_DATE, SYSDATE()) > 0
         GROUP BY MEMBER_ID, LECTURE_NUMBER
+        ]]>
     </select>
 
     <!-- call mypage.selectByLectureNumber -->
