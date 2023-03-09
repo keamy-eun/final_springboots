@@ -70,7 +70,7 @@
                     <td class="post">${resultData.POST_NUMBER}</td>
                     <td>${resultData.COMMUNITY_TITLE}</td>
                     <td>${resultData.MEMBER_ID}</td>
-                    <td>${resultData.COMMUNITY_DATE}</td>
+                    <td>${resultData.COMMUNITY_DATE.substring(0,10)}</td>
                     <td>${resultData.VIEW_COUNT}</td>
                   </tr>
                  
