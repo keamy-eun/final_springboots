@@ -141,4 +141,12 @@ public class AdminService {
         result = this.listAndPagination(dataMap);
         return result;
     }
+
+    public Object getPollResponse(){
+        Object dataMap = null;
+        String statement = "Admin.selectPollResponse";
+        Object result = sharedDaos.getList(statement, dataMap);
+        return result;
+    }
+    
 }
