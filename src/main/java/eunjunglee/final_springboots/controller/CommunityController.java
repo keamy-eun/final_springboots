@@ -183,19 +183,6 @@ public class CommunityController {
         modelAndView.setViewName("/communitys/community_student");
         return modelAndView;
     }
-       // 학생게시판 페이지네이션
-       @RequestMapping(value="/community_student_paginaion/{currentPage}", method = RequestMethod.GET)
-       public ModelAndView studentPagination( ModelAndView modelAndView, @RequestParam Map<String, Object> params, @PathVariable String currentPage ){
-        params.put("currentPage", Integer.parseInt(currentPage));
-        params.put("pageScale", 10);
-           Object resultMap = communityService.getList(params);
-           Object resultMap_page = lectureService.listAndPagination(params);
-           modelAndView.addObject("resultMap", resultMap);
-           modelAndView.addObject("resultMap_page", resultMap_page);
-           // resultmap에 값이 다 들어있는 것 확인.
-           modelAndView.setViewName("/communitys/community_student");
-           return modelAndView;
-       }
 
     // 게시글 작성 누르면 insert하고 이 링크로 옴
     @RequestMapping(value="/community_student", method = RequestMethod.POST)
