@@ -94,7 +94,7 @@
                 <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
                   <tr class="line">
                     <td class="post">${resultData.POST_NUMBER}</td>
-                    <td>${resultData.COMMUNITY_TITLE}</td>
+                    <td style="cursor : pointer;" class="title">${resultData.COMMUNITY_TITLE}</td>
                     <td>${resultData.MEMBER_ID}</td>
                     <td>${resultData.COMMUNITY_DATE}</td>
                     <td>${resultData.VIEW_COUNT}</td>
@@ -104,26 +104,26 @@
                 </tbody>
               </table>
               <!-- 페이징 -->
-              <div class="text-center">
+              <%-- <div class="text-center">
                 <button class="btn">이전</button>
                 <button class="btn">1</button>
                 <button class="btn">2</button>
                 <button class="btn">3</button>
                 <button class="btn">4</button>
                 <button class="btn">다음</button>
-              </div>
+              </div> --%>
 
-              <div class="input-group input-group-sm mt-3">
-                <input
+              <%-- <div class="input-group input-group-sm mt-3"> --%>
+                <%-- <input
                   type="text"
                   name="table_search"
                   class="form-control float-right"
                   placeholder="Search"
-                />
+                /> --%>
 
-                <button type="submit" class="btn btn-default border">
+                <%-- <button type="submit" class="btn btn-default border">
                   검색
-                </button>
+                </button> --%>
               </div>
             </div>
           </div>
@@ -141,13 +141,13 @@
     ></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script>
-      $(document).on('click','.line',function(){
+      $(document).on('click','.title',function(){
         let community_title = $(this).children('.post').text();
         location.href = "/community_post/"+community_title;
       });
 
-      $(document).on('mouseover','.line',function(){
-        $('.line').css('padding','none');
+      $(document).on('mouseover','.title',function(){
+        $('.title').css('padding','none');
         $(this).css('padding','0.5px solid lightgrey');
       });
     </script>
