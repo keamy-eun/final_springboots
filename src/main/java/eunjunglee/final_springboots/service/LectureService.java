@@ -100,4 +100,5 @@ public class LectureService {
         result.put("resultList", this.getLectureReview(dataMap));
         return result;
     }
+
 }

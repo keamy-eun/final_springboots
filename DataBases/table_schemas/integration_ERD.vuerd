@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -1246.671875,
-    "scrollLeft": -630.8385416997803,
+    "scrollTop": -1240.8385418984622,
+    "scrollLeft": -1062.5051912135605,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -1933,7 +1933,7 @@
         "id": "d1bdab8e-61b9-4346-bbe0-554500123860"
       },
       {
-        "name": "tb_seq",
+        "name": "TB_SEQ",
         "comment": "게시판번호증가테이블",
         "columns": [
           {
@@ -1945,7 +1945,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -1968,7 +1968,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -1986,8 +1986,8 @@
         "ui": {
           "active": false,
           "left": 1294.6609,
-          "top": 1600.8768,
-          "zIndex": 82,
+          "top": 1600.0435,
+          "zIndex": 28,
           "widthName": 60,
           "widthComment": 120
         },
@@ -2007,7 +2007,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -2022,7 +2022,7 @@
             "id": "46a25025-9bbe-428d-8b06-8973009a080b"
           },
           {
-            "name": "SEQ_SM",
+            "name": "SEQ_NM",
             "comment": "STRING부분 ",
             "dataType": "VARCHAR",
             "default": "",
@@ -2030,7 +2030,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -2049,7 +2049,7 @@
           "active": false,
           "left": 1295.0055,
           "top": 1727.5045,
-          "zIndex": 80,
+          "zIndex": 32,
           "widthName": 140.67724609375,
           "widthComment": 60
         },

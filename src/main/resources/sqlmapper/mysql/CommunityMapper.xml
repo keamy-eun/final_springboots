@@ -8,9 +8,9 @@
     <!-- 게시글과 멤버의 모든 column불러옴 -->
        SELECT COMMUNITY_POST.COMMUNITY_TITLE, MEMBER.MEMBER_NAME, POST_COMMENT.POST_DATE, POST_COMMENT.COMMENT_CONTENT 
         FROM COMMUNITY_POST 
-        inner join MEMBER on COMMUNITY_POST.MEMBER_ID = MEMBER.MEMBER_ID 
-        inner join POST_COMMENT on POST_COMMENT.POST_NUMBER = COMMUNITY_POST.POST_NUMBER 
-        order by COMMUNITY_POST.POST_NUMBER DESC
+        INNER JOIN MEMBER ON COMMUNITY_POST.MEMBER_ID = MEMBER.MEMBER_ID 
+        INNER JOIN POST_COMMENT ON POST_COMMENT.POST_NUMBER = COMMUNITY_POST.POST_NUMBER 
+        ORDER BY COMMUNITY_POST.POST_NUMBER DESC
     </select>
 
 
@@ -20,7 +20,7 @@
     <!-- 게시글과 멤버의 모든 column불러옴 -->
         SELECT * 
         FROM COMMUNITY_POST 
-        where POST_NUMBER = #{parameter} 
+        WHERE POST_NUMBER = #{parameter} 
         <!-- post67 게시글 번호가 넘어감 -->
     </select>
 
@@ -35,7 +35,7 @@
         SELECT MEMBER.MEMBER_NAME, POST_COMMENT.COMMENT_CONTENT, POST_COMMENT.POST_DATE
         FROM MEMBER
         INNER JOIN POST_COMMENT ON MEMBER.MEMBER_ID = POST_COMMENT.MEMBER_ID
-        where POST_COMMENT.POST_NUMBER = #{parameter}
+        WHERE POST_COMMENT.POST_NUMBER = #{parameter}
         <!-- uid로 넘긴 post??값이 붙어서 비교. -->
         <!-- 파라미터를 받아와서 지금 댓글 불러오기도 이 파라미터를 받아오기 때문에 comment_content가 post72가 나오는 것 같음 -->
     </select>
@@ -44,10 +44,10 @@
     <select id="selectListLecturer"
     parameterType="Map" resultType="Map">
 
-        select *
-        from community_post
+        SELECT *
+        FROM COMMUNITY_POST 
         WHERE COMMUNITY_NUMBER = 'C02'
-        order by POST_NUMBER desc
+        ORDER BY POST_NUMBER DESC
     </select>
 
     <!-- call  Community.selectListByID-->
@@ -57,10 +57,10 @@
     <!-- 학생게시판   -->
        SELECT COMMUNITY_POST.POST_NUMBER, COMMUNITY_POST.COMMUNITY_TITLE, COMMUNITY_POST.COMMUNITY_DATE, COMMUNITY_POST.VIEW_COUNT
         FROM COMMUNITY_POST 
-        inner join MEMBER 
-        where COMMUNITY_NUMBER = 'C03' 
-        group by COMMUNITY_POST.POST_NUMBER, COMMUNITY_POST.COMMUNITY_TITLE, COMMUNITY_POST.COMMUNITY_DATE, COMMUNITY_POST.VIEW_COUNT 
-        order by POST_NUMBER DESC
+        INNER JOIN MEMBER 
+        WHERE COMMUNITY_NUMBER = 'C03' 
+        GROUP by COMMUNITY_POST.POST_NUMBER, COMMUNITY_POST.COMMUNITY_TITLE, COMMUNITY_POST.COMMUNITY_DATE, COMMUNITY_POST.VIEW_COUNT 
+        ORDER by POST_NUMBER DESC
     </select>
 
 
@@ -69,45 +69,45 @@
         parameterType="Map" resultType="Map">
         SELECT LECTURE.LECTURE_NUMBER, LECTURE.LECTURE_TITLE, LECTURE.LECTURE_INTRO, LECTURE.LECTURE_IMAGE, MEMBER.MEMBER_ID
         FROM ENROLLMENT 
-        inner join LECTURE ON LECTURE.LECTURE_NUMBER = ENROLLMENT.LECTURE_NUMBER
-        inner join MEMBER ON MEMBER.MEMBER_ID = ENROLLMENT.MEMBER_ID
+        INNER JOIN LECTURE ON LECTURE.LECTURE_NUMBER = ENROLLMENT.LECTURE_NUMBER
+        INNER JOIN MEMBER ON MEMBER.MEMBER_ID = ENROLLMENT.MEMBER_ID
         <!-- where ENROLLMENT.MEMBER_ID = #{MEMBER_ID}  -->
-        where ENROLLMENT.MEMBER_ID = 'circle01'
+        WHERE ENROLLMENT.MEMBER_ID = 'circle01'
     </select>
 
 <!-- 공지사항 -->
  <select id="selectListNotice"
     parameterType="Map" resultType="Map">
 
-        select *
-        from COMMUNITY_POST
+        SELECT *
+        FROM COMMUNITY_POST
         WHERE COMMUNITY_NUMBER = 'C04'
-        order by POST_NUMBER desc
+        ORDER BY POST_NUMBER desc
 
     </select>
 
     <!-- call  Community.insertPost-->
     <insert id="insertPost" 
         parameterType="Map">
-        insert into COMMUNITY_POST                           
+        INSERT INTO COMMUNITY_POST                           
         (POST_NUMBER, COMMUNITY_CONTENT, COMMUNITY_TITLE, FILE_ATTACHIMENT, COMMUNITY_DATE, VIEW_COUNT, MEMBER_ID, COMMUNITY_NUMBER)
-        value (NEXTVAL('post'),#{community_content},#{community_title},#{file_Attachiment},now(),'0','circle01',#{community_number})
+        VALUE (NEXTVAL('post'),#{community_content},#{community_title},#{file_Attachiment},now(),'0','circle01',#{community_number})
         <!-- id값과 조회수, 댓글기능만  -->
         <!-- post unique string 값 -->
     </insert> 
     
     <insert id="insertComment"  
         parameterType="Map">
-        insert into POST_COMMENT                           
+        INSERT INTO POST_COMMENT                           
         (COMMENT_NUMBER, POST_NUMBER, COMMENT_CONTENT, POST_DATE, MEMBER_ID)
-        value (NEXTVAL2('comm'),#{Id},#{content},now(),'circle01')
+        VALUE (NEXTVAL2('comm'),#{Id},#{content},now(),'circle01')
         <!-- id값과 조회수, 댓글기능만  -->
     </insert>
 
     <update id="updatePostView" parameterType="String">
-    update COMMUNITY_POST
-    set VIEW_COUNT  = VIEW_COUNT +1
-    where POST_NUMBER = #{parameter}
+    UPDATE COMMUNITY_POST
+    SET VIEW_COUNT  = VIEW_COUNT +1
+    WHERE POST_NUMBER = #{parameter}
     </update>
 
 </mapper>

@@ -53,7 +53,7 @@ public class LectureController {
      // 강좌신청목록
      @RequestMapping(value={"/lecture_signup_list","/",""}, method = RequestMethod.GET)
      public ModelAndView getLectureList(@RequestParam Map<String, Object> params, ModelAndView modelAndView ){
-         Object resultMap = lectureService.getLectureList(params);
+        Object resultMap = lectureService.getLectureList(params);
          modelAndView.addObject("resultMap", resultMap);
          modelAndView.setViewName("/lecture/lecture_signup_list");
          return modelAndView;
@@ -71,8 +71,6 @@ public class LectureController {
             username = principal.toString();     // 로그 아웃 상태 확인
         }
         params.put("MEMBER_ID", username);
-    //    params.put("MEMBER_ID", "circle01");
-    //    params.put("LECTURER_TITLE", "세로미");
         lectureService.insertQnAAndMyLecture(params);
         return "redirect:/mypage/Lecture";
     }

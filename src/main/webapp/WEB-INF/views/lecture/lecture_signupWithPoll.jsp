@@ -60,7 +60,7 @@
               <c:if test="${Que.ORDERS eq '1-1' || Que.ORDERS eq '4'}">
                 <div class="mt-4 mb-2">
                   <label class="mt-4 mb-3"
-                    >${Que.ORDERS}. ${Que.QUESTION} ${Que.QUESTION_UID}</label
+                    >${Que.ORDERS}. ${Que.QUESTION}</label
                   >
                   <input class="form-control mt-3" type="text" name="${Que.QUESTION_UID}" id="${Que.QUESTION_UID}"/>
                 </div>
@@ -88,16 +88,16 @@
     <script type="text/javascript">
       function check(){
         if(document.getElementById("PQ01").value=="선택"){
-            alert("PQ01을 입력하세요");
+            alert("1번 문항을 선택해주세요");
             return false;
         }else if(document.getElementById("PQ01").value=="기타" && document.getElementById("PQ01_1").value==""){
-            alert("PQ01-1을 입력하세요");
+            alert("1-1을 입력해주세요");
             return false;
         }else if(document.getElementById("PQ02").value=="선택"){
-            alert("PQ02을 입력하세요");
+            alert("2번 문항을 선택해주세요");
             return false;
         }else if(document.getElementById("PQ03").value=="선택"){
-            alert("PQ03을 입력하세요");
+            alert("3번 문항을 선택해주세요");
             return false;
         }else document.poll.submit();
     }
