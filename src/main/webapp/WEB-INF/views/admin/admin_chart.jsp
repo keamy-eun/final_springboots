@@ -22,19 +22,19 @@
             target_element3.parentElement.clientHeight;
             var options1 = {
                 title: '선택하신 강의를 신청하게 된 계기가 무엇인가요?',
-                hAxis: { title: '1.지인의 추천으로 \n 2.인터넷 광고를 보고 \n 3.SMS 광고를 보고 \n 4.수업이 마음에 들어서 재신청 \n 기타', minValue: 0, maxValue: 15 },
+                hAxis: { title: '문항번호', minValue: 0, maxValue: 15 },
                 vAxis: { title: '선택수', minValue: 0, maxValue: 15 },
                 legend: 'none'  // 범례
             };
             var options2 = {
                 title: '하루에 공부하는 평균 시간은 어느정도 되시나요?',
-                hAxis: { title: '1. 30분 이하 \n 2. 1시간 내외 \n 3. 2시간 내외 \n 4. 3시간 내외', minValue: 0, maxValue: 15 },
+                hAxis: { title: '문항번호', minValue: 0, maxValue: 15 },
                 vAxis: { title: '선택수', minValue: 0, maxValue: 15 },
                 legend: 'none'  // 범례
             };
             var options3 = {
                 title: '강의를 수강하실 때 주로 어떤 기기를 사용하시나요?',
-                hAxis: { title: '1. 스마트폰 \n 2. 컴퓨터 \n 3. 테플릿 \n 4. 기타', minValue: 0, maxValue: 15 },
+                hAxis: { title: '문항번호', minValue: 0, maxValue: 15 },
                 vAxis: { title: '선택수', minValue: 0, maxValue: 15 },
                 legend: 'none'  // 범례
             };
@@ -89,15 +89,38 @@
               </ul>
             </nav>
           </div>
-            <h1>통계</h1>
-            <br />
+            <h1>설문통계</h1>
+            <div class="row mt-5 fs-5 text-info">
+                <div class="col-4" id="">1번 문항</div>
+                <div class="col-4" id="">2번 문항</div>
+                <div class="col-4" id="">3번 문항</div>
+            </div>
             <div class="row vh-50">
                 <div class="col-4" id="chart_div1"></div>
                 <div class="col-4" id="chart_div2"></div>
                 <div class="col-4" id="chart_div3"></div>
             </div>
-
-
+            <div class="row mb-5">
+              <div class="col-4" id="">
+                <div>1-1. 지인의 추천으로</div>
+                <div>1-2. 인터넷 광고를 보고</div>
+                <div>1-3. SMS 광고를 보고</div>
+                <div>1-4. 수업이 마음에 들어서 재신청</div>
+                <div>1-5. 기타</div>
+              </div>
+              <div class="col-4" id="">
+                <div>2-1. 30분 이하</div>
+                <div>2-2. 1시간 내외</div>
+                <div>2-3. 2시간 내외</div>
+                <div>2-4. 3시간 내외</div>
+              </div>
+              <div class="col-4" id="">
+                <div>3-1. 스마트폰</div>
+                <div>3-2. 컴퓨터</div>
+                <div>3-3. 테플릿</div>
+                <div>3-4. 기타</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
