@@ -84,4 +84,10 @@
         )
     </delete>
 
+    <select id="selectPollResponse" 
+        parameterType="Map" resultType="Map">
+        select *
+        from POLL_RESPONSE
+    </select>
+
 </mapper>
