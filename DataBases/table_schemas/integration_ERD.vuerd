@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -1240.8385418984622,
-    "scrollLeft": -1062.5051912135605,
-    "zoomLevel": 1,
+    "scrollTop": -933.8385418984622,
+    "scrollLeft": -308,
+    "zoomLevel": 0.8,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -289,7 +289,7 @@
             "id": "56470afa-d481-496e-bafd-b7d3f8f5c81f",
             "name": "COMMUNITY_CONTENT",
             "comment": "게시글내용",
-            "dataType": "VARCHAR(100)",
+            "dataType": "MEDIUMTEXT",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -304,7 +304,7 @@
               "pfk": false,
               "widthName": 152.21728515625,
               "widthComment": 67,
-              "widthDataType": 94.94873046875,
+              "widthDataType": 87.94091796875,
               "widthDefault": 60
             }
           },
@@ -497,7 +497,7 @@
           "active": false,
           "left": 739.75,
           "top": 1340.25,
-          "zIndex": 6,
+          "zIndex": 33,
           "widthName": 124.78271484375,
           "widthComment": 60
         },
@@ -620,7 +620,7 @@
             "id": "94fd46ba-f624-4acf-b3ae-51505ec20215",
             "name": "COMMENT_CONTENT",
             "comment": "댓글내용",
-            "dataType": "VARCHAR(100)",
+            "dataType": "VARCHAR(255)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -713,7 +713,7 @@
           "active": false,
           "left": 1458,
           "top": 1176.5,
-          "zIndex": 1,
+          "zIndex": 42,
           "widthName": 111.78271484375,
           "widthComment": 60
         },
@@ -1962,7 +1962,7 @@
           {
             "name": "SEQ_NM",
             "comment": "STRING부분",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -1977,7 +1977,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 77.11181640625,
-              "widthDataType": 64.6005859375,
+              "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
             "id": "42f20821-1c04-4982-9dc6-7caa12aa2927"
@@ -1987,7 +1987,7 @@
           "active": false,
           "left": 1294.6609,
           "top": 1600.0435,
-          "zIndex": 28,
+          "zIndex": 22,
           "widthName": 60,
           "widthComment": 120
         },
@@ -2024,7 +2024,7 @@
           {
             "name": "SEQ_NM",
             "comment": "STRING부분 ",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -2039,7 +2039,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 80.7236328125,
-              "widthDataType": 64.6005859375,
+              "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
             "id": "e289cf7b-6830-4060-a98d-fb65acb3f7e7"
@@ -2049,7 +2049,7 @@
           "active": false,
           "left": 1295.0055,
           "top": 1727.5045,
-          "zIndex": 32,
+          "zIndex": 25,
           "widthName": 140.67724609375,
           "widthComment": 60
         },

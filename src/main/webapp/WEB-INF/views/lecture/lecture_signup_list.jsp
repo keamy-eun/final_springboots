@@ -69,15 +69,6 @@
                 </div>
               </div>
                 </c:forEach>
-
-                <div class="pagination justify-content-center mt-5 mb-5">
-                  <a href="" class="page-item page-link disabled">Prev</a>
-                  <a href="" class="page-item page-link">1</a>
-                  <a href="" class="page-item page-link">2</a>
-                  <a href="" class="page-item page-link active">3</a>
-                  <a href="" class="page-item page-link">4</a>
-                  <a href="" class="page-item page-link">Next</a>
-                </div>
               </div>
             </div>
           </div>
