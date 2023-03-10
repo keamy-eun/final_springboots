@@ -55,11 +55,11 @@
     parameterType="Map" resultType="Map">
     <!-- 게시글과 멤버의 모든 column불러옴 -->
     <!-- 학생게시판                                                SUBSTR(COMMUNITY_POST.COMMUNITY_DATE, 1, 10) 하는 순간 작성자까지 사라짐.. 왜... -->
-       SELECT COMMUNITY_POST.POST_NUMBER, COMMUNITY_POST.COMMUNITY_TITLE, COMMUNITY_POST.COMMUNITY_DATE, COMMUNITY_POST.VIEW_COUNT, COMMUNITY_POST.COMMUNITY_CONTENT, MEMBER.MEMBER_ID
+       SELECT COMMUNITY_POST.POST_NUMBER, MIN(COMMUNITY_POST.COMMUNITY_TITLE) AS COMMUNITY_TITLE, MIN(COMMUNITY_POST.COMMUNITY_DATE) AS COMMUNITY_DATE, MIN(COMMUNITY_POST.VIEW_COUNT) AS VIEW_COUNT, MIN(COMMUNITY_POST.COMMUNITY_CONTENT) AS COMMUNITY_CONTENT, MIN(MEMBER.MEMBER_ID) AS MEMBER_ID
         FROM COMMUNITY_POST 
         INNER JOIN MEMBER 
         WHERE COMMUNITY_NUMBER = 'C03' 
-        GROUP BY COMMUNITY_POST.POST_NUMBER
+        GROUP BY POST_NUMBER
         ORDER BY COMMUNITY_POST.POST_NUMBER DESC
     </select>
 
@@ -91,7 +91,7 @@
         parameterType="Map">
         INSERT INTO COMMUNITY_POST                           
         (POST_NUMBER, COMMUNITY_CONTENT, COMMUNITY_TITLE, FILE_ATTACHIMENT, COMMUNITY_DATE, VIEW_COUNT, MEMBER_ID, COMMUNITY_NUMBER)
-        VALUE (NEXTVAL('post'),#{community_content},#{community_title},#{file_Attachiment},now(),'0','circle01',#{community_number})
+        VALUE (NEXTVAL('post'),#{community_content},#{community_title},#{file_Attachiment},now(),'0','admin',#{community_number})
         <!-- id값과 조회수, 댓글기능만  -->
         <!-- post unique string 값 -->
     </insert> 
@@ -100,7 +100,7 @@
         parameterType="Map">
         INSERT INTO POST_COMMENT                           
         (COMMENT_NUMBER, POST_NUMBER, COMMENT_CONTENT, POST_DATE, MEMBER_ID)
-        VALUE (NEXTVAL2('comm'),#{Id},#{content},now(),'circle01')
+        VALUE (NEXTVAL2('comm'),#{Id},#{content},now(),'admin')
         <!-- id값과 조회수, 댓글기능만  -->
     </insert>
 
