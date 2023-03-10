@@ -1,5 +1,6 @@
 # Final 프로젝트 : 영어학원 무료 강의 사이트
-### - [운영 서버 링크](http://final-springboots-aictc.run.goorm.io/main)
+
+### - [운영 서버 링크](http://final-springboots-aictc.run.goorm.io/main) -
 
 #### 영어강의를 무료로 수강하고 영어 학습 내용을 게시판으로 자유롭게 공유할 수 있는 웹 서비스
 
@@ -24,17 +25,20 @@
 - [ERD 작성 및 DB CRUD 테스트](./DataBases/table_schemas/integration_ERD.png) (2/6  ~ 2/13)
 
 - [백앤드 기능 구현]() (2/25 ~ 3/4)
-- 은원기
+  * 은원기
   - [관리자페이지 (회원관리, 통계)](../final_springboots/src/main/java/eunjunglee/final_springboots/controller/AdminController.java)
   - [수강신청 및 수강후기 게시판](../final_springboots/src/main/java/eunjunglee/final_springboots/controller/LectureController.java)
 
-- 이찬우
+  <br>
+
+  * 이찬우
   - [로그인](../final_springboots/docs/htmls/main.html)
   - [회원가입](../final_springboots/docs/htmls/lecture_signup.html)
   - [마이페이지](../final_springboots/docs/htmls/mypage_Lecture.html)
 
+  <br>
 
-- 이정훈
+  * 이정훈
   - [게시판](../final_springboots/docs/htmls/main.html)
   - [학원소개](../final_springboots/docs/htmls/lecture_signup.html)
   - [메인](../final_springboots/docs/htmls/mypage_Lecture.html)
