@@ -77,7 +77,6 @@
             </table>
           <nav aria-label="Page navigation example">
             <c:set var="_pagination" value="${resultMap.paginations}" />
-              <span>전체 게시물 수 : ${_pagination.totalCount}</span>
               <ul class="pagination">
                 <li class="page-item">
                   <a class="page-link" href="/lecture/lecture_review_pagination/${_pagination.previousPage}" aria-label="Previous">
