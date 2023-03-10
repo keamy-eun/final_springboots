@@ -86,7 +86,6 @@
               </form>
               <nav aria-label="Page navigation example">
                 <c:set var="_pagination" value="${resultMap.paginations}" />
-                  <span>전체 회원수 : ${_pagination.totalCount}</span>
                   <ul class="pagination">
                     <li class="page-item">
                       <a class="page-link" href="/admin/member_pagination/${_pagination.previousPage}" aria-label="Previous">
