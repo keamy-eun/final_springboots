@@ -49,7 +49,7 @@
               <div class="mt-3">
               
                 <select class="form-select col-" id="community_number" name="community_number" placeholder="">
-                  <option selected value="C01">강좌 게시판</option>
+                  <%-- <option selected value="C01">강좌 게시판</option> --%>
                   <option value="C02">강사 게시판</option>
                   <option value="C03">학생 게시판</option>
                   <option value="C04">공지사항</option>

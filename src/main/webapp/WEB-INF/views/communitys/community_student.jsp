@@ -103,15 +103,16 @@
                 </c:forEach>
                 </tbody>
               </table>
+              
               <!-- 페이징 -->
-              <%-- <div class="text-center">
+              <div class="text-center">
                 <button class="btn">이전</button>
                 <button class="btn">1</button>
-                <button class="btn">2</button>
+                <%-- <button class="btn">2</button>
                 <button class="btn">3</button>
-                <button class="btn">4</button>
+                <button class="btn">4</button> --%>
                 <button class="btn">다음</button>
-              </div> --%>
+              </div>
 
               <%-- <div class="input-group input-group-sm mt-3"> --%>
                 <%-- <input
@@ -141,15 +142,29 @@
     ></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script>
-      $(document).on('click','.title',function(){
+      $(document).on('click','.line',function(){
         let community_title = $(this).children('.post').text();
         location.href = "/community_post/"+community_title;
       });
+   
 
-      $(document).on('mouseover','.title',function(){
-        $('.title').css('padding','none');
+      $(document).on('mouseover','.post',function(){
+        $('.post').css('padding','none');
         $(this).css('padding','0.5px solid lightgrey');
       });
     </script>
+
+
+                <%-- 
+                  <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
+                  <tr class="line">
+                    <td class="post">${resultData.POST_NUMBER}</td>
+                    <td style="cursor : pointer;" class="title">${resultData.COMMUNITY_TITLE}</td>
+                    <td>${resultData.MEMBER_ID}</td>
+                    <td>${resultData.COMMUNITY_DATE.substring(0,10)}</td>
+                    <td>${resultData.VIEW_COUNT}</td>
+                  </tr> 
+                  --%>
+
   </body>
 </html>

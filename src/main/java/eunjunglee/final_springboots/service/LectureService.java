@@ -19,6 +19,13 @@ public class LectureService {
     @Autowired
     SharedDaos sharedDaos;
 
+    
+    public Object selectListLecturerReview (Object dataMap){
+        String sqlMapId = "Lecture.selectListLecturerReview";
+        Object result = sharedDaos.getList(sqlMapId, dataMap);
+        return result;
+    }
+
     public Object getLectureList(Object dataMap){
         String sqlMapId = "Lecture.selectLectureList";
         Object result = sharedDaos.getList(sqlMapId, dataMap);
