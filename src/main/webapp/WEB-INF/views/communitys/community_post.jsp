@@ -41,8 +41,8 @@
               <c:set var="comment" value="${content}"/>
             <%-- <div class="fs-1">${map}</div>  확인용--%>
             <div class="fs-1">${map.COMMUNITY_TITLE}</div>
-            <hr class="opacity-100" />
-
+            <hr class="opacity-100 mb-5" />
+  <br><br><br>
           
             <%-- <div>
               <iframe
@@ -58,9 +58,10 @@
             </div> --%>
             <%-- 게시글 내용 --%>
             ${map.COMMUNITY_CONTENT}
+            <br><br><br><br><br><br><br>
             <!-- 댓글 -->
 <%-- ---------------- --%>
-  <div>연습</div>
+  
 
 
 
