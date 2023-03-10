@@ -44,7 +44,7 @@
             <hr class="opacity-100" />
 
           
-            <div>
+            <%-- <div>
               <iframe
                 width="560"
                 height="315"
@@ -55,7 +55,7 @@
                 allowfullscreen
                 class="m-3"
               ></iframe>
-            </div>
+            </div> --%>
             <%-- 게시글 내용 --%>
             ${map.COMMUNITY_CONTENT}
             <!-- 댓글 -->
