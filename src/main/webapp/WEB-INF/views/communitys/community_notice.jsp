@@ -79,13 +79,13 @@
                     <div class="text-center">
                       <button class="btn">이전</button>
                       <button class="btn">1</button>
-                      <button class="btn">2</button>
+                      <%-- <button class="btn">2</button>
                       <button class="btn">3</button>
-                      <button class="btn">4</button>
+                      <button class="btn">4</button> --%>
                       <button class="btn">다음</button>
                     </div>
       
-                    <div class="input-group input-group-sm mt-3">
+                    <%-- <div class="input-group input-group-sm mt-3">
                       <input
                         type="text"
                         name="table_search"
@@ -97,7 +97,7 @@
                       <button type="submit" class="btn btn-default border">
                         검색
                       </button>
-                    </div>
+                    </div> --%>
                   </div>
                 </div>
               </div>
