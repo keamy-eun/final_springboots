@@ -13,7 +13,7 @@
 <hr>
 
 ## 프로잭트 진행
-- #### [의뢰팀 제안서 검토]() (2/1 ~ 2/3)
+- #### [의뢰팀 제안서 검토](https://docs.google.com/viewer?url=https://github.com/keamy-eun/final_springboots/files/10948277/_.pdf?raw=True) (2/1 ~ 2/3)
 
 - #### 네이밍룰 작성 (2/3  ~ 2/6)
 <img src="https://user-images.githubusercontent.com/77378816/224479175-08383894-68e3-4f12-b10c-bb0a11a8f7cd.PNG"  width="700" height="370">
