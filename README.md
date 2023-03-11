@@ -12,10 +12,10 @@
  - #### 주요 기술 스택 : <img src="https://img.shields.io/badge/Spring-6DB33F?style=flat&logo=Spring&logoColor=white"/> <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=MySQL&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat&logo=Bootstrap&logoColor=white"/>
 <hr>
 
-## 프로잭트 진행
+### 프로잭트 진행
 - [의뢰팀 제안서 검토]() (2/1 ~ 2/3)
 
-- 네이밍룰 작성 (2/3  ~ 2/6)
+- #### 네이밍룰 작성 (2/3  ~ 2/6)
 <img src="https://user-images.githubusercontent.com/77378816/224479175-08383894-68e3-4f12-b10c-bb0a11a8f7cd.PNG"  width="700" height="370">
 
 - UI 요구사항협의서 (2/6  ~ 2/13)
