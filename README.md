@@ -24,7 +24,8 @@
 
 - controller, service, dao, mapper 기초 구성 파일 작성 (2/17 ~ 2/18)
 
-- [ERD 작성 및 DB CRUD 테스트](./DataBases/table_schemas/integration_ERD.png) (2/6  ~ 2/13)
+- ERD 작성 및 DB CRUD 테스트 (2/6  ~ 2/13)
+![ERD](https://user-images.githubusercontent.com/77378816/224478909-e98c9f64-4d66-4048-a768-ae6c1d4cc529.PNG)
 
 - [백앤드 기능 구현]() (2/25 ~ 3/4)
 
