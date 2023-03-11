@@ -25,7 +25,7 @@
 - controller, service, dao, mapper 기초 구성 파일 작성 (2/17 ~ 2/18)
 
 - ERD 작성 및 DB CRUD 테스트 (2/6  ~ 2/13)
-<img src="https://user-images.githubusercontent.com/77378816/224478909-e98c9f64-4d66-4048-a768-ae6c1d4cc529.PNG"  width="700" height="370">
+<img src="https://user-images.githubusercontent.com/77378816/224478909-e98c9f64-4d66-4048-a768-ae6c1d4cc529.PNG"  width="900" height="450">
 
 - [백앤드 기능 구현]() (2/25 ~ 3/4)
 
