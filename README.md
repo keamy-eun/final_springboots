@@ -28,7 +28,7 @@
 - #### ERD 작성 및 DB CRUD 테스트 (2/6  ~ 2/13)
 <img src="https://user-images.githubusercontent.com/77378816/224478909-e98c9f64-4d66-4048-a768-ae6c1d4cc529.PNG"  width="1400" height="750">
 
-- #### [백앤드 기능 구현]() (2/25 ~ 3/4)
+- #### 백앤드 기능 구현 (2/25 ~ 3/4)
 
   * 은원기
     - [관리자페이지 (회원관리, 통계)](../final_springboots/src/main/java/eunjunglee/final_springboots/controller/AdminController.java)
@@ -49,6 +49,6 @@
     - [메인](../final_springboots/docs/htmls/mypage_Lecture.html)
 
 
-- #### [의뢰팀과의 단위테스트]() (3/4  ~ 3/6)
+- #### [의뢰팀과의 단위테스트](https://docs.google.com/viewer?url=https://github.com/keamy-eun/final_springboots/files/10948288/_.xlsx.pdf?raw=True) (3/4  ~ 3/6)
 
 - #### 최종 검토 및 컴펌 (3/6  ~ 3/10)
