@@ -31,8 +31,8 @@
 - #### 백앤드 기능 구현 (2/25 ~ 3/4)
 
   * 은원기
-    - [관리자페이지 (회원관리, 통계)](../final_springboots/src/main/java/eunjunglee/final_springboots/controller/AdminController.java)
-    - [수강신청 및 수강후기 게시판](../final_springboots/src/main/java/eunjunglee/final_springboots/controller/LectureController.java)
+    - [관리자페이지 (회원관리, 통계)](https://github.com/keamy-eun/final_springboots/blob/master/src/main/java/eunjunglee/final_springboots/controller/AdminController.java)
+    - [수강신청 및 수강후기 게시판](https://github.com/keamy-eun/final_springboots/blob/master/src/main/java/eunjunglee/final_springboots/controller/LectureController.java)
 
   <br>
 
