@@ -19,6 +19,13 @@
 
 - [UI 요구사항협의서]() (2/6  ~ 2/13)
 ![요구사항정의서_은정이(with 끝까지버팀 TEAM)](https://user-images.githubusercontent.com/77378816/224469840-f01ed9be-da4d-4fc0-98bf-93bbd06e91bf.JPG)
+
+// 마트다운 형식
+![캡처](/uploads/1848994ad25765da30fa8ef3684c67bc/캡처.PNG)
+ 
+// 태그 형식
+<img src="[/uploads/1848994ad25765da30fa8ef3684c67bc/캡처.PNG](https://user-images.githubusercontent.com/77378816/224469840-f01ed9be-da4d-4fc0-98bf-93bbd06e91bf.JPG)"  width="700" height="370">
+
 - DB 테이블, DDL, DML과 JSP 기초 구성 파일 작성 (2/13 ~ 2/17)
 
 - controller, service, dao, mapper 기초 구성 파일 작성 (2/17 ~ 2/18)
