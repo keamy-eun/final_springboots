@@ -18,6 +18,7 @@
 - [네이밍룰 작성]() (2/3  ~ 2/6)
 
 - UI 요구사항협의서 (2/6  ~ 2/13)
+<img src="https://user-images.githubusercontent.com/77378816/224469840-f01ed9be-da4d-4fc0-98bf-93bbd06e91bf.JPG"  width="700" height="370">
 
 - DB 테이블, DDL, DML과 JSP 기초 구성 파일 작성 (2/13 ~ 2/17)
 
