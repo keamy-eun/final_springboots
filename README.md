@@ -15,7 +15,8 @@
 ## 프로잭트 진행
 - [의뢰팀 제안서 검토]() (2/1 ~ 2/3)
 
-- [네이밍룰 작성]() (2/3  ~ 2/6)
+- 네이밍룰 작성 (2/3  ~ 2/6)
+![네이밍룰](https://user-images.githubusercontent.com/77378816/224479175-08383894-68e3-4f12-b10c-bb0a11a8f7cd.PNG)
 
 - UI 요구사항협의서 (2/6  ~ 2/13)
 <img src="https://user-images.githubusercontent.com/77378816/224469840-f01ed9be-da4d-4fc0-98bf-93bbd06e91bf.JPG"  width="700" height="370">
