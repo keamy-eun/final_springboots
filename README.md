@@ -1,6 +1,6 @@
 # 영어학원 무료 강의 사이트
 
-- #### 운영 서버 링크 : http://final-springboots-aictc.run.goorm.io/main
+- #### demo : http://final-springboots-aictc.run.goorm.io/main
 
 
 - #### 프로젝트 기간 : 2023.02.01 ~ 2023.03.10
