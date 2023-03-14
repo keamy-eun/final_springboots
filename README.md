@@ -12,6 +12,9 @@
 - #### 프로잭트 개요 : Spring을 통해 데이터베이스를 자유롭게 활용하여 수강신청 및 게시판, 회원관리 기능이 적용된 반응형 웹 서비스
 
  - #### 주요 기술 스택 : <img src="https://img.shields.io/badge/Spring-6DB33F?style=flat&logo=Spring&logoColor=white"/> <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=MySQL&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat&logo=Bootstrap&logoColor=white"/>
+ 
+ - #### 개발 환경 : GroomIDE, <img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat&logo=Ubuntu&logoColor=white"/>
+ 
 <hr>
 
 ## 프로잭트 진행
