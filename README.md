@@ -42,9 +42,9 @@
   <br>
 
   * 이찬우
-    - [로그인](../final_springboots/docs/htmls/main.html)
-    - [회원가입](../final_springboots/docs/htmls/lecture_signup.html)
-    - [마이페이지](../final_springboots/docs/htmls/mypage_Lecture.html)
+    - [로그인](https://github.com/keamy-eun/final_springboots/blob/master/src/main/java/eunjunglee/final_springboots/service/PrincipalUserService.java)
+    - [회원가입](https://github.com/keamy-eun/final_springboots/blob/master/src/main/java/eunjunglee/final_springboots/controller/HomeController.java)
+    - [마이페이지](https://github.com/keamy-eun/final_springboots/blob/master/src/main/java/eunjunglee/final_springboots/service/MypageService.java)
 
   <br>
 
